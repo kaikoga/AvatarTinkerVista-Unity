@@ -5,6 +5,7 @@
     "nadena.dev.ndmf",
     "VRM",
     "VRM10",
+    "LibVRMTool",
     "AvatarTinkerVista.Ndmf"
   ],
   "includePlatforms": [

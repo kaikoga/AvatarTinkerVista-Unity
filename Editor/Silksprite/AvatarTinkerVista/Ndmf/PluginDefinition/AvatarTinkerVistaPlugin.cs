@@ -2,6 +2,7 @@
 using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
+using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
@@ -20,8 +21,18 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         protected override void Configure()
         {
-            var seq = InPhase(BuildPhase.Resolving);
-            seq.Run(DeleteComponentsPass.Instance);
+            var resolving = InPhase(BuildPhase.Resolving);
+            resolving.Run(DeleteComponentsPass.Instance);
+            resolving.Run(DeleteAtvComponentsPass<AtvResolvingComponent>.Instance);
+
+            var generating = InPhase(BuildPhase.Generating);
+#if ATV_VRM0
+            generating.Run(OverwriteVrm0MetaPass.Instance);
+#endif
+#if ATV_VRM1
+            generating.Run(OverwriteVrm1MetaPass.Instance);
+#endif
+            generating.Run(DeleteAtvComponentsPass<AtvGeneratingComponent>.Instance);
         }
     }
 }

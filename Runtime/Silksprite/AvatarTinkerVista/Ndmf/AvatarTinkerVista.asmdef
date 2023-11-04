@@ -1,8 +1,6 @@
 {
     "name": "AvatarTinkerVista.Ndmf",
-    "references": [
-        "nadena.dev.ndmf"
-    ],
+    "references": [],
     "includePlatforms": [
     ],
     "excludePlatforms": [],
