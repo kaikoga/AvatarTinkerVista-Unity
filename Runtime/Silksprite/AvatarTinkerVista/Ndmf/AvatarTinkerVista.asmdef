@@ -1,0 +1,32 @@
+{
+    "name": "AvatarTinkerVista.Ndmf",
+    "references": [
+        "nadena.dev.ndmf"
+    ],
+    "includePlatforms": [
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.vrchat.avatars",
+            "expression": "",
+            "define": "ATV_VRCSDK3_AVATARS"
+        },
+        {
+            "name": "com.vrmc.univrm",
+            "expression": "",
+            "define": "ATV_VRM0"
+        },
+        {
+            "name": "com.vrmc.vrm",
+            "expression": "",
+            "define": "ATV_VRM1"
+        }
+    ],
+    "noEngineReferences": false
+}
