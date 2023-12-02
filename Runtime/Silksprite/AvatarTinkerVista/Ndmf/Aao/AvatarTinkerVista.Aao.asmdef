@@ -1,0 +1,38 @@
+{
+    "name": "AvatarTinkerVista.Aao",
+    "references": [
+        "AvatarTinkerVista.Ndmf",
+        "com.anatawa12.avatar-optimizer.internal.prefab-safe-set"
+    ],
+    "includePlatforms": [
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.vrchat.avatars",
+            "expression": "",
+            "define": "ATV_VRCSDK3_AVATARS"
+        },
+        {
+            "name": "com.vrmc.univrm",
+            "expression": "",
+            "define": "ATV_VRM0"
+        },
+        {
+            "name": "com.vrmc.vrm",
+            "expression": "",
+            "define": "ATV_VRM1"
+        },
+        {
+            "name": "com.anatawa12.avatar-optimizer",
+            "expression": "",
+            "define": "ATV_AAO"
+        }
+    ],
+    "noEngineReferences": false
+}

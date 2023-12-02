@@ -3,10 +3,13 @@
   "rootNamespace": "Silksprite.AvatarTinkerVista.Ndmf",
   "references": [
     "nadena.dev.ndmf",
+    "com.anatawa12.avatar-optimizer.runtime",
+    "com.anatawa12.avatar-optimizer.internal.prefab-safe-set",
     "VRM",
     "VRM10",
     "LibVRMTool",
-    "AvatarTinkerVista.Ndmf"
+    "AvatarTinkerVista.Ndmf",
+    "AvatarTinkerVista.Aao"
   ],
   "includePlatforms": [
     "Editor"
@@ -32,6 +35,11 @@
       "name": "com.vrmc.vrm",
       "expression": "",
       "define": "ATV_VRM1"
+    },
+    {
+      "name": "com.anatawa12.avatar-optimizer",
+      "expression": "",
+      "define": "ATV_AAO"
     }
   ],
   "noEngineReferences": false

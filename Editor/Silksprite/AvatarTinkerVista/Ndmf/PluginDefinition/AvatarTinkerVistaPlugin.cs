@@ -3,6 +3,7 @@ using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Ndmf.Passes.Aao;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
@@ -26,6 +27,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             resolving.Run(DeleteAtvComponentsPass<AtvResolvingComponent>.Instance);
 
             var generating = InPhase(BuildPhase.Generating);
+#if ATV_AAO
+            generating.Run(AaoMergeOtherSkinnedMeshPass.Instance);
+#endif
 #if ATV_VRM0
             generating.Run(OverwriteVrm0MetaPass.Instance);
 #endif
