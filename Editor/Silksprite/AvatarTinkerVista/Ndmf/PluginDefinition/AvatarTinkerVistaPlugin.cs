@@ -24,19 +24,19 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         {
             var resolving = InPhase(BuildPhase.Resolving);
             resolving.Run(DeleteComponentsPass.Instance);
-            resolving.Run(DeleteAtvComponentsPass<AtvResolvingComponent>.Instance);
+            resolving.Run(DeleteAtvComponentsPass<AtivResolvingComponent>.Instance);
 
             var generating = InPhase(BuildPhase.Generating);
-#if ATV_AAO
+#if ATIV_AAO
             generating.Run(AaoMergeOtherSkinnedMeshPass.Instance);
 #endif
-#if ATV_VRM0
+#if ATIV_VRM0
             generating.Run(OverwriteVrm0MetaPass.Instance);
 #endif
-#if ATV_VRM1
+#if ATIV_VRM1
             generating.Run(OverwriteVrm1MetaPass.Instance);
 #endif
-            generating.Run(DeleteAtvComponentsPass<AtvGeneratingComponent>.Instance);
+            generating.Run(DeleteAtvComponentsPass<AtivGeneratingComponent>.Instance);
         }
     }
 }

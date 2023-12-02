@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
 {
     class DeleteAtvComponentsPass<T> : Pass<DeleteAtvComponentsPass<T>>
-    where T : AtvComponent
+    where T : AtivComponent
     {
         protected override void Execute(BuildContext context)
         {

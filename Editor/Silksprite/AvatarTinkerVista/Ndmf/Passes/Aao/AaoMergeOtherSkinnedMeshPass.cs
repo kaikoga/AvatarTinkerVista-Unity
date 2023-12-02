@@ -1,4 +1,4 @@
-#if ATV_AAO
+#if ATIV_AAO
 
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes.Aao
     {
         protected override void Execute(BuildContext context)
         {
-            var generators = context.AvatarRootTransform.GetComponentsInChildren<AtvAaoMergeOtherSkinnedMesh>(true);
+            var generators = context.AvatarRootTransform.GetComponentsInChildren<AtivAaoMergeOtherSkinnedMesh>(true);
             if (generators.Length != 1) return;
             var generator = generators[0];
 

@@ -1,4 +1,4 @@
-#if ATV_VRM0
+#if ATIV_VRM0
 
 using System;
 using LibVRMTool.Utils.VRM0;
@@ -14,7 +14,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             var vrmMeta = context.AvatarRootTransform.GetComponent<VRMMeta>();
             if (!vrmMeta) return;
 
-            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtvOverwriteVrmMeta>();
+            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVrmMeta>();
             if (overwrites.Length == 0) return;
 
             var meta = vrmMeta.Meta;
@@ -25,7 +25,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             foreach (var overwrite in overwrites) DoOverwrite(overwrite, newMeta);
         }
 
-        void DoOverwrite(AtvOverwriteVrmMeta overwrite, VRMMetaObject newMeta)
+        void DoOverwrite(AtivOverwriteVrmMeta overwrite, VRMMetaObject newMeta)
         {
             overwrite.nameOrTitle.OverwriteValue(ref newMeta.Title);
             overwrite.version.OverwriteValue(ref newMeta.Version);
@@ -44,15 +44,15 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             overwrite.otherLicenseUrl.OverwriteValue(ref newMeta.OtherLicenseUrl);
         }
 
-        AllowedUser MapAllowedUser(AtvOverwriteVrmMeta.AllowedUser atvValue)
+        AllowedUser MapAllowedUser(AtivOverwriteVrmMeta.AllowedUser atvValue)
         {
             switch (atvValue)
             {
-                case AtvOverwriteVrmMeta.AllowedUser.OnlyAuthor:
+                case AtivOverwriteVrmMeta.AllowedUser.OnlyAuthor:
                     return AllowedUser.OnlyAuthor;
-                case AtvOverwriteVrmMeta.AllowedUser.ExplicitlyLicensedPerson:
+                case AtivOverwriteVrmMeta.AllowedUser.ExplicitlyLicensedPerson:
                     return AllowedUser.ExplicitlyLicensedPerson;
-                case AtvOverwriteVrmMeta.AllowedUser.Everyone:
+                case AtivOverwriteVrmMeta.AllowedUser.Everyone:
                     return AllowedUser.Everyone;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(atvValue), atvValue, null);
@@ -64,27 +64,27 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             return atvValue ? UssageLicense.Allow : UssageLicense.Disallow;
         }
 
-        LicenseType MapLicenseType(AtvOverwriteVrmMeta.Vrm0LicenseType atvValue)
+        LicenseType MapLicenseType(AtivOverwriteVrmMeta.Vrm0LicenseType atvValue)
         {
             switch (atvValue)
             {
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.Redistribution_Prohibited:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.Redistribution_Prohibited:
                     return LicenseType.Redistribution_Prohibited;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.CC0:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.CC0:
                     return LicenseType.CC0;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.CC_BY:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.CC_BY:
                     return LicenseType.CC_BY;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.CC_BY_NC:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.CC_BY_NC:
                     return LicenseType.CC_BY_NC;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.CC_BY_SA:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.CC_BY_SA:
                     return LicenseType.CC_BY_SA;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.CC_BY_NC_SA:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.CC_BY_NC_SA:
                     return LicenseType.CC_BY_NC_SA;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.CC_BY_ND:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.CC_BY_ND:
                     return LicenseType.CC_BY_ND;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.CC_BY_NC_ND:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.CC_BY_NC_ND:
                     return LicenseType.CC_BY_NC_ND;
-                case AtvOverwriteVrmMeta.Vrm0LicenseType.Other:
+                case AtivOverwriteVrmMeta.Vrm0LicenseType.Other:
                     return LicenseType.Other;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(atvValue), atvValue, null);

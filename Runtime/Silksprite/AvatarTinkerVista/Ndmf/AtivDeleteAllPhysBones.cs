@@ -5,8 +5,8 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [DisallowMultipleComponent]
-    [AddComponentMenu("Avatar Tinker Vista/ATV Delete All PhysBones")]
-    public class AtvDeleteAllPhysBones : AtvDeleteComponentsBase
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Delete All PhysBones")]
+    public class AtivDeleteAllPhysBones : AtivDeleteComponentsBase
     {
         public override IEnumerable<string> ComponentTypeNamePrefixes
         {

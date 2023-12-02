@@ -6,8 +6,8 @@ namespace Silksprite.AvatarTinkerVista.Aao
 {
     [RequireComponent(typeof(SkinnedMeshRenderer))]
     [DisallowMultipleComponent]
-    [AddComponentMenu("Avatar Tinker Vista/ATV AAO Merge Other Skinned Mesh")]
-    public class AtvAaoMergeOtherSkinnedMesh : AtvGeneratingComponent
+    [AddComponentMenu("Avatar Tinker Vista/ATiV AAO Merge Other Skinned Mesh")]
+    public class AtivAaoMergeOtherSkinnedMesh : AtivGeneratingComponent
     {
         public SkinnedMeshRendererSet excludeRenderersSet;
         public MeshRendererSet excludeStaticRenderersSet;

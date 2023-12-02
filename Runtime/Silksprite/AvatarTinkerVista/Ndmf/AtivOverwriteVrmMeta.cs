@@ -7,8 +7,8 @@ using UnityEngine.Serialization;
 namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
-    [AddComponentMenu("Avatar Tinker Vista/ATV Overwrite VRM0+1 Meta")]
-    public class AtvOverwriteVrmMeta : AtvGeneratingComponent
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite VRM0+1 Meta")]
+    public class AtivOverwriteVrmMeta : AtivGeneratingComponent
     {
         #region Info
 

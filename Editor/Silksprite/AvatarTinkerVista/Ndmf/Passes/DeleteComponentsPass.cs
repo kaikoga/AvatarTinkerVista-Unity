@@ -9,7 +9,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
     {
         protected override void Execute(BuildContext context)
         {
-            var typeNamePrefixes = context.AvatarRootTransform.GetComponentsInChildren<AtvDeleteComponentsBase>()
+            var typeNamePrefixes = context.AvatarRootTransform.GetComponentsInChildren<AtivDeleteComponentsBase>()
                 .SelectMany(atv => atv.ComponentTypeNamePrefixes)
                 .ToArray();
 

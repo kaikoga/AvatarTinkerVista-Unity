@@ -1,4 +1,4 @@
-#if ATV_VRM1
+#if ATIV_VRM1
 
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             var vrmInstance = context.AvatarRootTransform.GetComponent<Vrm10Instance>();
             if (!vrmInstance) return;
 
-            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtvOverwriteVrmMeta>();
+            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVrmMeta>();
             if (overwrites.Length == 0) return;
 
             var vrm = vrmInstance.Vrm;
@@ -27,7 +27,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             foreach (var overwrite in overwrites) DoOverwrite(overwrite, newVrm.Meta);
         }
 
-        void DoOverwrite(AtvOverwriteVrmMeta overwrite, VRM10ObjectMeta newMeta)
+        void DoOverwrite(AtivOverwriteVrmMeta overwrite, VRM10ObjectMeta newMeta)
         {
             overwrite.nameOrTitle.OverwriteValue(ref newMeta.Name);
             overwrite.version.OverwriteValue(ref newMeta.Version);
@@ -59,58 +59,58 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             if (!string.IsNullOrWhiteSpace(atvValue)) list.Add(atvValue);
             return list;
         }
-        AvatarPermissionType MapAvatarPermission(AtvOverwriteVrmMeta.AllowedUser atvValue)
+        AvatarPermissionType MapAvatarPermission(AtivOverwriteVrmMeta.AllowedUser atvValue)
         {
             switch (atvValue)
             {
-                case AtvOverwriteVrmMeta.AllowedUser.OnlyAuthor:
+                case AtivOverwriteVrmMeta.AllowedUser.OnlyAuthor:
                     return AvatarPermissionType.onlyAuthor;
-                case AtvOverwriteVrmMeta.AllowedUser.ExplicitlyLicensedPerson:
+                case AtivOverwriteVrmMeta.AllowedUser.ExplicitlyLicensedPerson:
                     return AvatarPermissionType.onlySeparatelyLicensedPerson;
-                case AtvOverwriteVrmMeta.AllowedUser.Everyone:
+                case AtivOverwriteVrmMeta.AllowedUser.Everyone:
                     return AvatarPermissionType.everyone;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(atvValue), atvValue, null);
             }
         }
 
-        CommercialUsageType MapCommercialUsage(AtvOverwriteVrmMeta.Vrm1CommercialUsageType atvValue)
+        CommercialUsageType MapCommercialUsage(AtivOverwriteVrmMeta.Vrm1CommercialUsageType atvValue)
         {
             switch (atvValue)
             {
-                case AtvOverwriteVrmMeta.Vrm1CommercialUsageType.PersonalNonProfit:
+                case AtivOverwriteVrmMeta.Vrm1CommercialUsageType.PersonalNonProfit:
                     return CommercialUsageType.personalNonProfit;
-                case AtvOverwriteVrmMeta.Vrm1CommercialUsageType.PersonalProfit:
+                case AtivOverwriteVrmMeta.Vrm1CommercialUsageType.PersonalProfit:
                     return CommercialUsageType.personalProfit;
-                case AtvOverwriteVrmMeta.Vrm1CommercialUsageType.Corporation:
+                case AtivOverwriteVrmMeta.Vrm1CommercialUsageType.Corporation:
                     return CommercialUsageType.corporation;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(atvValue), atvValue, null);
             }
         }
 
-        ModificationType MapModification(AtvOverwriteVrmMeta.Vrm1ModificationType atvValue)
+        ModificationType MapModification(AtivOverwriteVrmMeta.Vrm1ModificationType atvValue)
         {
             switch (atvValue)
             {
-                case AtvOverwriteVrmMeta.Vrm1ModificationType.Prohibited:
+                case AtivOverwriteVrmMeta.Vrm1ModificationType.Prohibited:
                     return ModificationType.prohibited;
-                case AtvOverwriteVrmMeta.Vrm1ModificationType.AllowModification:
+                case AtivOverwriteVrmMeta.Vrm1ModificationType.AllowModification:
                     return ModificationType.allowModification;
-                case AtvOverwriteVrmMeta.Vrm1ModificationType.AllowModificationRedistribution:
+                case AtivOverwriteVrmMeta.Vrm1ModificationType.AllowModificationRedistribution:
                     return ModificationType.allowModificationRedistribution;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(atvValue), atvValue, null);
             }
         }
 
-        CreditNotationType MapCreditNotation(AtvOverwriteVrmMeta.Vrm1CreditNotationType atvValue)
+        CreditNotationType MapCreditNotation(AtivOverwriteVrmMeta.Vrm1CreditNotationType atvValue)
         {
             switch (atvValue)
             {
-                case AtvOverwriteVrmMeta.Vrm1CreditNotationType.Required:
+                case AtivOverwriteVrmMeta.Vrm1CreditNotationType.Required:
                     return CreditNotationType.required;
-                case AtvOverwriteVrmMeta.Vrm1CreditNotationType.Unnecessary:
+                case AtivOverwriteVrmMeta.Vrm1CreditNotationType.Unnecessary:
                     return CreditNotationType.unnecessary;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(atvValue), atvValue, null);

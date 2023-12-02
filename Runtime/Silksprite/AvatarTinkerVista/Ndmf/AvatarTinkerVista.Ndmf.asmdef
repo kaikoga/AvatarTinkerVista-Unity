@@ -13,17 +13,17 @@
         {
             "name": "com.vrchat.avatars",
             "expression": "",
-            "define": "ATV_VRCSDK3_AVATARS"
+            "define": "ATIV_VRCSDK3_AVATARS"
         },
         {
             "name": "com.vrmc.univrm",
             "expression": "",
-            "define": "ATV_VRM0"
+            "define": "ATIV_VRM0"
         },
         {
             "name": "com.vrmc.vrm",
             "expression": "",
-            "define": "ATV_VRM1"
+            "define": "ATIV_VRM1"
         }
     ],
     "noEngineReferences": false
