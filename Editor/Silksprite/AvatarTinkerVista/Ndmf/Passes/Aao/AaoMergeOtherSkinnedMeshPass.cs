@@ -23,6 +23,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes.Aao
                 .First(type => type.FullName == "Anatawa12.AvatarOptimizer.MergeSkinnedMesh");
             var renderersSetField = mergeSkinnedMeshType.GetField("renderersSet");
             var staticRenderersSetField = mergeSkinnedMeshType.GetField("staticRenderersSet");
+            var skipEnablementMismatchedRenderersField = mergeSkinnedMeshType.GetField("skipEnablementMismatchedRenderers");
 
             var mergeSkinnedMeshes = context.AvatarRootTransform.GetComponentsInChildren<Component>(true)
                 .Where(component => component.GetType() == mergeSkinnedMeshType);
@@ -51,6 +52,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes.Aao
                 var staticRenderersSet = (MeshRendererSet)staticRenderersSetField.GetValue(mergeSkinnedMesh);
                 rendererSet.SetValueNonPrefab(renderers);
                 staticRenderersSet.SetValueNonPrefab(staticRenderers);
+                skipEnablementMismatchedRenderersField.SetValue(mergeSkinnedMesh, true);
             }
         }
     }
