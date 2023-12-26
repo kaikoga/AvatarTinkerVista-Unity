@@ -2,7 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using LibVRMTool.Utils.VRM1;
+using Silksprite.AdLib.Utils.VRM1;
 using nadena.dev.ndmf;
 using UniGLTF.Extensions.VRMC_vrm;
 using UniVRM10;

@@ -7,7 +7,7 @@
     "com.anatawa12.avatar-optimizer.internal.prefab-safe-set",
     "VRM",
     "VRM10",
-    "LibVRMTool",
+    "AdLib.Editor",
     "AvatarTinkerVista.Ndmf",
     "AvatarTinkerVista.Aao"
   ],

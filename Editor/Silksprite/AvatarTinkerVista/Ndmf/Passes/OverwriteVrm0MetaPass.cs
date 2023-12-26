@@ -1,7 +1,7 @@
 #if ATIV_VRM0
 
 using System;
-using LibVRMTool.Utils.VRM0;
+using Silksprite.AdLib.Utils.VRM0;
 using nadena.dev.ndmf;
 using VRM;
 
