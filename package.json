@@ -9,5 +9,8 @@
     "name": "kaikoga",
     "email": "info@mail.kaikoga.net",
     "url": "https://github.com/kaikoga/AvatarTinkerVista-Unity"
+  },
+  "vpmDependencies": {
+    "net.kaikoga.adlib": ">= 0.1.0"
   }
 }
