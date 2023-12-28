@@ -19,11 +19,18 @@
   "overrideReferences": true,
   "precompiledReferences": [],
   "autoReferenced": false,
-  "defineConstraints": [],
+  "defineConstraints": [
+    "ATIV_NDMF"
+  ],
   "versionDefines": [
     {
+      "name": "nadena.dev.ndmf",
+      "expression": "(1.2,2.0-a)",
+      "define": "ATIV_NDMF"
+    },
+    {
       "name": "com.vrchat.avatars",
-      "expression": "",
+      "expression": "(3.0,4.0)",
       "define": "ATIV_VRCSDK3_AVATARS"
     },
     {
@@ -38,7 +45,7 @@
     },
     {
       "name": "com.anatawa12.avatar-optimizer",
-      "expression": "",
+      "expression": "(1.0,2.0-a)",
       "define": "ATIV_AAO"
     }
   ],

@@ -8,7 +8,7 @@ using nadena.dev.ndmf;
 using Silksprite.AvatarTinkerVista.Aao;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Passes.Aao
+namespace Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes
 {
     class AaoMergeOtherSkinnedMeshPass : Pass<AaoMergeOtherSkinnedMeshPass>
     {

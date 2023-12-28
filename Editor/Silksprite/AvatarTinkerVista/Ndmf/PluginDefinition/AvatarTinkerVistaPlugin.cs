@@ -1,9 +1,9 @@
 ﻿using System;
 using Silksprite.AvatarTinkerVista.Ndmf;
+using Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes;
+using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
-using Silksprite.AvatarTinkerVista.Ndmf.Passes.Aao;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
