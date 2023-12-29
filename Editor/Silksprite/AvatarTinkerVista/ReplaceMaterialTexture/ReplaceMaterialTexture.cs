@@ -8,6 +8,10 @@ namespace Silksprite.AvatarTinkerVista.ReplaceMaterialTexture
     [Serializable]
     public class ReplaceMaterialTexture
     {
+        // Mitigate Unity Issue https://issuetracker.unity3d.com/issues/reorderable-list-elements-cannot-be-edited-when-using-custom-editors-and-serialized-objects
+#if UNITY_2020_2_OR_NEWER
+        [NonReorderable]
+#endif
         public Material[] materials = {};
         public List<TextureReplacement> replacements = new List<TextureReplacement>();
 
@@ -26,6 +30,7 @@ namespace Silksprite.AvatarTinkerVista.ReplaceMaterialTexture
 
         public void ReplaceTexture(Texture oldTexture, Texture newTexture)
         {
+            replacements.RemoveAll(replacement => replacement.oldTexture == oldTexture);
             replacements.Add(new TextureReplacement(oldTexture, newTexture));
         }
 
