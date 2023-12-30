@@ -35,6 +35,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes
             staticRenderers.UnionWith(context.AvatarRootTransform.GetComponentsInChildren<MeshRenderer>(true));
 
             renderers.ExceptWith(generator.excludeRenderersSet.GetAsSet());
+            renderers.Remove(generator.GetComponent<SkinnedMeshRenderer>());
             staticRenderers.ExceptWith(generator.excludeStaticRenderersSet.GetAsSet());
             
             foreach (var mergeSkinnedMesh in mergeSkinnedMeshes)
