@@ -16,11 +16,15 @@
 
 # 収録ツール
 
+「Window」 → 「Avatar Tinker」 に入っています。
+
 ## Replace Material Texture
 
 マテリアルからテクスチャへの参照を一括で置き換えます。
 
 # 収録ndmfツール
+
+「Component」 → 「Avatar Tinker Vista」 に入っています。
 
 ## ATiV Select Platform
 
@@ -29,6 +33,10 @@
 ## ATiV Delete All PhysBones
 
 PhysBoneを全て削除します。
+
+## ATiV Default VRM0+1 FirstPerson
+
+VRMFirstPerson / Vrm10Instance のFirstPerson設定が行われていないRendererに対して指定されたデフォルト値を割り当てます。
 
 ## ATiV Overwrite VRM0+1 Meta
 
