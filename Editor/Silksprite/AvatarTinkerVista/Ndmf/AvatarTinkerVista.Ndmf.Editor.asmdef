@@ -3,6 +3,7 @@
   "rootNamespace": "Silksprite.AvatarTinkerVista.Ndmf",
   "references": [
     "nadena.dev.ndmf",
+    "nadena.dev.ndmf.runtime",
     "com.anatawa12.avatar-optimizer.runtime",
     "com.anatawa12.avatar-optimizer.internal.prefab-safe-set",
     "VRM",

@@ -4,6 +4,7 @@ using Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
+using nadena.dev.ndmf.fluent;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
@@ -22,21 +23,42 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         protected override void Configure()
         {
-            var resolving = InPhase(BuildPhase.Resolving);
-            resolving.Run(DeleteComponentsPass.Instance);
-            resolving.Run(DeleteAtvComponentsPass<AtivResolvingComponent>.Instance);
+            void Phase<T>(BuildPhase phase, Action<Sequence> initializer)
+            where T : AtivComponent
+            {
+                var sequence = InPhase(phase);
+                initializer(sequence);
+                sequence.Run(DeleteAtvComponentsPass<T>.Instance);
+            }
 
-            var generating = InPhase(BuildPhase.Generating);
+            Phase<AtivResolvingComponent>(BuildPhase.Resolving, resolving =>
+            {
+                resolving.Run(DeleteComponentsPass.Instance);
+            });
+
+            Phase<AtivGeneratingComponent>(BuildPhase.Generating, generating =>
+            {
 #if ATIV_AAO
-            generating.Run(AaoMergeOtherSkinnedMeshPass.Instance);
+                generating.Run(AaoMergeOtherSkinnedMeshPass.Instance);
 #endif
 #if ATIV_VRM0
-            generating.Run(OverwriteVrm0MetaPass.Instance);
+                generating.Run(OverwriteVrm0MetaPass.Instance);
 #endif
 #if ATIV_VRM1
-            generating.Run(OverwriteVrm1MetaPass.Instance);
+                generating.Run(OverwriteVrm1MetaPass.Instance);
 #endif
-            generating.Run(DeleteAtvComponentsPass<AtivGeneratingComponent>.Instance);
+            });
+
+            Phase<AtivOptimizingComponent>(BuildPhase.Optimizing, optimizing =>
+            {
+#if ATIV_VRM0
+                optimizing.Run(DefaultVrm0FirstPersonPass.Instance);
+#endif
+#if ATIV_VRM1
+                optimizing.Run(DefaultVrm1FirstPersonPass.Instance);
+#endif
+            });
+
         }
     }
 }
