@@ -30,7 +30,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
 
         void DoOverwrite(BuildContext context, AtivDefaultVrmFirstPerson ativ, VRM10ObjectFirstPerson newFirstPerson)
         {
-            var renderers = context.AvatarRootTransform.GetComponentsInChildren<Renderer>(true);
+            var renderers = context.AvatarRootTransform.GetComponentsInChildren<Renderer>(true)
+                .Where(renderer => renderer is not SkinnedMeshRenderer smr || (bool)smr.sharedMesh);
             
             FirstPersonType defaultValue;
             switch (ativ.defaultValue)
