@@ -16,7 +16,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             var vrmInstance = context.AvatarRootTransform.GetComponent<Vrm10Instance>();
             if (!vrmInstance) return;
 
-            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVrmMeta>();
+            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVrmMeta>(true);
             if (overwrites.Length == 0) return;
 
             var vrm = vrmInstance.Vrm;

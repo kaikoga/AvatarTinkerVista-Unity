@@ -14,7 +14,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             var vrmMeta = context.AvatarRootTransform.GetComponent<VRMMeta>();
             if (!vrmMeta) return;
 
-            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVrmMeta>();
+            var overwrites = context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVrmMeta>(true);
             if (overwrites.Length == 0) return;
 
             var meta = vrmMeta.Meta;
