@@ -1,11 +1,10 @@
 using UnityEngine;
-using VRC.SDKBase;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Base
 {
     public abstract class AtivComponent : MonoBehaviour
 #if ATIV_VRCSDK3_AVATARS
-        , IEditorOnly
+        , VRC.SDKBase.IEditorOnly
 #endif
     {
     }
