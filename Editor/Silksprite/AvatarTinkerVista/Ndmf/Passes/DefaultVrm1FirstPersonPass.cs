@@ -25,6 +25,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             
             var newVrm = new CustomCloneVRM10Object().Clone(vrmInstance.Vrm).mainAsset;
             vrmInstance.Vrm = newVrm;
+
+            ativ.firstPersonOffset.OverwriteValue(ref newVrm.LookAt.OffsetFromHead);
+
             DoOverwrite(context, ativ, newVrm.FirstPerson);
         }
 

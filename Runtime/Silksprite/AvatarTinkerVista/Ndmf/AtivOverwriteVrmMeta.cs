@@ -72,6 +72,7 @@ namespace Silksprite.AvatarTinkerVista
 
         [Serializable] public class OverwriteBool : Overwrite<bool> { }
         [Serializable] public class OverwriteString : Overwrite<string> { }
+        [Serializable] public class OverwriteVector3 : Overwrite<Vector3> { }
         [Serializable] public class OverwriteTexture2D : Overwrite<Texture2D> { }
         
         #endregion
