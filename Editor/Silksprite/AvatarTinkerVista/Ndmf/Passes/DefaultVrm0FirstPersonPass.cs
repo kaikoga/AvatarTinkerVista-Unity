@@ -17,7 +17,13 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             var ativ = context.AvatarRootTransform.GetComponentInChildren<AtivDefaultVrmFirstPerson>(true);
             if (!ativ) return;
 
-            ativ.firstPersonOffset.OverwriteValue(ref vrmFirstPerson.FirstPersonOffset);
+            if (ativ.firstPersonOffset.willOverwrite)
+            {
+                var animator = context.AvatarRootTransform.GetComponent<Animator>();
+                if (animator) vrmFirstPerson.FirstPersonBone = animator.GetBoneTransform(HumanBodyBones.Head);
+                vrmFirstPerson.FirstPersonOffset = ativ.firstPersonOffset.value;
+            }
+
 
             var renderers = context.AvatarRootTransform.GetComponentsInChildren<Renderer>(true)
                 .Where(renderer => renderer is not SkinnedMeshRenderer smr || (bool)smr.sharedMesh);
