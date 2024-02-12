@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Ndmf.DataObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Silksprite.AvatarTinkerVista
+namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite VRM0+1 Meta")]
@@ -52,31 +53,6 @@ namespace Silksprite.AvatarTinkerVista
         
         #endregion
         
-        #region core
-
-        public abstract class Overwrite<T>
-        {
-            public bool willOverwrite;
-            public T value;
-
-            public void OverwriteValue(ref T original)
-            {
-                if (willOverwrite) original = value;
-            }
-
-            public void OverwriteValue<TOut>(ref TOut original, Func<T, TOut> filter)
-            {
-                if (willOverwrite) original = filter(value);
-            }
-        }
-
-        [Serializable] public class OverwriteBool : Overwrite<bool> { }
-        [Serializable] public class OverwriteString : Overwrite<string> { }
-        [Serializable] public class OverwriteVector3 : Overwrite<Vector3> { }
-        [Serializable] public class OverwriteTexture2D : Overwrite<Texture2D> { }
-        
-        #endregion
-
         #region enums
 
         public enum AllowedUser

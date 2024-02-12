@@ -1,11 +1,12 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.PropertyDrawers
+namespace Silksprite.AvatarTinkerVista.Ndmf.DataObjects
 {
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteBool))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteString))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteTexture2D))]
+    [CustomPropertyDrawer(typeof(OverwriteBool))]
+    [CustomPropertyDrawer(typeof(OverwriteString))]
+    [CustomPropertyDrawer(typeof(OverwriteVector3))]
+    [CustomPropertyDrawer(typeof(OverwriteTexture2D))]
     [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteAllowedUser))]
     [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteVrm1CommercialUsageType))]
     [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteVrm0LicenseType))]
@@ -15,8 +16,8 @@ namespace Silksprite.AvatarTinkerVista.PropertyDrawers
     {
         public override void OnGUI(Rect position, SerializedProperty serializedProperty, GUIContent label)
         {
-            var serializedWillOverwrite = serializedProperty.FindPropertyRelative(nameof(AtivOverwriteVrmMeta.Overwrite<bool>.willOverwrite));
-            var serializedValue = serializedProperty.FindPropertyRelative(nameof(AtivOverwriteVrmMeta.Overwrite<bool>.value));
+            var serializedWillOverwrite = serializedProperty.FindPropertyRelative(nameof(Overwrite<bool>.willOverwrite));
+            var serializedValue = serializedProperty.FindPropertyRelative(nameof(Overwrite<bool>.value));
             
             var oldLabelWidth = EditorGUIUtility.labelWidth;
             EditorGUIUtility.labelWidth = Mathf.Max(200f, position.width * 0.6f);

@@ -1,4 +1,5 @@
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Ndmf.DataObjects;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf
@@ -7,7 +8,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
     [AddComponentMenu("Avatar Tinker Vista/ATiV Default VRM0+1 FirstPerson")]
     public class AtivDefaultVrmFirstPerson : AtivOptimizingComponent
     {
-        public AtivOverwriteVrmMeta.OverwriteVector3 firstPersonOffset;
+        public OverwriteVector3 firstPersonOffset;
         public AtivFirstPersonFlag defaultValue;
 
         public enum AtivFirstPersonFlag
