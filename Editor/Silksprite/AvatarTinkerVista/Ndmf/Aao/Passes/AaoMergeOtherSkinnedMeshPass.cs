@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Anatawa12.AvatarOptimizer.PrefabSafeSet;
 using nadena.dev.ndmf;
 using Silksprite.AvatarTinkerVista.Aao;
@@ -21,9 +22,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes
             var mergeSkinnedMeshType = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(asm => asm.GetTypes())
                 .First(type => type.FullName == "Anatawa12.AvatarOptimizer.MergeSkinnedMesh");
-            var renderersSetField = mergeSkinnedMeshType.GetField("renderersSet");
-            var staticRenderersSetField = mergeSkinnedMeshType.GetField("staticRenderersSet");
-            var skipEnablementMismatchedRenderersField = mergeSkinnedMeshType.GetField("skipEnablementMismatchedRenderers");
+            var renderersSetField = mergeSkinnedMeshType.GetField("renderersSet", BindingFlags.NonPublic | BindingFlags.Instance);
+            var staticRenderersSetField = mergeSkinnedMeshType.GetField("staticRenderersSet", BindingFlags.NonPublic | BindingFlags.Instance);
+            var skipEnablementMismatchedRenderersField = mergeSkinnedMeshType.GetField("skipEnablementMismatchedRenderers", BindingFlags.NonPublic | BindingFlags.Instance);
 
             var mergeSkinnedMeshes = context.AvatarRootTransform.GetComponentsInChildren<Component>(true)
                 .Where(component => component.GetType() == mergeSkinnedMeshType);
