@@ -17,6 +17,10 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Base
     {
     }
 
+    public abstract class AtivTransformingComponent : AtivComponent
+    {
+    }
+
     public abstract class AtivOptimizingComponent : AtivComponent
     {
     }

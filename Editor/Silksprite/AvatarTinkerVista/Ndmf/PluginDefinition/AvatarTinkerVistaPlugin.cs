@@ -49,6 +49,20 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 #endif
             });
 
+
+            Phase<AtivTransformingComponent>(BuildPhase.Transforming, transforming =>
+            {
+                #if ATIV_VRM0
+                transforming.Run(MergeVrm0FirstPersonPass.Instance);
+                #endif
+                #if ATIV_VRM1
+                transforming.Run(MergeVrm1SpringBonesPass.Instance);
+                #endif
+                #if ATIV_VRM1
+                transforming.Run(MergeVrm1FirstPersonPass.Instance);
+                #endif
+            });
+
             Phase<AtivOptimizingComponent>(BuildPhase.Optimizing, optimizing =>
             {
                 optimizing.BeforePlugin("com.anatawa12.avatar-optimizer");

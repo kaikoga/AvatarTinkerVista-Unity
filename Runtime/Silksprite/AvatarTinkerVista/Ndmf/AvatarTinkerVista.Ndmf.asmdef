@@ -1,6 +1,9 @@
 {
     "name": "AvatarTinkerVista.Ndmf",
-    "references": [],
+    "references": [
+        "VRM",
+        "VRM10"
+    ],
     "includePlatforms": [
     ],
     "excludePlatforms": [],
