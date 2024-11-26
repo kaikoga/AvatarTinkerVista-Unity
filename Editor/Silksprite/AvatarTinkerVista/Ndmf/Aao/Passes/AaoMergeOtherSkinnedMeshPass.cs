@@ -41,8 +41,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes
             
             foreach (var mergeSkinnedMesh in mergeSkinnedMeshes)
             {
-                var rendererSet = (SkinnedMeshRendererSet)renderersSetField.GetValue(mergeSkinnedMesh);
-                var staticRenderersSet = (MeshRendererSet)staticRenderersSetField.GetValue(mergeSkinnedMesh);
+                var rendererSet = (PrefabSafeSet<SkinnedMeshRenderer>)renderersSetField.GetValue(mergeSkinnedMesh);
+                var staticRenderersSet = (PrefabSafeSet<MeshRenderer>)staticRenderersSetField.GetValue(mergeSkinnedMesh);
                 renderers.ExceptWith(rendererSet.GetAsSet());
                 renderers.Remove(mergeSkinnedMesh.GetComponent<SkinnedMeshRenderer>());
                 staticRenderers.ExceptWith(staticRenderersSet.GetAsSet());
@@ -50,8 +50,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes
 
             {
                 var mergeSkinnedMesh = generator.gameObject.AddComponent(mergeSkinnedMeshType);
-                var rendererSet = (SkinnedMeshRendererSet)renderersSetField.GetValue(mergeSkinnedMesh);
-                var staticRenderersSet = (MeshRendererSet)staticRenderersSetField.GetValue(mergeSkinnedMesh);
+                var rendererSet = (PrefabSafeSet<SkinnedMeshRenderer>)renderersSetField.GetValue(mergeSkinnedMesh);
+                var staticRenderersSet = (PrefabSafeSet<MeshRenderer>)staticRenderersSetField.GetValue(mergeSkinnedMesh);
                 rendererSet.SetValueNonPrefab(renderers);
                 staticRenderersSet.SetValueNonPrefab(staticRenderers);
                 skipEnablementMismatchedRenderersField.SetValue(mergeSkinnedMesh, true);
