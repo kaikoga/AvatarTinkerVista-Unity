@@ -1,9 +1,15 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
-using UniGLTF.Extensions.VRMC_vrm;
 using UnityEngine;
+
+#if ATIV_VRM0
 using VRM;
+#endif
+
+#if ATIV_VRM1
+using UniGLTF.Extensions.VRMC_vrm;
+#endif
 
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
