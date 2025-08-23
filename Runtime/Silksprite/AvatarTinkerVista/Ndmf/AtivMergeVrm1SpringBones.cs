@@ -19,13 +19,30 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.green;
+            static Color JointColor(VRM10SpringBoneJoint joint)
+            {
+                return Color.green;
+            }
+        
             foreach (var spring in springs)
             {
-                foreach (var (head, tail) in spring.EnumHeadTail())
+                var joints = spring.Joints;
+                if (joints.Count > 0)
                 {
-                    Gizmos.DrawLine(head.transform.position, tail.transform.position);
-                    Gizmos.DrawWireSphere(tail.transform.position, head.m_jointRadius);
+                    var backup = Gizmos.matrix;
+                    Gizmos.matrix = Matrix4x4.identity;
+                    VRM10SpringBoneJoint lastJoint = joints[0];
+                    for (int i = 1; i < joints.Count; ++i)
+                    {
+                        var joint = joints[i];
+                        Gizmos.color = JointColor(lastJoint);
+                        if (joint != null && lastJoint != null)
+                        {
+                            Gizmos.DrawLine(lastJoint.transform.position, joint.transform.position);
+                        }
+                        lastJoint = joint;
+                    }
+                    Gizmos.matrix = backup;
                 }
             }
         }
