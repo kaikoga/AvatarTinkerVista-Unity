@@ -1,0 +1,25 @@
+{
+    "name": "AvatarTinkerVista.Vrm0.Editor",
+    "references": [
+        "UniGLTF",
+        "UniVRM.Editor",
+        "VRM"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": ["ATIV_VRM0"],
+    "versionDefines": [
+        {
+            "name": "com.vrmc.univrm",
+            "expression": "",
+            "define": "ATIV_VRM0"
+        }
+    ],
+    "noEngineReferences": false
+}
