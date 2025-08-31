@@ -71,6 +71,16 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 #endif
             });
 
+            Phase<AtivOptimizingComponent>(BuildPhase.PlatformFinish, platformFinish =>
+            {
+#if ATIV_VRM0
+                platformFinish.Run(ExportVrm0Pass.Instance);
+#endif
+#if ATIV_VRM1
+                platformFinish.Run(ExportVrm1Pass.Instance);
+#endif
+            });
+
         }
     }
 }
