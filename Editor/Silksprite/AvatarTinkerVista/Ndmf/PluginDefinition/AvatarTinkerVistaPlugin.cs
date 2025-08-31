@@ -7,9 +7,10 @@ using nadena.dev.ndmf.fluent;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
-
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
+    // runs independently of NDMF platform
+    [RunsOnAllPlatforms]
     class AvatarTinkerVistaPlugin : Plugin<AvatarTinkerVistaPlugin>
     {
         public override string QualifiedName => "net.kaikoga.atv";
