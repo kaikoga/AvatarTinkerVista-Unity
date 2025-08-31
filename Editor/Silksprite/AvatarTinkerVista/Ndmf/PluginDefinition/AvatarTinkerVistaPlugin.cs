@@ -1,6 +1,5 @@
 ﻿using System;
 using Silksprite.AvatarTinkerVista.Ndmf;
-using Silksprite.AvatarTinkerVista.Ndmf.Aao.Passes;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
@@ -38,9 +37,6 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
             Phase<AtivGeneratingComponent>(BuildPhase.Generating, generating =>
             {
-#if ATIV_AAO
-                generating.Run(AaoMergeOtherSkinnedMeshPass.Instance);
-#endif
 #if ATIV_VRM0
                 generating.Run(OverwriteVrm0MetaPass.Instance);
 #endif
