@@ -13,7 +13,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
     [RunsOnAllPlatforms]
     class AvatarTinkerVistaPlugin : Plugin<AvatarTinkerVistaPlugin>
     {
-        public override string QualifiedName => "net.kaikoga.atv";
+        public override string QualifiedName => "net.kaikoga.ativ";
         public override string DisplayName => "Avatar Tinker Vista";
 
         protected override void OnUnhandledException(Exception e)

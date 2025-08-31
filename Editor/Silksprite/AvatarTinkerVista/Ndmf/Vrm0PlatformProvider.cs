@@ -10,7 +10,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
     class Vrm0PlatformProvider : INDMFPlatformProvider
     {
         string INDMFPlatformProvider.QualifiedName => "net.kaikoga.ativ.univrm.vrm0"; 
-        string INDMFPlatformProvider.DisplayName => "UniVRM 0.x";
+        string INDMFPlatformProvider.DisplayName => "VRM 0.x (ATiV)";
 
         Type INDMFPlatformProvider.AvatarRootComponentType => typeof(VRMMeta);
     }
