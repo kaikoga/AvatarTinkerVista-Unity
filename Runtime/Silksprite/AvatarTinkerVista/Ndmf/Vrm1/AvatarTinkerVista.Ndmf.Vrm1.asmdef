@@ -1,24 +1,23 @@
 {
-    "name": "AvatarTinkerVista.Ndmf",
+    "name": "AvatarTinkerVista.Ndmf.Vrm1",
     "references": [
-        "nadena.dev.ndmf.runtime"
+        "VRM10",
+        "nadena.dev.ndmf.runtime",
+        "AvatarTinkerVista.Ndmf"
     ],
     "includePlatforms": [
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
-    "precompiledReferences": [
-        "VRCSDKBase.dll",
-        "VRCSDK3A.dll"
-    ],
+    "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": [],
+    "defineConstraints": ["ATIV_VRM1"],
     "versionDefines": [
         {
-            "name": "com.vrchat.avatars",
+            "name": "com.vrmc.vrm",
             "expression": "",
-            "define": "ATIV_VRCSDK3_AVATARS"
+            "define": "ATIV_VRM1"
         }
     ],
     "noEngineReferences": false

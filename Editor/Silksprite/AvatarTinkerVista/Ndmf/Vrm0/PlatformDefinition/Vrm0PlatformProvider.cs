@@ -1,5 +1,3 @@
-#if ATIV_VRM0
-
 using System;
 using nadena.dev.ndmf.platform;
 using VRM;
@@ -15,5 +13,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         Type INDMFPlatformProvider.AvatarRootComponentType => typeof(VRMMeta);
     }
 }
-
-#endif

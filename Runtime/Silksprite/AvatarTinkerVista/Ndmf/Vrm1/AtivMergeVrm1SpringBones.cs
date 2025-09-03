@@ -1,11 +1,9 @@
-#if ATIV_VRM1
-
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using UnityEngine;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Ndmf.Vrm1
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Merge VRM1 SpringBones")]
     [DisallowMultipleComponent]
@@ -52,5 +50,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
     }
 
 }
-
-#endif

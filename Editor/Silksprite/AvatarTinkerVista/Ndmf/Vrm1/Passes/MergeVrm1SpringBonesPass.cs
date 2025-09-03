@@ -1,7 +1,6 @@
-#if ATIV_VRM1
-
 using System.Linq;
 using nadena.dev.ndmf;
+using Silksprite.AvatarTinkerVista.Ndmf.Vrm1;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
@@ -31,5 +30,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
         }
     }
 }
-
-#endif

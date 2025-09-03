@@ -1,5 +1,3 @@
-#if ATIV_VRM0 || ATIV_VRM1
-
 using UnityEditor;
 using UnityEngine;
 
@@ -25,5 +23,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.DataObjects
         }
     }
 }
-
-#endif

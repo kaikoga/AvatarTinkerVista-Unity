@@ -1,5 +1,3 @@
-#if ATIV_VRM1
-
 using System;
 using System.Collections.Generic;
 using Silksprite.AdLib.Utils.VRM1;
@@ -118,5 +116,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
         }
     }
 }
-
-#endif

@@ -1,5 +1,3 @@
-#if ATIV_VRM0
-
 using System.Linq;
 using nadena.dev.ndmf;
 using UnityEngine;
@@ -66,5 +64,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
         }
     }
 }
-
-#endif

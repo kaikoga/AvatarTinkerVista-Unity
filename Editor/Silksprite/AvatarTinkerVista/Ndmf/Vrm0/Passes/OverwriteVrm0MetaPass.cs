@@ -1,5 +1,3 @@
-#if ATIV_VRM0
-
 using System;
 using Silksprite.AdLib.Utils.VRM0;
 using nadena.dev.ndmf;
@@ -92,5 +90,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
         }
     }
 }
-
-#endif

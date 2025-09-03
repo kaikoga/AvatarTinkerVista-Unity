@@ -1,8 +1,6 @@
-﻿#if ATIV_VRM1
+﻿using UnityEditor;
 
-using UnityEditor;
-
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Ndmf.Vrm1
 {
     [CustomEditor(typeof(AtivMergeVrm1SpringBones))]
     class AtivMergeVrm1SpringBonesEditor : Editor
@@ -24,5 +22,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         }
     }
 }
-
-#endif

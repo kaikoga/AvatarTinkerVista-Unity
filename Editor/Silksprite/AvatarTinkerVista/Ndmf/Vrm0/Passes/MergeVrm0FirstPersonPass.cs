@@ -1,7 +1,6 @@
-#if ATIV_VRM0
-
 using System.Linq;
 using nadena.dev.ndmf;
+using Silksprite.AvatarTinkerVista.Ndmf.Vrm0.Extensions;
 using VRM;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
@@ -20,7 +19,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
                 .Select(renderer => new VRMFirstPerson.RendererFirstPersonFlags
                 {
                     Renderer = renderer.renderer,
-                    FirstPersonFlag = renderer.Vrm0FirstPersonFlag
+                    FirstPersonFlag = renderer.Vrm0FirstPersonFlag()
                 }));
 
             foreach (var source in sources)
@@ -30,5 +29,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
         }
     }
 }
-
-#endif

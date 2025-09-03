@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using UnityEngine;
 
-#if ATIV_VRM0
-using VRM;
-#endif
-
-#if ATIV_VRM1
-using UniGLTF.Extensions.VRMC_vrm;
-#endif
-
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Merge VRM0+1 FirstPerson")]
@@ -24,40 +16,6 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         {
             public Renderer renderer;
             public AtivFirstPersonFlag firstPersonFlag;
-
-#if ATIV_VRM0
-            public FirstPersonFlag Vrm0FirstPersonFlag
-            {
-                get
-                {
-                    switch (firstPersonFlag)
-                    {
-                        case AtivFirstPersonFlag.Auto: return FirstPersonFlag.Auto;
-                        case AtivFirstPersonFlag.Both: return FirstPersonFlag.Both;
-                        case AtivFirstPersonFlag.ThirdPersonOnly: return FirstPersonFlag.ThirdPersonOnly;
-                        case AtivFirstPersonFlag.FirstPersonOnly: return FirstPersonFlag.FirstPersonOnly;
-                        default: throw new ArgumentOutOfRangeException();
-                    }
-                }
-            }
-#endif
-
-#if ATIV_VRM1
-            public FirstPersonType Vrm1FirstPersonType
-            {
-                get
-                {
-                    switch (firstPersonFlag)
-                    {
-                        case AtivFirstPersonFlag.Auto: return FirstPersonType.auto;
-                        case AtivFirstPersonFlag.Both: return FirstPersonType.both;
-                        case AtivFirstPersonFlag.ThirdPersonOnly: return FirstPersonType.thirdPersonOnly;
-                        case AtivFirstPersonFlag.FirstPersonOnly: return FirstPersonType.firstPersonOnly;
-                        default: throw new ArgumentOutOfRangeException();
-                    }
-                }
-            }
-#endif
         }
 
         public enum AtivFirstPersonFlag

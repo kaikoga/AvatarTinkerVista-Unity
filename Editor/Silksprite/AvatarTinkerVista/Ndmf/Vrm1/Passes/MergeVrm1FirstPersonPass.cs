@@ -1,9 +1,8 @@
-#if ATIV_VRM1
-
 using System.Linq;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.runtime;
 using Silksprite.AdLib.Utils.VRM1;
+using Silksprite.AvatarTinkerVista.Ndmf.Vrm1.Extensions;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
@@ -23,7 +22,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
                 .Select(renderer => new RendererFirstPersonFlags
                 {
                     Renderer = RuntimeUtil.RelativePath(context.AvatarRootObject, renderer.renderer.gameObject),
-                    FirstPersonFlag = renderer.Vrm1FirstPersonType
+                    FirstPersonFlag = renderer.Vrm1FirstPersonType()
                 }));
 
             foreach (var source in sources)
@@ -33,5 +32,3 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
         }
     }
 }
-
-#endif
