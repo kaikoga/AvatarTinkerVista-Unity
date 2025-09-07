@@ -40,9 +40,11 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             {
 #if ATIV_VRM0
                 generating.Run(OverwriteVrm0MetaPass.Instance);
+                generating.Run(GenerateVrm0SpringBonesPass.Instance);
 #endif
 #if ATIV_VRM1
                 generating.Run(OverwriteVrm1MetaPass.Instance);
+                generating.Run(GenerateVrm1SpringBonesPass.Instance);
 #endif
             });
 

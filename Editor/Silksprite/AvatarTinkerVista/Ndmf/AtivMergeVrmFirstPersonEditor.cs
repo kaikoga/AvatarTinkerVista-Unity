@@ -3,6 +3,7 @@ using UnityEditor;
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [CustomEditor(typeof(AtivMergeVrmFirstPerson))]
+    [CanEditMultipleObjects]
     class AtivMergeVrmFirstPersonEditor : Editor
     {
         SerializedProperty _propRenderers;
