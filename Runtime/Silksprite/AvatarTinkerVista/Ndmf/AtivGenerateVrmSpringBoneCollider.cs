@@ -35,23 +35,23 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             switch (colliderType)
             {
                 case ColliderTypes.Sphere:
-                    gizmos.Color = Color.magenta;
+                    gizmos.Color = AtivGizmoStyle.Current.Collider;
                     gizmos.DrawWireSphereLocal(transform, offset, radius);
                     break;
                 case ColliderTypes.Capsule:
-                    gizmos.Color = Color.magenta;
+                    gizmos.Color = AtivGizmoStyle.Current.Collider;
                     gizmos.DrawWireCapsuleLocal(transform, offset, tail, radius);
                     break;
                 case ColliderTypes.Plane:
-                    gizmos.Color = Color.magenta;
+                    gizmos.Color = AtivGizmoStyle.Current.Collider;
                     gizmos.DrawPlaneLocal(transform, offset, normal, 0.05f);
                     break;
                 case ColliderTypes.SphereInside:
-                    gizmos.Color = new Color(0.5f, 0, 1.0f);
+                    gizmos.Color = AtivGizmoStyle.Current.InnerCollider;
                     gizmos.DrawWireSphereLocal(transform, offset, radius);
                     break;
                 case ColliderTypes.CapsuleInside:
-                    gizmos.Color = new Color(0.5f, 0, 1.0f);
+                    gizmos.Color = AtivGizmoStyle.Current.InnerCollider;
                     gizmos.DrawWireCapsuleLocal(transform, offset, tail, radius);
                     break;
                 default:

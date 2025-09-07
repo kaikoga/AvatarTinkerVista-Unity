@@ -26,6 +26,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         
         public override void OnInspectorGUI()
         {
+            AtivGUILayout.GizmosDarkModeToggle();
             EditorGUILayout.PropertyField(_propRenderers);
             EditorGUILayout.PropertyField(_propRootBone);
             EditorGUILayout.PropertyField(_propOffset);

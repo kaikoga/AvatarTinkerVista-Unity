@@ -37,26 +37,21 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         void OnDrawGizmosSelected()
         {
-            static Color JointColor(Transform joint)
-            {
-                return Color.yellow;
-            }
 
             var joints = GuessJoints().ToArray();
             if (joints.Length > 0)
             {
                 using var gizmos = new AtivGizmos();
                 var lastJoint = joints[0];
-                gizmos.Color = new Color(1, 0.75f, 0f);
+                gizmos.Color = AtivGizmoStyle.Current.JointRoot;
                 gizmos.DrawWireSphereLocal(lastJoint.transform, Vector3.zero, 0.01f);
                 for (var i = 1; i < joints.Length; ++i)
                 {
                     var joint = joints[i];
-                    gizmos.Color = JointColor(lastJoint);
+                    gizmos.Color = AtivGizmoStyle.Current.Joint;
                     if (joint != null && lastJoint != null)
                     {
                         gizmos.DrawLineGlobal(lastJoint.transform.position, joint.transform.position);
-                        gizmos.Color = Color.yellow;
                         gizmos.DrawWireSphereLocal(joint.transform, Vector3.zero, radius);
                     }
                     lastJoint = joint;

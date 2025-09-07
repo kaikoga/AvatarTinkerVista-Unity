@@ -10,6 +10,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
     {
         public override void OnInspectorGUI()
         {
+            AtivGUILayout.GizmosDarkModeToggle();
             base.OnInspectorGUI();
             EditorGUILayout.Space();
             foreach (var ativ in targets.OfType<AtivGenerateVrmSpringBones>())
