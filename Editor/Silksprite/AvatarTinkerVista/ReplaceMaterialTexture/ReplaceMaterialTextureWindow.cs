@@ -70,7 +70,7 @@ namespace Silksprite.AvatarTinkerVista.ReplaceMaterialTexture
 
         }
 
-        [MenuItem("Window/Avatar Tinker/Replace Material Texture", false, 60000)]
+        [MenuItem("Tools/Avatar Tinker Vista/Replace Material Texture", false, 60000)]
         static void ShowWindow()
         {
             CreateInstance<ReplaceMaterialTextureWindow>().Show();
