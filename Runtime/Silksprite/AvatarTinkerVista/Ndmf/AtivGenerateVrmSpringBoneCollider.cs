@@ -36,23 +36,23 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             {
                 case ColliderTypes.Sphere:
                     gizmos.Color = AtivGizmoStyle.Current.Collider;
-                    gizmos.DrawWireSphereLocal(transform, offset, radius);
+                    gizmos.DrawWireSphereLocal(ActualRootBone, offset, radius);
                     break;
                 case ColliderTypes.Capsule:
                     gizmos.Color = AtivGizmoStyle.Current.Collider;
-                    gizmos.DrawWireCapsuleLocal(transform, offset, tail, radius);
+                    gizmos.DrawWireCapsuleLocal(ActualRootBone, offset, tail, radius);
                     break;
                 case ColliderTypes.Plane:
                     gizmos.Color = AtivGizmoStyle.Current.Collider;
-                    gizmos.DrawPlaneLocal(transform, offset, normal, 0.05f);
+                    gizmos.DrawPlaneLocal(ActualRootBone, offset, normal, 0.05f);
                     break;
                 case ColliderTypes.SphereInside:
                     gizmos.Color = AtivGizmoStyle.Current.InnerCollider;
-                    gizmos.DrawWireSphereLocal(transform, offset, radius);
+                    gizmos.DrawWireSphereLocal(ActualRootBone, offset, radius);
                     break;
                 case ColliderTypes.CapsuleInside:
                     gizmos.Color = AtivGizmoStyle.Current.InnerCollider;
-                    gizmos.DrawWireCapsuleLocal(transform, offset, tail, radius);
+                    gizmos.DrawWireCapsuleLocal(ActualRootBone, offset, tail, radius);
                     break;
                 default:
                     throw new NotImplementedException();

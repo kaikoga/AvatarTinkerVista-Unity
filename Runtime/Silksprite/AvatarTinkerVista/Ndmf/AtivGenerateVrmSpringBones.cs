@@ -37,7 +37,6 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         void OnDrawGizmosSelected()
         {
-
             var joints = GuessJoints().ToArray();
             if (joints.Length > 0)
             {
