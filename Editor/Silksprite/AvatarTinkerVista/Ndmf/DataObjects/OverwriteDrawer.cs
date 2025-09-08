@@ -6,11 +6,11 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.DataObjects
     [CustomPropertyDrawer(typeof(OverwriteBool))]
     [CustomPropertyDrawer(typeof(OverwriteString))]
     [CustomPropertyDrawer(typeof(OverwriteTexture2D))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteAllowedUser))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteVrm1CommercialUsageType))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteVrm0LicenseType))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteVrm1CreditNotationType))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVrmMeta.OverwriteVrm1ModificationType))]
+    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteAllowedUser))]
+    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM1CommercialUsageType))]
+    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM0LicenseType))]
+    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM1CreditNotationType))]
+    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM1ModificationType))]
     public class OverwriteDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty serializedProperty, GUIContent label)

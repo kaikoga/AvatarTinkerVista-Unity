@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.DataObjects
 {
-    [CustomPropertyDrawer(typeof(AtivMergeVrmFirstPerson.RendererFirstPersonFlags))]
+    [CustomPropertyDrawer(typeof(AtivMergeVRMFirstPerson.RendererFirstPersonFlags))]
     class RendererFirstPersonFlagsDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            var rendererProp = property.FindPropertyRelative(nameof(AtivMergeVrmFirstPerson.RendererFirstPersonFlags.renderer));
-            var flagProp = property.FindPropertyRelative(nameof(AtivMergeVrmFirstPerson.RendererFirstPersonFlags.firstPersonFlag));
+            var rendererProp = property.FindPropertyRelative(nameof(AtivMergeVRMFirstPerson.RendererFirstPersonFlags.renderer));
+            var flagProp = property.FindPropertyRelative(nameof(AtivMergeVRMFirstPerson.RendererFirstPersonFlags.firstPersonFlag));
 
             const float rightSideWidth = 140.0f;
 

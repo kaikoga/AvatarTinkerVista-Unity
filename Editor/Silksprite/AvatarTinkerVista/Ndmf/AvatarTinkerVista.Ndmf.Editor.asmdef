@@ -6,8 +6,8 @@
     "nadena.dev.ndmf.runtime",
     "AvatarTinkerVista.Ndmf",
     "AvatarTinkerVista.Editor",
-    "AvatarTinkerVista.Ndmf.Vrm0.Editor",
-    "AvatarTinkerVista.Ndmf.Vrm1.Editor",
+    "AvatarTinkerVista.Ndmf.VRM0.Editor",
+    "AvatarTinkerVista.Ndmf.VRM1.Editor",
     "AvatarTinkerVista"
   ],
   "includePlatforms": [

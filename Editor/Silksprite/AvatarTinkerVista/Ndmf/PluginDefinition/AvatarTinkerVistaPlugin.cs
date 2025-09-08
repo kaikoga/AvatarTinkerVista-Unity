@@ -39,12 +39,12 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             Phase<AtivGeneratingComponent>(BuildPhase.Generating, generating =>
             {
 #if ATIV_VRM0
-                generating.Run(OverwriteVrm0MetaPass.Instance);
-                generating.Run(GenerateVrm0SpringBonesPass.Instance);
+                generating.Run(OverwriteVRM0MetaPass.Instance);
+                generating.Run(GenerateVRM0SpringBonesPass.Instance);
 #endif
 #if ATIV_VRM1
-                generating.Run(OverwriteVrm1MetaPass.Instance);
-                generating.Run(GenerateVrm1SpringBonesPass.Instance);
+                generating.Run(OverwriteVRM1MetaPass.Instance);
+                generating.Run(GenerateVRM1SpringBonesPass.Instance);
 #endif
             });
 
@@ -52,13 +52,13 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             Phase<AtivTransformingComponent>(BuildPhase.Transforming, transforming =>
             {
                 #if ATIV_VRM0
-                transforming.Run(MergeVrm0FirstPersonPass.Instance);
+                transforming.Run(MergeVRM0FirstPersonPass.Instance);
                 #endif
                 #if ATIV_VRM1
-                transforming.Run(MergeVrm1SpringBonesPass.Instance);
+                transforming.Run(MergeVRM1SpringBonesPass.Instance);
                 #endif
                 #if ATIV_VRM1
-                transforming.Run(MergeVrm1FirstPersonPass.Instance);
+                transforming.Run(MergeVRM1FirstPersonPass.Instance);
                 #endif
             });
 
@@ -66,20 +66,20 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             {
                 optimizing.BeforePlugin("com.anatawa12.avatar-optimizer");
 #if ATIV_VRM0
-                optimizing.Run(DefaultVrm0FirstPersonPass.Instance);
+                optimizing.Run(DefaultVRM0FirstPersonPass.Instance);
 #endif
 #if ATIV_VRM1
-                optimizing.Run(DefaultVrm1FirstPersonPass.Instance);
+                optimizing.Run(DefaultVRM1FirstPersonPass.Instance);
 #endif
             });
 
             Phase<AtivPlatformFinishComponent>(BuildPhase.PlatformFinish, platformFinish =>
             {
 #if ATIV_VRM0
-                platformFinish.Run(ExportVrm0Pass.Instance);
+                platformFinish.Run(ExportVRM0Pass.Instance);
 #endif
 #if ATIV_VRM1
-                platformFinish.Run(ExportVrm1Pass.Instance);
+                platformFinish.Run(ExportVRM1Pass.Instance);
 #endif
             });
         }
