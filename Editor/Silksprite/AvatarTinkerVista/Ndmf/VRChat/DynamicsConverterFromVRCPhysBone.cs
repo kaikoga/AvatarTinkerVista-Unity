@@ -2,27 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Utils;
-using UnityEditor;
 using UnityEngine;
 using VRC.Dynamics;
 using VRC.SDK3.Dynamics.PhysBone.Components;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat
 {
-    public static class MenuItems
+    public class DynamicsConverterFromVRCPhysBone
     {
-        [MenuItem("GameObject/Avatar Tinker Vista/Extract VRCPhysBones as GenerateVrmSpringBones", true)]
-        public static bool ValidateExtractVrcPhysBones(MenuCommand menuCommand)
+        public void Convert(GameObject context)
         {
-            return Selection.activeGameObject;
-        }
-
-        [MenuItem("GameObject/Avatar Tinker Vista/Extract VRCPhysBones as GenerateVrmSpringBones", false)]
-        public static void ExtractVrcPhysBones(MenuCommand menuCommand)
-        {
-            var context = Selection.activeGameObject;
-            if (!context) return;
-
             var ativColliderGroups = new Dictionary<VRCPhysBoneColliderBase, AtivGenerateVRMSpringBoneColliderGroup>();
             foreach (var pbCollider in context.GetComponentsInChildren<VRCPhysBoneCollider>())
             {
@@ -37,8 +26,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat
                 GenerateSpringBones(context, pb, ativColliderGroups);
             }
         }
-        
-        static AtivGenerateVRMSpringBoneColliderGroup GenerateSpringBoneColliderGroup(GameObject context, VRCPhysBoneCollider pbCollider)
+
+        AtivGenerateVRMSpringBoneColliderGroup GenerateSpringBoneColliderGroup(GameObject context, VRCPhysBoneCollider pbCollider)
         {
             var secondary = context.transform.FindOrCreateSecondary(pbCollider.gameObject.name);
             var ativCollider = secondary.gameObject.AddComponent<AtivGenerateVRMSpringBoneCollider>();
@@ -75,7 +64,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat
             return ativColliderGroup;
         }
 
-        static void GenerateSpringBones(GameObject context, VRCPhysBone pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateVRMSpringBoneColliderGroup> ativColliderGroups)
+        void GenerateSpringBones(GameObject context, VRCPhysBone pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateVRMSpringBoneColliderGroup> ativColliderGroups)
         {
             if (pb.transform.childCount == 0)
             {
