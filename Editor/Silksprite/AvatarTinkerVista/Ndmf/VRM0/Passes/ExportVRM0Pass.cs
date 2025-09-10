@@ -1,5 +1,7 @@
 using nadena.dev.ndmf;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Contexts;
 using Silksprite.AvatarTinkerVista.VRM0;
+using VRM;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
 {
@@ -10,7 +12,10 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
             var exportVrm = context.AvatarRootObject.GetComponentInChildren<AtivExportVRM>();
             if (!exportVrm) return;
 
-            VRM0FileExporter.ExportVRM0File(context.AvatarRootObject, exportVrm.fileName);
+            if (context.Extension<VRM0BytesContext>().TryGetBytes(out var bytes))
+            {
+                VRM0FileExporter.ExportVRM0File(bytes, string.IsNullOrEmpty(exportVrm.fileName) ? context.AvatarRootObject.name : exportVrm.fileName);
+            }
         }
     }
 }
