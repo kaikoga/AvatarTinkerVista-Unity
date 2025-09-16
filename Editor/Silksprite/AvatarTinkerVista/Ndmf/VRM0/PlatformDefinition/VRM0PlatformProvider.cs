@@ -23,6 +23,57 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         Type INDMFPlatformProvider.AvatarRootComponentType => typeof(VRMMeta);
 
         public BuildUIElement CreateBuildUI() => new VRM0BuildUIElement();
+
+        public bool HasNativeConfigData => true;
+
+        public bool CanInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info) => true;
+
+        public void InitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info)
+        {
+            DoInitFromCommonAvatarInfo(avatarRoot, info, false);
+        }
+
+        public void InitBuildFromCommonAvatarInfo(BuildContext context, CommonAvatarInfo info)
+        {
+            DoInitFromCommonAvatarInfo(context.AvatarRootObject, info, true);
+        }
+
+        static void DoInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info, bool createAssets)
+        {
+            // note: CommonAvatarInfo is not extracted from VRM because it cannot round trip in VRM0
+            if (!avatarRoot.TryGetComponent<VRMMeta>(out var vrmMeta))
+            {
+                vrmMeta = avatarRoot.AddComponent<VRMMeta>();
+            }
+            if (!avatarRoot.TryGetComponent<VRMBlendShapeProxy>(out var vrmBlendShapeProxy))
+            {
+                vrmBlendShapeProxy = avatarRoot.AddComponent<VRMBlendShapeProxy>();
+            }
+            if (!avatarRoot.TryGetComponent<VRMFirstPerson>(out var vrmFirstPerson))
+            {
+                vrmFirstPerson = avatarRoot.AddComponent<VRMFirstPerson>();
+            }
+
+            if (createAssets)
+            {
+                if (!vrmMeta.Meta)
+                {
+                    vrmMeta.Meta = ScriptableObject.CreateInstance<VRMMetaObject>();
+                }
+                if (!vrmBlendShapeProxy.BlendShapeAvatar)
+                {
+                    vrmBlendShapeProxy.BlendShapeAvatar = ScriptableObject.CreateInstance<BlendShapeAvatar>();
+                }
+            }
+
+            if (info.EyePosition is { } eyePosition)
+            {
+                vrmFirstPerson.SetDefault();
+                var rootBone = avatarRoot.transform;
+                var headBone = vrmFirstPerson.FirstPersonBone ?? rootBone;
+                vrmFirstPerson.FirstPersonOffset = headBone.InverseTransformPoint(rootBone.TransformPoint(eyePosition));
+            }
+        }
     }
 
     class VRM0BuildUIElement : BuildUIElement
