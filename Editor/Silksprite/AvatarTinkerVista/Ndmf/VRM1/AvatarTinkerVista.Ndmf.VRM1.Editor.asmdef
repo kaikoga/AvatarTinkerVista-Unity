@@ -8,7 +8,8 @@
     "AdLib.Editor",
     "AvatarTinkerVista.Ndmf",
     "AvatarTinkerVista.Ndmf.VRM1",
-    "AvatarTinkerVista.VRM1.Editor"
+    "AvatarTinkerVista.VRM1.Editor",
+    "AvatarTinkerVista.Editor"
   ],
   "includePlatforms": [
     "Editor"

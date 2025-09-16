@@ -1,7 +1,7 @@
+using System.IO;
 using nadena.dev.ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Contexts;
 using Silksprite.AvatarTinkerVista.VRM1;
-using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
 {
@@ -14,7 +14,12 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
 
             if (context.Extension<VRM1BytesContext>().TryGetBytes(out var bytes))
             {
-                VRM1FileExporter.ExportVRM1File(bytes, string.IsNullOrEmpty(exportVrm.fileName) ? context.AvatarRootObject.name : exportVrm.fileName);
+                const string directoryName = "ATiV_VRM1~";
+                Directory.CreateDirectory(directoryName);
+                var fileName = string.IsNullOrEmpty(exportVrm.fileName) ? context.AvatarRootObject.name : exportVrm.fileName;
+                var filePath = Path.Join(directoryName, fileName);
+
+                VRM1FileExporter.ExportVRM1File(bytes, filePath);
             }
         }
     }
