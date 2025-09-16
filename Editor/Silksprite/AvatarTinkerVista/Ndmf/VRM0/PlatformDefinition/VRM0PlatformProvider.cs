@@ -59,6 +59,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 if (!vrmMeta.Meta)
                 {
                     vrmMeta.Meta = ScriptableObject.CreateInstance<VRMMetaObject>();
+                    vrmMeta.Meta.Title = AtivRuntimeUtil.GuessOriginalAvatarName(avatarRoot.name);
+                    vrmMeta.Meta.Author = AtivRuntimeUtil.VrmAuthor;
+                    vrmMeta.Meta.Version = AtivRuntimeUtil.VrmVersion;
                 }
                 if (!vrmBlendShapeProxy.BlendShapeAvatar)
                 {
@@ -103,16 +106,16 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 var directory = Path.GetDirectoryName(filePath) ?? "";
                 PlayerPrefs.SetString(lastDirectoryPrefsKey, directory);
 
-                var avatar = Object.Instantiate(AvatarRoot).GetComponent<VRMMeta>();
+                var clone = Object.Instantiate(AvatarRoot);
                 try
                 {
-                    AvatarProcessor.ProcessAvatar(avatar.gameObject, VRM0PlatformProvider.Instance);
-                    VRM0FileExporter.ExportVRM0File(avatar, filePath);
+                    AvatarProcessor.ProcessAvatar(clone, VRM0PlatformProvider.Instance);
+                    VRM0FileExporter.ExportVRM0File(clone.GetComponent<VRMMeta>(), filePath);
                     AtivEditorUtil.OpenInExplorer(directory);
                 }
                 finally
                 {
-                    Object.DestroyImmediate(avatar.gameObject);
+                    Object.DestroyImmediate(clone);
                 }
             }
         }

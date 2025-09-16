@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.platform;
@@ -57,6 +58,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 if (!vrm10Instance.Vrm)
                 {
                     vrm10Instance.Vrm = ScriptableObject.CreateInstance<VRM10Object>();
+                    vrm10Instance.Vrm.Meta.Name = AtivRuntimeUtil.GuessOriginalAvatarName(avatarRoot.name);
+                    vrm10Instance.Vrm.Meta.Authors = new List<string> { AtivRuntimeUtil.VrmAuthor };
+                    vrm10Instance.Vrm.Meta.Version = AtivRuntimeUtil.VrmVersion;
                 }
                 if (info.EyePosition is { } eyePosition)
                 {
@@ -97,16 +101,16 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 var directory = Path.GetDirectoryName(filePath) ?? "";
                 PlayerPrefs.SetString(lastDirectoryPrefsKey, directory);
 
-                var avatar = Object.Instantiate(AvatarRoot).GetComponent<Vrm10Instance>();
+                var clone = Object.Instantiate(AvatarRoot);
                 try
                 {
-                    AvatarProcessor.ProcessAvatar(avatar.gameObject, VRM1PlatformProvider.Instance);
-                    VRM1FileExporter.ExportVRM1File(avatar, filePath);
+                    AvatarProcessor.ProcessAvatar(clone, VRM1PlatformProvider.Instance);
+                    VRM1FileExporter.ExportVRM1File(clone.GetComponent<Vrm10Instance>(), filePath);
                     AtivEditorUtil.OpenInExplorer(directory);
                 }
                 finally
                 {
-                    Object.DestroyImmediate(avatar.gameObject);
+                    Object.DestroyImmediate(clone);
                 }
             }
         }

@@ -12,6 +12,9 @@ namespace Silksprite.AvatarTinkerVista.Utils
             }
             return avatarName;
         }
+        
+        public static string VrmAuthor => "no name";
+        public static string VrmVersion => "0.1.0";
 
         static Transform FindOrCreateChild(this Transform parent, string name)
         {
