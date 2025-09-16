@@ -4,7 +4,6 @@ using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.fluent;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Contexts;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
@@ -71,22 +70,6 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 #endif
 #if ATIV_VRM1
                 optimizing.Run(DefaultVRM1FirstPersonPass.Instance);
-#endif
-            });
-
-            Phase<AtivPlatformFinishComponent>(BuildPhase.PlatformFinish, platformFinish =>
-            {
-#if ATIV_VRM0
-                platformFinish.WithRequiredExtension(typeof(VRM0BytesContext), bytes =>
-                {
-                    bytes.Run(ExportVRM0Pass.Instance);
-                });
-#endif
-#if ATIV_VRM1
-                platformFinish.WithRequiredExtension(typeof(VRM1BytesContext), bytes =>
-                {
-                    bytes.Run(ExportVRM1Pass.Instance);
-                });
 #endif
             });
         }
