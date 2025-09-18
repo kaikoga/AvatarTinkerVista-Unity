@@ -22,6 +22,7 @@
   "autoReferenced": false,
   "defineConstraints": [
     "ATIV_NDMF",
+    "ATIV_ADLIB",
     "ATIV_VRM0"
   ],
   "versionDefines": [
@@ -29,6 +30,11 @@
       "name": "nadena.dev.ndmf",
       "expression": "(1.8.0-a,2.0-a)",
       "define": "ATIV_NDMF"
+    },
+    {
+      "name": "net.kaikoga.adlib",
+      "expression": "0.1.0",
+      "define": "ATIV_ADLIB"
     },
     {
       "name": "com.vrmc.univrm",
