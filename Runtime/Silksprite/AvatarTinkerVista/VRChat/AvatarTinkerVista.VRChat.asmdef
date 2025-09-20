@@ -1,35 +1,27 @@
 {
-    "name": "AvatarTinkerVista.Ndmf.VRChat.Editor",
-    "rootNamespace": "Silksprite.AvatarTinkerVista.Ndmf.VRChat",
+    "name": "AvatarTinkerVista.VRChat",
     "references": [
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Ndmf",
-        "AvatarTinkerVista.VRChat"
+        "AvatarTinkerVista.Ndmf"
     ],
     "includePlatforms": [
-        "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
+        "VRCSDKBase.dll",
+        "VRCSDK3A.dll",
         "VRC.Dynamics.dll",
         "VRC.SDK3.Dynamics.PhysBone.dll"
+
     ],
     "autoReferenced": false,
-    "defineConstraints": [
-        "ATIV_NDMF",
-        "ATIV_VRCSDK3_AVATARS"
-    ],
+    "defineConstraints": ["ATIV_VRCSDK3_AVATARS"],
     "versionDefines": [
         {
-            "name": "nadena.dev.ndmf",
-            "expression": "(1.8.0-a,2.0-a)",
-            "define": "ATIV_NDMF"
-        },
-        {
             "name": "com.vrchat.avatars",
-            "expression": "[3.0.0,999.0.0)",
+            "expression": "",
             "define": "ATIV_VRCSDK3_AVATARS"
         }
     ],

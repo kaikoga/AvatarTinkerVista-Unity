@@ -10,7 +10,8 @@
     "AvatarTinkerVista.Ndmf",
     "AvatarTinkerVista.Ndmf.VRM0",
     "AvatarTinkerVista.VRM0.Editor",
-    "AvatarTinkerVista.Editor"
+    "AvatarTinkerVista.Editor",
+    "AvatarTinkerVista.VRM0"
   ],
   "includePlatforms": [
     "Editor"

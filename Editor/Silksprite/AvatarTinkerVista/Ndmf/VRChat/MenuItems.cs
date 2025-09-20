@@ -1,3 +1,4 @@
+using Silksprite.AvatarTinkerVista.VRChat.Converter;
 using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat
@@ -16,7 +17,17 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat
             var context = Selection.activeGameObject;
             if (!context) return;
 
-            new DynamicsConverterFromVRCPhysBone().Convert(context);
+            Undo.RegisterFullObjectHierarchyUndo(context, "ATiV: Extract VRCPhysBones");
+            var result = EditorUtility.DisplayDialogComplex(
+                "Extract VRCPhysBones as GenerateVrmSpringBones",
+                "Do you want to also destroy existing VRC PhysBones?",
+                "Just generate",
+                "Cancel",
+                "Destroy VRC PhysBones");
+            if (result != 1)
+            {
+                new DynamicsConverterFromVRCPhysBone().Convert(context.transform, result == 2);
+            }
         }
     }
 }

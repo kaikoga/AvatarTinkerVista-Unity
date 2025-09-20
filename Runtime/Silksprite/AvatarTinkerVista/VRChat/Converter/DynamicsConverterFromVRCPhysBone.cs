@@ -1,33 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Converter;
+using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Utils;
 using UnityEngine;
 using VRC.Dynamics;
 using VRC.SDK3.Dynamics.PhysBone.Components;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat
+namespace Silksprite.AvatarTinkerVista.VRChat.Converter
 {
     public class DynamicsConverterFromVRCPhysBone
+    : DynamicsConverterBase<
+        Transform,
+        VRCPhysBone,
+        VRCPhysBoneColliderBase,
+        AtivGenerateVRMSpringBoneColliderGroup
+    >
     {
-        public void Convert(GameObject context)
-        {
-            var ativColliderGroups = new Dictionary<VRCPhysBoneColliderBase, AtivGenerateVRMSpringBoneColliderGroup>();
-            foreach (var pbCollider in context.GetComponentsInChildren<VRCPhysBoneCollider>())
-            {
-                var ativColliderGroup = GenerateSpringBoneColliderGroup(context, pbCollider);
-                if (ativColliderGroup)
-                {
-                    ativColliderGroups.Add(pbCollider, ativColliderGroup);
-                }
-            }
-            foreach (var pb in context.GetComponentsInChildren<VRCPhysBone>())
-            {
-                GenerateSpringBones(context, pb, ativColliderGroups);
-            }
-        }
-
-        AtivGenerateVRMSpringBoneColliderGroup GenerateSpringBoneColliderGroup(GameObject context, VRCPhysBoneCollider pbCollider)
+        protected override bool TryConvertCollider(Transform context, VRCPhysBoneColliderBase pbCollider, out AtivGenerateVRMSpringBoneColliderGroup result)
         {
             var secondary = context.transform.FindOrCreateSecondary(pbCollider.gameObject.name);
             var ativCollider = secondary.gameObject.AddComponent<AtivGenerateVRMSpringBoneCollider>();
@@ -59,12 +50,12 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            var ativColliderGroup = secondary.gameObject.AddComponent<AtivGenerateVRMSpringBoneColliderGroup>();
-            ativColliderGroup.colliders.Add(ativCollider);
-            return ativColliderGroup;
+            result = secondary.gameObject.AddComponent<AtivGenerateVRMSpringBoneColliderGroup>();
+            result.colliders.Add(ativCollider);
+            return true;
         }
 
-        void GenerateSpringBones(GameObject context, VRCPhysBone pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateVRMSpringBoneColliderGroup> ativColliderGroups)
+        protected override void ConvertDynamics(Transform context, VRCPhysBone pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateVRMSpringBoneColliderGroup> ativColliderGroups)
         {
             if (pb.transform.childCount == 0)
             {
