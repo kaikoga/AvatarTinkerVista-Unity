@@ -3,7 +3,9 @@
     "references": [
         "UniGLTF",
         "UniVRM.Editor",
-        "VRM"
+        "VRM",
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.VRM0"
     ],
     "includePlatforms": [
         "Editor"

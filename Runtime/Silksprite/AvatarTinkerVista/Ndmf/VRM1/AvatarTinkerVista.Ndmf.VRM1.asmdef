@@ -3,7 +3,8 @@
     "references": [
         "VRM10",
         "nadena.dev.ndmf.runtime",
-        "AvatarTinkerVista.Ndmf"
+        "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista"
     ],
     "includePlatforms": [
     ],

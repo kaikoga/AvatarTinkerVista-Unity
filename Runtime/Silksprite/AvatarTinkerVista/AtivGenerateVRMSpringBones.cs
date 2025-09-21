@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Base;
 using Silksprite.AvatarTinkerVista.Utils;
-using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBones")]
     public class AtivGenerateVRMSpringBones : AtivGeneratingComponent

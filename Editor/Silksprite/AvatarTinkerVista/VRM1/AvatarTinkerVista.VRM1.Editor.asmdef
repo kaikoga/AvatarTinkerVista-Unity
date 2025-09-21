@@ -5,7 +5,9 @@
         "UniGLTF.Editor",
         "VrmLib",
         "VRM10",
-        "VRM10.Editor"
+        "VRM10.Editor",
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.VRM1"
     ],
     "includePlatforms": [
         "Editor"

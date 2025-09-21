@@ -1,9 +1,9 @@
 using System;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Base;
 using Silksprite.AvatarTinkerVista.Utils;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBone Collider")]
     public class AtivGenerateVRMSpringBoneCollider : AtivGeneratingComponent

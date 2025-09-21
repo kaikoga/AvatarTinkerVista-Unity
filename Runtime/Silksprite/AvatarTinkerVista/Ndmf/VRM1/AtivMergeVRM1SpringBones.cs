@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
 using UniVRM10;
 

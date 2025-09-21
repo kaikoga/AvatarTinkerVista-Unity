@@ -1,7 +1,7 @@
 using Silksprite.AvatarTinkerVista.Utils;
 using UnityEditor;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista
 {
     public static class AtivGUILayout
     {

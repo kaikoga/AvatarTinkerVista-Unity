@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Base
+namespace Silksprite.AvatarTinkerVista.Base
 {
     public abstract class AtivComponent : MonoBehaviour
 #if ATIV_VRCSDK3_AVATARS

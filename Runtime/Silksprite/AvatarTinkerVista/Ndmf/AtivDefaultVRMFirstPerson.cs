@@ -1,3 +1,4 @@
+using Silksprite.AvatarTinkerVista.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.DataObjects;
 using UnityEngine;

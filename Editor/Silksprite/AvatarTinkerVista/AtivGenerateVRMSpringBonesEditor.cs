@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivGenerateVRMSpringBones))]
     [CanEditMultipleObjects]
