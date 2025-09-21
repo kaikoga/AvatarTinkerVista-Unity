@@ -4,8 +4,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat
 {
     public static class MenuItems
     {
-        const string ExtractDynamicsMenu = "GameObject/Avatar Tinker Vista/Extract VRCPhysBones as ATiVGenerateVRMSpringBones";
-        const string ExtractConstraintsMenu = "GameObject/Avatar Tinker Vista/Extract VRCConstraints as ATiVGenerateVRMConstraints";
+        const string ExtractDynamicsMenu = "GameObject/Avatar Tinker Vista/Extract VRC PhysBones as ATiV Generate VRM SpringBones";
+        const string ExtractConstraintsMenu = "GameObject/Avatar Tinker Vista/Extract VRC Constraints as ATiV Generate VRM Constraints";
         
         [MenuItem(ExtractDynamicsMenu, true, 60000)]
         [MenuItem(ExtractConstraintsMenu, true, 60001)]
@@ -17,7 +17,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat
         [MenuItem(ExtractDynamicsMenu, false, 60000)]
         public static void ExtractVrcPhysBones(MenuCommand menuCommand)
         {
-            var context = Selection.activeGameObject;
+            if (!Selection.activeGameObject) return;
+            var context = Selection.activeGameObject.transform;
             if (!context) return;
 
             new InteractiveDynamicsConverterFromVRCPhysBone().InteractiveConvert(context.transform);
@@ -26,7 +27,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat
         [MenuItem(ExtractConstraintsMenu, false, 60001)]
         public static void ExtractVrcConstraints(MenuCommand menuCommand)
         {
-            var context = Selection.activeGameObject;
+            if (!Selection.activeGameObject) return;
+            var context = Selection.activeGameObject.transform;
             if (!context) return;
 
             new InteractiveConstraintsConverterFromVRCConstraints().InteractiveConvert(context.transform);

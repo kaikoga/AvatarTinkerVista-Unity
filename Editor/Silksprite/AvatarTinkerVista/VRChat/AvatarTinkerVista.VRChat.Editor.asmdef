@@ -14,8 +14,7 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "VRC.Dynamics.dll",
-        "VRC.SDK3.Dynamics.PhysBone.dll"
+        "VRC.Dynamics.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [

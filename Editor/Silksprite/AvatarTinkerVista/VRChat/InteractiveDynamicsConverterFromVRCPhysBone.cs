@@ -6,8 +6,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat
 {
     public class InteractiveDynamicsConverterFromVRCPhysBone : InteractiveConverterBase<Transform>
     {
-        protected override string UndoName => "ATiV: Extract VRCPhysBones";
-        protected override string Title => "Extract VRCPhysBones as ATiVGenerateVRMSpringBones";
+        protected override string UndoName => "ATiV: Extract VRC PhysBones";
+        protected override string Title => "Extract VRC PhysBones as ATiV Generate VRM0+1 SpringBones";
         protected override string DestroyTarget => "VRC PhysBones";
 
         protected override void Convert(Transform context, bool destroy)

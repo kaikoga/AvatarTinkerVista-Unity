@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Converter;
-using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Utils;
 using UnityEngine;
 using VRM;

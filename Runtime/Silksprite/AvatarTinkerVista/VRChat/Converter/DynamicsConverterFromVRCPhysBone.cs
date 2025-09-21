@@ -2,18 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Converter;
-using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Utils;
 using UnityEngine;
 using VRC.Dynamics;
-using VRC.SDK3.Dynamics.PhysBone.Components;
 
 namespace Silksprite.AvatarTinkerVista.VRChat.Converter
 {
     public class DynamicsConverterFromVRCPhysBone
     : DynamicsConverterBase<
         Transform,
-        VRCPhysBone,
+        VRCPhysBoneBase,
         VRCPhysBoneColliderBase,
         AtivGenerateDynamicsColliderGroup
     >
@@ -21,7 +19,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
         protected override bool TryConvertCollider(Transform context, VRCPhysBoneColliderBase pbCollider, out AtivGenerateDynamicsColliderGroup result)
         {
             var secondary = context.transform.FindOrCreateSecondary(pbCollider.gameObject.name);
-            var ativCollider = secondary.gameObject.AddComponent<AtivGenerateDynamicsCollider>();
+            result = secondary.gameObject.AddComponent<AtivGenerateDynamicsColliderGroup>();
+            var ativCollider = secondary.transform.CreateChild(pbCollider.gameObject.name).gameObject.AddComponent<AtivGenerateDynamicsCollider>();
             ativCollider.rootBone = pbCollider.transform;
             switch (pbCollider.shapeType)
             {
@@ -50,21 +49,21 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            result = secondary.transform.CreateChild(pbCollider.gameObject.name).gameObject.AddComponent<AtivGenerateDynamicsColliderGroup>();
             result.colliders.Add(ativCollider);
             return true;
         }
 
-        protected override void ConvertDynamics(Transform context, VRCPhysBone pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateDynamicsColliderGroup> ativColliderGroups)
+        protected override void ConvertDynamics(Transform context, VRCPhysBoneBase pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateDynamicsColliderGroup> ativColliderGroups)
         {
-            if (pb.transform.childCount == 0)
+            var rootTransform = pb.GetRootTransform();
+            if (rootTransform.childCount == 0)
             {
                 return;
             }
             var secondary = context.transform.FindOrCreateSecondary(pb.gameObject.name);
-            if (pb.transform.childCount == 1)
+            if (rootTransform.childCount == 1)
             {
-                GenerateSpring(pb.transform);
+                GenerateSpring(rootTransform);
             }
             else
             {
@@ -72,15 +71,15 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
                 {
                     // FIXME: this is completely different logic from AtivGenerateVrmSpringBones
                     case VRCPhysBoneBase.MultiChildType.Ignore:
-                        foreach (var child in pb.transform.OfType<Transform>())
+                        foreach (var child in rootTransform.OfType<Transform>())
                         {
                             GenerateSpring(child);
                         }
                         break;
                     case VRCPhysBoneBase.MultiChildType.First:
                     case VRCPhysBoneBase.MultiChildType.Average:
-                        GenerateSpring(pb.transform);
-                        foreach (var child in pb.transform.OfType<Transform>().Skip(1))
+                        GenerateSpring(rootTransform);
+                        foreach (var child in rootTransform.OfType<Transform>().Skip(1))
                         {
                             GenerateSpring(child);
                         }

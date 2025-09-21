@@ -1,6 +1,6 @@
 using System.Linq;
 using nadena.dev.ndmf;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1;
+using Silksprite.AvatarTinkerVista.VRM1;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
@@ -17,6 +17,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
 
             vrmInstance.SpringBone.ColliderGroups = vrmInstance.SpringBone.ColliderGroups
                 .Concat(sources.SelectMany(bone => bone.colliderGroups))
+                .Distinct()
                 .ToList();
             
             vrmInstance.SpringBone.Springs = vrmInstance.SpringBone.Springs

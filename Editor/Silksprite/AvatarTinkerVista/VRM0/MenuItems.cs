@@ -6,15 +6,16 @@ namespace Silksprite.AvatarTinkerVista.VRM0
     {
         const string BakeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateSpringBones as VRM0 SpringBones"; 
         [MenuItem(BakeDynamicsMenu, true, 61000)]
-        public static bool ValidateExtractVrcComponents(MenuCommand menuCommand)
+        public static bool ValidateBakeVRM0SpringBones(MenuCommand menuCommand)
         {
             return Selection.activeGameObject;
         }
 
         [MenuItem(BakeDynamicsMenu, false, 61000)]
-        public static void ExtractVrcPhysBones(MenuCommand menuCommand)
+        public static void BakeVRM0SpringBones(MenuCommand menuCommand)
         {
-            var context = Selection.activeGameObject;
+            if (!Selection.activeGameObject) return;
+            var context = Selection.activeGameObject.transform;
             if (!context) return;
 
             new InteractiveDynamicsConverterToVRM0SpringBone().InteractiveConvert(context.transform);

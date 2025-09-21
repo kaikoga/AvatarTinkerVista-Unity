@@ -6,8 +6,8 @@ namespace Silksprite.AvatarTinkerVista.VRM1
 {
     public class InteractiveDynamicsConverterToVRM1SpringBone : InteractiveConverterBase<Vrm10Instance>
     {
-        protected override string UndoName => "ATiV: Bake ATiVSpringBones as VRM1";
-        protected override string Title => "Bake ATiVGenerateSpringBones as Vrm10SpringBones";
+        protected override string UndoName => "ATiV: Bake ATiVSpringBones into VRM1 SpringBones";
+        protected override string Title => "Bake ATiVGenerateSpringBones into Vrm10Instance SpringBones";
         protected override string DestroyTarget => "ATiV SpringBones";
 
         protected override void Convert(Vrm10Instance context, bool destroy)
