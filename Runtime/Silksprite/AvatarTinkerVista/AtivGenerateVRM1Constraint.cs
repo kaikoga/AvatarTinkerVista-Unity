@@ -3,14 +3,15 @@ using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM Constraint")]
-    public class AtivGenerateVRMConstraint : AtivGeneratingComponent
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM1 Constraint")]
+    public class AtivGenerateVRM1Constraint : AtivGeneratingComponent
     {
         public ConstraintKind kind;
 
         public Transform source;
         public Transform target;
 
+        [Range(0, 1.0f)]
         public float weight = 1.0f;
 
         public AimVector aimAxis;

@@ -16,8 +16,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
                 case VRCAimConstraintBase vrcAim:
                 {
                     var secondary = context.transform.FindOrCreateSecondary(vrcAim.gameObject.name);
-                    var ativAim = secondary.gameObject.AddComponent<AtivGenerateVRMConstraint>();
-                    ativAim.kind = AtivGenerateVRMConstraint.ConstraintKind.Aim;
+                    var ativAim = secondary.gameObject.AddComponent<AtivGenerateVRM1Constraint>();
+                    ativAim.kind = AtivGenerateVRM1Constraint.ConstraintKind.Aim;
                     ativAim.aimAxis = GuessAimAxis(vrcAim.AimAxis);
                     foreach (var vrcSource in vrcAim.Sources.Take(1))
                     {
@@ -30,8 +30,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
                 case VRCLookAtConstraintBase vrcLookAt:
                 {
                     var secondary = context.transform.FindOrCreateSecondary(vrcLookAt.gameObject.name);
-                    var ativLookAt = secondary.gameObject.AddComponent<AtivGenerateVRMConstraint>();
-                    ativLookAt.kind = AtivGenerateVRMConstraint.ConstraintKind.Aim;
+                    var ativLookAt = secondary.gameObject.AddComponent<AtivGenerateVRM1Constraint>();
+                    ativLookAt.kind = AtivGenerateVRM1Constraint.ConstraintKind.Aim;
                     foreach (var vrcSource in vrcLookAt.Sources.Take(1))
                     {
                         ativLookAt.source = vrcSource.SourceTransform;
@@ -43,7 +43,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
                 case VRCRotationConstraintBase vrcRotation:
                 {
                     var secondary = context.transform.FindOrCreateSecondary(vrcRotation.gameObject.name);
-                    var ativRotation = secondary.gameObject.AddComponent<AtivGenerateVRMConstraint>();
+                    var ativRotation = secondary.gameObject.AddComponent<AtivGenerateVRM1Constraint>();
                     (ativRotation.kind, ativRotation.rollAxis) = GuessRollAxisOrRotation(vrcRotation);
                     foreach (var vrcSource in vrcRotation.Sources.Take(1))
                     {
@@ -56,8 +56,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
                 case VRCParentConstraintBase vrcParent:
                 {
                     var secondary = context.transform.FindOrCreateSecondary(vrcParent.gameObject.name);
-                    var ativRotation = secondary.gameObject.AddComponent<AtivGenerateVRMConstraint>();
-                    ativRotation.kind = AtivGenerateVRMConstraint.ConstraintKind.Rotation;
+                    var ativRotation = secondary.gameObject.AddComponent<AtivGenerateVRM1Constraint>();
+                    ativRotation.kind = AtivGenerateVRM1Constraint.ConstraintKind.Rotation;
                     foreach (var vrcSource in vrcParent.Sources.Take(1))
                     {
                         ativRotation.source = vrcSource.SourceTransform;
@@ -73,27 +73,27 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
             }
         }
         
-        static AtivGenerateVRMConstraint.AimVector GuessAimAxis(Vector3 vrcAimAxis)
+        static AtivGenerateVRM1Constraint.AimVector GuessAimAxis(Vector3 vrcAimAxis)
         {
-            return new(float abs, AtivGenerateVRMConstraint.AimVector value)[]
+            return new(float abs, AtivGenerateVRM1Constraint.AimVector value)[]
             {
-                (vrcAimAxis.x, AtivGenerateVRMConstraint.AimVector.PositiveX),
-                (-vrcAimAxis.x, AtivGenerateVRMConstraint.AimVector.NegativeX),
-                (vrcAimAxis.y, AtivGenerateVRMConstraint.AimVector.PositiveY),
-                (-vrcAimAxis.y, AtivGenerateVRMConstraint.AimVector.NegativeY),
-                (vrcAimAxis.z, AtivGenerateVRMConstraint.AimVector.PositiveZ),
-                (-vrcAimAxis.z, AtivGenerateVRMConstraint.AimVector.NegativeZ)
+                (vrcAimAxis.x, AtivGenerateVRM1Constraint.AimVector.PositiveX),
+                (-vrcAimAxis.x, AtivGenerateVRM1Constraint.AimVector.NegativeX),
+                (vrcAimAxis.y, AtivGenerateVRM1Constraint.AimVector.PositiveY),
+                (-vrcAimAxis.y, AtivGenerateVRM1Constraint.AimVector.NegativeY),
+                (vrcAimAxis.z, AtivGenerateVRM1Constraint.AimVector.PositiveZ),
+                (-vrcAimAxis.z, AtivGenerateVRM1Constraint.AimVector.NegativeZ)
             }.OrderByDescending(r => r.abs).Select(r => r.value).First();
         }
 
-        static (AtivGenerateVRMConstraint.ConstraintKind constraintKind, AtivGenerateVRMConstraint.RollAxis rollAxis) GuessRollAxisOrRotation(VRCRotationConstraintBase vrcRotation)
+        static (AtivGenerateVRM1Constraint.ConstraintKind constraintKind, AtivGenerateVRM1Constraint.RollAxis rollAxis) GuessRollAxisOrRotation(VRCRotationConstraintBase vrcRotation)
         {
             return (vrcRotation.AffectsRotationX, vrcRotation.AffectsRotationY, vrcRotation.AffectsRotationZ) switch
             {
-                (true, false, false) => (AtivGenerateVRMConstraint.ConstraintKind.Roll, AtivGenerateVRMConstraint.RollAxis.X),
-                (false, true, false) => (AtivGenerateVRMConstraint.ConstraintKind.Roll, AtivGenerateVRMConstraint.RollAxis.Y),
-                (false, false, true) => (AtivGenerateVRMConstraint.ConstraintKind.Roll, AtivGenerateVRMConstraint.RollAxis.Z),
-                _ => (AtivGenerateVRMConstraint.ConstraintKind.Rotation, default)
+                (true, false, false) => (AtivGenerateVRM1Constraint.ConstraintKind.Roll, AtivGenerateVRM1Constraint.RollAxis.X),
+                (false, true, false) => (AtivGenerateVRM1Constraint.ConstraintKind.Roll, AtivGenerateVRM1Constraint.RollAxis.Y),
+                (false, false, true) => (AtivGenerateVRM1Constraint.ConstraintKind.Roll, AtivGenerateVRM1Constraint.RollAxis.Z),
+                _ => (AtivGenerateVRM1Constraint.ConstraintKind.Rotation, default)
             };
         }
     }

@@ -6,31 +6,31 @@ using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.VRM1.Converter
 {
-    public class ConstraintsConverterToVRM1Constraints : ConstraintsConverterBase<Transform, AtivGenerateVRMConstraint>
+    public class ConstraintsConverterToVRM1Constraints : ConstraintsConverterBase<Transform, AtivGenerateVRM1Constraint>
     {
-        protected override void ConvertConstraint(Transform context, AtivGenerateVRMConstraint constraintFrom)
+        protected override void ConvertConstraint(Transform context, AtivGenerateVRM1Constraint constraintFrom)
         {
             switch (constraintFrom.kind)
             {
-                case AtivGenerateVRMConstraint.ConstraintKind.Aim:
+                case AtivGenerateVRM1Constraint.ConstraintKind.Aim:
                     var vrmAim = constraintFrom.ActualTarget.gameObject.AddComponent<Vrm10AimConstraint>();
                     vrmAim.Weight = constraintFrom.weight;
                     vrmAim.Source = constraintFrom.source;
                     vrmAim.AimAxis = AimAxis.NegativeX;
                     break;
-                case AtivGenerateVRMConstraint.ConstraintKind.Roll:
+                case AtivGenerateVRM1Constraint.ConstraintKind.Roll:
                     var vrmRoll = constraintFrom.ActualTarget.gameObject.AddComponent<Vrm10RollConstraint>();
                     vrmRoll.Weight = constraintFrom.weight;
                     vrmRoll.Source = constraintFrom.source;
                     vrmRoll.RollAxis = constraintFrom.rollAxis switch
                     {
-                        AtivGenerateVRMConstraint.RollAxis.X => RollAxis.X,
-                        AtivGenerateVRMConstraint.RollAxis.Y => RollAxis.Y,
-                        AtivGenerateVRMConstraint.RollAxis.Z => RollAxis.Z,
+                        AtivGenerateVRM1Constraint.RollAxis.X => RollAxis.X,
+                        AtivGenerateVRM1Constraint.RollAxis.Y => RollAxis.Y,
+                        AtivGenerateVRM1Constraint.RollAxis.Z => RollAxis.Z,
                         _ => throw new ArgumentOutOfRangeException()
                     };
                     break;
-                case AtivGenerateVRMConstraint.ConstraintKind.Rotation:
+                case AtivGenerateVRM1Constraint.ConstraintKind.Rotation:
                     var vrmRotation = constraintFrom.ActualTarget.gameObject.AddComponent<Vrm10RotationConstraint>();
                     vrmRotation.Weight = constraintFrom.weight;
                     vrmRotation.Source = constraintFrom.source;

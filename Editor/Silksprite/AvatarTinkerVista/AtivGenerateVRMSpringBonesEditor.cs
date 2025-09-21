@@ -19,6 +19,7 @@ namespace Silksprite.AvatarTinkerVista
                 {
                     EditorGUILayout.ObjectField(ativ, typeof(AtivGenerateVRMSpringBones), true);
                 }
+                AtivGUILayout.Header("Joints");
                 using (new EditorGUI.IndentLevelScope(1))
                 using (new EditorGUI.DisabledScope(true))
                 {
