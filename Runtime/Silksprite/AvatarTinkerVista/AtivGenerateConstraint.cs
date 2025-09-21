@@ -14,19 +14,20 @@ namespace Silksprite.AvatarTinkerVista
         [Range(0, 1.0f)]
         public float weight = 1.0f;
 
-        public AimVector aimAxis;
+        public AimAxis aimAxis;
         public RollAxis rollAxis;
 
         public Transform ActualTarget => target ? target : transform;
 
         public enum ConstraintKind
         {
+            None,
             Aim,
             Roll,
             Rotation
         }
         
-        public enum AimVector
+        public enum AimAxis
         {
             PositiveX,
             NegativeX,

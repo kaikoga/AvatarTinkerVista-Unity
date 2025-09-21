@@ -12,11 +12,22 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converter
         {
             switch (constraintFrom.kind)
             {
+                case AtivGenerateConstraint.ConstraintKind.None:
+                    break;
                 case AtivGenerateConstraint.ConstraintKind.Aim:
                     var vrmAim = constraintFrom.ActualTarget.gameObject.AddComponent<Vrm10AimConstraint>();
                     vrmAim.Weight = constraintFrom.weight;
                     vrmAim.Source = constraintFrom.source;
-                    vrmAim.AimAxis = AimAxis.NegativeX;
+                    vrmAim.AimAxis = constraintFrom.aimAxis switch
+                    {
+                        AtivGenerateConstraint.AimAxis.PositiveX => AimAxis.PositiveX,
+                        AtivGenerateConstraint.AimAxis.NegativeX => AimAxis.NegativeX,
+                        AtivGenerateConstraint.AimAxis.PositiveY => AimAxis.PositiveY,
+                        AtivGenerateConstraint.AimAxis.NegativeY => AimAxis.NegativeY,
+                        AtivGenerateConstraint.AimAxis.PositiveZ => AimAxis.PositiveZ,
+                        AtivGenerateConstraint.AimAxis.NegativeZ => AimAxis.NegativeZ,
+                        _ => throw new ArgumentOutOfRangeException()
+                    };
                     break;
                 case AtivGenerateConstraint.ConstraintKind.Roll:
                     var vrmRoll = constraintFrom.ActualTarget.gameObject.AddComponent<Vrm10RollConstraint>();
