@@ -7,10 +7,10 @@ using UniVRM10;
 namespace Silksprite.AvatarTinkerVista.VRM1.Converter
 {
     public class DynamicsConverterToVRM1SpringBone : DynamicsConverterBase<
-        Vrm10Instance, AtivGenerateVRMSpringBones, AtivGenerateVRMSpringBoneColliderGroup, VRM10SpringBoneColliderGroup
+        Vrm10Instance, AtivGenerateDynamics, AtivGenerateDynamicsColliderGroup, VRM10SpringBoneColliderGroup
     >
     {
-        protected override bool TryConvertCollider(Vrm10Instance vrm10Instance, AtivGenerateVRMSpringBoneColliderGroup ativ, out VRM10SpringBoneColliderGroup result)
+        protected override bool TryConvertCollider(Vrm10Instance vrm10Instance, AtivGenerateDynamicsColliderGroup ativ, out VRM10SpringBoneColliderGroup result)
         {
             var ativColliders = ativ.colliders.Where(collider => collider).ToArray();
             if (ativColliders.Length == 0)
@@ -25,25 +25,25 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converter
                 var vrm10Collider = ativCollider.ActualRootBone.gameObject.AddComponent<VRM10SpringBoneCollider>();
                 switch (ativCollider.colliderType)
                 {
-                    case AtivGenerateVRMSpringBoneCollider.ColliderTypes.Sphere:
+                    case AtivGenerateDynamicsCollider.ColliderTypes.Sphere:
                         vrm10Collider.ColliderType = VRM10SpringBoneColliderTypes.Sphere;
                         vrm10Collider.Radius = ativCollider.radius;
                         break;
-                    case AtivGenerateVRMSpringBoneCollider.ColliderTypes.Capsule:
+                    case AtivGenerateDynamicsCollider.ColliderTypes.Capsule:
                         vrm10Collider.ColliderType = VRM10SpringBoneColliderTypes.Capsule;
                         vrm10Collider.Radius = ativCollider.radius;
                         vrm10Collider.Tail = ativCollider.tail;
                         break;
-                    case AtivGenerateVRMSpringBoneCollider.ColliderTypes.Plane:
+                    case AtivGenerateDynamicsCollider.ColliderTypes.Plane:
                         vrm10Collider.ColliderType = VRM10SpringBoneColliderTypes.Plane;
                         vrm10Collider.Radius = ativCollider.radius;
                         vrm10Collider.Normal = ativCollider.normal;
                         break;
-                    case AtivGenerateVRMSpringBoneCollider.ColliderTypes.SphereInside:
+                    case AtivGenerateDynamicsCollider.ColliderTypes.SphereInside:
                         vrm10Collider.ColliderType = VRM10SpringBoneColliderTypes.SphereInside;
                         vrm10Collider.Radius = ativCollider.radius;
                         break;
-                    case AtivGenerateVRMSpringBoneCollider.ColliderTypes.CapsuleInside:
+                    case AtivGenerateDynamicsCollider.ColliderTypes.CapsuleInside:
                         vrm10Collider.ColliderType = VRM10SpringBoneColliderTypes.CapsuleInside;
                         vrm10Collider.Radius = ativCollider.radius;
                         vrm10Collider.Tail = ativCollider.tail;
@@ -56,7 +56,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converter
             return result;
         }
 
-        protected override void ConvertDynamics(Vrm10Instance vrm10Instance, AtivGenerateVRMSpringBones ativ, Dictionary<AtivGenerateVRMSpringBoneColliderGroup, VRM10SpringBoneColliderGroup> vrm10ColliderGroups)
+        protected override void ConvertDynamics(Vrm10Instance vrm10Instance, AtivGenerateDynamics ativ, Dictionary<AtivGenerateDynamicsColliderGroup, VRM10SpringBoneColliderGroup> vrm10ColliderGroups)
         {
             var joints = ativ.GuessJoints().ToArray();
             if (joints.Any(joint => joint.TryGetComponent<VRM10SpringBoneJoint>(out _)))

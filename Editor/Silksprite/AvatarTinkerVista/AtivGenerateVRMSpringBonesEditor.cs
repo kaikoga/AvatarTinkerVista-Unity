@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [CustomEditor(typeof(AtivGenerateVRMSpringBones))]
+    [CustomEditor(typeof(AtivGenerateDynamics))]
     [CanEditMultipleObjects]
     class AtivGenerateVRMSpringBonesEditor : Editor
     {
@@ -13,11 +13,11 @@ namespace Silksprite.AvatarTinkerVista
             AtivGUILayout.GizmosDarkModeToggle();
             base.OnInspectorGUI();
             EditorGUILayout.Space();
-            foreach (var ativ in targets.OfType<AtivGenerateVRMSpringBones>())
+            foreach (var ativ in targets.OfType<AtivGenerateDynamics>())
             {
                 if (serializedObject.isEditingMultipleObjects)
                 {
-                    EditorGUILayout.ObjectField(ativ, typeof(AtivGenerateVRMSpringBones), true);
+                    EditorGUILayout.ObjectField(ativ, typeof(AtivGenerateDynamics), true);
                 }
                 AtivGUILayout.Header("Joints");
                 using (new EditorGUI.IndentLevelScope(1))

@@ -15,27 +15,27 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
         Transform,
         VRCPhysBone,
         VRCPhysBoneColliderBase,
-        AtivGenerateVRMSpringBoneColliderGroup
+        AtivGenerateDynamicsColliderGroup
     >
     {
-        protected override bool TryConvertCollider(Transform context, VRCPhysBoneColliderBase pbCollider, out AtivGenerateVRMSpringBoneColliderGroup result)
+        protected override bool TryConvertCollider(Transform context, VRCPhysBoneColliderBase pbCollider, out AtivGenerateDynamicsColliderGroup result)
         {
             var secondary = context.transform.FindOrCreateSecondary(pbCollider.gameObject.name);
-            var ativCollider = secondary.gameObject.AddComponent<AtivGenerateVRMSpringBoneCollider>();
+            var ativCollider = secondary.gameObject.AddComponent<AtivGenerateDynamicsCollider>();
             ativCollider.rootBone = pbCollider.transform;
             switch (pbCollider.shapeType)
             {
                 case VRCPhysBoneColliderBase.ShapeType.Sphere:
                     ativCollider.colliderType = pbCollider.insideBounds
-                        ? AtivGenerateVRMSpringBoneCollider.ColliderTypes.SphereInside
-                        : AtivGenerateVRMSpringBoneCollider.ColliderTypes.Sphere;
+                        ? AtivGenerateDynamicsCollider.ColliderTypes.SphereInside
+                        : AtivGenerateDynamicsCollider.ColliderTypes.Sphere;
                     ativCollider.offset = pbCollider.position;
                     ativCollider.radius = pbCollider.radius;
                     break;
                 case VRCPhysBoneColliderBase.ShapeType.Capsule:
                     ativCollider.colliderType = pbCollider.insideBounds
-                        ? AtivGenerateVRMSpringBoneCollider.ColliderTypes.CapsuleInside
-                        : AtivGenerateVRMSpringBoneCollider.ColliderTypes.Capsule;
+                        ? AtivGenerateDynamicsCollider.ColliderTypes.CapsuleInside
+                        : AtivGenerateDynamicsCollider.ColliderTypes.Capsule;
                     var height = Mathf.Max(pbCollider.height - pbCollider.radius * 2f, 0f);
                     var offset = pbCollider.rotation * Vector3.up * height / 2f;
                     ativCollider.offset = pbCollider.position - offset;
@@ -43,19 +43,19 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
                     ativCollider.radius = pbCollider.radius;
                     break;
                 case VRCPhysBoneColliderBase.ShapeType.Plane:
-                    ativCollider.colliderType = AtivGenerateVRMSpringBoneCollider.ColliderTypes.Plane;
+                    ativCollider.colliderType = AtivGenerateDynamicsCollider.ColliderTypes.Plane;
                     ativCollider.offset = pbCollider.position;
                     ativCollider.normal = pbCollider.rotation * Vector3.up;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            result = secondary.gameObject.AddComponent<AtivGenerateVRMSpringBoneColliderGroup>();
+            result = secondary.transform.CreateChild(pbCollider.gameObject.name).gameObject.AddComponent<AtivGenerateDynamicsColliderGroup>();
             result.colliders.Add(ativCollider);
             return true;
         }
 
-        protected override void ConvertDynamics(Transform context, VRCPhysBone pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateVRMSpringBoneColliderGroup> ativColliderGroups)
+        protected override void ConvertDynamics(Transform context, VRCPhysBone pb, Dictionary<VRCPhysBoneColliderBase, AtivGenerateDynamicsColliderGroup> ativColliderGroups)
         {
             if (pb.transform.childCount == 0)
             {
@@ -92,7 +92,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
 
             void GenerateSpring(Transform root)
             {
-                var ativSpringBone = secondary.gameObject.AddComponent<AtivGenerateVRMSpringBones>();
+                var ativSpringBone = secondary.gameObject.AddComponent<AtivGenerateDynamics>();
                 ativSpringBone.rootBone = root;
                 // FIXME adjust parameters
                 ativSpringBone.stiffness = pb.pull;

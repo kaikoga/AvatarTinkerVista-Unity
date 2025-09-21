@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [CustomEditor(typeof(AtivGenerateVRMSpringBoneCollider))]
+    [CustomEditor(typeof(AtivGenerateDynamicsCollider))]
     [CanEditMultipleObjects]
     class AtivGenerateVRMSpringBoneColliderEditor : Editor
     {
@@ -16,12 +16,12 @@ namespace Silksprite.AvatarTinkerVista
 
         void OnEnable()
         {
-            _propRenderers = serializedObject.FindProperty(nameof(AtivGenerateVRMSpringBoneCollider.colliderType));
-            _propRootBone = serializedObject.FindProperty(nameof(AtivGenerateVRMSpringBoneCollider.rootBone));
-            _propOffset = serializedObject.FindProperty(nameof(AtivGenerateVRMSpringBoneCollider.offset));
-            _propRadius = serializedObject.FindProperty(nameof(AtivGenerateVRMSpringBoneCollider.radius));
-            _propTail = serializedObject.FindProperty(nameof(AtivGenerateVRMSpringBoneCollider.tail));
-            _propNormal = serializedObject.FindProperty(nameof(AtivGenerateVRMSpringBoneCollider.normal));
+            _propRenderers = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.colliderType));
+            _propRootBone = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.rootBone));
+            _propOffset = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.offset));
+            _propRadius = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.radius));
+            _propTail = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.tail));
+            _propNormal = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.normal));
         }
         
         public override void OnInspectorGUI()
@@ -30,22 +30,22 @@ namespace Silksprite.AvatarTinkerVista
             EditorGUILayout.PropertyField(_propRenderers);
             EditorGUILayout.PropertyField(_propRootBone);
             EditorGUILayout.PropertyField(_propOffset);
-            switch ((AtivGenerateVRMSpringBoneCollider.ColliderTypes)_propRenderers.intValue)
+            switch ((AtivGenerateDynamicsCollider.ColliderTypes)_propRenderers.intValue)
             {
-                case AtivGenerateVRMSpringBoneCollider.ColliderTypes.Sphere:
+                case AtivGenerateDynamicsCollider.ColliderTypes.Sphere:
                     EditorGUILayout.PropertyField(_propRadius);
                     break;
-                case AtivGenerateVRMSpringBoneCollider.ColliderTypes.Capsule:
+                case AtivGenerateDynamicsCollider.ColliderTypes.Capsule:
                     EditorGUILayout.PropertyField(_propRadius);
                     EditorGUILayout.PropertyField(_propTail);
                     break;
-                case AtivGenerateVRMSpringBoneCollider.ColliderTypes.Plane:
+                case AtivGenerateDynamicsCollider.ColliderTypes.Plane:
                     EditorGUILayout.PropertyField(_propNormal);
                     break;
-                case AtivGenerateVRMSpringBoneCollider.ColliderTypes.SphereInside:
+                case AtivGenerateDynamicsCollider.ColliderTypes.SphereInside:
                     EditorGUILayout.PropertyField(_propRadius);
                     break;
-                case AtivGenerateVRMSpringBoneCollider.ColliderTypes.CapsuleInside:
+                case AtivGenerateDynamicsCollider.ColliderTypes.CapsuleInside:
                     EditorGUILayout.PropertyField(_propRadius);
                     EditorGUILayout.PropertyField(_propTail);
                     break;

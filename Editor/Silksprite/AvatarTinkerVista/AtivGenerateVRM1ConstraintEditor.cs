@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [CustomEditor(typeof(AtivGenerateVRM1Constraint))]
+    [CustomEditor(typeof(AtivGenerateConstraint))]
     [CanEditMultipleObjects]
     class AtivGenerateVRM1ConstraintEditor : Editor
     {
@@ -16,12 +16,12 @@ namespace Silksprite.AvatarTinkerVista
 
         void OnEnable()
         {
-            _propKind = serializedObject.FindProperty(nameof(AtivGenerateVRM1Constraint.kind));
-            _propSource = serializedObject.FindProperty(nameof(AtivGenerateVRM1Constraint.source));
-            _propTarget = serializedObject.FindProperty(nameof(AtivGenerateVRM1Constraint.target));
-            _propWeight = serializedObject.FindProperty(nameof(AtivGenerateVRM1Constraint.weight));
-            _propAimAxis = serializedObject.FindProperty(nameof(AtivGenerateVRM1Constraint.aimAxis));
-            _propRollAxis = serializedObject.FindProperty(nameof(AtivGenerateVRM1Constraint.rollAxis));
+            _propKind = serializedObject.FindProperty(nameof(AtivGenerateConstraint.kind));
+            _propSource = serializedObject.FindProperty(nameof(AtivGenerateConstraint.source));
+            _propTarget = serializedObject.FindProperty(nameof(AtivGenerateConstraint.target));
+            _propWeight = serializedObject.FindProperty(nameof(AtivGenerateConstraint.weight));
+            _propAimAxis = serializedObject.FindProperty(nameof(AtivGenerateConstraint.aimAxis));
+            _propRollAxis = serializedObject.FindProperty(nameof(AtivGenerateConstraint.rollAxis));
         }
         
         public override void OnInspectorGUI()
@@ -30,15 +30,15 @@ namespace Silksprite.AvatarTinkerVista
             EditorGUILayout.PropertyField(_propSource);
             EditorGUILayout.PropertyField(_propTarget);
             EditorGUILayout.PropertyField(_propWeight);
-            switch ((AtivGenerateVRM1Constraint.ConstraintKind)_propKind.intValue)
+            switch ((AtivGenerateConstraint.ConstraintKind)_propKind.intValue)
             {
-                case AtivGenerateVRM1Constraint.ConstraintKind.Aim:
+                case AtivGenerateConstraint.ConstraintKind.Aim:
                     EditorGUILayout.PropertyField(_propAimAxis);
                     break;
-                case AtivGenerateVRM1Constraint.ConstraintKind.Roll:
+                case AtivGenerateConstraint.ConstraintKind.Roll:
                     EditorGUILayout.PropertyField(_propRollAxis);
                     break;
-                case AtivGenerateVRM1Constraint.ConstraintKind.Rotation:
+                case AtivGenerateConstraint.ConstraintKind.Rotation:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

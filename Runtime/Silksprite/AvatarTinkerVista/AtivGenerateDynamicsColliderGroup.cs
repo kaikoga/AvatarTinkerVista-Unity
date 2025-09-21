@@ -6,9 +6,9 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBone Collider Group")]
-    public class AtivGenerateVRMSpringBoneColliderGroup : AtivGeneratingComponent
+    public class AtivGenerateDynamicsColliderGroup : AtivGeneratingComponent
     {
-        public List<AtivGenerateVRMSpringBoneCollider> colliders = new List<AtivGenerateVRMSpringBoneCollider>();
+        public List<AtivGenerateDynamicsCollider> colliders = new List<AtivGenerateDynamicsCollider>();
         
         void OnDrawGizmosSelected()
         {

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBone Collider")]
-    public class AtivGenerateVRMSpringBoneCollider : AtivGeneratingComponent
+    public class AtivGenerateDynamicsCollider : AtivGeneratingComponent
     {
         public ColliderTypes colliderType;
 

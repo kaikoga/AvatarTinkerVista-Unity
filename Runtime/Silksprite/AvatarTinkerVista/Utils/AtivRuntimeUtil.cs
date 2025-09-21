@@ -16,6 +16,13 @@ namespace Silksprite.AvatarTinkerVista.Utils
         public static string VrmAuthor => "no name";
         public static string VrmVersion => "0.1.0";
 
+        public static Transform CreateChild(this Transform parent, string name)
+        {
+            var newChild = new GameObject(name).transform;
+            newChild.SetParent(parent, false);
+            return newChild;
+        }
+
         static Transform FindOrCreateChild(this Transform parent, string name)
         {
             var child = parent.Find(name);
@@ -23,9 +30,7 @@ namespace Silksprite.AvatarTinkerVista.Utils
             {
                 return child;
             }
-            var newChild = new GameObject(name).transform;
-            newChild.SetParent(parent, false);
-            return newChild;
+            return parent.CreateChild(name);
         }
 
         public static Transform FindOrCreateSecondary(this Transform avatarRootTransform)

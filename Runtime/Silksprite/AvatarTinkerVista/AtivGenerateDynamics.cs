@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBones")]
-    public class AtivGenerateVRMSpringBones : AtivGeneratingComponent
+    public class AtivGenerateDynamics : AtivGeneratingComponent
     {
         public float stiffness = 1.0f;
         public float gravityPower;
@@ -21,7 +21,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public Transform ActualRootBone => rootBone ? rootBone : transform;
 
-        public List<AtivGenerateVRMSpringBoneColliderGroup> colliderGroups = new List<AtivGenerateVRMSpringBoneColliderGroup>();
+        public List<AtivGenerateDynamicsColliderGroup> colliderGroups = new List<AtivGenerateDynamicsColliderGroup>();
 
         public IEnumerable<Transform> GuessJoints()
         {

@@ -9,10 +9,10 @@ using VRM;
 namespace Silksprite.AvatarTinkerVista.VRM0.Converter
 {
     public class DynamicsConverterToVRM0SpringBone : DynamicsConverterBase<
-        Transform, AtivGenerateVRMSpringBones, AtivGenerateVRMSpringBoneColliderGroup, VRMSpringBoneColliderGroup[]
+        Transform, AtivGenerateDynamics, AtivGenerateDynamicsColliderGroup, VRMSpringBoneColliderGroup[]
     >
     {
-        protected override bool TryConvertCollider(Transform avatarRootTransform, AtivGenerateVRMSpringBoneColliderGroup ativ, out VRMSpringBoneColliderGroup[] result)
+        protected override bool TryConvertCollider(Transform avatarRootTransform, AtivGenerateDynamicsColliderGroup ativ, out VRMSpringBoneColliderGroup[] result)
         {
             var ativColliders = ativ.colliders
                 .Where(collider => collider)
@@ -29,7 +29,7 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converter
                 {
                     var vrmColliderGroup = ativ.gameObject.AddComponent<VRMSpringBoneColliderGroup>();
                     vrmColliderGroup.Colliders = g
-                        .Where(ativCollider => ativCollider.colliderType == AtivGenerateVRMSpringBoneCollider.ColliderTypes.Sphere)
+                        .Where(ativCollider => ativCollider.colliderType == AtivGenerateDynamicsCollider.ColliderTypes.Sphere)
                         .Select(ativCollider => new VRMSpringBoneColliderGroup.SphereCollider
                         {
                             Offset = ativCollider.offset,
@@ -40,7 +40,7 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converter
             return true;
         }
 
-        protected override void ConvertDynamics(Transform avatarRootTransform, AtivGenerateVRMSpringBones ativ, Dictionary<AtivGenerateVRMSpringBoneColliderGroup, VRMSpringBoneColliderGroup[]> vrmColliderGroups)
+        protected override void ConvertDynamics(Transform avatarRootTransform, AtivGenerateDynamics ativ, Dictionary<AtivGenerateDynamicsColliderGroup, VRMSpringBoneColliderGroup[]> vrmColliderGroups)
         {
             var secondary = avatarRootTransform.FindOrCreateSecondary(ativ.gameObject.name);
             var vrmSpringBone = secondary.gameObject.AddComponent<VRMSpringBone>();
