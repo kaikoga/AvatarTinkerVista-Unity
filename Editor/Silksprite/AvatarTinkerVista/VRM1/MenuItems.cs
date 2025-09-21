@@ -1,54 +1,36 @@
-using Silksprite.AvatarTinkerVista.VRM1.Converter;
 using UnityEditor;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.VRChat
+namespace Silksprite.AvatarTinkerVista.VRM1
 {
     public static class MenuItems
     {
-        [MenuItem("GameObject/Avatar Tinker Vista/Bake ATiVSpringBones as VRM1", true)]
-        [MenuItem("GameObject/Avatar Tinker Vista/Bake ATiVConstraints as VRM1", true)]
+        const string BakeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateSpringBones as Vrm10SpringBones";
+        const string BakeConstraintsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateConstraints as Vrm10Constraints";
+
+        [MenuItem(BakeDynamicsMenu, true, 61100)]
+        [MenuItem(BakeConstraintsMenu, true, 61101)]
         public static bool ValidateExtractVrcComponents(MenuCommand menuCommand)
         {
             return Selection.activeGameObject;
         }
 
-        [MenuItem("GameObject/Avatar Tinker Vista/Bake ATiVSpringBones as VRM1", false)]
+        [MenuItem(BakeDynamicsMenu, false, 61100)]
         public static void ExtractVrcPhysBones(MenuCommand menuCommand)
         {
             var context = Selection.activeGameObject.GetComponent<Vrm10Instance>();
             if (!context) return;
 
-            Undo.RegisterFullObjectHierarchyUndo(context, "ATiV: Bake ATiVSpringBones as VRM1");
-            var result = EditorUtility.DisplayDialogComplex(
-                "Bake ATiVSpringBones as Vrm10SpringBones",
-                "Do you want to also destroy existing ATiV SpringBones?",
-                "Just generate",
-                "Cancel",
-                "Destroy ATiV PhysBones");
-            if (result != 1)
-            {
-                new DynamicsConverterToVRM1SpringBone().Convert(context, result == 2);
-            }
+            new InteractiveDynamicsConverterToVRM1SpringBone().InteractiveConvert(context);
         }
 
-        [MenuItem("GameObject/Avatar Tinker Vista/Bake ATiVConstraints as VRM1", false)]
+        [MenuItem(BakeConstraintsMenu, false, 61101)]
         public static void ExtractVrcConstraints(MenuCommand menuCommand)
         {
             var context = Selection.activeGameObject;
             if (!context) return;
 
-            Undo.RegisterFullObjectHierarchyUndo(context, "ATiV: Bake ATiVConstraints as VRM1");
-            var result = EditorUtility.DisplayDialogComplex(
-                "Bake ATiVConstraints as Vrm10Constraints",
-                "Do you want to also destroy existing ATiV Constraints?",
-                "Just generate",
-                "Cancel",
-                "Destroy ATiV Constraints");
-            if (result != 1)
-            {
-                new ConstraintsConverterToVRM1Constraint().Convert(context.transform, result == 2);
-            }
+            new InteractiveConstraintsConverterToVRM1Constraint().InteractiveConvert(context.transform);
         }
     }
 }

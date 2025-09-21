@@ -1,33 +1,23 @@
-using Silksprite.AvatarTinkerVista.VRM0.Converter;
 using UnityEditor;
 
-namespace Silksprite.AvatarTinkerVista.VRChat
+namespace Silksprite.AvatarTinkerVista.VRM0
 {
     public static class MenuItems
     {
-        [MenuItem("GameObject/Avatar Tinker Vista/Bake ATiVSpringBones as VRM0", true)]
+        const string BakeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateSpringBones as VRM0 SpringBones"; 
+        [MenuItem(BakeDynamicsMenu, true, 61000)]
         public static bool ValidateExtractVrcComponents(MenuCommand menuCommand)
         {
             return Selection.activeGameObject;
         }
 
-        [MenuItem("GameObject/Avatar Tinker Vista/Bake ATiVSpringBones as VRM0", false)]
+        [MenuItem(BakeDynamicsMenu, false, 61000)]
         public static void ExtractVrcPhysBones(MenuCommand menuCommand)
         {
             var context = Selection.activeGameObject;
             if (!context) return;
 
-            Undo.RegisterFullObjectHierarchyUndo(context, "ATiV: Bake ATiVSpringBones as VRM0");
-            var result = EditorUtility.DisplayDialogComplex(
-                "Bake ATiVSpringBones as VRM0 SpringBones",
-                "Do you want to also destroy existing ATiV SpringBones?",
-                "Just generate",
-                "Cancel",
-                "Destroy ATiV PhysBones");
-            if (result != 1)
-            {
-                new DynamicsConverterToVRM0SpringBone().Convert(context.transform, result == 2);
-            }
+            new InteractiveDynamicsConverterToVRM0SpringBone().InteractiveConvert(context.transform);
         }
     }
 }

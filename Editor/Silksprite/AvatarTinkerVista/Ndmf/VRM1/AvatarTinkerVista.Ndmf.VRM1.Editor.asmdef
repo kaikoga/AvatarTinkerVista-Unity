@@ -1,48 +1,48 @@
 {
-  "name": "AvatarTinkerVista.Ndmf.VRM1.Editor",
-  "rootNamespace": "Silksprite.AvatarTinkerVista.Ndmf.VRM1",
-  "references": [
-    "nadena.dev.ndmf",
-    "nadena.dev.ndmf.runtime",
-    "UniHumanoid",
-    "VRM10",
-    "AdLib.Editor",
-    "AvatarTinkerVista.Ndmf",
-    "AvatarTinkerVista.Ndmf.VRM1",
-    "AvatarTinkerVista.VRM1.Editor",
-    "AvatarTinkerVista.Editor",
-    "AvatarTinkerVista",
-    "AvatarTinkerVista.VRM1"
-  ],
-  "includePlatforms": [
-    "Editor"
-  ],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": true,
-  "precompiledReferences": [],
-  "autoReferenced": false,
-  "defineConstraints": [
-    "ATIV_NDMF",
-    "ATIV_ADLIB",
-    "ATIV_VRM1"
-  ],
-  "versionDefines": [
-    {
-      "name": "nadena.dev.ndmf",
-      "expression": "(1.8.0-a,2.0-a)",
-      "define": "ATIV_NDMF"
-    },
-    {
-      "name": "net.kaikoga.adlib",
-      "expression": "0.1.0",
-      "define": "ATIV_ADLIB"
-    },
-    {
-      "name": "com.vrmc.vrm",
-      "expression": "",
-      "define": "ATIV_VRM1"
-    }
-  ],
-  "noEngineReferences": false
+    "name": "AvatarTinkerVista.Ndmf.VRM1.Editor",
+    "rootNamespace": "Silksprite.AvatarTinkerVista.Ndmf.VRM1",
+    "references": [
+        "nadena.dev.ndmf",
+        "nadena.dev.ndmf.runtime",
+        "UniHumanoid",
+        "VRM10",
+        "AdLib.Editor",
+        "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista.Ndmf.VRM1",
+        "AvatarTinkerVista.VRM1.Editor",
+        "AvatarTinkerVista.Editor",
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.VRM1"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "ATIV_NDMF",
+        "ATIV_ADLIB",
+        "ATIV_VRM1"
+    ],
+    "versionDefines": [
+        {
+            "name": "nadena.dev.ndmf",
+            "expression": "(1.8.0-a,2.0-a)",
+            "define": "ATIV_NDMF"
+        },
+        {
+            "name": "net.kaikoga.adlib",
+            "expression": "0.1.0",
+            "define": "ATIV_ADLIB"
+        },
+        {
+            "name": "com.vrmc.vrm",
+            "expression": "",
+            "define": "ATIV_VRM1"
+        }
+    ],
+    "noEngineReferences": false
 }

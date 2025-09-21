@@ -1,13 +1,12 @@
 using System;
 using Silksprite.AvatarTinkerVista.Converter;
-using Silksprite.AvatarTinkerVista.Ndmf;
 using UniGLTF.Extensions.VRMC_node_constraint;
 using UnityEngine;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.VRM1.Converter
 {
-    public class ConstraintsConverterToVRM1Constraint : ConstraintsConverterBase<Transform, AtivGenerateVRMConstraint>
+    public class ConstraintsConverterToVRM1Constraints : ConstraintsConverterBase<Transform, AtivGenerateVRMConstraint>
     {
         protected override void ConvertConstraint(Transform context, AtivGenerateVRMConstraint constraintFrom)
         {

@@ -7,7 +7,7 @@ using VRC.Dynamics.ManagedTypes;
 
 namespace Silksprite.AvatarTinkerVista.VRChat.Converter
 {
-    public class ConstraintsConverterFromVRCConstraints : ConstraintsConverterBase<Transform, VRCConstraintBase>
+    public class ConstraintsConverterFromVRCConstraint : ConstraintsConverterBase<Transform, VRCConstraintBase>
     {
         protected override void ConvertConstraint(Transform context, VRCConstraintBase constraintFrom)
         {

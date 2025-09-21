@@ -4,7 +4,8 @@
     "references": [
         "AvatarTinkerVista",
         "AvatarTinkerVista.VRChat",
-        "AvatarTinkerVista.Ndmf"
+        "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista.Editor"
     ],
     "includePlatforms": [
         "Editor"

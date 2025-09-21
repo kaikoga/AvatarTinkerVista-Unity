@@ -1,5 +1,4 @@
 using System.IO;
-using UnityEngine;
 using VRM;
 
 namespace Silksprite.AvatarTinkerVista.VRM0

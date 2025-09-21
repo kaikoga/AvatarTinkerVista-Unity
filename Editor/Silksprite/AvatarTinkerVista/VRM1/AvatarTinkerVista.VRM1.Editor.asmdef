@@ -1,5 +1,6 @@
 {
     "name": "AvatarTinkerVista.VRM1.Editor",
+    "rootNamespace": "Silksprite.AvatarTinkerVista.VRM1",
     "references": [
         "UniGLTF",
         "UniGLTF.Editor",
@@ -7,7 +8,8 @@
         "VRM10",
         "VRM10.Editor",
         "AvatarTinkerVista",
-        "AvatarTinkerVista.VRM1"
+        "AvatarTinkerVista.VRM1",
+        "AvatarTinkerVista.Editor"
     ],
     "includePlatforms": [
         "Editor"
