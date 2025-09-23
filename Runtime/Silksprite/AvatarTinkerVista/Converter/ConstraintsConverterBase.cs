@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Utils;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Converter
@@ -21,7 +22,7 @@ namespace Silksprite.AvatarTinkerVista.Converter
 
         IEnumerable<TConstraintsFrom> CollectConstraints(TContext context)
         {
-            return context.GetComponentsInChildren<TConstraintsFrom>();
+            return context.GetEligibleComponentsInChildren<TConstraintsFrom>();
         }
 
         protected abstract void ConvertConstraint(TContext context, TConstraintsFrom constraintFrom);

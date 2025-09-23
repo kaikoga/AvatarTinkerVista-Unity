@@ -29,11 +29,12 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             {
                 var sequence = InPhase(phase);
                 initializer(sequence);
-                sequence.Run(DeleteAtvComponentsPass<T>.Instance);
+                sequence.Run(DeleteAtivComponentsPass<T>.Instance);
             }
 
             Phase<AtivResolvingComponent>(BuildPhase.Resolving, resolving =>
             {
+                resolving.Run(DeleteDisabledAtivComponentsPass.Instance);
                 resolving.Run(DeleteComponentsPass.Instance);
             });
 

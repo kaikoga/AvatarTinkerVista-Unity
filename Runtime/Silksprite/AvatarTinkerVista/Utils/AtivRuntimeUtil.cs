@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Utils
@@ -15,6 +16,11 @@ namespace Silksprite.AvatarTinkerVista.Utils
         
         public static string VrmAuthor => "no name";
         public static string VrmVersion => "0.1.0";
+
+        public static IEnumerable<T> GetEligibleComponentsInChildren<T>(this Component parent)
+        {
+            return parent.GetComponentsInChildren<T>();
+        }
 
         public static Transform CreateChild(this Transform parent, string name)
         {

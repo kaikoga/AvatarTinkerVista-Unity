@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Utils;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Converter
@@ -26,8 +27,8 @@ namespace Silksprite.AvatarTinkerVista.Converter
                 DestroyComponents(context);
             }
         }
-        protected virtual IEnumerable<TColliderFrom> CollectColliders(TContext context) => context.GetComponentsInChildren<TColliderFrom>();
-        protected virtual IEnumerable<TDynamicsFrom> CollectDynamics(TContext context) => context.GetComponentsInChildren<TDynamicsFrom>();
+        protected virtual IEnumerable<TColliderFrom> CollectColliders(TContext context) => context.GetEligibleComponentsInChildren<TColliderFrom>();
+        protected virtual IEnumerable<TDynamicsFrom> CollectDynamics(TContext context) => context.GetEligibleComponentsInChildren<TDynamicsFrom>();
 
         protected virtual void DestroyComponents(TContext context)
         {
