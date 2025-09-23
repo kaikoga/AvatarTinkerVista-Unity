@@ -4,8 +4,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat
 {
     public static class MenuItems
     {
-        const string ExtractDynamicsMenu = "GameObject/Avatar Tinker Vista/Extract VRC PhysBones as ATiV Generate VRM SpringBones";
-        const string ExtractConstraintsMenu = "GameObject/Avatar Tinker Vista/Extract VRC Constraints as ATiV Generate VRM Constraints";
+        const string ExtractDynamicsMenu = "GameObject/Avatar Tinker Vista/Extract VRC PhysBones as ATiV Generate VRM0+1 SpringBones";
+        const string ExtractConstraintsMenu = "GameObject/Avatar Tinker Vista/Extract VRC Constraints as ATiV Generate VRM1 Constraints";
         
         [MenuItem(ExtractDynamicsMenu, true, 60000)]
         [MenuItem(ExtractConstraintsMenu, true, 60001)]
