@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBones")]
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBone")]
     public class AtivGenerateDynamics : AtivGeneratingComponent
     {
         public float stiffness = 1.0f;
