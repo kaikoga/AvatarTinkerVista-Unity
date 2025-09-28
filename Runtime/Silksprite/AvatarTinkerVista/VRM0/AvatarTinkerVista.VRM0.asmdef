@@ -1,18 +1,24 @@
 {
-  "name": "AvatarTinkerVista.VRM0",
-  "references": [
-    "VRM",
-    "AvatarTinkerVista",
-    "AvatarTinkerVista.Ndmf"
-  ],
-  "includePlatforms": [
-  ],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": true,
-  "precompiledReferences": [],
-  "autoReferenced": false,
-  "defineConstraints": [],
-  "versionDefines": [],
-  "noEngineReferences": false
+    "name": "AvatarTinkerVista.VRM0",
+    "references": [
+        "VRM",
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.Ndmf"
+    ],
+    "includePlatforms": [
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": ["ATIV_VRM0"],
+    "versionDefines": [
+        {
+            "name": "com.vrmc.univrm",
+            "expression": "",
+            "define": "ATIV_VRM0"
+        }
+    ],
+    "noEngineReferences": false
 }
