@@ -22,7 +22,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                     container.Add(vrm0BuildUI);
                 }
 #endif
-#if ATIV_VRM1
+#if ATIV_VRM1 || ATIV_DETECTED_VRM1
                 if (VRM1PlatformProvider.Instance.CreateBuildUI() is { } vrm1BuildUI)
                 {
                     vrm1BuildUI.AvatarRoot = avatarRoot.gameObject;

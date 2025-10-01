@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Silksprite.AvatarTinkerVista.Base;
 using UnityEditor;
 
-namespace Silksprite.AvatarTinkerVista
+namespace Silksprite.AvatarTinkerVista.ProjectSettings
 {
     public static class GizmoIconsDisabler
     {

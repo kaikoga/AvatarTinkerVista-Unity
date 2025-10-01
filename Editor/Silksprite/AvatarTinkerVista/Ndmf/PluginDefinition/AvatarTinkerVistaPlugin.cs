@@ -44,7 +44,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 generating.Run(OverwriteVRM0MetaPass.Instance);
                 generating.Run(GenerateVRM0SpringBonesPass.Instance);
 #endif
-#if ATIV_VRM1
+#if ATIV_VRM1 || ATIV_DETECTED_VRM1
                 generating.Run(OverwriteVRM1MetaPass.Instance);
                 generating.Run(GenerateVRM1SpringBonesPass.Instance);
 #endif
@@ -56,10 +56,10 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 #if ATIV_VRM0
                 transforming.Run(MergeVRM0FirstPersonPass.Instance);
                 #endif
-                #if ATIV_VRM1
+                #if ATIV_VRM1 || ATIV_DETECTED_VRM1
                 transforming.Run(MergeVRM1SpringBonesPass.Instance);
                 #endif
-                #if ATIV_VRM1
+                #if ATIV_VRM1 || ATIV_DETECTED_VRM1
                 transforming.Run(MergeVRM1FirstPersonPass.Instance);
                 #endif
             });
@@ -70,7 +70,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 #if ATIV_VRM0
                 optimizing.Run(DefaultVRM0FirstPersonPass.Instance);
 #endif
-#if ATIV_VRM1
+#if ATIV_VRM1 || ATIV_DETECTED_VRM1
                 optimizing.Run(DefaultVRM1FirstPersonPass.Instance);
 #endif
             });
