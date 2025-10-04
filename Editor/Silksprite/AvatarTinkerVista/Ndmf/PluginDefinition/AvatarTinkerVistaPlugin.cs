@@ -5,6 +5,7 @@ using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.fluent;
 using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
@@ -53,6 +54,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
             Phase<AtivTransformingComponent>(BuildPhase.Transforming, transforming =>
             {
+                #if ATIV_VRCSDK3_AVATARS
+                transforming.Run(ReduceVRCPhysBonesPass.Instance);
+                #endif
                 #if ATIV_VRM0
                 transforming.Run(MergeVRM0FirstPersonPass.Instance);
                 #endif

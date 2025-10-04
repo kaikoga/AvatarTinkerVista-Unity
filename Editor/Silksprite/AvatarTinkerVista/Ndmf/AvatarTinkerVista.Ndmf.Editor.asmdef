@@ -6,6 +6,7 @@
     "nadena.dev.ndmf.runtime",
     "AvatarTinkerVista.Ndmf",
     "AvatarTinkerVista.Editor",
+    "AvatarTinkerVista.Ndmf.VRChat.Editor",
     "AvatarTinkerVista.Ndmf.VRM0.Editor",
     "AvatarTinkerVista.Ndmf.VRM1.Editor",
     "AvatarTinkerVista"
@@ -16,7 +17,9 @@
   "excludePlatforms": [],
   "allowUnsafeCode": false,
   "overrideReferences": true,
-  "precompiledReferences": [],
+  "precompiledReferences": [
+      "VRC.Dynamics.dll"
+  ],
   "autoReferenced": false,
   "defineConstraints": [
     "ATIV_NDMF",
