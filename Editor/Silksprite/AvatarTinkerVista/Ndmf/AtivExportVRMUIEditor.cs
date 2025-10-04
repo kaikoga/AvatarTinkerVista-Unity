@@ -15,14 +15,14 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             var avatarRoot = RuntimeUtil.FindAvatarInParents(exportVrm.gameObject.transform);
             if (avatarRoot)
             {
-#if ATIV_VRM0 || ATIV_DETECTED_VRM0
+#if ATIV_DETECTED_VRM0
                 if (VRM0PlatformProvider.Instance.CreateBuildUI() is { } vrm0BuildUI)
                 {
                     vrm0BuildUI.AvatarRoot = avatarRoot.gameObject;
                     container.Add(vrm0BuildUI);
                 }
 #endif
-#if ATIV_VRM1 || ATIV_DETECTED_VRM1
+#if ATIV_DETECTED_VRM1
                 if (VRM1PlatformProvider.Instance.CreateBuildUI() is { } vrm1BuildUI)
                 {
                     vrm1BuildUI.AvatarRoot = avatarRoot.gameObject;

@@ -41,11 +41,11 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
             Phase<AtivGeneratingComponent>(BuildPhase.Generating, generating =>
             {
-#if ATIV_VRM0
+#if ATIV_DETECTED_VRM0
                 generating.Run(OverwriteVRM0MetaPass.Instance);
                 generating.Run(GenerateVRM0SpringBonesPass.Instance);
 #endif
-#if ATIV_VRM1 || ATIV_DETECTED_VRM1
+#if ATIV_DETECTED_VRM1
                 generating.Run(OverwriteVRM1MetaPass.Instance);
                 generating.Run(GenerateVRM1SpringBonesPass.Instance);
 #endif
@@ -54,27 +54,25 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
             Phase<AtivTransformingComponent>(BuildPhase.Transforming, transforming =>
             {
-                #if ATIV_VRCSDK3_AVATARS
+#if ATIV_VRCSDK3_AVATARS
                 transforming.Run(ReduceVRCPhysBonesPass.Instance);
-                #endif
-                #if ATIV_VRM0
+#endif
+#if ATIV_DETECTED_VRM0
                 transforming.Run(MergeVRM0FirstPersonPass.Instance);
-                #endif
-                #if ATIV_VRM1 || ATIV_DETECTED_VRM1
+#endif
+#if ATIV_DETECTED_VRM1
                 transforming.Run(MergeVRM1SpringBonesPass.Instance);
-                #endif
-                #if ATIV_VRM1 || ATIV_DETECTED_VRM1
                 transforming.Run(MergeVRM1FirstPersonPass.Instance);
-                #endif
+#endif
             });
 
             Phase<AtivOptimizingComponent>(BuildPhase.Optimizing, optimizing =>
             {
                 optimizing.BeforePlugin("com.anatawa12.avatar-optimizer");
-#if ATIV_VRM0
+#if ATIV_DETECTED_VRM0
                 optimizing.Run(DefaultVRM0FirstPersonPass.Instance);
 #endif
-#if ATIV_VRM1 || ATIV_DETECTED_VRM1
+#if ATIV_DETECTED_VRM1
                 optimizing.Run(DefaultVRM1FirstPersonPass.Instance);
 #endif
             });

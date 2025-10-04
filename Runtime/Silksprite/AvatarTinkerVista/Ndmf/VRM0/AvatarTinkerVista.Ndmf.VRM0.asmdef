@@ -13,12 +13,12 @@
     "overrideReferences": true,
     "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": ["ATIV_VRM0"],
+    "defineConstraints": ["ATIV_DETECTED_VRM0"],
     "versionDefines": [
         {
             "name": "com.vrmc.univrm",
             "expression": "",
-            "define": "ATIV_VRM0"
+            "define": "ATIV_DETECTED_VRM0"
         }
     ],
     "noEngineReferences": false

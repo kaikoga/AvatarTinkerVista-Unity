@@ -25,7 +25,7 @@
     "defineConstraints": [
         "ATIV_NDMF",
         "ATIV_ADLIB",
-        "ATIV_VRM1 || ATIV_DETECTED_VRM1"
+        "ATIV_DETECTED_VRM1"
     ],
     "versionDefines": [
         {
@@ -41,7 +41,7 @@
         {
             "name": "com.vrmc.vrm",
             "expression": "",
-            "define": "ATIV_VRM1"
+            "define": "ATIV_DETECTED_VRM1"
         }
     ],
     "noEngineReferences": false

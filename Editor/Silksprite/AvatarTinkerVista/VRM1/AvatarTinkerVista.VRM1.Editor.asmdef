@@ -19,12 +19,12 @@
     "overrideReferences": true,
     "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": ["ATIV_VRM1 || ATIV_DETECTED_VRM1"],
+    "defineConstraints": ["ATIV_DETECTED_VRM1"],
     "versionDefines": [
         {
             "name": "com.vrmc.vrm",
             "expression": "",
-            "define": "ATIV_VRM1"
+            "define": "ATIV_DETECTED_VRM1"
         }
     ],
     "noEngineReferences": false
