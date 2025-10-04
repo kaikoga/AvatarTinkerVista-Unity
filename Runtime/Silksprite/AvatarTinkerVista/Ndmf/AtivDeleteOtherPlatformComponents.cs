@@ -1,6 +1,12 @@
 using System.Collections.Generic;
+using nadena.dev.ndmf.runtime;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using nadena.dev.ndmf;
+using nadena.dev.ndmf.platform;
+#endif
 
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
@@ -12,18 +18,38 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         {
             get
             {
-                if (platform != AtivPlatform.VRCSDK3_AVATARS) yield return "VRC.SDK3.";
-                if (platform != AtivPlatform.VRM0) yield return "VRM.";
-                if (platform != AtivPlatform.VRM1) yield return "UniVRM10.";
-                if (platform != AtivPlatform.VRM1) yield return "UniHumanoid.";
+                var actualPlatform = ActualPlatform();
+                if (actualPlatform != AtivPlatform.VRCSDK3_Avatars) yield return "VRC.SDK3.";
+                if (actualPlatform != AtivPlatform.VRM0) yield return "VRM.";
+                if (actualPlatform != AtivPlatform.VRM1) yield return "UniVRM10.";
+                if (actualPlatform != AtivPlatform.VRM1) yield return "UniHumanoid.";
             }
         }
 
+        public bool ndmfDetectPlatform = true;
         public AtivPlatform platform;
 
+        public AtivPlatform ActualPlatform()
+        {
+#if UNITY_EDITOR
+            if (ndmfDetectPlatform
+                && RuntimeUtil.FindAvatarInParents(transform) is {} avatarRoot
+                && PlatformRegistry.GetPrimaryPlatformForAvatar(avatarRoot.gameObject) is {} avatarPlatform)
+            {
+                return avatarPlatform.QualifiedName switch
+                {
+                    WellKnownPlatforms.VRChatAvatar30 => AtivPlatform.VRCSDK3_Avatars,
+                    "net.kaikoga.ativ.univrm.vrm0" => AtivPlatform.VRM0,
+                    "net.kaikoga.ativ.univrm.vrm1" => AtivPlatform.VRM1,
+                    _ => platform
+                };
+            }
+#endif
+            return platform;
+        }
         public enum AtivPlatform
         {
-            VRCSDK3_AVATARS,
+            VRCSDK3_Avatars,
             VRM0,
             VRM1
         }
