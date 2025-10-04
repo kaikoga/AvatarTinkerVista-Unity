@@ -15,7 +15,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             var avatarRoot = RuntimeUtil.FindAvatarInParents(exportVrm.gameObject.transform);
             if (avatarRoot)
             {
-#if ATIV_VRM0
+#if ATIV_VRM0 || ATIV_DETECTED_VRM0
                 if (VRM0PlatformProvider.Instance.CreateBuildUI() is { } vrm0BuildUI)
                 {
                     vrm0BuildUI.AvatarRoot = avatarRoot.gameObject;
