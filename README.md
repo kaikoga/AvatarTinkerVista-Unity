@@ -22,7 +22,7 @@
 
 マテリアルからテクスチャへの参照を一括で置き換えます。
 
-# 収録ndmfツール
+# 収録ndmfツール（例）
 
 「Component」 → 「Avatar Tinker Vista」 に入っています。
 
@@ -42,8 +42,6 @@ VRMFirstPerson / Vrm10Instance のFirstPerson設定が行われていないRende
 
 VRMMeta / Vrm10Instance に含まれるメタデータの一部を上書きします。
 
-# 収録ndmfツール (AAO拡張)
+## ドキュメント（日本語）
 
-## ATiV AAO Merge Other Skinned Mesh
-
-Merge Skinned Mesh に指定されていない全てのメッシュを含む Merge Skinned Mesh を作成します。
+https://docs.kaikoga.net/ativ
