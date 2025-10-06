@@ -11,6 +11,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
     class AtivReduceDynamicsEditor : Editor
     {
         AtivReduceDynamics _reduceDynamics;
+        SerializedProperty _propReduceOnPC;
+        SerializedProperty _propReduceOnMobile;
         SerializedProperty _propKeepBoneRoots;
         Transform _avatarRoot;
 
@@ -21,6 +23,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         void OnEnable()
         {
             _reduceDynamics = (AtivReduceDynamics)target;
+            _propReduceOnPC = serializedObject.FindProperty(nameof(AtivReduceDynamics.reduceOnPC));
+            _propReduceOnMobile = serializedObject.FindProperty(nameof(AtivReduceDynamics.reduceOnMobile));
             _propKeepBoneRoots = serializedObject.FindProperty(nameof(AtivReduceDynamics.keepBoneRoots));
             _avatarRoot = RuntimeUtil.FindAvatarInParents(_reduceDynamics.transform);
 #if ATIV_VRCSDK3_AVATARS
@@ -37,6 +41,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         public override void OnInspectorGUI()
         {
+            EditorGUILayout.PropertyField(_propReduceOnPC);
+            EditorGUILayout.PropertyField(_propReduceOnMobile);
             EditorGUILayout.PropertyField(_propKeepBoneRoots);
             serializedObject.ApplyModifiedProperties();
 #if ATIV_VRCSDK3_AVATARS

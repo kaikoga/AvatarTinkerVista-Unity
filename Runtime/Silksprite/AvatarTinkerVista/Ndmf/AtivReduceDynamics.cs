@@ -8,6 +8,15 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
     [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_reduce_vrc_physbones")]
     public class AtivReduceDynamics : AtivTransformingComponent
     {
+        public bool reduceOnPC = false;
+        public bool reduceOnMobile = true;
+
+#if UNITY_STANDALONE
+        public bool ReduceOnPlatform => reduceOnPC;
+#else
+        public bool ReduceOnPlatform => reduceOnMobile;
+#endif
+
         public Transform[] keepBoneRoots = { };
     }
 }

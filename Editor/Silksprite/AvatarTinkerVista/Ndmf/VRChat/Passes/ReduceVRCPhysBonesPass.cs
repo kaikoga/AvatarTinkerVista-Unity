@@ -11,12 +11,6 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
 {
     class ReduceVRCPhysBonesPass : Pass<ReduceVRCPhysBonesPass>
     {
-#if UNITY_STANDALONE
-        static bool ReduceOnPlatform => false;
-#else
-        static bool ReduceOnPlatform => true;
-#endif
-
         protected override void Execute(BuildContext context)
         {
             var rootTransform = context.AvatarRootObject;
@@ -26,6 +20,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
             {
                 return;
             }
+            var reduceOnPlatform = ativ.Aggregate(false, (b, c) => b || c.ReduceOnPlatform);
+
             var keepBoneRoots = ativ
                 .SelectMany(c => c.keepBoneRoots)
                 .Distinct().ToArray();
@@ -38,7 +34,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
             var reducePbs = allPbs.Except(keepPbs);
             // this is based on VRCSDK assign strategy; large ID numbers are not likely to be auto assigned
             RecordNetworkIdsToSync(context, keepPbs, GenerateUnusedIds(context));
-            if (ReduceOnPlatform)
+            if (reduceOnPlatform)
             {
                 DestroyPhysBones(reducePbs);
             }
