@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Merge VRM0+1 FirstPerson")]
     [DisallowMultipleComponent]
+    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_merge_vrm_firstperson")]
     public class AtivMergeVRMFirstPerson : AtivTransformingComponent
     {
         public List<RendererFirstPersonFlags> renderers = new List<RendererFirstPersonFlags>();

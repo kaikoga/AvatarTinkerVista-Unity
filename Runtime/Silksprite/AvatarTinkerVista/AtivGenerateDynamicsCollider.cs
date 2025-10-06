@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBone Collider")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_generate_vrm_springbone_collider")]
     public class AtivGenerateDynamicsCollider : AtivGeneratingComponent
     {
         public ColliderTypes colliderType;

@@ -3,7 +3,7 @@ using nadena.dev.ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Extensions;
 using VRM;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
+namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes
 {
     class MergeVRM0FirstPersonPass : Pass<MergeVRM0FirstPersonPass>
     {

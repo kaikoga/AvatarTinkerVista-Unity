@@ -1,9 +1,8 @@
 using System.Linq;
 using nadena.dev.ndmf;
-using Silksprite.AvatarTinkerVista.VRM1;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
+namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
 {
     class MergeVRM1SpringBonesPass : Pass<MergeVRM1SpringBonesPass>
     {

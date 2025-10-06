@@ -1,11 +1,12 @@
 ﻿using System;
 using Silksprite.AvatarTinkerVista.Ndmf;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.fluent;
 using Silksprite.AvatarTinkerVista.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes;
 using UnityEngine;
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]

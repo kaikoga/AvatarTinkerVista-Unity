@@ -3,13 +3,13 @@ using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.VRM1
+namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Merge VRM1 SpringBones")]
     [DisallowMultipleComponent]
+    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_merge_vrm1_springbones")]
     public class AtivMergeVRM1SpringBones : AtivTransformingComponent
     {
-
         public List<VRM10SpringBoneColliderGroup> colliderGroups = new List<VRM10SpringBoneColliderGroup>();
         public List<Vrm10InstanceSpringBone.Spring> springs = new List<Vrm10InstanceSpringBone.Spring>();
 

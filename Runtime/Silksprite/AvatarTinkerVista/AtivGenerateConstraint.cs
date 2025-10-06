@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM1 Constraint")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_generate_vrm1_constraint")]
     public class AtivGenerateConstraint : AtivGeneratingComponent
     {
         public ConstraintKind kind;

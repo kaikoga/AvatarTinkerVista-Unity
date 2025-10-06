@@ -3,7 +3,7 @@ using nadena.dev.ndmf;
 using UnityEngine;
 using VRM;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
+namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes
 {
     class DefaultVRM0FirstPersonPass : Pass<DefaultVRM0FirstPersonPass>
     {

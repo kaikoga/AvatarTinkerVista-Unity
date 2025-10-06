@@ -2,7 +2,7 @@ using nadena.dev.ndmf;
 using Silksprite.AvatarTinkerVista.VRM1.Converter;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
+namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
 {
     class GenerateVRM1SpringBonesPass : Pass<GenerateVRM1SpringBonesPass>
     {

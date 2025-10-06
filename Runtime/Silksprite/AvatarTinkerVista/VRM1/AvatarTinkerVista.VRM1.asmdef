@@ -3,7 +3,8 @@
     "references": [
         "VRM10",
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Ndmf"
+        "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista.Ndmf.VRM1"
     ],
     "includePlatforms": [
     ],

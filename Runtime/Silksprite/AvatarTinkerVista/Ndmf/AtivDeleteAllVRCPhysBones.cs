@@ -6,6 +6,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Delete All VRC PhysBones")]
+    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_delete_all_vrc_physbones")]
     public class AtivDeleteAllVRCPhysBones : AtivDeleteComponentsBase
     {
         public override IEnumerable<string> ComponentTypeNamePrefixes

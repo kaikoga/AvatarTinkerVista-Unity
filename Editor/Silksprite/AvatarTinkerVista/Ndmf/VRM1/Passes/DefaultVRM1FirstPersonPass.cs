@@ -6,7 +6,7 @@ using UniGLTF.Extensions.VRMC_vrm;
 using UnityEngine;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
+namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
 {
     class DefaultVRM1FirstPersonPass : Pass<DefaultVRM1FirstPersonPass>
     {

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.DataObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,6 +9,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite VRM0+1 Meta")]
+    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_overwrite_vrm_meta")]
     public class AtivOverwriteVRMMeta : AtivGeneratingComponent
     {
         #region Info

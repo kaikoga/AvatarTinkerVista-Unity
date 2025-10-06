@@ -12,6 +12,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Delete Other Platform Components")]
+    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_delete_other_platform_components")]
     public class AtivDeleteOtherPlatformComponents : AtivDeleteComponentsBase
     {
         public override IEnumerable<string> ComponentTypeNamePrefixes
