@@ -20,6 +20,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
         protected override void Execute(BuildContext context)
         {
             var rootTransform = context.AvatarRootObject;
+            var avatarDescriptor = context.VRChatAvatarDescriptor();
             var ativ = rootTransform.GetComponentsInChildren<AtivReduceDynamics>();
             if (ativ.Length == 0)
             {
@@ -28,7 +29,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
             var keepBoneRoots = ativ
                 .SelectMany(c => c.keepBoneRoots)
                 .Distinct().ToArray();
-            var allPbs = rootTransform.GetComponentsInChildren<VRCPhysBoneBase>();
+            var allPbs = rootTransform.GetComponentsInChildren<VRCPhysBoneBase>()
+                .OrderBy(pb => avatarDescriptor.GetNetworkIDGameObjectPath(pb.gameObject))
+                .ToArray();
             var keepPbs = allPbs
                 .Where(pb => keepBoneRoots.Contains(pb.GetRootTransform()))
                 .ToArray();
