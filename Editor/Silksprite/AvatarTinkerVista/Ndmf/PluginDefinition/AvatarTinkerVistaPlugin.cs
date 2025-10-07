@@ -4,10 +4,17 @@ using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.fluent;
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes;
 using UnityEngine;
+
+#if ATIV_VRCSDK3_AVATARS
+using Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes;
+#endif
+#if ATIV_DETECTED_VRM0
+using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes;
+#endif
+#if ATIV_DETECTED_VRM1
+using Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes;
+#endif
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
 namespace Silksprite.AvatarTinkerVista.Ndmf
