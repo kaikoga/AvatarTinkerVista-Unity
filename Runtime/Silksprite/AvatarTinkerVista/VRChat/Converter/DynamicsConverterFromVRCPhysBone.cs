@@ -91,6 +91,10 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
 
             void GenerateSpring(Transform root)
             {
+                if (pb.ignoreTransforms.Contains(root))
+                {
+                    return;
+                }
                 var ativSpringBone = secondary.CreateChild(root.gameObject.name).gameObject.AddComponent<AtivGenerateDynamics>();
                 ativSpringBone.rootBone = root;
                 // FIXME adjust parameters
