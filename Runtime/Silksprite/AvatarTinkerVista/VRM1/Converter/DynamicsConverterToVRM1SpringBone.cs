@@ -20,6 +20,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converter
             }
 
             result = vrm10Instance.gameObject.AddComponent<VRM10SpringBoneColliderGroup>();
+            result.Name = ativ.gameObject.name;
             result.Colliders = ativColliders.Select(ativCollider => 
             {
                 var vrm10Collider = ativCollider.ActualRootBone.gameObject.AddComponent<VRM10SpringBoneCollider>();
@@ -53,7 +54,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converter
                 }
                 return vrm10Collider;
             }).ToList();
-            return result;
+            return true;
         }
 
         protected override void ConvertDynamics(Vrm10Instance vrm10Instance, AtivGenerateDynamics ativ, Dictionary<AtivGenerateDynamicsColliderGroup, VRM10SpringBoneColliderGroup> vrm10ColliderGroups)

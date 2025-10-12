@@ -57,7 +57,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converter
                 }
                 return vrm10Collider;
             }).ToList();
-            return result;
+            return true;
         }
 
         protected override void ConvertDynamics(Transform context, AtivGenerateDynamics ativ, Dictionary<AtivGenerateDynamicsColliderGroup, VRM10SpringBoneColliderGroup> vrm10ColliderGroups)
