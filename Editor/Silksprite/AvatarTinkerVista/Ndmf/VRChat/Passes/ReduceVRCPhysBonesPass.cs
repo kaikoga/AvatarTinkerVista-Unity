@@ -4,6 +4,7 @@ using nadena.dev.ndmf;
 using nadena.dev.ndmf.vrchat;
 using UnityEngine;
 using VRC.Dynamics;
+using VRC.SDK3.Avatars.Components;
 using VRC.SDKBase;
 using VRC.SDKBase.Network;
 
@@ -14,7 +15,11 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
         protected override void Execute(BuildContext context)
         {
             var rootTransform = context.AvatarRootObject;
-            var avatarDescriptor = context.VRChatAvatarDescriptor();
+            var avatarDescriptor = context.AvatarRootObject.GetComponent<VRCAvatarDescriptor>();
+            if (!avatarDescriptor)
+            {
+                return;
+            }
             var ativ = rootTransform.GetComponentsInChildren<AtivReduceDynamics>();
             if (ativ.Length == 0)
             {
