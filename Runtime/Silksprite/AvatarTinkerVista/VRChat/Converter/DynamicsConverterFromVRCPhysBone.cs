@@ -21,7 +21,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converter
             var secondary = context.transform.FindOrCreateSecondary(pbCollider.gameObject.name);
             result = secondary.gameObject.AddComponent<AtivGenerateDynamicsColliderGroup>();
             var ativCollider = secondary.transform.CreateChild(pbCollider.gameObject.name).gameObject.AddComponent<AtivGenerateDynamicsCollider>();
-            ativCollider.rootBone = pbCollider.transform;
+            ativCollider.rootBone = pbCollider.GetRootTransform();
             switch (pbCollider.shapeType)
             {
                 case VRCPhysBoneColliderBase.ShapeType.Sphere:
