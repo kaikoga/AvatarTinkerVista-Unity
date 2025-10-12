@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Utils
@@ -19,7 +20,8 @@ namespace Silksprite.AvatarTinkerVista.Utils
 
         public static IEnumerable<T> GetEligibleComponentsInChildren<T>(this Component parent)
         {
-            return parent.GetComponentsInChildren<T>();
+            return parent.GetComponentsInChildren<T>()
+                .Where(t => t is Component c && c && c.TryGetComponent<AtivDisableAtivComponents>(out _));
         }
 
         public static Transform CreateChild(this Transform parent, string name)
