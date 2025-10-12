@@ -84,7 +84,9 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converter
                 Center = ativ.center
             };
             vrm10Instance.SpringBone.Springs.Add(vrm10Spring);
-            vrm10Instance.SpringBone.ColliderGroups.AddRange(vrm10ColliderGroups.Values);
+            vrm10Instance.SpringBone.ColliderGroups = vrm10Instance.SpringBone.ColliderGroups
+                .Concat(vrm10ColliderGroups.Values)
+                .Distinct().ToList();
         }
     }
 }
