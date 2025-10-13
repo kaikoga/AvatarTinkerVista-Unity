@@ -22,25 +22,38 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         Type INDMFPlatformProvider.AvatarRootComponentType => typeof(VRMMeta);
 
-        public BuildUIElement CreateBuildUI() => new VRM0BuildUIElement();
+        BuildUIElement INDMFPlatformProvider.CreateBuildUI() => new VRM0BuildUIElement();
 
-        public bool HasNativeConfigData => true;
+        bool INDMFPlatformProvider.HasNativeConfigData => true;
 
-        public bool CanInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info) => true;
+        bool INDMFPlatformProvider.CanInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info) => true;
 
-        public void InitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info)
+        CommonAvatarInfo INDMFPlatformProvider.ExtractCommonAvatarInfo(GameObject avatarRoot)
+        {
+            var info = new CommonAvatarInfo();
+            if (avatarRoot.TryGetComponent<VRMMeta>(out _)
+                && avatarRoot.TryGetComponent<VRMFirstPerson>(out var vrmFirstPerson))
+            {
+                var rootBone = avatarRoot.transform;
+                var headBone = vrmFirstPerson.FirstPersonBone ?? rootBone;
+                info.EyePosition = rootBone.InverseTransformPoint(headBone.TransformPoint(vrmFirstPerson.FirstPersonOffset));
+            }
+            
+            return info;
+        }
+
+        void INDMFPlatformProvider.InitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info)
         {
             DoInitFromCommonAvatarInfo(avatarRoot, info, false);
         }
 
-        public void InitBuildFromCommonAvatarInfo(BuildContext context, CommonAvatarInfo info)
+        void INDMFPlatformProvider.InitBuildFromCommonAvatarInfo(BuildContext context, CommonAvatarInfo info)
         {
             DoInitFromCommonAvatarInfo(context.AvatarRootObject, info, true);
         }
 
         static void DoInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info, bool createAssets)
         {
-            // note: CommonAvatarInfo is not extracted from VRM because it cannot round trip in VRM0
             if (!avatarRoot.TryGetComponent<VRMMeta>(out var vrmMeta))
             {
                 vrmMeta = avatarRoot.AddComponent<VRMMeta>();
@@ -73,6 +86,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             {
                 vrmFirstPerson.SetDefault();
                 var rootBone = avatarRoot.transform;
+                // question: should we force Head bone if eye position is provided?
                 var headBone = vrmFirstPerson.FirstPersonBone ?? rootBone;
                 vrmFirstPerson.FirstPersonOffset = headBone.InverseTransformPoint(rootBone.TransformPoint(eyePosition));
             }

@@ -23,26 +23,48 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         string INDMFPlatformProvider.DisplayName => "VRM 1.0 (ATiV)";
 
         Type INDMFPlatformProvider.AvatarRootComponentType => typeof(Vrm10Instance);
-        
-        public BuildUIElement CreateBuildUI() => new VRM1BuildUIElement();
 
-        public bool HasNativeConfigData => true;
+        BuildUIElement INDMFPlatformProvider.CreateBuildUI() => new VRM1BuildUIElement();
 
-        public bool CanInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info) => true;
+        bool INDMFPlatformProvider.HasNativeConfigData => true;
 
-        public void InitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info)
+        bool INDMFPlatformProvider.CanInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info) => true;
+
+        CommonAvatarInfo INDMFPlatformProvider.ExtractCommonAvatarInfo(GameObject avatarRoot)
+        {
+            var info = new CommonAvatarInfo();
+            
+            if (avatarRoot.TryGetComponent<Vrm10Instance>(out var vrm10Instance))
+            {
+                var rootBone = avatarRoot.transform;
+                Transform headBone = null;
+                if (avatarRoot.TryGetComponent<Humanoid>(out var humanoid))
+                {
+                    headBone = humanoid.Head;
+                }
+                if (avatarRoot.TryGetComponent<Animator>(out var animator) && animator.isHuman)
+                {
+                    headBone ??= animator.GetBoneTransform(HumanBodyBones.Head);
+                }
+                headBone ??= rootBone;
+                info.EyePosition = rootBone.InverseTransformPoint(headBone.TransformPoint(vrm10Instance.Vrm.LookAt.OffsetFromHead));
+            }
+
+            return info;
+        }
+
+        void INDMFPlatformProvider.InitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info)
         {
             DoInitFromCommonAvatarInfo(avatarRoot, info, false);
         }
 
-        public void InitBuildFromCommonAvatarInfo(BuildContext context, CommonAvatarInfo info)
+        void INDMFPlatformProvider.InitBuildFromCommonAvatarInfo(BuildContext context, CommonAvatarInfo info)
         {
             DoInitFromCommonAvatarInfo(context.AvatarRootObject, info, true);
         }
 
         static void DoInitFromCommonAvatarInfo(GameObject avatarRoot, CommonAvatarInfo info, bool createAssets)
         {
-            // note: CommonAvatarInfo is not extracted from VRM because I was too lazy to do so
             if (!avatarRoot.TryGetComponent<Vrm10Instance>(out var vrm10Instance))
             {
                 vrm10Instance = avatarRoot.AddComponent<Vrm10Instance>();
@@ -67,10 +89,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                     var rootBone = avatarRoot.transform;
                     var headBone = humanoid.Head ?? rootBone;
                     vrm10Instance.Vrm.LookAt.OffsetFromHead = headBone.InverseTransformPoint(rootBone.TransformPoint(eyePosition));
-                    ;
                 }
             }
-
         }
     }
 
