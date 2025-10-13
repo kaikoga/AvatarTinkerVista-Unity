@@ -13,9 +13,9 @@ using Object = UnityEngine.Object;
 namespace Silksprite.AvatarTinkerVista.Ndmf
 {
     [NDMFPlatformProvider]
-    class VRM0PlatformProvider : INDMFPlatformProvider
+    class VRM0Platform : INDMFPlatformProvider
     {
-        public static readonly INDMFPlatformProvider Instance = new VRM0PlatformProvider();
+        public static readonly INDMFPlatformProvider Instance = new VRM0Platform();
 
         string INDMFPlatformProvider.QualifiedName => "net.kaikoga.ativ.univrm.vrm0"; 
         string INDMFPlatformProvider.DisplayName => "VRM 0.x (ATiV)";
@@ -109,7 +109,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 var clone = Object.Instantiate(AvatarRoot);
                 try
                 {
-                    AvatarProcessor.ProcessAvatar(clone, VRM0PlatformProvider.Instance);
+                    AvatarProcessor.ProcessAvatar(clone, VRM0Platform.Instance);
                     VRM0FileExporter.ExportVRM0File(clone.GetComponent<VRMMeta>(), filePath);
                     AtivEditorUtil.OpenInExplorer(directory);
                 }
