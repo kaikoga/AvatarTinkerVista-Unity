@@ -34,7 +34,8 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
         {
             var info = new CommonAvatarInfo();
             
-            if (avatarRoot.TryGetComponent<Vrm10Instance>(out var vrm10Instance))
+            if (avatarRoot.TryGetComponent<Vrm10Instance>(out var vrm10Instance)
+                && vrm10Instance.Vrm is { } vrm10Object)
             {
                 var rootBone = avatarRoot.transform;
                 Transform headBone = null;
@@ -47,7 +48,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                     headBone ??= animator.GetBoneTransform(HumanBodyBones.Head);
                 }
                 headBone ??= rootBone;
-                info.EyePosition = rootBone.InverseTransformPoint(headBone.TransformPoint(vrm10Instance.Vrm.LookAt.OffsetFromHead));
+                info.EyePosition = rootBone.InverseTransformPoint(headBone.TransformPoint(vrm10Object.LookAt.OffsetFromHead));
             }
 
             return info;
