@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using nadena.dev.ndmf.runtime;
 using Silksprite.AvatarTinkerVista.Ndmf.Base;
 using UnityEngine;
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && ATIV_NDMF
 using nadena.dev.ndmf;
+using nadena.dev.ndmf.runtime;
 using nadena.dev.ndmf.platform;
 #endif
 
@@ -32,7 +32,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         public AtivPlatform ActualPlatform()
         {
-#if UNITY_EDITOR
+#if UNITY_EDITOR && ATIV_NDMF
             if (ndmfDetectPlatform
                 && RuntimeUtil.FindAvatarInParents(transform) is {} avatarRoot
                 && PlatformRegistry.GetPrimaryPlatformForAvatar(avatarRoot.gameObject) is {} avatarPlatform)
