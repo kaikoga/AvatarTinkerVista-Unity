@@ -1,3 +1,4 @@
+using Silksprite.AvatarTinkerVista.VRChat.Converter;
 using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista.VRChat

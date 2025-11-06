@@ -1,9 +1,8 @@
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.VRM1.Converter;
 using UnityEngine;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.VRM1
+namespace Silksprite.AvatarTinkerVista.VRM1.Converter
 {
     public class InteractiveDynamicsConverterToMergeVRM1SpringBone : InteractiveConverterBase<Transform>
     {

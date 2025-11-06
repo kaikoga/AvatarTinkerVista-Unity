@@ -1,8 +1,7 @@
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.VRChat.Converter;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.VRChat
+namespace Silksprite.AvatarTinkerVista.VRChat.Converter
 {
     public class InteractiveConstraintsConverterFromVRCConstraints : InteractiveConverterBase<Transform>
     {
