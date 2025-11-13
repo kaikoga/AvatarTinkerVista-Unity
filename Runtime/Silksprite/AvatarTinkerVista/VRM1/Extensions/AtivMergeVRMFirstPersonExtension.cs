@@ -1,9 +1,8 @@
 using System;
 using UniGLTF.Extensions.VRMC_vrm;
+using static Silksprite.AvatarTinkerVista.Nondestructive.AtivMergeVRMFirstPerson;
 
-using static Silksprite.AvatarTinkerVista.Ndmf.AtivMergeVRMFirstPerson;
-
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Extensions
+namespace Silksprite.AvatarTinkerVista.VRM1.Extensions
 {
     public static class AtivMergeVRMFirstPersonExtension
     {

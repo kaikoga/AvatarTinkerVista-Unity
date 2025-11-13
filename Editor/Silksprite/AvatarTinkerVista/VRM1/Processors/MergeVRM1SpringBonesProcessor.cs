@@ -1,5 +1,5 @@
 using System.Linq;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1;
+using Silksprite.AvatarTinkerVista.VRM1.Nondestructive;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.VRM1.Processors

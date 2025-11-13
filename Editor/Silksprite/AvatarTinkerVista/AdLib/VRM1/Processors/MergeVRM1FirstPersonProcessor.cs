@@ -1,8 +1,8 @@
 using System.Linq;
 using Silksprite.AdLib.Utils.VRM1;
-using Silksprite.AvatarTinkerVista.Ndmf;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1.Extensions;
+using Silksprite.AvatarTinkerVista.Nondestructive;
 using Silksprite.AvatarTinkerVista.Utils;
+using Silksprite.AvatarTinkerVista.VRM1.Extensions;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.VRM1.Processors

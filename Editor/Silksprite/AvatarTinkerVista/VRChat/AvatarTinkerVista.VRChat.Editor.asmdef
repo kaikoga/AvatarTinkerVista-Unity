@@ -3,7 +3,6 @@
     "rootNamespace": "Silksprite.AvatarTinkerVista.VRChat",
     "references": [
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Ndmf",
         "AvatarTinkerVista.VRChat",
         "AvatarTinkerVista.Editor"
     ],

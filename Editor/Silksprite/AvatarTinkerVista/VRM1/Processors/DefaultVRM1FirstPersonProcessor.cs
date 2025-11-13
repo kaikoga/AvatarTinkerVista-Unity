@@ -1,6 +1,6 @@
 using System.Linq;
 using Silksprite.AdLib.Utils.VRM1;
-using Silksprite.AvatarTinkerVista.Ndmf;
+using Silksprite.AvatarTinkerVista.Nondestructive;
 using Silksprite.AvatarTinkerVista.Utils;
 using UniGLTF.Extensions.VRMC_vrm;
 using UnityEngine;

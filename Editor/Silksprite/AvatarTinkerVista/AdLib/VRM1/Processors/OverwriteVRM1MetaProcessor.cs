@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AdLib.Utils.VRM1;
-using Silksprite.AvatarTinkerVista.Ndmf;
+using Silksprite.AvatarTinkerVista.Nondestructive;
 using UniGLTF.Extensions.VRMC_vrm;
 using UniVRM10;
 

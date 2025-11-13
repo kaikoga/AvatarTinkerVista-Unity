@@ -1,6 +1,6 @@
 using System.Linq;
 using nadena.dev.ndmf;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Nondestructive.Base;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Base;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Base
+namespace Silksprite.AvatarTinkerVista.Nondestructive.Base
 {
     public abstract class AtivDeleteComponentsBase : AtivResolvingComponent
     {

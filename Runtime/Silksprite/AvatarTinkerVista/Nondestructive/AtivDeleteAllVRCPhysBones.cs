@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Nondestructive.Base;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Delete All VRC PhysBones")]

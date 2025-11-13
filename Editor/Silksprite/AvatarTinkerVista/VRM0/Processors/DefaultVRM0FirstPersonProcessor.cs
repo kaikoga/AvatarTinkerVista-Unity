@@ -1,5 +1,5 @@
 using System.Linq;
-using Silksprite.AvatarTinkerVista.Ndmf;
+using Silksprite.AvatarTinkerVista.Nondestructive;
 using UnityEngine;
 using VRM;
 

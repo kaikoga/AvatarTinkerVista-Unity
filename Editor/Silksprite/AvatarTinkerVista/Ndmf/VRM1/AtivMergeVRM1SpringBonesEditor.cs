@@ -1,4 +1,5 @@
 ﻿using Silksprite.AvatarTinkerVista.VRM1;
+using Silksprite.AvatarTinkerVista.VRM1.Nondestructive;
 using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1

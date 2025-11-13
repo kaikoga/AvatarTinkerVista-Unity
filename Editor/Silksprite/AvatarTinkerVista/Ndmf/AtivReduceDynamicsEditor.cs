@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading;
 using nadena.dev.ndmf.runtime;
+using Silksprite.AvatarTinkerVista.Nondestructive;
 using UnityEditor;
 using UnityEngine;
 using VRC.Dynamics;

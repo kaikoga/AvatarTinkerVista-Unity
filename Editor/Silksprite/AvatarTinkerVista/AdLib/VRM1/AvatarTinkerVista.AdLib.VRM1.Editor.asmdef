@@ -11,8 +11,8 @@
         "AvatarTinkerVista",
         "AvatarTinkerVista.VRM1",
         "AvatarTinkerVista.Editor",
-        "AvatarTinkerVista.Ndmf",
-        "AvatarTinkerVista.Ndmf.VRM1"
+        "AvatarTinkerVista.Nondestructive",
+        "AvatarTinkerVista.Nondestructive.VRM1"
     ],
     "includePlatforms": [
         "Editor"

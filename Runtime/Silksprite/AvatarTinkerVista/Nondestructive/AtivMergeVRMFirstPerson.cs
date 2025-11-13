@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Merge VRM0+1 FirstPerson")]
     [DisallowMultipleComponent]

@@ -1,8 +1,8 @@
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.Ndmf.DataObjects;
+using Silksprite.AvatarTinkerVista.Nondestructive.DataObjects;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Default VRM0+1 FirstPerson")]

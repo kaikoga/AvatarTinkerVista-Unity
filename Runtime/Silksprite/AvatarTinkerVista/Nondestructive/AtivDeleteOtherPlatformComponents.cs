@@ -1,14 +1,13 @@
 using System.Collections.Generic;
-using Silksprite.AvatarTinkerVista.Ndmf.Base;
+using Silksprite.AvatarTinkerVista.Nondestructive.Base;
 using UnityEngine;
-
 #if UNITY_EDITOR && ATIV_NDMF
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.runtime;
 using nadena.dev.ndmf.platform;
 #endif
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Delete Other Platform Components")]

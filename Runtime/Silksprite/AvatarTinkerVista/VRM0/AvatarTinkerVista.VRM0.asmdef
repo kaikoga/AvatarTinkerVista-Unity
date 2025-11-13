@@ -2,8 +2,7 @@
     "name": "AvatarTinkerVista.VRM0",
     "references": [
         "VRM",
-        "AvatarTinkerVista",
-        "AvatarTinkerVista.Ndmf"
+        "AvatarTinkerVista"
     ],
     "includePlatforms": [
     ],

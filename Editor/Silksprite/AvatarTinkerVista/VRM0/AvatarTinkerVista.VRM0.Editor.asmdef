@@ -8,7 +8,6 @@
         "AvatarTinkerVista",
         "AvatarTinkerVista.VRM0",
         "AvatarTinkerVista.Editor",
-        "AvatarTinkerVista.Ndmf",
         "AdLib.Editor"
     ],
     "includePlatforms": [

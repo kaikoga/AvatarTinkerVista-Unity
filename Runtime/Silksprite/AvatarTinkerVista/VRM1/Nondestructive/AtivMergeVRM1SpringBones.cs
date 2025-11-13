@@ -3,7 +3,7 @@ using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1
+namespace Silksprite.AvatarTinkerVista.VRM1.Nondestructive
 {
     [AddComponentMenu("Avatar Tinker Vista/ATiV Merge VRM1 SpringBones")]
     [DisallowMultipleComponent]

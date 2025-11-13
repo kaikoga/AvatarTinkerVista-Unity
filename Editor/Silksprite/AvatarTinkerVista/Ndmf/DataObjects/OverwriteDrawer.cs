@@ -1,3 +1,5 @@
+using Silksprite.AvatarTinkerVista.Nondestructive;
+using Silksprite.AvatarTinkerVista.Nondestructive.DataObjects;
 using UnityEditor;
 using UnityEngine;
 

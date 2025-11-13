@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.Ndmf.DataObjects;
+using Silksprite.AvatarTinkerVista.Nondestructive.DataObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite VRM0+1 Meta")]
