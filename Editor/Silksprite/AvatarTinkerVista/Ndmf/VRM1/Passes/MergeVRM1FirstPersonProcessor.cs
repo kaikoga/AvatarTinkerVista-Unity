@@ -1,7 +1,7 @@
 using System.Linq;
-using nadena.dev.ndmf.runtime;
 using Silksprite.AdLib.Utils.VRM1;
 using Silksprite.AvatarTinkerVista.Ndmf.VRM1.Extensions;
+using Silksprite.AvatarTinkerVista.Utils;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
@@ -16,7 +16,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
             vrmInstance.Vrm.FirstPerson.Renderers.AddRange(sources.SelectMany(source => source.renderers)
                 .Select(renderer => new RendererFirstPersonFlags
                 {
-                    Renderer = RuntimeUtil.RelativePath(vrmInstance.gameObject, renderer.renderer.gameObject),
+                    Renderer = AtivRuntimeUtil.RelativePath(vrmInstance.transform, renderer.renderer.transform),
                     FirstPersonFlag = renderer.VRM1FirstPersonType()
                 }));
 

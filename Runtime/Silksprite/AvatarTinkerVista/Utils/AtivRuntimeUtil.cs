@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -49,6 +50,30 @@ namespace Silksprite.AvatarTinkerVista.Utils
         public static Transform FindOrCreateSecondary(this Transform avatarRootTransform, string name)
         {
             return avatarRootTransform.FindOrCreateSecondary().FindOrCreateChild(name);
+        }
+
+        const string AvatarRootMagic = "$$$AVATAR_ROOT$$$"; // this follows the convention of Modular Avatar
+        public static string RelativePath(Transform root, Transform child)
+        {
+            return RelativePath(root, child, AvatarRootMagic);
+        }
+
+        static string RelativePath(Transform root, Transform child, string rootName)
+        {
+            if (!root) return null;
+            if (!child) return null;
+            if (root == child) return rootName;
+
+            var cursor = child;
+            var path = child.gameObject.name;
+            while (true)
+            {
+                cursor = cursor.parent;
+                if (cursor == root) break;
+                if (!cursor) break;
+                path = Path.Combine(cursor.gameObject.name, path);
+            }
+            return path;
         }
     }
 }

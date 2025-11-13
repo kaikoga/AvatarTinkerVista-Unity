@@ -1,6 +1,6 @@
 using System.Linq;
-using nadena.dev.ndmf.runtime;
 using Silksprite.AdLib.Utils.VRM1;
+using Silksprite.AvatarTinkerVista.Utils;
 using UniGLTF.Extensions.VRMC_vrm;
 using UnityEngine;
 using UniVRM10;
@@ -61,7 +61,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
                 }
                 return new RendererFirstPersonFlags
                 {
-                    Renderer = RuntimeUtil.RelativePath(vrmInstance.gameObject, renderer.gameObject),
+                    Renderer = AtivRuntimeUtil.RelativePath(vrmInstance.transform, renderer.transform),
                     FirstPersonFlag = firstPersonFlag
                 };
             }).ToList();
