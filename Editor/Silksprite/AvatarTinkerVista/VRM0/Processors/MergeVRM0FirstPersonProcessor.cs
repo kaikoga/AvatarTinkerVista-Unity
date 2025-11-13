@@ -1,8 +1,9 @@
 using System.Linq;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM0.Extensions;
+using Silksprite.AvatarTinkerVista.Ndmf;
+using Silksprite.AvatarTinkerVista.VRM0.Extensions;
 using VRM;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes
+namespace Silksprite.AvatarTinkerVista.VRM0.Processors
 {
     public static class MergeVRM0FirstPersonProcessor
     {

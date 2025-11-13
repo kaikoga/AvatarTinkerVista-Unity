@@ -2,7 +2,7 @@ using System;
 using VRM;
 using static Silksprite.AvatarTinkerVista.Ndmf.AtivMergeVRMFirstPerson;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Extensions
+namespace Silksprite.AvatarTinkerVista.VRM0.Extensions
 {
     public static class AtivMergeVRMFirstPersonExtension
     {

@@ -1,10 +1,11 @@
 using System.Linq;
 using Silksprite.AdLib.Utils.VRM1;
+using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.VRM1.Extensions;
 using Silksprite.AvatarTinkerVista.Utils;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
+namespace Silksprite.AvatarTinkerVista.VRM1.Processors
 {
     public static class MergeVRM1FirstPersonProcessor
     {

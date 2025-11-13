@@ -7,9 +7,12 @@
         "VrmLib",
         "VRM10",
         "VRM10.Editor",
+        "AdLib.Editor",
         "AvatarTinkerVista",
         "AvatarTinkerVista.VRM1",
-        "AvatarTinkerVista.Editor"
+        "AvatarTinkerVista.Editor",
+        "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista.Ndmf.VRM1"
     ],
     "includePlatforms": [
         "Editor"

@@ -3,8 +3,8 @@
     "rootNamespace": "Silksprite.AvatarTinkerVista.VRChat",
     "references": [
         "AvatarTinkerVista",
-        "AvatarTinkerVista.VRChat",
         "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista.VRChat",
         "AvatarTinkerVista.Editor"
     ],
     "includePlatforms": [
@@ -14,6 +14,8 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
+        "VRCSDKBase.dll",
+        "VRCSDK3A.dll",
         "VRC.Dynamics.dll"
     ],
     "autoReferenced": false,

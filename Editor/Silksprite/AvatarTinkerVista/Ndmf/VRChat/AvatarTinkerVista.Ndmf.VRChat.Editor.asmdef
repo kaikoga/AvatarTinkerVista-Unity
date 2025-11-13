@@ -6,7 +6,9 @@
         "nadena.dev.ndmf.runtime",
         "nadena.dev.ndmf.vrchat",
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Ndmf"
+        "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista.VRChat",
+        "AvatarTinkerVista.VRChat.Editor"
     ],
     "includePlatforms": [
         "Editor"

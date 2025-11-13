@@ -1,19 +1,18 @@
 {
-    "name": "AvatarTinkerVista.Ndmf.VRM1.Editor",
-    "rootNamespace": "Silksprite.AvatarTinkerVista.Ndmf.VRM1",
+    "name": "AvatarTinkerVista.AdLib.VRM1.Editor",
+    "rootNamespace": "Silksprite.AvatarTinkerVista.AdLib.VRM1",
     "references": [
-        "nadena.dev.ndmf",
-        "nadena.dev.ndmf.runtime",
-        "UniHumanoid",
+        "UniGLTF",
+        "UniGLTF.Editor",
+        "VrmLib",
         "VRM10",
+        "VRM10.Editor",
         "AdLib.Editor",
-        "AvatarTinkerVista.Ndmf",
-        "AvatarTinkerVista.Ndmf.VRM1",
-        "AvatarTinkerVista.VRM1.Editor",
-        "AvatarTinkerVista.Editor",
         "AvatarTinkerVista",
         "AvatarTinkerVista.VRM1",
-        "AvatarTinkerVista.AdLib.VRM1.Editor"
+        "AvatarTinkerVista.Editor",
+        "AvatarTinkerVista.Ndmf",
+        "AvatarTinkerVista.Ndmf.VRM1"
     ],
     "includePlatforms": [
         "Editor"
@@ -23,17 +22,8 @@
     "overrideReferences": true,
     "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": [
-        "ATIV_NDMF",
-        "ATIV_ADLIB",
-        "ATIV_DETECTED_VRM1"
-    ],
+    "defineConstraints": ["ATIV_ADLIB", "ATIV_DETECTED_VRM1"],
     "versionDefines": [
-        {
-            "name": "nadena.dev.ndmf",
-            "expression": "(1.8.0-a,2.0-a)",
-            "define": "ATIV_NDMF"
-        },
         {
             "name": "net.kaikoga.adlib",
             "expression": "0.1.0",

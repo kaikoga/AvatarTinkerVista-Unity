@@ -1,7 +1,8 @@
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM1;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
+namespace Silksprite.AvatarTinkerVista.VRM1.Processors
 {
     public static class MergeVRM1SpringBonesProcessor
     {

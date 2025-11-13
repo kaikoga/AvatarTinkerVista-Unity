@@ -1,8 +1,9 @@
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Ndmf;
 using UnityEngine;
 using VRM;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes
+namespace Silksprite.AvatarTinkerVista.VRM0.Processors
 {
     public static class DefaultVRM0FirstPersonProcessor
     {

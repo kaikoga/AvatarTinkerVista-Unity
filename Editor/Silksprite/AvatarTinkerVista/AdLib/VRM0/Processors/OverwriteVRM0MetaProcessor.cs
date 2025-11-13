@@ -1,8 +1,9 @@
 using System;
 using Silksprite.AdLib.Utils.VRM0;
+using Silksprite.AvatarTinkerVista.Ndmf;
 using VRM;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes
+namespace Silksprite.AvatarTinkerVista.VRM0.AdLib.Processors
 {
     public static class OverwriteVRM0MetaProcessor
     {

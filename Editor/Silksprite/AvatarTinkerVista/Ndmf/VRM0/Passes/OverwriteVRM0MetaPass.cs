@@ -1,4 +1,5 @@
 using nadena.dev.ndmf;
+using Silksprite.AvatarTinkerVista.VRM0.AdLib.Processors;
 using VRM;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes

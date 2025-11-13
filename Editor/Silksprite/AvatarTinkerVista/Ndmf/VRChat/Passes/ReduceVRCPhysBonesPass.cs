@@ -1,5 +1,6 @@
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.vrchat;
+using Silksprite.AvatarTinkerVista.VRChat.Processors;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
 {

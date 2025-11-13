@@ -1,11 +1,12 @@
 using System.Linq;
 using Silksprite.AdLib.Utils.VRM1;
+using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Utils;
 using UniGLTF.Extensions.VRMC_vrm;
 using UnityEngine;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
+namespace Silksprite.AvatarTinkerVista.VRM1.Processors
 {
     public static class DefaultVRM1FirstPersonProcessor
     {

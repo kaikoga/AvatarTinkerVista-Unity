@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Ndmf;
 using UnityEngine;
 using VRC.Dynamics;
 using VRC.SDK3.Avatars.Components;
 using VRC.SDKBase;
 using VRC.SDKBase.Network;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
+namespace Silksprite.AvatarTinkerVista.VRChat.Processors
 {
     public static class ReduceVRCPhysBonesProcessor
     {

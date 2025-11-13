@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AdLib.Utils.VRM1;
+using Silksprite.AvatarTinkerVista.Ndmf;
 using UniGLTF.Extensions.VRMC_vrm;
 using UniVRM10;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes
+namespace Silksprite.AvatarTinkerVista.VRM1.Processors
 {
     public static class OverwriteVRM1MetaProcessor
     {
