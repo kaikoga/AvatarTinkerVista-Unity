@@ -1,9 +1,7 @@
-using Silksprite.AvatarTinkerVista.Nondestructive;
-using Silksprite.AvatarTinkerVista.Nondestructive.DataObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.DataObjects
+namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
 {
     [CustomPropertyDrawer(typeof(OverwriteBool))]
     [CustomPropertyDrawer(typeof(OverwriteString))]

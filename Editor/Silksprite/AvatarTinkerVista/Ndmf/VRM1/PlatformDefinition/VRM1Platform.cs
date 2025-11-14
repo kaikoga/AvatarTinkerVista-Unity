@@ -12,7 +12,7 @@ using UnityEngine.UIElements;
 using UniVRM10;
 using Object = UnityEngine.Object;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition
 {
     [NDMFPlatformProvider]
     class VRM1Platform : INDMFPlatformProvider

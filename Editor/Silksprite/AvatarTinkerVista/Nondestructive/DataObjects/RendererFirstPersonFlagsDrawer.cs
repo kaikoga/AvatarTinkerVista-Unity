@@ -1,8 +1,7 @@
-using Silksprite.AvatarTinkerVista.Nondestructive;
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.DataObjects
+namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
 {
     [CustomPropertyDrawer(typeof(AtivMergeVRMFirstPerson.RendererFirstPersonFlags))]
     class RendererFirstPersonFlagsDrawer : PropertyDrawer

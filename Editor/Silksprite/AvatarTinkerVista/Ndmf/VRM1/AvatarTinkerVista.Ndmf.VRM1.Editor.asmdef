@@ -7,12 +7,10 @@
         "UniHumanoid",
         "VRM10",
         "AdLib.Editor",
-        "AvatarTinkerVista.Nondestructive",
-        "AvatarTinkerVista.Nondestructive.VRM1",
-        "AvatarTinkerVista.VRM1.Editor",
-        "AvatarTinkerVista.Editor",
         "AvatarTinkerVista",
+        "AvatarTinkerVista.Base.Editor",
         "AvatarTinkerVista.VRM1",
+        "AvatarTinkerVista.VRM1.Editor",
         "AvatarTinkerVista.AdLib.VRM1.Editor"
     ],
     "includePlatforms": [

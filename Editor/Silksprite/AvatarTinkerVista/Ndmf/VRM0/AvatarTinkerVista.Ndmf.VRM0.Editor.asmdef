@@ -7,11 +7,9 @@
         "VRM",
         "AdLib.Editor",
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Nondestructive",
-        "AvatarTinkerVista.Nondestructive.VRM0",
+        "AvatarTinkerVista.Base.Editor",
         "AvatarTinkerVista.AdLib.VRM0.Editor",
         "AvatarTinkerVista.VRM0.Editor",
-        "AvatarTinkerVista.Editor",
         "AvatarTinkerVista.VRM0"
     ],
     "includePlatforms": [

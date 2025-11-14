@@ -1,9 +1,10 @@
 using nadena.dev.ndmf.runtime;
-using Silksprite.AvatarTinkerVista.Nondestructive;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
 using UnityEditor;
 using UnityEngine.UIElements;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [CustomEditor(typeof(AtivExportVRMUI))]
     [CanEditMultipleObjects]

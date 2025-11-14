@@ -1,12 +1,13 @@
-﻿using System.Linq;
-using System.Threading;
+﻿#if ATIV_NDMF
+#endif
+
+using System.Linq;
 using nadena.dev.ndmf.runtime;
-using Silksprite.AvatarTinkerVista.Nondestructive;
 using UnityEditor;
 using UnityEngine;
 using VRC.Dynamics;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [CustomEditor(typeof(AtivReduceDynamics))]
     class AtivReduceDynamicsEditor : Editor
@@ -27,6 +28,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             _propReduceOnPC = serializedObject.FindProperty(nameof(AtivReduceDynamics.reduceOnPC));
             _propReduceOnMobile = serializedObject.FindProperty(nameof(AtivReduceDynamics.reduceOnMobile));
             _propKeepBoneRoots = serializedObject.FindProperty(nameof(AtivReduceDynamics.keepBoneRoots));
+#if ATIV_NDMF
             _avatarRoot = RuntimeUtil.FindAvatarInParents(_reduceDynamics.transform);
 #if ATIV_VRCSDK3_AVATARS
             _allVrcPhysBones = _avatarRoot?.GetComponentsInChildren<VRCPhysBoneBase>();
@@ -37,6 +39,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                     pb.InitTransforms(true);
                 }
             }
+#endif
 #endif
         }
 

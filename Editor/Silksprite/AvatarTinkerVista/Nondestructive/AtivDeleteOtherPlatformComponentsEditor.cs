@@ -1,8 +1,7 @@
-﻿using Silksprite.AvatarTinkerVista.Nondestructive;
-using UnityEditor;
+﻿using UnityEditor;
 using VRC.Dynamics;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [CustomEditor(typeof(AtivDeleteOtherPlatformComponents))]
     class AtivDeleteOtherPlatformComponentsEditor : Editor
