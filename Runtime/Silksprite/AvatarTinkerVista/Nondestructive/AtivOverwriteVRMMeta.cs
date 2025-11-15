@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Nondestructive.DataObjects;
 using UnityEngine;
 using UnityEngine.Serialization;

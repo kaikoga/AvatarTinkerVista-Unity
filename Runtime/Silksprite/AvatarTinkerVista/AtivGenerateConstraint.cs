@@ -1,4 +1,4 @@
-using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Common.Base;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista

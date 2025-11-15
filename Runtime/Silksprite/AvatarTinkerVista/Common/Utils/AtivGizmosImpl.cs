@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Utils
+namespace Silksprite.AvatarTinkerVista.Common.Utils
 {
     class AtivGizmosImpl : IDisposable
     {

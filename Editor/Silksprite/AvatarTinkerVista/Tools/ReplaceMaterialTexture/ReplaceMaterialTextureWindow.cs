@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.ReplaceMaterialTexture
+namespace Silksprite.AvatarTinkerVista.Tools.ReplaceMaterialTexture
 {
     public class ReplaceMaterialTextureWindow : EditorWindow
     {

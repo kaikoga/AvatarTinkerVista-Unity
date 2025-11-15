@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Utils
+namespace Silksprite.AvatarTinkerVista.Common.Utils
 {
     public class AtivGizmos : IDisposable
     {

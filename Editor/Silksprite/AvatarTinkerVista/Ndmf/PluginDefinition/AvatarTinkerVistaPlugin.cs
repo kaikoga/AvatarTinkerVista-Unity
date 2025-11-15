@@ -3,7 +3,8 @@ using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.fluent;
-using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Common.Base;
+using Silksprite.AvatarTinkerVista.Ndmf.Passes.Internal;
 using UnityEngine;
 
 #if ATIV_VRCSDK3_AVATARS

@@ -1,4 +1,4 @@
-using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Common;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.VRM0.Converter

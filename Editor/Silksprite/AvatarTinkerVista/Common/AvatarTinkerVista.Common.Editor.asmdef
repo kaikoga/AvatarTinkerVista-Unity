@@ -1,7 +1,8 @@
 {
-    "name": "AvatarTinkerVista.Base.Editor",
-    "rootNamespace": "Silksprite.AvatarTinkerVista.Base",
+    "name": "AvatarTinkerVista.Common.Editor",
+    "rootNamespace": "Silksprite.AvatarTinkerVista.Common",
     "references": [
+        "AvatarTinkerVista.Common"
     ],
     "includePlatforms": [
         "Editor"
@@ -9,7 +10,9 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "VRC.Dynamics.dll"
+    ],
     "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],

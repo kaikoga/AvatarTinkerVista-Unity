@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Common.Base;
 
 namespace Silksprite.AvatarTinkerVista.Nondestructive.Base
 {

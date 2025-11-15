@@ -3,8 +3,9 @@
     "rootNamespace": "Silksprite.AvatarTinkerVista.VRChat",
     "references": [
         "AvatarTinkerVista",
-        "AvatarTinkerVista.VRChat",
-        "AvatarTinkerVista.Base.Editor"
+        "AvatarTinkerVista.Common",
+        "AvatarTinkerVista.Common.Editor",
+        "AvatarTinkerVista.VRChat"
     ],
     "includePlatforms": [
         "Editor"

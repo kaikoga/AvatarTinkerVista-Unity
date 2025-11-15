@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using Silksprite.AvatarTinkerVista.Utils;
+using Silksprite.AvatarTinkerVista.Common.Utils;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Converter
+namespace Silksprite.AvatarTinkerVista.Common.Converter
 {
     public abstract class DynamicsConverterBase<TContext, TDynamicsFrom, TColliderFrom, TColliderTo>
     where TContext : Component

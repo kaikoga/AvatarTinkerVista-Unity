@@ -1,4 +1,5 @@
 using System;
+using Silksprite.AvatarTinkerVista.Common;
 using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista

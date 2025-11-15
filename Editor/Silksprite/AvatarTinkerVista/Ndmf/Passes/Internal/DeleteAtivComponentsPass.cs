@@ -1,8 +1,8 @@
 using nadena.dev.ndmf;
-using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Common.Base;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
+namespace Silksprite.AvatarTinkerVista.Ndmf.Passes.Internal
 {
     class DeleteAtivComponentsPass<T> : Pass<DeleteAtivComponentsPass<T>>
     where T : AtivComponent

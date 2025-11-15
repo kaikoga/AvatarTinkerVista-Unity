@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Base
+namespace Silksprite.AvatarTinkerVista.Common
 {
     public abstract class InteractiveConverterBase<TContext>
     where TContext : Component

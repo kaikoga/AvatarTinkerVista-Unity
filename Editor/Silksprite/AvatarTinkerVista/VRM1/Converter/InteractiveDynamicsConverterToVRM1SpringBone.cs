@@ -1,4 +1,4 @@
-using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.AvatarTinkerVista.Common;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.VRM1.Converter

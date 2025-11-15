@@ -6,7 +6,8 @@
         "UniVRM.Editor",
         "VRM",
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Base.Editor",
+        "AvatarTinkerVista.Common",
+        "AvatarTinkerVista.Common.Editor",
         "AvatarTinkerVista.VRM0",
         "AdLib.Editor"
     ],

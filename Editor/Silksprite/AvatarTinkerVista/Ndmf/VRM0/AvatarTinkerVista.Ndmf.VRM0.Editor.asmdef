@@ -7,7 +7,8 @@
         "VRM",
         "AdLib.Editor",
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Base.Editor",
+        "AvatarTinkerVista.Common",
+        "AvatarTinkerVista.Common.Editor",
         "AvatarTinkerVista.AdLib.VRM0.Editor",
         "AvatarTinkerVista.VRM0.Editor",
         "AvatarTinkerVista.VRM0"

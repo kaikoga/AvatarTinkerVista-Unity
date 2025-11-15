@@ -2,7 +2,8 @@
     "name": "AvatarTinkerVista.VRM0",
     "references": [
         "VRM",
-        "AvatarTinkerVista"
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.Common"
     ],
     "includePlatforms": [
     ],

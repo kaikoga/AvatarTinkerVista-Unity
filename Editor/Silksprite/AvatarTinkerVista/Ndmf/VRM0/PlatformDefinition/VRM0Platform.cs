@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.platform;
-using Silksprite.AvatarTinkerVista.Utils;
+using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.AvatarTinkerVista.VRM0;
 using UnityEditor;
 using UnityEngine;

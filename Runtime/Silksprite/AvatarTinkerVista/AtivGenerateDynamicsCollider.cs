@@ -1,6 +1,6 @@
 using System;
-using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.AvatarTinkerVista.Utils;
+using Silksprite.AvatarTinkerVista.Common.Base;
+using Silksprite.AvatarTinkerVista.Common.Utils;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista

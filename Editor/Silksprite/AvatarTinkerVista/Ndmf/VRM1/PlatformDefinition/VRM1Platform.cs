@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.platform;
-using Silksprite.AvatarTinkerVista.Utils;
+using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.AvatarTinkerVista.VRM1;
 using UniHumanoid;
 using UnityEditor;

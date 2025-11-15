@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Utils
+namespace Silksprite.AvatarTinkerVista.Common.Utils
 {
     public static class AtivRuntimeUtil
     {
@@ -22,7 +22,7 @@ namespace Silksprite.AvatarTinkerVista.Utils
         public static IEnumerable<T> GetEligibleComponentsInChildren<T>(this Component parent)
         {
             return parent.GetComponentsInChildren<T>()
-                .Where(t => t is Component c && c && !c.TryGetComponent<AtivDisableAtivComponents>(out _));
+                .Where(t => t is Component c && c && !c.TryGetComponent<IAtivDisableAtivComponents>(out _));
         }
 
         public static Transform CreateChild(this Transform parent, string name)

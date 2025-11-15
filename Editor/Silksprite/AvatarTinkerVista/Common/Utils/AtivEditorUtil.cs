@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Silksprite.AvatarTinkerVista.Utils
+namespace Silksprite.AvatarTinkerVista.Common.Utils
 {
     public static class AtivEditorUtil
     {

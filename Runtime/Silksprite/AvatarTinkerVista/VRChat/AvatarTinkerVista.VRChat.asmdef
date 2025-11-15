@@ -1,7 +1,8 @@
 {
     "name": "AvatarTinkerVista.VRChat",
     "references": [
-        "AvatarTinkerVista"
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.Common"
     ],
     "includePlatforms": [
     ],

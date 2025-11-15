@@ -1,6 +1,6 @@
 using System.Linq;
-using Silksprite.AvatarTinkerVista.Converter;
-using Silksprite.AvatarTinkerVista.Utils;
+using Silksprite.AvatarTinkerVista.Common.Converter;
+using Silksprite.AvatarTinkerVista.Common.Utils;
 using UnityEngine;
 using VRC.Dynamics;
 using VRC.Dynamics.ManagedTypes;

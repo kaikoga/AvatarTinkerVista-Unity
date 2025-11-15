@@ -1,8 +1,8 @@
-using Silksprite.AvatarTinkerVista.Utils;
+using Silksprite.AvatarTinkerVista.Common.Utils;
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista
+namespace Silksprite.AvatarTinkerVista.Common
 {
     public static class AtivGUILayout
     {

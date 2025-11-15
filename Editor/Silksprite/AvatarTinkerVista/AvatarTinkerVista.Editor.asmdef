@@ -4,6 +4,8 @@
     "references": [
         "nadena.dev.ndmf.runtime",
         "AvatarTinkerVista",
+        "AvatarTinkerVista.Common",
+        "AvatarTinkerVista.Common.Editor",
         "AvatarTinkerVista.Ndmf.VRM0.Editor",
         "AvatarTinkerVista.Ndmf.VRM1.Editor",
         "AvatarTinkerVista.VRM1",
