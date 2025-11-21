@@ -17,11 +17,11 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRChat.Layers
         {
             config.AddDependency<TransformingPhase>();
         }
-        public IAbletProcedure ToProcedure(IBuildArgument argument)
+        public AbletProcedure ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 
-            return new AbletBuildProcedure(context =>
+            return AbletBuildProcedure.Create((IBuildContext context) =>
             {
                 if (context.CurrentRootTransform.TryGetComponent<VRCAvatarDescriptor>(out var avatarDescriptor))
                 {

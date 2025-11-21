@@ -19,11 +19,11 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers.Internal
         {
             config.AddDependency<PruningPhase>();
         }
-        public IAbletProcedure ToProcedure(IBuildArgument argument)
+        public AbletProcedure ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 
-            return new AbletBuildProcedure(context =>
+            return AbletBuildProcedure.Create((IBuildContext context) =>
             {
                 foreach (var disableAtiv in context.CurrentRootTransform.GetComponentsInChildren<IAtivDisableAtivComponents>().Cast<Component>())
                 {

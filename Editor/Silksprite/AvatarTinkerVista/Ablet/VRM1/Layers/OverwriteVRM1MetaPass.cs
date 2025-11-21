@@ -17,11 +17,11 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
         {
             config.AddDependency<GeneratingPhase>();
         }
-        public IAbletProcedure ToProcedure(IBuildArgument argument)
+        public AbletProcedure ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 
-            return new AbletBuildProcedure(context =>
+            return AbletBuildProcedure.Create((IBuildContext context) =>
             {
                 if (context.CurrentRootObject.TryGetComponent<Vrm10Instance>(out var vrmInstance))
                 {

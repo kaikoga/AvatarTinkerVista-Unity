@@ -21,11 +21,11 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers.Internal
             config.AddDependency<AfterLayer<TAblet>>();
         }
 
-        public IAbletProcedure ToProcedure(IBuildArgument argument)
+        public AbletProcedure ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 
-            return new AbletBuildProcedure(context =>
+            return AbletBuildProcedure.Create((IBuildContext context) =>
             {
                 foreach (var ativComponent in context.CurrentRootObject.GetComponentsInChildren<TAtiv>())
                 {
