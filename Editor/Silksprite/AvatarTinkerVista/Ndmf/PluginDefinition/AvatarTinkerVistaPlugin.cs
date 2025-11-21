@@ -7,6 +7,9 @@ using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes.Internal;
 using UnityEngine;
 
+#if ATIV_ABLET
+using Ablet.API;
+#endif
 #if ATIV_VRCSDK3_AVATARS
 using Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes;
 #endif
@@ -34,6 +37,10 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
         protected override void Configure()
         {
+#if ATIV_ABLET
+            if (AbletSymbols.PreferAblet) return;
+#endif
+
             void Phase<T>(BuildPhase phase, Action<Sequence> initializer)
             where T : AtivComponent
             {

@@ -1,16 +1,15 @@
 {
-    "name": "AvatarTinkerVista.Ndmf.Editor",
-    "rootNamespace": "Silksprite.AvatarTinkerVista.Ndmf",
+    "name": "AvatarTinkerVista.Ablet.Editor",
+    "rootNamespace": "Silksprite.AvatarTinkerVista.Ablet",
     "references": [
-        "nadena.dev.ndmf",
-        "nadena.dev.ndmf.runtime",
+        "Ablet.API",
+        "Ablet.Builtin",
         "AvatarTinkerVista",
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.Editor",
         "AvatarTinkerVista.Ndmf.VRChat.Editor",
         "AvatarTinkerVista.Ndmf.VRM0.Editor",
-        "AvatarTinkerVista.Ndmf.VRM1.Editor",
-        "Ablet.API"
+        "AvatarTinkerVista.Ndmf.VRM1.Editor"
     ],
     "includePlatforms": [
         "Editor"
@@ -23,15 +22,10 @@
     ],
     "autoReferenced": false,
     "defineConstraints": [
-        "ATIV_NDMF",
+        "ATIV_ABLET",
         "ATIV_ADLIB"
     ],
     "versionDefines": [
-        {
-            "name": "nadena.dev.ndmf",
-            "expression": "(1.8.0-a,2.0-a)",
-            "define": "ATIV_NDMF"
-        },
         {
             "name": "net.kaikoga.ablet",
             "expression": "[0.1.0,999.0.0)",

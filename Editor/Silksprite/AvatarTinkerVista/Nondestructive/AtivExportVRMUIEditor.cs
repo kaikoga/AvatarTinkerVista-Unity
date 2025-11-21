@@ -1,8 +1,11 @@
+using UnityEditor;
+using UnityEngine.UIElements;
+
+#if ATIV_NDMF
 using nadena.dev.ndmf.runtime;
 using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
 using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
-using UnityEditor;
-using UnityEngine.UIElements;
+#endif
 
 namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
@@ -14,6 +17,7 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive
         {
             var exportVrm = (AtivExportVRMUI)target;
             var container = new VisualElement();
+#if ATIV_NDMF
             var avatarRoot = RuntimeUtil.FindAvatarInParents(exportVrm.gameObject.transform);
             if (avatarRoot)
             {
@@ -32,6 +36,7 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive
                 }
 #endif
             }
+#endif
             return container;
         }
     }

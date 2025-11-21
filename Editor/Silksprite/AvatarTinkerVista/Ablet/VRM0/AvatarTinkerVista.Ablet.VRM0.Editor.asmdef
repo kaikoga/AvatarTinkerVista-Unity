@@ -1,0 +1,47 @@
+{
+    "name": "AvatarTinkerVista.Ablet.VRM0.Editor",
+    "rootNamespace": "Silksprite.AvatarTinkerVista.Ablet.VRM0",
+    "references": [
+        "Ablet.API",
+        "Ablet.Builtin",
+        "VRM",
+        "AdLib.Editor",
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.Common",
+        "AvatarTinkerVista.Common.Editor",
+        "AvatarTinkerVista.AdLib.VRM0.Editor",
+        "AvatarTinkerVista.VRM0.Editor",
+        "AvatarTinkerVista.VRM0"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "ATIV_ABLET",
+        "ATIV_ADLIB",
+        "ATIV_DETECTED_VRM0"
+    ],
+    "versionDefines": [
+        {
+            "name": "net.kaikoga.ablet",
+            "expression": "[0.1.0,999.0.0)",
+            "define": "ATIV_ABLET"
+        },
+        {
+            "name": "net.kaikoga.adlib",
+            "expression": "0.1.0",
+            "define": "ATIV_ADLIB"
+        },
+        {
+            "name": "com.vrmc.univrm",
+            "expression": "",
+            "define": "ATIV_DETECTED_VRM0"
+        }
+    ],
+    "noEngineReferences": false
+}

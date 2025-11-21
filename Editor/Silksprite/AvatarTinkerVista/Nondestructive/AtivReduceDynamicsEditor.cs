@@ -1,11 +1,14 @@
-﻿#if ATIV_NDMF
-#endif
-
-using System.Linq;
-using nadena.dev.ndmf.runtime;
+﻿using System.Linq;
 using UnityEditor;
 using UnityEngine;
+
+#if ATIV_NDMF
+using nadena.dev.ndmf.runtime;
+#endif
+
+#if ATIV_VRCSDK3_AVATARS
 using VRC.Dynamics;
+#endif
 
 namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
