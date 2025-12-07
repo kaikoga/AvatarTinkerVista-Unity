@@ -1,5 +1,4 @@
 ﻿using UnityEditor;
-using VRC.Dynamics;
 
 namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
@@ -9,10 +8,6 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive
         AtivDeleteOtherPlatformComponents _deleteOtherPlatformComponents;
         SerializedProperty _propNdmfDetectPlatform;
         SerializedProperty _propPlatform;
-
-#if ATIV_VRCSDK3_AVATARS
-        VRCPhysBoneBase[] _allVrcPhysBones;
-#endif
 
         void OnEnable()
         {
