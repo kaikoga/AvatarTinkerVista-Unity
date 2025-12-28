@@ -70,6 +70,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
             Phase<AtivTransformingComponent>(BuildPhase.Transforming, transforming =>
             {
+                transforming.Run(SimpleWearPass.Instance);
 #if ATIV_VRCSDK3_AVATARS
                 transforming.Run(ReduceVRCPhysBonesPass.Instance);
 #endif

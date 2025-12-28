@@ -3,10 +3,41 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
+#if ATIV_NDMF_SUPPORT
+using NdmfRuntimeUtil = nadena.dev.ndmf.runtime.RuntimeUtil;
+#endif
+
+#if ATIV_ABLET_SUPPORT
+using Ablet;
+#endif
+
+#if ATIV_VRCSDK3_AVATARS
+using VRC.SDK3.Avatars.Components;
+#endif
+
 namespace Silksprite.AvatarTinkerVista.Common.Utils
 {
     public static class AtivRuntimeUtil
     {
+        public static Transform FindAvatarInParents(Transform transform)
+        {
+            if (!transform) return null;
+
+#if ATIV_ABLET_SUPPORT
+            return AbletFacade.GetEntrypointFor(transform.gameObject).gameObject.transform;
+#endif
+            
+#if ATIV_NDMF_SUPPORT
+            return NdmfRuntimeUtil.FindAvatarInParents(transform);
+#endif
+            
+#if ATIV_VRCSDK3_AVATARS
+            return transform.GetComponentInParent<VRCAvatarDescriptor>()?.transform;
+#endif
+
+            return null;
+        }
+
         public static string GuessOriginalAvatarName(string avatarName)
         {
             if (avatarName.EndsWith("(Clone)"))

@@ -1,8 +1,7 @@
 {
     "name": "AvatarTinkerVista",
     "references": [
-        "AvatarTinkerVista.Common",
-        "nadena.dev.ndmf.runtime"
+        "AvatarTinkerVista.Common"
     ],
     "includePlatforms": [
     ],

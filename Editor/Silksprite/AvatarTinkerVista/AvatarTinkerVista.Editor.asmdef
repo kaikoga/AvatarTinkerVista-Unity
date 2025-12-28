@@ -9,7 +9,8 @@
         "AvatarTinkerVista.Ndmf.VRM0.Editor",
         "AvatarTinkerVista.Ndmf.VRM1.Editor",
         "AvatarTinkerVista.VRM1",
-        "nadena.dev.ndmf"
+        "nadena.dev.ndmf",
+        "VRM10"
     ],
     "includePlatforms": [
         "Editor"

@@ -2,6 +2,7 @@
     "name": "AvatarTinkerVista.Ablet.Editor",
     "rootNamespace": "Silksprite.AvatarTinkerVista.Ablet",
     "references": [
+        "Ablet",
         "Ablet.API",
         "Ablet.Builtin",
         "AvatarTinkerVista",
