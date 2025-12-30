@@ -63,8 +63,8 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive
                     }
 #endif
                 }
-#endif
             }
+#endif
 
 #if ATIV_ABLET
             if (MayAbletExport)
