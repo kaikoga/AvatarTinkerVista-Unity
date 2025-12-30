@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Common.Utils
@@ -7,8 +6,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
     {
         const string IsDarkModeKey = "net.kaikoga.ativ.AtivGizmoStyle.IsDarkMode";
 
-        [InitializeOnLoadMethod]
-        static void InitializeOnLoad()
+        static AtivGizmoStyle()
         {
             IsDarkMode = PlayerPrefs.GetInt(IsDarkModeKey) != 0;            
         }
