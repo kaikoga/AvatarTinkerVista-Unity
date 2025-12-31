@@ -11,7 +11,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM0.Layers
     [AbletLayer]
     class DefaultVRM0FirstPersonPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.vrm0.default-vrm0-first-person";
+        public string Id => "Silksprite.AvatarTinkerVista.DefaultVRM0FirstPerson";
         public string DisplayName => "ATiV: Default VRM0 FirstPerson";
         public void Configure(IDependencyConfigurator config)
         {

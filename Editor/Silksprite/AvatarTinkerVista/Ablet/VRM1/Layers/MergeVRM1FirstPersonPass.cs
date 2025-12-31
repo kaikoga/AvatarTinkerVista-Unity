@@ -11,7 +11,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
     [AbletLayer]
     class MergeVRM1FirstPersonPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.vrm1.merge-vrm1-first-person";
+        public string Id => "Silksprite.AvatarTinkerVista.MergeVRM1FirstPerson";
         public string DisplayName => "ATiV: Merge VRM1 FirstPerson";
         public void Configure(IDependencyConfigurator config)
         {

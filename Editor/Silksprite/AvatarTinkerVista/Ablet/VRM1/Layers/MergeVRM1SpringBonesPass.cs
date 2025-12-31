@@ -11,7 +11,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
     [AbletLayer]
     class MergeVRM1SpringBonesPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.vrm1.merge-vrm1-spring-bones";
+        public string Id => "Silksprite.AvatarTinkerVista.MergeVRM1SpringBones";
         public string DisplayName => "ATiV: Merge VRM1 SpringBones";
         public void Configure(IDependencyConfigurator config)
         {

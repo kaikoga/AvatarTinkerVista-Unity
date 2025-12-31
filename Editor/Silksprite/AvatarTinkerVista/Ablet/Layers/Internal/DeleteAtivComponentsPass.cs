@@ -38,28 +38,28 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers.Internal
     [AbletLayer]
     class DeleteAtivResolvingComponentsLayer : DeleteAtivComponentsLayer<AtivResolvingComponent, PruningPhase>
     {
-        public override string Id => "net.kaikoga.ativ.delete-ativ-resolving-components";
+        public override string Id => "Silksprite.AvatarTinkerVista.DeleteAtivResolvingComponents";
         public override string DisplayName => "ATiV: Delete ATiV Resolving Components";
     }
 
     [AbletLayer]
     class DeleteAtivGeneratingComponentsLayer : DeleteAtivComponentsLayer<AtivGeneratingComponent, GeneratingPhase>
     {
-        public override string Id => "net.kaikoga.ativ.delete-ativ-generating-components";
+        public override string Id => "Silksprite.AvatarTinkerVista.DeleteAtivGeneratingComponents";
         public override string DisplayName => "ATiV: Delete ATiV Generating Components";
     }
 
     [AbletLayer]
     class DeleteAtivTransformingComponentsLayer : DeleteAtivComponentsLayer<AtivTransformingComponent, TransformingPhase>
     {
-        public override string Id => "net.kaikoga.ativ.delete-ativ-transforming-components";
+        public override string Id => "Silksprite.AvatarTinkerVista.DeleteAtivTransformingComponents";
         public override string DisplayName => "ATiV: Delete ATiV Transforming Components";
     }
 
     [AbletLayer]
     class DeleteAtivOptimizingComponentsLayer : DeleteAtivComponentsLayer<AtivOptimizingComponent, MaterializingPhase>
     {
-        public override string Id => "net.kaikoga.ativ.delete-ativ-optimizing-components";
+        public override string Id => "Silksprite.AvatarTinkerVista.DeleteAtivOptimizingComponents";
         public override string DisplayName => "ATiV: Delete ATiV Optimizing Components";
     }
 }

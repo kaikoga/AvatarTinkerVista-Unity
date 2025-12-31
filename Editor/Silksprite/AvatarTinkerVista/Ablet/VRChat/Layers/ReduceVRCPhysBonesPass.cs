@@ -11,7 +11,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRChat.Layers
     [AbletLayer]
     class ReduceVRCPhysBonesPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.vrchat.reduce-vrc-physbones";
+        public string Id => "Silksprite.AvatarTinkerVista.ReduceVRCPhysBones";
         public string DisplayName => "ATiV: Reduce VRC PhysBones";
         public void Configure(IDependencyConfigurator config)
         {

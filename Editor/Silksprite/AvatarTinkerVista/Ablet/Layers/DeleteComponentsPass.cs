@@ -12,7 +12,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers
     [AbletLayer]
     class DeleteComponentsPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.delete-components";
+        public string Id => "Silksprite.AvatarTinkerVista.DeleteComponents";
         public string DisplayName => "ATiV: Delete Components";
         public void Configure(IDependencyConfigurator config)
         {

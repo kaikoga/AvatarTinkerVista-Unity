@@ -11,7 +11,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM0.Layers
     [AbletLayer]
     class OverwriteVRM0MetaPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.vrm0.overwrite-vrm0-meta";
+        public string Id => "Silksprite.AvatarTinkerVista.OverwriteVRM0Meta";
         public string DisplayName => "ATiV: Overwrite VRM0 Meta";
         public void Configure(IDependencyConfigurator config)
         {

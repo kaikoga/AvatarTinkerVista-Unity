@@ -11,7 +11,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
     [AbletLayer]
     class GenerateVRM1SpringBonesPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.vrm1.default-vrm0-first-person";
+        public string Id => "Silksprite.AvatarTinkerVista.GenerateVRM1SpringBones";
         public string DisplayName => "ATiV: Generate VRM1 SpringBones";
         public void Configure(IDependencyConfigurator config)
         {

@@ -11,7 +11,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers
     [AbletLayer]
     class SimpleWearPass : IAbletLayer
     {
-        public string Id => "net.kaikoga.ativ.simple-wear";
+        public string Id => "Silksprite.AvatarTinkerVista.SimpleWear";
         public string DisplayName => "ATiV: SimpleWear";
         public void Configure(IDependencyConfigurator config)
         {
