@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
-#if ATIV_NDMF_SUPPORT
+#if ATIV_NDMF
 using NdmfRuntimeUtil = nadena.dev.ndmf.runtime.RuntimeUtil;
 #endif
 
-#if ATIV_ABLET_SUPPORT
+#if ATIV_ABLET
 using Ablet;
 #endif
 
@@ -23,11 +23,11 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
         {
             if (!transform) return null;
 
-#if ATIV_ABLET_SUPPORT
+#if ATIV_ABLET
             return AbletFacade.GetEntrypointFor(transform.gameObject).gameObject.transform;
 #endif
             
-#if ATIV_NDMF_SUPPORT
+#if ATIV_NDMF
             return NdmfRuntimeUtil.FindAvatarInParents(transform);
 #endif
             
