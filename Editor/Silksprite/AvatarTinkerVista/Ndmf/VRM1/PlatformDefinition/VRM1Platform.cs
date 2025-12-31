@@ -4,13 +4,16 @@ using System.IO;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.platform;
 using Silksprite.AvatarTinkerVista.Common.Utils;
-using Silksprite.AvatarTinkerVista.VRM1;
 using UniHumanoid;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UniVRM10;
 using Object = UnityEngine.Object;
+
+#if ATIV_ABLET
+using Ablet.Builtin.UniVRM10;
+#endif
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition
 {
@@ -99,14 +102,17 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition
     {
         public VRM1BuildUIElement()
         {
+#if ATIV_ABLET
             var buildButton = new Button
             {
                 text = "Export VRM1.0 Avatar with NDMF"
             };
             buildButton.clicked += OnBuild;
             hierarchy.Add(buildButton);
+#endif
         }
         
+#if ATIV_ABLET
         void OnBuild()
         {
             const string lastDirectoryPrefsKey = "net.kaikoga.ativ.VRM1.LastDirectory";
@@ -135,5 +141,6 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition
                 }
             }
         }
+#endif
     }
 }

@@ -4,6 +4,7 @@
     "references": [
         "nadena.dev.ndmf",
         "nadena.dev.ndmf.runtime",
+        "Ablet.Builtin.UniVRM.Editor",
         "VRM",
         "AdLib.Editor",
         "AvatarTinkerVista",
@@ -31,6 +32,11 @@
             "name": "nadena.dev.ndmf",
             "expression": "(1.8.0-a,2.0-a)",
             "define": "ATIV_NDMF"
+        },
+        {
+            "name": "net.kaikoga.ablet",
+            "expression": "[1.0.0,2.0.0)",
+            "define": "ATIV_ABLET"
         },
         {
             "name": "net.kaikoga.adlib",
