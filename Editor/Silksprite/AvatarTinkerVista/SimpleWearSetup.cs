@@ -9,7 +9,7 @@ using UnityEngine;
 using VRC.Dynamics;
 #endif
 
-#if ATIV_DETECTED_VRM1
+#if ATIV_UNIVRM_VRM1
 using Silksprite.AvatarTinkerVista.VRM1.Nondestructive;
 #endif
 
@@ -102,7 +102,7 @@ namespace Silksprite.AvatarTinkerVista
             {
                 leafBones.Add(gd.ActualRootBone);
             }
-#if ATIV_DETECTED_VRM1
+#if ATIV_UNIVRM_VRM1
             foreach (var gsb1 in root.GetComponentsInChildren<AtivMergeVRM1SpringBones>())
             {
                 foreach (var spring in gsb1.springs)
