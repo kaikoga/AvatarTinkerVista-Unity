@@ -1,16 +1,23 @@
-#if ATIV_UNIVRM_VRM0 || ATIV_UNIVRM_VRM1
-
-using Ablet;
-using Ablet.EditorAPI.V1.Extensions.Platform;
-using Ablet.Models.Extensions;
-using Ablet.Repositories;
-using nadena.dev.ndmf.runtime;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+#if ATIV_UNIVRM_VRM0
+using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
+#endif
+#if ATIV_UNIVRM_VRM1
+using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
+#endif
+
+#if ATIV_NDMF
+using nadena.dev.ndmf.runtime;
+#endif
+
+#if ATIV_ABLET
+using Ablet;
+using Ablet.EditorAPI.V1.Extensions.Platform;
+using Ablet.Models.Extensions;
+using Ablet.Repositories;
 #endif
 
 namespace Silksprite.AvatarTinkerVista
