@@ -1,6 +1,8 @@
 {
     "name": "AvatarTinkerVista",
     "references": [
+        "Ablet",
+        "Ablet.Builtin",
         "AvatarTinkerVista.Common"
     ],
     "includePlatforms": [
@@ -16,9 +18,9 @@
     "defineConstraints": [],
     "versionDefines": [
         {
-            "name": "nadena.dev.ndmf",
-            "expression": "(1.8.0-a,2.0-a)",
-            "define": "ATIV_NDMF"
+            "name": "net.kaikoga.ablet",
+            "expression": "[1.0.0,2.0.0)",
+            "define": "ATIV_ABLET"
         },
         {
             "name": "com.vrchat.avatars",

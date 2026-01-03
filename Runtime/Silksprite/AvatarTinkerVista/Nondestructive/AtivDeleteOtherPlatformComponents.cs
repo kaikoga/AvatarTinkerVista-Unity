@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Nondestructive.Base;
 using UnityEngine;
-#if UNITY_EDITOR && ATIV_NDMF && false
-using nadena.dev.ndmf;
-using nadena.dev.ndmf.runtime;
-using nadena.dev.ndmf.platform;
+
+#if ATIV_ABLET
+using Ablet;
+using Ablet.Builtin;
 #endif
 
 namespace Silksprite.AvatarTinkerVista.Nondestructive
@@ -26,27 +26,26 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive
             }
         }
 
-        public bool ndmfDetectPlatform = true;
+        public bool abletDetectPlatform = true;
         public AtivPlatform platform;
 
         public AtivPlatform ActualPlatform()
         {
-#if UNITY_EDITOR && ATIV_NDMF && false
-            if (ndmfDetectPlatform
-                && RuntimeUtil.FindAvatarInParents(transform) is {} avatarRoot
-                && PlatformRegistry.GetPrimaryPlatformForAvatar(avatarRoot.gameObject) is {} avatarPlatform)
+#if ATIV_ABLET
+            if (abletDetectPlatform)
             {
-                return avatarPlatform.QualifiedName switch
+                return AbletFacade.GetEntrypointFor(transform.gameObject).platform.Id switch
                 {
-                    WellKnownPlatforms.VRChatAvatar30 => AtivPlatform.VRCSDK3_Avatars,
-                    "net.kaikoga.ativ.univrm.vrm0" => AtivPlatform.VRM0,
-                    "net.kaikoga.ativ.univrm.vrm1" => AtivPlatform.VRM1,
+                    BuiltinPlatformIds.VRChatAvatarSDK3 => AtivPlatform.VRCSDK3_Avatars,
+                    BuiltinPlatformIds.UniVRM => AtivPlatform.VRM0,
+                    BuiltinPlatformIds.UniVRM10 => AtivPlatform.VRM1,
                     _ => platform
                 };
             }
 #endif
             return platform;
         }
+
         public enum AtivPlatform
         {
             VRCSDK3_Avatars,

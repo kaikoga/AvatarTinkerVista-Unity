@@ -6,20 +6,20 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive
     class AtivDeleteOtherPlatformComponentsEditor : Editor
     {
         AtivDeleteOtherPlatformComponents _deleteOtherPlatformComponents;
-        SerializedProperty _propNdmfDetectPlatform;
+        SerializedProperty _propAbletDetectPlatform;
         SerializedProperty _propPlatform;
 
         void OnEnable()
         {
             _deleteOtherPlatformComponents = (AtivDeleteOtherPlatformComponents)target;
-            _propNdmfDetectPlatform = serializedObject.FindProperty(nameof(AtivDeleteOtherPlatformComponents.ndmfDetectPlatform));
+            _propAbletDetectPlatform = serializedObject.FindProperty(nameof(AtivDeleteOtherPlatformComponents.abletDetectPlatform));
             _propPlatform = serializedObject.FindProperty(nameof(AtivDeleteOtherPlatformComponents.platform));
         }
 
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.PropertyField(_propNdmfDetectPlatform);
-            if (_propNdmfDetectPlatform.boolValue)
+            EditorGUILayout.PropertyField(_propAbletDetectPlatform);
+            if (_propAbletDetectPlatform.boolValue)
             {
                 using (new EditorGUI.DisabledScope(true))
                 {
