@@ -35,12 +35,12 @@
         },
         {
             "name": "net.kaikoga.ablet",
-            "expression": "[1.0.0,2.0.0)",
+            "expression": "[2.0.0,3.0.0)",
             "define": "ATIV_ABLET"
         },
         {
             "name": "net.kaikoga.adlib",
-            "expression": "0.1.0",
+            "expression": "[2.0.0,3.0.0)",
             "define": "ATIV_ADLIB"
         },
         {
