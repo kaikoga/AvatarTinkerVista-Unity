@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
 {
+    [Serializable] 
     public abstract class Overwrite<T>
     {
         public bool willOverwrite;
@@ -22,6 +23,7 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
     [Serializable] public class OverwriteBool : Overwrite<bool> { }
     [Serializable] public class OverwriteString : Overwrite<string> { }
     [Serializable] public class OverwriteVector3 : Overwrite<Vector3> { }
+    [Serializable] public class OverwriteBounds : Overwrite<Bounds> { }
     [Serializable] public class OverwriteTexture2D : Overwrite<Texture2D> { }
-
+    [Serializable] public class OverwriteAvatarRelativeTransform : Overwrite<AvatarRelativeTransform> { }
 }

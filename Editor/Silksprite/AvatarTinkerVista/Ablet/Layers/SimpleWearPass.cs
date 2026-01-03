@@ -12,7 +12,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers
     class SimpleWearPass : IAbletLayer
     {
         public string Id => "Silksprite.AvatarTinkerVista.SimpleWear";
-        public string DisplayName => "ATiV: SimpleWear";
+        public string DisplayName => "ATiV: Simple Wear";
         public void Configure(IDependencyConfigurator config)
         {
             config.AddDependency<TransformingPhase>();

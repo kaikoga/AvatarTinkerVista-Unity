@@ -86,6 +86,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
             Phase<AtivOptimizingComponent>(BuildPhase.Optimizing, optimizing =>
             {
                 optimizing.BeforePlugin("com.anatawa12.avatar-optimizer");
+                optimizing.Run(DefaultRendererSettingsPass.Instance);
 #if ATIV_UNIVRM_VRM0
                 optimizing.Run(DefaultVRM0FirstPersonPass.Instance);
 #endif

@@ -6,6 +6,7 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
     [CustomPropertyDrawer(typeof(OverwriteBool))]
     [CustomPropertyDrawer(typeof(OverwriteString))]
     [CustomPropertyDrawer(typeof(OverwriteTexture2D))]
+    [CustomPropertyDrawer(typeof(OverwriteAvatarRelativeTransform))]
     [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteAllowedUser))]
     [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM1CommercialUsageType))]
     [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM0LicenseType))]
@@ -36,6 +37,7 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
     }
 
     [CustomPropertyDrawer(typeof(OverwriteVector3))]
+    [CustomPropertyDrawer(typeof(OverwriteBounds))]
     public class MultilineOverwriteDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty serializedProperty, GUIContent label)
@@ -47,8 +49,6 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
             EditorGUIUtility.labelWidth = Mathf.Max(200f, position.width * 0.6f);
             using (new EditorGUI.PropertyScope(position, label, serializedProperty))
             {
-                var valuePosition = position;
-                valuePosition.yMin += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
                 using (new EditorGUI.DisabledScope(!serializedWillOverwrite.boolValue))
                 {
                     EditorGUI.PropertyField(position, serializedValue, label);
@@ -62,9 +62,10 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
             EditorGUIUtility.labelWidth = oldLabelWidth;
         }
 
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        public override float GetPropertyHeight(SerializedProperty serializedProperty, GUIContent label)
         {
-            return base.GetPropertyHeight(property, label) + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
+            var serializedValue = serializedProperty.FindPropertyRelative(nameof(Overwrite<bool>.value));
+            return EditorGUI.GetPropertyHeight(serializedValue);
         }
     }
 }

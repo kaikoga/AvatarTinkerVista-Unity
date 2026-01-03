@@ -83,10 +83,12 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
             return avatarRootTransform.FindOrCreateSecondary().FindOrCreateChild(name);
         }
 
-        const string AvatarRootMagic = "$$$AVATAR_ROOT$$$"; // this follows the convention of Modular Avatar
-        public static string RelativePath(Transform root, Transform child)
+        const string AvatarRootPath = "";
+        const string ModularAvatarAvatarRootMagic = "$$$AVATAR_ROOT$$$";
+
+        public static string RelativePath(Transform root, Transform child, bool isModularAvatarMagic = false)
         {
-            return RelativePath(root, child, AvatarRootMagic);
+            return RelativePath(root, child, isModularAvatarMagic ? ModularAvatarAvatarRootMagic : AvatarRootPath);
         }
 
         static string RelativePath(Transform root, Transform child, string rootName)
@@ -105,6 +107,14 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
                 path = Path.Combine(cursor.gameObject.name, path);
             }
             return path;
+        }
+
+        public static Transform FromRelativePath(Transform root, string relativePath, bool isModularAvatarMagic = false)
+        {
+            return !root ? null :
+                relativePath == null ? null :
+                relativePath == (isModularAvatarMagic ? ModularAvatarAvatarRootMagic : AvatarRootPath) ? root :
+                root.Find(relativePath);
         }
     }
 }
