@@ -2,6 +2,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+#if ATIV_UNIVRM_VRM0 || ATIV_UNIVRM_VRM1
+
 #if ATIV_NDMF
 using nadena.dev.ndmf.runtime;
 using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
@@ -15,12 +17,16 @@ using Ablet.Models.Extensions;
 using Ablet.Repositories;
 #endif
 
+#endif
+
 namespace Silksprite.AvatarTinkerVista.Nondestructive
 {
     [CustomEditor(typeof(AtivExportVRMUI))]
     [CanEditMultipleObjects]
     class AtivExportVRMUIEditor : Editor
     {
+
+#if ATIV_UNIVRM_VRM0 || ATIV_UNIVRM_VRM1
 
 #if ATIV_ABLET
         static bool MayNdmfExport => !EditorSettingsRepository.Instance.Value.IsNdmfOnAblet;
@@ -87,5 +93,7 @@ namespace Silksprite.AvatarTinkerVista.Nondestructive
 
             return container;
         }
+
+#endif
     }
 }
