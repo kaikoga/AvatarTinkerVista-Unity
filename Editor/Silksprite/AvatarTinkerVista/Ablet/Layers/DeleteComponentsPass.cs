@@ -4,7 +4,7 @@ using Ablet.API.V1;
 using Ablet.API.V1.Attributes;
 using Ablet.API.V1.Building;
 using Ablet.Builtin;
-using Silksprite.AvatarTinkerVista.Nondestructive.Base;
+using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Ablet.Layers

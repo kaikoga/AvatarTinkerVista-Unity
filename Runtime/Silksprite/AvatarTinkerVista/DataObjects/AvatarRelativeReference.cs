@@ -2,7 +2,7 @@ using System;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
+namespace Silksprite.AvatarTinkerVista.DataObjects
 {
     [Serializable]
     public abstract class AvatarRelativeReference<T>

@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive
+namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivMergeVRMFirstPerson))]
     [CanEditMultipleObjects]

@@ -1,25 +1,19 @@
-using UnityEditor;
-using UnityEngine;
-using UnityEngine.UIElements;
-
 #if ATIV_UNIVRM_VRM0 || ATIV_UNIVRM_VRM1
 
-#if ATIV_NDMF
-using nadena.dev.ndmf.runtime;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
-#endif
-
-#if ATIV_ABLET
 using Ablet;
 using Ablet.EditorAPI.V1.Extensions.Platform;
 using Ablet.Models.Extensions;
 using Ablet.Repositories;
-#endif
+using nadena.dev.ndmf.runtime;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
+using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 #endif
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive
+namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivExportVRMUI))]
     [CanEditMultipleObjects]

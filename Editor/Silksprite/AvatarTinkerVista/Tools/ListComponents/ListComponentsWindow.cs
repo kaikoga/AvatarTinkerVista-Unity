@@ -30,10 +30,10 @@ namespace Silksprite.AvatarTinkerVista.Tools.ListComponents
 
             GUILayout.Label("List Components", new GUIStyle { fontStyle = FontStyle.Bold });
             GUILayout.Space(4f);
-            EditorGUILayout.HelpBox("使用されているコンポーネントを表示します。".Replace(" ", " "), MessageType.Info);
+            EditorGUILayout.HelpBox("選択されたコンポーネント以下で使用されているコンポーネントを表示します。".Replace(" ", " "), MessageType.Info);
             GUILayout.Space(4f);
 
-            HelpLabel("1. アバターを選択する");
+            HelpLabel("1. アバター（など）を選択する");
             var serializedCore = new SerializedObject(this).FindProperty(nameof(core));
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(serializedCore.FindPropertyRelative(nameof(ListComponents.avatarRoot)));

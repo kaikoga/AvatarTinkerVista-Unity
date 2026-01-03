@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Utils;
-using Silksprite.AvatarTinkerVista.Nondestructive.DataObjects;
+using Silksprite.AvatarTinkerVista.DataObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive
+namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivDefaultRendererSettings))]
     class AtivDefaultRendererSettingsEditor : Editor

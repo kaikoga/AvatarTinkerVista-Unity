@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace Silksprite.AvatarTinkerVista.VRM1.Nondestructive
+namespace Silksprite.AvatarTinkerVista.VRM1
 {
     [CustomEditor(typeof(AtivMergeVRM1SpringBones))]
     class AtivMergeVRM1SpringBonesEditor : Editor

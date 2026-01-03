@@ -1,12 +1,12 @@
 using Silksprite.AvatarTinkerVista.Common.Base;
-using Silksprite.AvatarTinkerVista.Nondestructive.DataObjects;
+using Silksprite.AvatarTinkerVista.DataObjects;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive
+namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Default Renderer Settings")]
-    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_default_renderer_settings")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_default_renderer_settings")]
     public class AtivDefaultRendererSettings : AtivOptimizingComponent
     {
         public bool preferParentSettings;

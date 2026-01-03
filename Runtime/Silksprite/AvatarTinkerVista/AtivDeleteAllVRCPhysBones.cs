@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using Silksprite.AvatarTinkerVista.Nondestructive.Base;
+using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive
+namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Delete All VRC PhysBones")]
-    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_delete_all_vrc_physbones")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_delete_all_vrc_physbones")]
     public class AtivDeleteAllVRCPhysBones : AtivDeleteComponentsBase
     {
         public override IEnumerable<string> ComponentTypeNamePrefixes

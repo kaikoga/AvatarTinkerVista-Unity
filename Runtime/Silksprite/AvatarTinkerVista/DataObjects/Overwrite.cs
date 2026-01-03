@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive.DataObjects
+namespace Silksprite.AvatarTinkerVista.DataObjects
 {
     [Serializable] 
     public abstract class Overwrite<T>

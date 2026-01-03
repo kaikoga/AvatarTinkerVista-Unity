@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.AvatarTinkerVista.Common.Wear;
+using Silksprite.AvatarTinkerVista.VRM1;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ using VRC.Dynamics;
 #endif
 
 #if ATIV_UNIVRM_VRM1
-using Silksprite.AvatarTinkerVista.VRM1.Nondestructive;
 #endif
 
 namespace Silksprite.AvatarTinkerVista

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Converter;
 using Silksprite.AvatarTinkerVista.Common.Utils;
-using Silksprite.AvatarTinkerVista.VRM1.Nondestructive;
 using UnityEngine;
 using UniVRM10;
 

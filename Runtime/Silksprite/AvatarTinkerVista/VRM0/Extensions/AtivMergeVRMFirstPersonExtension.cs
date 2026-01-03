@@ -1,6 +1,6 @@
 using System;
 using VRM;
-using static Silksprite.AvatarTinkerVista.Nondestructive.AtivMergeVRMFirstPerson;
+using static Silksprite.AvatarTinkerVista.AtivMergeVRMFirstPerson;
 
 namespace Silksprite.AvatarTinkerVista.VRM0.Extensions
 {

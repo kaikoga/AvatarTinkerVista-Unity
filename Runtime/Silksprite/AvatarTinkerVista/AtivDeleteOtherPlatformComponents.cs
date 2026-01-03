@@ -1,17 +1,14 @@
 using System.Collections.Generic;
-using Silksprite.AvatarTinkerVista.Nondestructive.Base;
-using UnityEngine;
-
-#if ATIV_ABLET
 using Ablet;
 using Ablet.Builtin;
-#endif
+using Silksprite.AvatarTinkerVista.Base;
+using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.Nondestructive
+namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("Avatar Tinker Vista/ATiV Delete Other Platform Components")]
-    [HelpURL("https://docs.kaikoga.net/ativ/ndmf_components/ativ_delete_other_platform_components")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_delete_other_platform_components")]
     public class AtivDeleteOtherPlatformComponents : AtivDeleteComponentsBase
     {
         public override IEnumerable<string> ComponentTypeNamePrefixes
