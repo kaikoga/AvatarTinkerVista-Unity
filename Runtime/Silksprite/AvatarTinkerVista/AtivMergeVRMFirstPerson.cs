@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Common.Base;
+using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista
@@ -10,21 +10,7 @@ namespace Silksprite.AvatarTinkerVista
     [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_merge_vrm_firstperson")]
     public class AtivMergeVRMFirstPerson : AtivTransformingComponent
     {
-        public List<RendererFirstPersonFlags> renderers = new List<RendererFirstPersonFlags>();
-        
-        [Serializable]
-        public struct RendererFirstPersonFlags
-        {
-            public Renderer renderer;
-            public AtivFirstPersonFlag firstPersonFlag;
-        }
+        public List<AtivRendererFirstPersonFlags> renderers = new List<AtivRendererFirstPersonFlags>();
 
-        public enum AtivFirstPersonFlag
-        {
-            Auto,
-            Both,
-            ThirdPersonOnly,
-            FirstPersonOnly,
-        }
     }
 }

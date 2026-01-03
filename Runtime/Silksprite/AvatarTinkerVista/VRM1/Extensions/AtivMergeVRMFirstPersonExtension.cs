@@ -1,12 +1,13 @@
 using System;
+using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using UniGLTF.Extensions.VRMC_vrm;
-using static Silksprite.AvatarTinkerVista.AtivMergeVRMFirstPerson;
+using static Silksprite.AvatarTinkerVista.Common.DataObjects.AtivRendererFirstPersonFlags;
 
 namespace Silksprite.AvatarTinkerVista.VRM1.Extensions
 {
     public static class AtivMergeVRMFirstPersonExtension
     {
-        public static FirstPersonType VRM1FirstPersonType(this RendererFirstPersonFlags rendererFirstPersonFlags)
+        public static FirstPersonType VRM1FirstPersonType(this AtivRendererFirstPersonFlags rendererFirstPersonFlags)
         {
             switch (rendererFirstPersonFlags.firstPersonFlag)
             {

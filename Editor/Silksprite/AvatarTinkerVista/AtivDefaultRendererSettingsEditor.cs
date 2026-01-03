@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Utils;
-using Silksprite.AvatarTinkerVista.DataObjects;
 using UnityEditor;
 using UnityEngine;
 

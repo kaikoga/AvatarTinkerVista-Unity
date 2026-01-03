@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Common.Base;
-using Silksprite.AvatarTinkerVista.DataObjects;
+using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using UnityEngine;
 using UnityEngine.Serialization;
 

@@ -1,5 +1,5 @@
 using Silksprite.AvatarTinkerVista.Common.Base;
-using Silksprite.AvatarTinkerVista.DataObjects;
+using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista

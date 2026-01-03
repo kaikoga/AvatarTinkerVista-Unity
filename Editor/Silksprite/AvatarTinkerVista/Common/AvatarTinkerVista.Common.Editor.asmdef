@@ -2,7 +2,8 @@
     "name": "AvatarTinkerVista.Common.Editor",
     "rootNamespace": "Silksprite.AvatarTinkerVista.Common",
     "references": [
-        "AvatarTinkerVista.Common"
+        "AvatarTinkerVista.Common",
+        "AvatarTinkerVista"
     ],
     "includePlatforms": [
         "Editor"

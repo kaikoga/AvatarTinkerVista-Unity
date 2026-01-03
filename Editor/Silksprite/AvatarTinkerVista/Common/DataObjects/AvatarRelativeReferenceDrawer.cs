@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.DataObjects
+namespace Silksprite.AvatarTinkerVista.Common.DataObjects
 {
     public abstract class AvatarRelativeReferenceDrawer<T> : PropertyDrawer
     where T : Component

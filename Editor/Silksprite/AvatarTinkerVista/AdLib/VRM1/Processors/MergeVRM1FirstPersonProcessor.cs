@@ -14,7 +14,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Processors
 
             vrmInstance.Vrm = new CustomCloneVRM10Object().Clone(vrmInstance.Vrm).mainAsset;
             vrmInstance.Vrm.FirstPerson.Renderers.AddRange(sources.SelectMany(source => source.renderers)
-                .Select(renderer => new RendererFirstPersonFlags
+                .Select(renderer => new UniVRM10.RendererFirstPersonFlags
                 {
                     Renderer = AtivRuntimeUtil.RelativePath(vrmInstance.transform, renderer.renderer.transform),
                     FirstPersonFlag = renderer.VRM1FirstPersonType()

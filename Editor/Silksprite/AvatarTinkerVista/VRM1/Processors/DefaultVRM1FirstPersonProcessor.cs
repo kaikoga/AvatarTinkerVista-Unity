@@ -59,7 +59,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Processors
                         break;
                     }
                 }
-                return new RendererFirstPersonFlags
+                return new UniVRM10.RendererFirstPersonFlags
                 {
                     Renderer = AtivRuntimeUtil.RelativePath(vrmInstance.transform, renderer.transform),
                     FirstPersonFlag = firstPersonFlag

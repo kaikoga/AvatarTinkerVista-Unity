@@ -1,15 +1,15 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Silksprite.AvatarTinkerVista.DataObjects
+namespace Silksprite.AvatarTinkerVista.Common.DataObjects
 {
-    [CustomPropertyDrawer(typeof(AtivMergeVRMFirstPerson.RendererFirstPersonFlags))]
+    [CustomPropertyDrawer(typeof(AtivRendererFirstPersonFlags))]
     class RendererFirstPersonFlagsDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            var rendererProp = property.FindPropertyRelative(nameof(AtivMergeVRMFirstPerson.RendererFirstPersonFlags.renderer));
-            var flagProp = property.FindPropertyRelative(nameof(AtivMergeVRMFirstPerson.RendererFirstPersonFlags.firstPersonFlag));
+            var rendererProp = property.FindPropertyRelative(nameof(AtivRendererFirstPersonFlags.renderer));
+            var flagProp = property.FindPropertyRelative(nameof(AtivRendererFirstPersonFlags.firstPersonFlag));
 
             const float rightSideWidth = 140.0f;
 
