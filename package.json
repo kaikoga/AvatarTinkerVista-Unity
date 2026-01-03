@@ -12,7 +12,6 @@
     "url": "https://github.com/kaikoga/AvatarTinkerVista-Unity"
   },
   "vpmDependencies": {
-    "net.kaikoga.ablet": "^1.0.0",
     "net.kaikoga.adlib": ">=1.0.0"
   }
 }
