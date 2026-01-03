@@ -12,6 +12,7 @@ namespace Silksprite.AvatarTinkerVista
         [MenuItem(SimpleWearSetupAsAccessoryModuleMenu, true, 62001)]
         public static bool ValidateSimpleWearSetup(MenuCommand menuCommand)
         {
+            if (!Selection.activeGameObject) return false;
             return Selection.activeGameObject.TryGetComponent(out Animator _);
         }
 
