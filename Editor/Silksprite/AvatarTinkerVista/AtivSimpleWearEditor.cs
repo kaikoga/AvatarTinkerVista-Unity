@@ -13,6 +13,8 @@ namespace Silksprite.AvatarTinkerVista
     {
         AtivSimpleWear[] _simpleWears;
         static bool _showMapping;
+        static bool _showModuleBoneTree;
+        static bool _showAvatarBoneTree;
 
         SerializedProperty _serializedModuleRootBones;
         SerializedProperty _serializedModuleIgnoreBones;
@@ -36,6 +38,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public override void OnInspectorGUI()
         {
+            EditorGUILayout.HelpBox("This component is in beta state.", MessageType.Info);
             Action<AtivSimpleWear> defer = null;
             AtivGUILayout.Header("Module Settings");
             EditorGUILayout.PropertyField(_serializedModuleRootBones);
@@ -68,17 +71,33 @@ namespace Silksprite.AvatarTinkerVista
                 foreach (var simpleWear in _simpleWears)
                 {
                     defer.Invoke(simpleWear);
+                    EditorUtility.SetDirty(simpleWear);
                 }
             }
-            
 
             if (!serializedObject.isEditingMultipleObjects)
             {
-                AtivGUILayout.Header("Debug");
+                var simpleWear = _simpleWears.First();
+                AtivGUILayout.Header("Merge Dry Run");
+                _showModuleBoneTree = EditorGUILayout.Foldout(_showModuleBoneTree, "Show Module Bone Tree");
+                if (_showModuleBoneTree)
+                {
+                    var module = simpleWear.ResolveModule();
+                    using var _ = new EditorGUI.DisabledScope(true);
+                    DrawWearTree(module);
+                }
+                
+                _showAvatarBoneTree = EditorGUILayout.Foldout(_showAvatarBoneTree, "Show Avatar Bone Tree");
+                if (_showAvatarBoneTree)
+                {
+                    var avatar = simpleWear.ResolveAvatar();
+                    using var _ = new EditorGUI.DisabledScope(true);
+                    DrawWearTree(avatar);
+                }
+                
                 _showMapping = EditorGUILayout.Foldout(_showMapping, "Show Mapping");
                 if (_showMapping)
                 {
-                    var simpleWear = _simpleWears.First();
                     var map = WearProcessor.Map(simpleWear.ResolveModule(), simpleWear.ResolveAvatar());
                     using var _ = new EditorGUI.DisabledScope(true);
                     foreach (var m in map)
@@ -90,6 +109,16 @@ namespace Silksprite.AvatarTinkerVista
                         }
                     }
                 }
+            }
+        }
+
+        void DrawWearTree(WearTreeNode[] tree)
+        {
+            foreach (var node in tree)
+            {
+                EditorGUILayout.ObjectField(new GUIContent(""), node.Bone, typeof(Transform), true);
+                using var _ = new EditorGUI.IndentLevelScope();
+                DrawWearTree(node.Children);
             }
         }
 

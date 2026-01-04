@@ -15,6 +15,7 @@
         "AvatarTinkerVista.Ndmf.VRM0.Editor",
         "AvatarTinkerVista.Ndmf.VRM1.Editor",
         "AvatarTinkerVista.VRM1",
+        "VRM",
         "VRM10"
     ],
     "includePlatforms": [

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -36,7 +35,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Wear
                     }
                     else
                     {
-                        score = -LevenshteinDistance(moduleChild.Name, avatarChild.Name);
+                        score = -WearUtil.NameDistance(moduleChild.Name, avatarChild.Name);
                     }
                     return (moduleChild, avatarChild, score);
                 })).OrderByDescending(r => r.score);
@@ -66,35 +65,6 @@ namespace Silksprite.AvatarTinkerVista.Common.Wear
             {
                 m.moduleBone.SetParent(m.avatarBone);
             }
-        }
-
-        static int LevenshteinDistance(string s, string t)
-        {
-            var m = s.Length;
-            var n = t.Length;
-            
-            var d = new int[m + 1, n + 1];
-            for (var i = 0; i <= m; i++)
-            {
-                d[i, 0] = i;
-            }
-            for (var j = 0; j <= n; j++)
-            {
-                d[0, j] = j;
-            }
-            for (var j = 1; j <= n; j++)
-            {
-                for (var i = 1; i <= m; i++)
-                {
-                    var cost = s[i - 1] == t[j - 1] ? 0 : 1;
-                    d[i, j] = Math.Min(
-                        Math.Min(
-                            d[i - 1, j] + 1,
-                            d[i, j - 1] + 1),
-                        d[i - 1, j - 1] + cost);
-                }
-            }
-            return d[m, n];
         }
     }
 }

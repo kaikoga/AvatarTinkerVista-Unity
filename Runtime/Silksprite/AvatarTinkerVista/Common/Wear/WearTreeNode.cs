@@ -26,9 +26,28 @@ namespace Silksprite.AvatarTinkerVista.Common.Wear
             var dict = new Dictionary<HumanBodyBones, Transform>();
             if (animator && animator.avatar && animator.avatar is { isValid: true, isHuman: true })
             {
+                var bonesAndLower = rootBone.GetComponentsInChildren<Transform>()
+                    .Select(bone => (bone, lower: bone.gameObject.name.ToLowerInvariant()))
+                    .ToArray();
                 foreach (var bone in Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().Where(bone => bone != HumanBodyBones.LastBone))
                 {
-                    dict.Add(bone, animator.GetBoneTransform(bone));
+                    Transform DetectBoneTransform()
+                    {
+                        if (animator.GetBoneTransform(bone) is { } fastResult)
+                        {
+                            return fastResult;
+                        }
+                        const string missingBoneName = "/";
+                        var boneNameLower = animator.avatar.humanDescription.human
+                            .FirstOrDefault(hb => hb.humanName == HumanTrait.BoneName[(int)bone])
+                            .boneName ?? missingBoneName
+                            .ToLowerInvariant();
+                        return bonesAndLower
+                            .OrderBy(b => WearUtil.NameDistance(b.lower, boneNameLower))
+                            .FirstOrDefault().bone;
+                    }
+
+                    dict.Add(bone, DetectBoneTransform());
                 }
             }
             return BuildInternal(rootBone, armatureMode, ignore, leaf, dict);

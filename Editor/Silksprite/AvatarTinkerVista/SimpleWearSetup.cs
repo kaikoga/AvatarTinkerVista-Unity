@@ -1,12 +1,18 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.AvatarTinkerVista.Common.Wear;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 #if ATIV_VRCSDK3_AVATARS
 using VRC.Dynamics;
+#endif
+
+#if ATIV_UNIVRM_VRM0
+using VRM;
 #endif
 
 #if ATIV_UNIVRM_VRM1
@@ -46,11 +52,16 @@ namespace Silksprite.AvatarTinkerVista
                 new WearRootBoneEntry
                 {
                     rootBone = hips,
-                    armatureMode = animator.isHuman && animator.GetBoneTransform(HumanBodyBones.Hips) == hips ? WearArmatureMode.Humanoid : WearArmatureMode.All,
+                    armatureMode = animator switch
+                    {
+                        { isHuman: true } => animator.GetBoneTransform(HumanBodyBones.Hips) == hips ? WearArmatureMode.Humanoid : WearArmatureMode.All,
+                        _ => WearArmatureMode.All
+                    },
                     humanBone = HumanBodyBones.Hips
                 }
             };
-            simpleWear.moduleLeafBones = GuessLeafBones(animator.transform).ToArray();
+            simpleWear.moduleIgnoreBones = GuessIgnoreBones(((Component)animator ?? simpleWear).transform).ToArray();
+            simpleWear.moduleLeafBones = Array.Empty<Transform>();
         }
         
         public static void SetupAccessoryModule(AtivSimpleWear simpleWear)
@@ -64,7 +75,8 @@ namespace Silksprite.AvatarTinkerVista
                     humanBone = HumanBodyBones.Hips
                 }
             };
-            simpleWear.moduleLeafBones = GuessLeafBones(simpleWear.transform).ToArray();
+            simpleWear.moduleIgnoreBones = GuessIgnoreBones(simpleWear.transform).ToArray();
+            simpleWear.moduleLeafBones = Array.Empty<Transform>();
         }
 
         public static void SetupAvatarIfNeeded(AtivSimpleWear simpleWear)
@@ -86,22 +98,32 @@ namespace Silksprite.AvatarTinkerVista
                 armatureMode = WearArmatureMode.Humanoid,
                 humanBone = moduleRootBone.humanBone
             }).ToArray();
-            simpleWear.avatarLeafBones = GuessLeafBones(avatarRoot).ToArray();
+            simpleWear.avatarIgnoreBones = GuessIgnoreBones(avatarRoot).ToArray();
+            simpleWear.avatarLeafBones = Array.Empty<Transform>();
         }
 
-        static IEnumerable<Transform> GuessLeafBones(Transform root)
+        static IEnumerable<Transform> GuessIgnoreBones(Transform root)
         {
-            var leafBones = new HashSet<Transform>();
+            var ignoreBones = new HashSet<Transform>();
 #if ATIV_VRCSDK3_AVATARS
             foreach (var pb in root.GetComponentsInChildren<VRCPhysBoneBase>())
             {
-                leafBones.Add(pb.GetRootTransform());
+                ignoreBones.Add(pb.GetRootTransform());
             }
 #endif
             foreach (var gd in root.GetComponentsInChildren<AtivGenerateDynamics>())
             {
-                leafBones.Add(gd.ActualRootBone);
+                ignoreBones.Add(gd.ActualRootBone);
             }
+#if ATIV_UNIVRM_VRM0
+            foreach (var springBone in StageUtility.GetCurrentStageHandle().FindComponentsOfType<VRMSpringBone>())
+            {
+                foreach (var rootBone in springBone.RootBones)
+                {
+                    ignoreBones.Add(rootBone);
+                }
+            }
+#endif
 #if ATIV_UNIVRM_VRM1
             foreach (var gsb1 in root.GetComponentsInChildren<AtivMergeVRM1SpringBones>())
             {
@@ -111,7 +133,7 @@ namespace Silksprite.AvatarTinkerVista
                         .OrderBy(joint => AtivRuntimeUtil.RelativePath(root.transform, joint.transform))
                         .FirstOrDefault() is { } jointRoot)
                     {
-                        leafBones.Add(jointRoot.transform);
+                        ignoreBones.Add(jointRoot.transform);
                     }
                 }
             }
@@ -120,7 +142,7 @@ namespace Silksprite.AvatarTinkerVista
                 .Select(a => a.transform)
                 .Where(t => t != root)
                 .ToArray();
-            return leafBones .Where(leafBone => !childModules.Any(leafBone.IsChildOf));
+            return ignoreBones.Where(bone => !childModules.Any(bone.IsChildOf));
         }
     }
 }
