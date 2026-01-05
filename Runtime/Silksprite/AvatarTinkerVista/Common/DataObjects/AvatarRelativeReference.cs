@@ -29,6 +29,7 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
         }
 
         public T ResolveNow(Transform transform) => AvatarRelativeReference.ResolveNow<T>(transform, relativePath);
+        public T ResolveFromAvatar(Transform avatarRoot) => AvatarRelativeReference.ResolveFromAvatar<T>(avatarRoot, relativePath);
     }
 
     [Serializable]
@@ -41,15 +42,29 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
         {
             if (string.IsNullOrEmpty(relativePath)) return null;
             var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
-            return avatarRoot? AtivRuntimeUtil.FromRelativePath(avatarRoot.transform, relativePath)?.GetComponent<T>() : null;
+            return ResolveFromAvatar<T>(avatarRoot, relativePath);
         }
 
         public static string RelativePath<T>(Transform transform, T obj)
             where T : Component
         {
             var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
+            return RelativePathFromAvatar(avatarRoot, obj);
+        }
+        
+        public static T ResolveFromAvatar<T>(Transform avatarRoot, string relativePath)
+            where T : Component
+        {
+            if (string.IsNullOrEmpty(relativePath)) return null;
+            return avatarRoot? AtivRuntimeUtil.FromRelativePath(avatarRoot.transform, relativePath)?.GetComponent<T>() : null;
+        }
+
+        public static string RelativePathFromAvatar<T>(Transform avatarRoot, T obj)
+            where T : Component
+        {
             return avatarRoot? AtivRuntimeUtil.RelativePath(avatarRoot.transform, obj?.transform) : null;
         }
+
     }
 
 }

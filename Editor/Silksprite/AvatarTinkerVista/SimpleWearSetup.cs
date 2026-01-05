@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.AvatarTinkerVista.Common.Wear;
 using UnityEditor;
@@ -81,7 +82,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public static void SetupAvatarIfNeeded(AtivSimpleWear simpleWear)
         {
-            if (simpleWear.avatarRootBones.All(rootBone => !rootBone.rootBone))
+            if (simpleWear.avatarRootBones.All(rootBone => !rootBone.rootBone.ResolveNow(simpleWear.transform)))
             {
                 SetupAvatar(simpleWear);
             }
@@ -92,9 +93,12 @@ namespace Silksprite.AvatarTinkerVista
             var animator = simpleWear.GetComponentInParent<Animator>();
             var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(animator.transform);
             var avatarAnimator = avatarRoot.GetComponent<Animator>();
-            simpleWear.avatarRootBones = simpleWear.moduleRootBones.Select(moduleRootBone => new WearRootBoneEntry
+            simpleWear.avatarRootBones = simpleWear.moduleRootBones.Select(moduleRootBone => new WearRelativeRootBoneEntry
             {
-                rootBone = avatarAnimator.GetBoneTransform(moduleRootBone.humanBone),
+                rootBone = new AvatarRelativeTransform
+                {
+                    RelativePath = AvatarRelativeReference.RelativePath(animator.transform, avatarAnimator.GetBoneTransform(moduleRootBone.humanBone))
+                },
                 armatureMode = WearArmatureMode.Humanoid,
                 humanBone = moduleRootBone.humanBone
             }).ToArray();
