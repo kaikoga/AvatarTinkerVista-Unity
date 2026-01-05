@@ -11,13 +11,17 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
             using (new EditorGUI.PropertyScope(position, label, serializedProperty))
             {
                 var transform = (serializedProperty.serializedObject.targetObject as Component)?.transform;
+                var serializedHasValue = serializedProperty.FindPropertyRelative("hasValue");
                 var serializedRelativePath = serializedProperty.FindPropertyRelative("relativePath");
-                var obj = AvatarRelativeReference<T>.ResolveNow(transform, serializedRelativePath.stringValue);
+                var relativePathValue = serializedHasValue.boolValue ? serializedRelativePath.stringValue : null;
+                var obj = AvatarRelativeReference.ResolveNow<T>(transform, relativePathValue);
                 var change = new EditorGUI.ChangeCheckScope();
                 obj = EditorGUI.ObjectField(position, label, obj, typeof(T), true) as T;
                 if (change.changed)
                 {
-                    serializedRelativePath.stringValue = AvatarRelativeReference<T>.RelativePath(transform, obj);
+                    var newRelativePathValue = AvatarRelativeReference.RelativePath(transform, obj);
+                    serializedRelativePath.stringValue = newRelativePathValue ?? "";
+                    serializedHasValue.boolValue = newRelativePathValue != null;
                 }
             }
         }

@@ -30,7 +30,7 @@ namespace Silksprite.AvatarTinkerVista
                     willOverwrite = true,
                     value = new AvatarRelativeTransform
                     {
-                        relativePath = AvatarRelativeReference<Transform>.RelativePath(avatarRoot, hips)
+                        RelativePath = AvatarRelativeReference.RelativePath(avatarRoot, hips)
                     }
                 };
                 ativ.overwriteRootBone = new OverwriteAvatarRelativeTransform
@@ -38,7 +38,7 @@ namespace Silksprite.AvatarTinkerVista
                     willOverwrite = true,
                     value = new AvatarRelativeTransform
                     {
-                        relativePath = AvatarRelativeReference<Transform>.RelativePath(avatarRoot, hips)
+                        RelativePath = AvatarRelativeReference.RelativePath(avatarRoot, hips)
                     }
                 };
                 ativ.overwriteBounds = new OverwriteBounds

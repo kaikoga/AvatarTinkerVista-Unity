@@ -24,7 +24,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
             if (!transform) return null;
 
 #if ATIV_ABLET
-            return AbletFacade.GetEntrypointFor(transform.gameObject).gameObject.transform;
+            return AbletFacade.GetEntrypointFor(transform.gameObject).gameObject?.transform;
 #endif
             
 #if ATIV_NDMF

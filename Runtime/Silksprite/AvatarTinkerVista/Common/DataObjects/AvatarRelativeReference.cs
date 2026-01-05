@@ -8,23 +8,48 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     public abstract class AvatarRelativeReference<T>
     where T : Component
     {
-        public string relativePath;
+        [SerializeField] bool hasValue;
+        [SerializeField] string relativePath;
 
-        public T ResolveNow(Transform transform) => ResolveNow(transform, relativePath);
-
-        public static T ResolveNow(Transform transform, string relativePath)
+        public string RelativePath
         {
-            var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
-            return AtivRuntimeUtil.FromRelativePath(avatarRoot.transform, relativePath)?.GetComponent<T>();
+            get => hasValue ? relativePath : null;
+            set {
+                if (value is { } path)
+                {
+                    hasValue = true;
+                    relativePath = path;
+                }
+                else
+                {
+                    hasValue = false;
+                    relativePath = "";
+                }
+            } 
         }
 
-        public static string RelativePath(Transform transform, T obj)
-        {
-            var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
-            return AtivRuntimeUtil.RelativePath(avatarRoot.transform, obj?.transform);
-        }
+        public T ResolveNow(Transform transform) => AvatarRelativeReference.ResolveNow<T>(transform, relativePath);
     }
 
     [Serializable]
     public class AvatarRelativeTransform : AvatarRelativeReference<Transform> { }
+
+    public static class AvatarRelativeReference
+    {
+        public static T ResolveNow<T>(Transform transform, string relativePath)
+            where T : Component
+        {
+            if (string.IsNullOrEmpty(relativePath)) return null;
+            var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
+            return avatarRoot? AtivRuntimeUtil.FromRelativePath(avatarRoot.transform, relativePath)?.GetComponent<T>() : null;
+        }
+
+        public static string RelativePath<T>(Transform transform, T obj)
+            where T : Component
+        {
+            var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
+            return avatarRoot? AtivRuntimeUtil.RelativePath(avatarRoot.transform, obj?.transform) : null;
+        }
+    }
+
 }
