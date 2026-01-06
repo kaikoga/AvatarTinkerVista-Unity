@@ -26,8 +26,10 @@ namespace Silksprite.AvatarTinkerVista.Common.Wear
             var dict = new Dictionary<HumanBodyBones, Transform>();
             if (animator && animator.avatar && animator.avatar is { isValid: true, isHuman: true })
             {
-                var bonesAndLower = rootBone.GetComponentsInChildren<Transform>()
-                    .Select(bone => (bone, lower: bone.gameObject.name.ToLowerInvariant()))
+                var humanBones = animator.avatar.humanDescription.human;
+                var humanBoneNames = HumanTrait.BoneName;
+                var normalizedBones = rootBone.GetComponentsInChildren<Transform>()
+                    .Select(bone => (bone, normalizedName: WearUtil.Normalize(bone.gameObject.name)))
                     .ToArray();
                 foreach (var bone in Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().Where(bone => bone != HumanBodyBones.LastBone))
                 {
@@ -38,12 +40,11 @@ namespace Silksprite.AvatarTinkerVista.Common.Wear
                             return fastResult;
                         }
                         const string missingBoneName = "/";
-                        var boneNameLower = animator.avatar.humanDescription.human
-                            .FirstOrDefault(hb => hb.humanName == HumanTrait.BoneName[(int)bone])
-                            .boneName ?? missingBoneName
-                            .ToLowerInvariant();
-                        return bonesAndLower
-                            .OrderBy(b => WearUtil.NameDistance(b.lower, boneNameLower))
+                        var boneNameToFind = WearUtil.Normalize(humanBones
+                            .FirstOrDefault(hb => hb.humanName == humanBoneNames[(int)bone])
+                            .boneName ?? missingBoneName);
+                        return normalizedBones
+                            .OrderBy(b => WearUtil.NameDistance(b.normalizedName, boneNameToFind))
                             .FirstOrDefault().bone;
                     }
 
@@ -59,7 +60,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Wear
             
             return new WearTreeNode(
                 rootBone,
-                rootBone.gameObject.name.ToLowerInvariant(),
+                WearUtil.Normalize(rootBone.gameObject.name),
                 humanBone.Value ? humanBone.Key : null,
                 leaf.Contains(rootBone)
                     ? Array.Empty<WearTreeNode>()
