@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common;
 using Silksprite.AvatarTinkerVista.Common.Wear;
@@ -12,9 +13,6 @@ namespace Silksprite.AvatarTinkerVista
     class AtivSimpleWearEditor : Editor
     {
         AtivSimpleWear[] _simpleWears;
-        static bool _showMapping;
-        static bool _showModuleBoneTree;
-        static bool _showAvatarBoneTree;
 
         SerializedProperty _serializedModuleRootBones;
         SerializedProperty _serializedModuleIgnoreBones;
@@ -22,6 +20,13 @@ namespace Silksprite.AvatarTinkerVista
         SerializedProperty _serializedAvatarRootBones;
         SerializedProperty _serializedAvatarIgnoreBones;
         SerializedProperty _serializedAvatarLeafBones;
+
+        static bool _showModuleBoneTree;
+        static bool _showAvatarBoneTree;
+        static bool _showMapping;
+        WearTreeNode[] _cachedModuleBoneTree;
+        WearTreeNode[] _cachedAvatarBoneTree;
+        List<(Transform moduleBone, Transform avatarBone)> _cachedMapping;
 
         void OnEnable()
         {
@@ -38,6 +43,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public override void OnInspectorGUI()
         {
+            using var changed = new EditorGUI.ChangeCheckScope();
             EditorGUILayout.HelpBox("This component is in beta state.", MessageType.Info);
             Action<AtivSimpleWear> defer = null;
             AtivGUILayout.Header("Module Settings");
@@ -75,6 +81,13 @@ namespace Silksprite.AvatarTinkerVista
                 }
             }
 
+            if (changed.changed)
+            {
+                _cachedModuleBoneTree = null;
+                _cachedAvatarBoneTree = null;
+                _cachedMapping = null;
+            }
+
             if (!serializedObject.isEditingMultipleObjects)
             {
                 var simpleWear = _simpleWears.First();
@@ -82,25 +95,33 @@ namespace Silksprite.AvatarTinkerVista
                 _showModuleBoneTree = EditorGUILayout.Foldout(_showModuleBoneTree, "Show Module Bone Tree");
                 if (_showModuleBoneTree)
                 {
-                    var module = simpleWear.ResolveModule();
+                    _cachedModuleBoneTree ??= simpleWear.ResolveModule();
                     using var _ = new EditorGUI.DisabledScope(true);
-                    DrawWearTree(module);
+                    DrawWearTree(_cachedModuleBoneTree);
+                }
+                else
+                {
+                    _cachedModuleBoneTree = null;
                 }
                 
                 _showAvatarBoneTree = EditorGUILayout.Foldout(_showAvatarBoneTree, "Show Avatar Bone Tree");
                 if (_showAvatarBoneTree)
                 {
-                    var avatar = simpleWear.ResolveAvatar();
+                    _cachedAvatarBoneTree ??= simpleWear.ResolveAvatar();
                     using var _ = new EditorGUI.DisabledScope(true);
-                    DrawWearTree(avatar);
+                    DrawWearTree(_cachedAvatarBoneTree);
+                }
+                else
+                {
+                    _cachedAvatarBoneTree = null;
                 }
                 
                 _showMapping = EditorGUILayout.Foldout(_showMapping, "Show Mapping");
                 if (_showMapping)
                 {
-                    var map = WearProcessor.Map(simpleWear.ResolveModule(), simpleWear.ResolveAvatar());
+                    _cachedMapping ??= WearProcessor.Map(simpleWear.ResolveModule(), simpleWear.ResolveAvatar());
                     using var _ = new EditorGUI.DisabledScope(true);
-                    foreach (var m in map)
+                    foreach (var m in _cachedMapping)
                     {
                         using (new GUILayout.HorizontalScope())
                         {
@@ -108,6 +129,10 @@ namespace Silksprite.AvatarTinkerVista
                             EditorGUILayout.ObjectField(new GUIContent(""), m.avatarBone, typeof(Transform), true);
                         }
                     }
+                }
+                else
+                {
+                    _cachedMapping = null;
                 }
             }
         }
