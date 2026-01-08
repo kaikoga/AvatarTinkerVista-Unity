@@ -15,7 +15,7 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
                 var serializedRelativePath = serializedProperty.FindPropertyRelative("relativePath");
                 var relativePathValue = serializedHasValue.boolValue ? serializedRelativePath.stringValue : null;
                 var obj = AvatarRelativeReference.ResolveNow<T>(transform, relativePathValue);
-                var change = new EditorGUI.ChangeCheckScope();
+                using var change = new EditorGUI.ChangeCheckScope();
                 obj = EditorGUI.ObjectField(position, label, obj, typeof(T), true) as T;
                 if (change.changed)
                 {
