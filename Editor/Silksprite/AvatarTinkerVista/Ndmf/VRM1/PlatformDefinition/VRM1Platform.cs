@@ -38,7 +38,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition
             var info = new CommonAvatarInfo();
             
             if (avatarRoot.TryGetComponent<Vrm10Instance>(out var vrm10Instance)
-                && vrm10Instance.Vrm is { } vrm10Object)
+                && vrm10Instance.Vrm is { } vrm10Object && vrm10Object)
             {
                 var rootBone = avatarRoot.transform;
                 Transform headBone = null;
