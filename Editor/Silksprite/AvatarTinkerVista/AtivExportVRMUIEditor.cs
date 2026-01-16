@@ -55,14 +55,14 @@ namespace Silksprite.AvatarTinkerVista
                             unityFontStyleAndWeight = FontStyle.Bold
                         }
                     });
-#if ATIV_UNIVRM_VRM0
+#if ATIV_DETECTED_VRM0
                     if (VRM0Platform.Instance.CreateBuildUI() is { } vrm0BuildUI)
                     {
                         vrm0BuildUI.AvatarRoot = avatarRoot.gameObject;
                         container.Add(vrm0BuildUI);
                     }
 #endif
-#if ATIV_UNIVRM_VRM1
+#if ATIV_DETECTED_VRM1
                     if (VRM1Platform.Instance.CreateBuildUI() is { } vrm1BuildUI)
                     {
                         vrm1BuildUI.AvatarRoot = avatarRoot.gameObject;

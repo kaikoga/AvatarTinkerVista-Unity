@@ -24,7 +24,7 @@
     "defineConstraints": [
         "ATIV_ABLET",
         "ATIV_ADLIB",
-        "ATIV_UNIVRM_VRM0"
+        "ATIV_DETECTED_VRM0"
     ],
     "versionDefines": [
         {
@@ -39,8 +39,8 @@
         },
         {
             "name": "com.vrmc.univrm",
-            "expression": "0.131.0",
-            "define": "ATIV_UNIVRM_VRM0"
+            "expression": "",
+            "define": "ATIV_DETECTED_VRM0"
         }
     ],
     "noEngineReferences": false

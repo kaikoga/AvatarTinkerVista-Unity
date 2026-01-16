@@ -16,7 +16,7 @@ using VRC.Dynamics;
 using VRM;
 #endif
 
-#if ATIV_UNIVRM_VRM1
+#if ATIV_DETECTED_VRM1
 using Silksprite.AvatarTinkerVista.VRM1;
 #endif
 
@@ -128,7 +128,7 @@ namespace Silksprite.AvatarTinkerVista
                 }
             }
 #endif
-#if ATIV_UNIVRM_VRM1
+#if ATIV_DETECTED_VRM1
             foreach (var gsb1 in root.GetComponentsInChildren<AtivMergeVRM1SpringBones>())
             {
                 foreach (var spring in gsb1.springs)
