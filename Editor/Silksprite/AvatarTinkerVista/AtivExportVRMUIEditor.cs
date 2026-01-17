@@ -2,10 +2,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-#if ATIV_UNIVRM_VRM0
+#if ATIV_DETECTED_VRM0
 using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
 #endif
-#if ATIV_UNIVRM_VRM1
+#if ATIV_DETECTED_VRM1
 using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
 #endif
 
@@ -27,7 +27,7 @@ namespace Silksprite.AvatarTinkerVista
     class AtivExportVRMUIEditor : Editor
     {
 
-#if ATIV_UNIVRM_VRM0 || ATIV_UNIVRM_VRM1
+#if ATIV_DETECTED_VRM0 || ATIV_DETECTED_VRM1
 
 #if ATIV_ABLET
         static bool MayNdmfExport => !EditorSettingsRepository.Instance.Value.IsNdmfOnAblet;

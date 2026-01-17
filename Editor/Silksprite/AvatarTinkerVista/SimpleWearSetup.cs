@@ -12,7 +12,7 @@ using UnityEngine;
 using VRC.Dynamics;
 #endif
 
-#if ATIV_UNIVRM_VRM0
+#if ATIV_DETECTED_VRM0
 using VRM;
 #endif
 
@@ -119,7 +119,7 @@ namespace Silksprite.AvatarTinkerVista
             {
                 ignoreBones.Add(gd.ActualRootBone);
             }
-#if ATIV_UNIVRM_VRM0
+#if ATIV_DETECTED_VRM0
             foreach (var springBone in StageUtility.GetCurrentStageHandle().FindComponentsOfType<VRMSpringBone>())
             {
                 foreach (var rootBone in springBone.RootBones)
