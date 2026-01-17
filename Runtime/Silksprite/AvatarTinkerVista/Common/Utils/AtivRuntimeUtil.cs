@@ -25,17 +25,13 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
 
 #if ATIV_ABLET
             return AbletFacade.GetEntrypointFor(transform.gameObject).gameObject?.transform;
-#endif
-            
-#if ATIV_NDMF
+#elif ATIV_NDMF
             return NdmfRuntimeUtil.FindAvatarInParents(transform);
-#endif
-            
-#if ATIV_VRCSDK3_AVATARS
+#elif ATIV_VRCSDK3_AVATARS
             return transform.GetComponentInParent<VRCAvatarDescriptor>()?.transform;
-#endif
-
+#else
             return null;
+#endif
         }
 
         public static string GuessOriginalAvatarName(string avatarName)
