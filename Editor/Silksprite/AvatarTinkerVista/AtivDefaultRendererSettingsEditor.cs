@@ -28,18 +28,12 @@ namespace Silksprite.AvatarTinkerVista
                 ativ.overwriteProbeAnchor = new OverwriteAvatarRelativeTransform
                 {
                     willOverwrite = true,
-                    value = new AvatarRelativeTransform
-                    {
-                        RelativePath = AvatarRelativeReference.RelativePath(avatarRoot, hips)
-                    }
+                    value = AvatarRelativeTransform.OfAvatar(avatarRoot, hips)
                 };
                 ativ.overwriteRootBone = new OverwriteAvatarRelativeTransform
                 {
                     willOverwrite = true,
-                    value = new AvatarRelativeTransform
-                    {
-                        RelativePath = AvatarRelativeReference.RelativePath(avatarRoot, hips)
-                    }
+                    value = AvatarRelativeTransform.OfAvatar(avatarRoot, hips)
                 };
                 ativ.overwriteBounds = new OverwriteBounds
                 {

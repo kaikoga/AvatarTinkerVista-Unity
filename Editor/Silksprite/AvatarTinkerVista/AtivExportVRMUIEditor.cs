@@ -76,9 +76,8 @@ namespace Silksprite.AvatarTinkerVista
 #if ATIV_ABLET
             if (MayAbletExport)
             {
-                var entrypoint = AbletFacade.GetEntrypointFor(exportVrm.gameObject);
-                if (entrypoint.gameObject
-                    && entrypoint.platform.TryGetExtensionDef<IExportUIExtension>(out var exportUI))
+                if (AbletFacade.TryGetEntrypointFor(exportVrm.gameObject, out var entrypointObject, out var platform)
+                    && platform.TryGetExtensionDef<IExportUIExtension>(out var exportUI))
                 {
                     container.Add(new Label("Export with Ablet")
                     {
@@ -87,7 +86,7 @@ namespace Silksprite.AvatarTinkerVista
                             unityFontStyleAndWeight = FontStyle.Bold
                         }
                     });
-                    container.Add(exportUI.RenderExportUI(entrypoint.gameObject));
+                    container.Add(exportUI.RenderExportUI(entrypointObject));
                 }
             }
 #endif

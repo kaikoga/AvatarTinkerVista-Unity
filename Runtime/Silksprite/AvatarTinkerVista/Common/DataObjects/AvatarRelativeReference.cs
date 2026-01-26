@@ -33,7 +33,14 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     }
 
     [Serializable]
-    public class AvatarRelativeTransform : AvatarRelativeReference<Transform> { }
+    public class AvatarRelativeTransform : AvatarRelativeReference<Transform>
+    {
+        public static AvatarRelativeTransform OfAvatar(Transform avatarRoot, Transform transform) =>
+            new AvatarRelativeTransform
+            {
+                RelativePath = AvatarRelativeReference.RelativePathFromAvatar(avatarRoot, transform)
+            };
+    }
 
     public static class AvatarRelativeReference
     {
@@ -64,7 +71,5 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
         {
             return avatarRoot? AtivRuntimeUtil.RelativePath(avatarRoot.transform, obj?.transform) : null;
         }
-
     }
-
 }

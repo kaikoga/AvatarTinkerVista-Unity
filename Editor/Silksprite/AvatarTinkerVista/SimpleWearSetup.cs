@@ -95,10 +95,7 @@ namespace Silksprite.AvatarTinkerVista
             var avatarAnimator = avatarRoot.GetComponent<Animator>();
             simpleWear.avatarRootBones = simpleWear.moduleRootBones.Select(moduleRootBone => new WearRelativeRootBoneEntry
             {
-                rootBone = new AvatarRelativeTransform
-                {
-                    RelativePath = AvatarRelativeReference.RelativePath(animator.transform, avatarAnimator.GetBoneTransform(moduleRootBone.humanBone))
-                },
+                rootBone = AvatarRelativeTransform.OfAvatar(avatarRoot, avatarAnimator.GetBoneTransform(moduleRootBone.humanBone)),
                 armatureMode = WearArmatureMode.Humanoid,
                 humanBone = moduleRootBone.humanBone
             }).ToArray();

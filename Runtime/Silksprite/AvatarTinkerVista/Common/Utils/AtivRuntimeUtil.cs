@@ -24,7 +24,9 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
             if (!transform) return null;
 
 #if ATIV_ABLET
-            return AbletFacade.GetEntrypointFor(transform.gameObject).gameObject?.transform;
+            return AbletFacade.TryGetEntrypointFor(transform.gameObject, out var entrypointObject, out _)
+                ? entrypointObject.transform
+                : null;
 #elif ATIV_NDMF
             return NdmfRuntimeUtil.FindAvatarInParents(transform);
 #elif ATIV_VRCSDK3_AVATARS
