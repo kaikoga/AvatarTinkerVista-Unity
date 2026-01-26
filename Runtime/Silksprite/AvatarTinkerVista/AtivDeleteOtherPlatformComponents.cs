@@ -1,8 +1,11 @@
 using System.Collections.Generic;
-using Ablet;
-using Ablet.Builtin;
 using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
+
+#if ATIV_ABLET
+using Ablet;
+using Ablet.Builtin;
+#endif
 
 namespace Silksprite.AvatarTinkerVista
 {
