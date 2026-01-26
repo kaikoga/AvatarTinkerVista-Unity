@@ -2,15 +2,16 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-#if ATIV_DETECTED_VRM0
-using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
-#endif
-#if ATIV_DETECTED_VRM1
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
-#endif
-
 #if ATIV_NDMF
 using nadena.dev.ndmf.runtime;
+#endif
+
+#if ATIV_NDMF && ATIV_DETECTED_VRM0
+using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
+#endif
+
+#if ATIV_NDMF && ATIV_DETECTED_VRM1
+using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
 #endif
 
 #if ATIV_ABLET
