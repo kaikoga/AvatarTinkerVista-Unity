@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-02-01
+
+### Fixed
+
+- Fix compile errors for non-NDMF projects.
+- Fix compile errors for non-Ablet projects.
+
+## [2.0.0] - 2026-01-17
+
+### Added
+
+- Added Ablet support.
+
 ## [1.0.1] - 2025-10-13
 
 - Fixed Extract VRC PhysBones as ATiV Generate VRM SpringBones: Takes account of Root Transforms of VRC Phys Bone Colliders.
