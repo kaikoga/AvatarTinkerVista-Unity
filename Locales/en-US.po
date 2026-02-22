@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-23 01:32+0900\n"
+"POT-Creation-Date: 2026-02-23 05:52+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,6 +31,14 @@ msgstr "Ablet Detect Platform"
 #: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:31
 msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
 msgstr "Detected Platform"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:89
+msgid "AtivExportVRMUI.ExportWithAblet"
+msgstr "Export With Ablet"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:57
+msgid "AtivExportVRMUI.ExportWithNDMF"
+msgstr "Export With NDMF"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:27
 msgid "AtivGenerateConstraint::aimAxis"

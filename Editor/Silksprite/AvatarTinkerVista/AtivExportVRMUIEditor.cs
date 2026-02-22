@@ -2,6 +2,7 @@ using Silksprite.Loch.UIElements.LEditor;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static Silksprite.Loch.Tools.LochTool;
 
 #if ATIV_NDMF
 using nadena.dev.ndmf.runtime;
@@ -51,12 +52,10 @@ namespace Silksprite.AvatarTinkerVista
                 var avatarRoot = RuntimeUtil.FindAvatarInParents(exportVrm.gameObject.transform);
                 if (avatarRoot)
                 {
-                    container.Add(new Label("Export with NDMF")
+                    container.Add(new Loch.UIElements.Heading
                     {
-                        style =
-                        {
-                            unityFontStyleAndWeight = FontStyle.Bold
-                        }
+                        text = "Export With NDMF",
+                        loc = Loc("AtivExportVRMUI.ExportWithNDMF")
                     });
 #if ATIV_DETECTED_VRM0
                     if (VRM0Platform.Instance.CreateBuildUI() is { } vrm0BuildUI)
@@ -82,12 +81,10 @@ namespace Silksprite.AvatarTinkerVista
                 if (AbletFacade.TryGetEntrypointFor(exportVrm.gameObject, out var entrypointObject, out var platform)
                     && platform.TryGetExtensionDef<IExportUIExtension>(out var exportUI))
                 {
-                    container.Add(new Label("Export with Ablet")
+                    container.Add(new Loch.UIElements.Heading
                     {
-                        style =
-                        {
-                            unityFontStyleAndWeight = FontStyle.Bold
-                        }
+                        text = "Export With Ablet",
+                        loc = Loc("AtivExportVRMUI.ExportWithAblet")
                     });
                     container.Add(exportUI.RenderExportUI(entrypointObject));
                 }

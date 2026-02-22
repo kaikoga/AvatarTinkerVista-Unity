@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-23 01:32+0900\n"
+"POT-Creation-Date: 2026-02-23 05:52+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,6 +31,14 @@ msgstr "Ablet Detect Platform"
 #: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:31
 msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
 msgstr "Detected Platform"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:89
+msgid "AtivExportVRMUI.ExportWithAblet"
+msgstr "Abletでエクスポート"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:57
+msgid "AtivExportVRMUI.ExportWithNDMF"
+msgstr "NDMFでエクスポート"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:27
 msgid "AtivGenerateConstraint::aimAxis"
@@ -194,7 +202,9 @@ msgstr "Component Names"
 
 #: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:31
 msgid "ListComponents::Help."
-msgstr "ヒエラルキーの選択されたTransform以下で使用されているコンポーネントを表示します。"
+msgstr ""
+"ヒエラルキーの選択されたTransform以下で使用されているコンポーネ"
+"ントを表示します。"
 
 #: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:29
 msgid "ListComponents::ListComponents"
