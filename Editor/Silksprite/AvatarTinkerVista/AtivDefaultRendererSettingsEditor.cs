@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Utils;
+using Silksprite.Loch.IMGUI;
+using Silksprite.Loch.Tools;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,8 +13,9 @@ namespace Silksprite.AvatarTinkerVista
     {
         public override void OnInspectorGUI()
         {
+            LEditorGUILayout.LocaleSelector();
             base.OnInspectorGUI();
-            if (GUILayout.Button("Setup"))
+            if (LGUILayout.Button(LochTool.Loc("AtivDefaultRendererSettings::Setup")))
             {
                 Setup();
             }

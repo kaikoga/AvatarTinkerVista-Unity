@@ -22,6 +22,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public override void OnInspectorGUI()
         {
+            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_abletDetectPlatform);
             if (_abletDetectPlatform.Property.boolValue)
             {

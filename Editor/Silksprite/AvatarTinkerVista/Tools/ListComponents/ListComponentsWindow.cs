@@ -25,6 +25,7 @@ namespace Silksprite.AvatarTinkerVista.Tools.ListComponents
         {
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
 
+            LEditorGUILayout.LocaleSelector();
             LGUILayout.Heading(Loc("ListComponents::ListComponents"));
             GUILayout.Space(4f);
             LEditorGUILayout.HelpBox(Loc("ListComponents::Help."), MessageType.Info);

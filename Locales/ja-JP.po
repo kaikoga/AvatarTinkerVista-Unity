@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-23 01:20+0900\n"
+"POT-Creation-Date: 2026-02-23 01:32+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,12 +19,16 @@ msgstr ""
 msgid "ativ::GizmosDarkMode"
 msgstr "Gizmos Dark Mode"
 
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:18
+msgid "AtivDefaultRendererSettings::Setup"
+msgstr "Setup"
+
 #: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:19
 #: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:20
 msgid "AtivDeleteOtherPlatformComponents::abletDetectPlatform"
 msgstr "Ablet Detect Platform"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:30
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:31
 msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
 msgstr "Detected Platform"
 
@@ -52,7 +56,7 @@ msgstr "Target"
 msgid "AtivGenerateConstraint::weight"
 msgstr "Weight"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBonesEditor.cs:25
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBonesEditor.cs:26
 msgid "AtivGenerateDynamics::Joints"
 msgstr "Joints"
 
@@ -92,19 +96,19 @@ msgstr "Springs"
 msgid "AtivMergeVRMFirstPerson::renderers"
 msgstr "Renderers"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
 msgid "AtivReduceDynamics::EstColliders"
 msgstr "Est. Colliders"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:86
 msgid "AtivReduceDynamics::EstCollisions"
 msgstr "Est. Collisions"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:82
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
 msgid "AtivReduceDynamics::EstComponents"
 msgstr "Est. Components"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
 msgid "AtivReduceDynamics::EstTransforms"
 msgstr "Est. Transforms"
 
@@ -132,15 +136,15 @@ msgstr "Avatar Leaf Bones"
 msgid "AtivSimpleWear::avatarRootBones"
 msgstr "Avatar Root Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:67
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:68
 msgid "AtivSimpleWear::AvatarSettings"
 msgstr "Avatar Settings"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:50
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:51
 msgid "AtivSimpleWear::BetaWarning."
 msgstr "This component is in beta state."
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:97
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:98
 msgid "AtivSimpleWear::MergeDryRun"
 msgstr "Merge Dry Run"
 
@@ -156,73 +160,73 @@ msgstr "Module Leaf Bones"
 msgid "AtivSimpleWear::moduleRootBones"
 msgstr "Module Root Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:52
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:53
 msgid "AtivSimpleWear::ModuleSettings"
 msgstr "Module Settings"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:110
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:111
 msgid "AtivSimpleWear::ShowAvatarBoneTree"
 msgstr "Show Avatar Bone Tree"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:122
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:123
 msgid "AtivSimpleWear::ShowMapping"
 msgstr "Show Mapping"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:98
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
 msgid "AtivSimpleWear::ShowModuleBoneTree"
 msgstr "Show Module Bone Tree"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:40
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:34
 msgid "ListComponents::1"
 msgstr "1. アバター（など）を選択する"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:50
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:44
 msgid "ListComponents::2"
 msgstr "2. コンポーネント名が表示される"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:43
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:37
 msgid "ListComponents::avatarRoot"
 msgstr "Avatar Root"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:52
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:46
 msgid "ListComponents::componentNames"
 msgstr "Component Names"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:37
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:31
 msgid "ListComponents::Help."
 msgstr "選択されたコンポーネント以下で使用されているコンポーネントを表示します。"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:34
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:29
 msgid "ListComponents::ListComponents"
 msgstr "List Components"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:40
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:34
 msgid "ReplaceMaterialTexture::1"
 msgstr "1. マテリアルを選択する"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:49
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:43
 msgid "ReplaceMaterialTexture::2"
 msgstr ""
 "2. 置き換えるテクスチャを設定する\n"
 "置き換え元→置き換え先"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:68
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:62
 msgid "ReplaceMaterialTexture::3"
 msgstr "3. 「Apply」を押す"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:69
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:63
 msgid "ReplaceMaterialTexture::Apply"
 msgstr "Apply"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:37
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:31
 msgid "ReplaceMaterialTexture::Help."
 msgstr "マテリアルからテクスチャへの参照を一括で置き換えます。"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:43
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:37
 msgid "ReplaceMaterialTexture::materials"
 msgstr "Materials"
 
-#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:34
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:29
 msgid "ReplaceMaterialTexture::ReplaceMaterialTexture"
 msgstr "ReplaceMaterialTexture"
 

@@ -31,6 +31,7 @@ namespace Silksprite.AvatarTinkerVista
         
         public override void OnInspectorGUI()
         {
+            LEditorGUILayout.LocaleSelector();
             AtivGUILayout.GizmosDarkModeToggle();
             LEditorGUILayout.Prop(_renderers);
             LEditorGUILayout.Prop(_rootBone);

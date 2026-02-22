@@ -46,6 +46,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public override void OnInspectorGUI()
         {
+            LEditorGUILayout.LocaleSelector();
             using var changed = new EditorGUI.ChangeCheckScope();
             LEditorGUILayout.HelpBox(Loc("AtivSimpleWear::BetaWarning."), MessageType.Info);
             Action<AtivSimpleWear> defer = null;

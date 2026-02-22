@@ -30,6 +30,7 @@ namespace Silksprite.AvatarTinkerVista
         
         public override void OnInspectorGUI()
         {
+            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_kind);
             LEditorGUILayout.Prop(_source);
             LEditorGUILayout.Prop(_target);

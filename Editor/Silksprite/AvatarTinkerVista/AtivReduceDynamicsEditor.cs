@@ -54,6 +54,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public override void OnInspectorGUI()
         {
+            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_reduceOnPC);
             LEditorGUILayout.Prop(_reduceOnMobile);
             LEditorGUILayout.Prop(_keepBoneRoots);

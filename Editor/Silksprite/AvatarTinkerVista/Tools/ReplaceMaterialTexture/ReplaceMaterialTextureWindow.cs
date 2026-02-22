@@ -25,6 +25,7 @@ namespace Silksprite.AvatarTinkerVista.Tools.ReplaceMaterialTexture
         {
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
 
+            LEditorGUILayout.LocaleSelector();
             LGUILayout.Heading(Loc("ReplaceMaterialTexture::ReplaceMaterialTexture"));
             GUILayout.Space(4f);
             LEditorGUILayout.HelpBox(Loc("ReplaceMaterialTexture::Help."), MessageType.Info);

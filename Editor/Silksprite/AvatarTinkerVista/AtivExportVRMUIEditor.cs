@@ -1,3 +1,4 @@
+using Silksprite.Loch.UIElements.LEditor;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -42,6 +43,7 @@ namespace Silksprite.AvatarTinkerVista
         {
             var exportVrm = (AtivExportVRMUI)target;
             var container = new VisualElement();
+            container.Add(new GlobalLocaleSelector());
 
 #if ATIV_NDMF
             if (MayNdmfExport)

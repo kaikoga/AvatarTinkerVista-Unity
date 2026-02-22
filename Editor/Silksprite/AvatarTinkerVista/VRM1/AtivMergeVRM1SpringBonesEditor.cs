@@ -20,6 +20,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1
         
         public override void OnInspectorGUI()
         {
+            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_colliderGroups);
             LEditorGUILayout.Prop(_springs);
             serializedObject.ApplyModifiedProperties();
