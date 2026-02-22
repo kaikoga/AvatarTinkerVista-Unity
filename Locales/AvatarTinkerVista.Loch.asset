@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dcbc496cfa546e9b08407d1d8eb1005, type: 3}
+  m_Name: AvatarTinkerVista.Loch
+  m_EditorClassIdentifier: 
+  key: Silksprite.AvatarTinkerVista
+  assemblies:
+  - AvatarTinkerVista
+  - AvatarTinkerVista.Ablet.Editor
+  - AvatarTinkerVista.Ablet.VRChat.Editor
+  - AvatarTinkerVista.Ablet.VRM0.Editor
+  - AvatarTinkerVista.Ablet.VRM1.Editor
+  - AvatarTinkerVista.AdLib.VRM0.Editor
+  - AvatarTinkerVista.AdLib.VRM1.Editor
+  - AvatarTinkerVista.Common
+  - AvatarTinkerVista.Common.Editor
+  - AvatarTinkerVista.Editor
+  - AvatarTinkerVista.Locales
+  - AvatarTinkerVista.Ndmf.Editor
+  - AvatarTinkerVista.Ndmf.VRChat.Editor
+  - AvatarTinkerVista.Ndmf.VRM0.Editor
+  - AvatarTinkerVista.Ndmf.VRM1.Editor
+  - AvatarTinkerVista.VRChat
+  - AvatarTinkerVista.VRChat.Editor
+  - AvatarTinkerVista.VRM0
+  - AvatarTinkerVista.VRM0.Editor
+  - AvatarTinkerVista.VRM1
+  - AvatarTinkerVista.VRM1.Editor
+  assemblyPrefixes: []
+  po:
+  - {fileID: 9010515335742159986, guid: 84af4fb53424f4519a5c6f495b58633c, type: 3}
+  - {fileID: 9010515335742159986, guid: 14c9570b4b9ba4382a4c40d9aa0ced35, type: 3}

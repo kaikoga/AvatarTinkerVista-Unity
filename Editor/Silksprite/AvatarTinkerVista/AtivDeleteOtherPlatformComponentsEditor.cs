@@ -1,4 +1,8 @@
-﻿using UnityEditor;
+﻿using Silksprite.Loch;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
+using UnityEditor;
+using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
@@ -6,29 +10,29 @@ namespace Silksprite.AvatarTinkerVista
     class AtivDeleteOtherPlatformComponentsEditor : Editor
     {
         AtivDeleteOtherPlatformComponents _deleteOtherPlatformComponents;
-        SerializedProperty _propAbletDetectPlatform;
-        SerializedProperty _propPlatform;
+        LocalizedProperty _abletDetectPlatform;
+        LocalizedProperty _platform;
 
         void OnEnable()
         {
             _deleteOtherPlatformComponents = (AtivDeleteOtherPlatformComponents)target;
-            _propAbletDetectPlatform = serializedObject.FindProperty(nameof(AtivDeleteOtherPlatformComponents.abletDetectPlatform));
-            _propPlatform = serializedObject.FindProperty(nameof(AtivDeleteOtherPlatformComponents.platform));
+            _abletDetectPlatform = serializedObject.Lop(nameof(AtivDeleteOtherPlatformComponents.abletDetectPlatform), Loc("AtivDeleteOtherPlatformComponents::abletDetectPlatform"));
+            _platform = serializedObject.Lop(nameof(AtivDeleteOtherPlatformComponents.platform), Loc("AtivDeleteOtherPlatformComponents::abletDetectPlatform"));
         }
 
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.PropertyField(_propAbletDetectPlatform);
-            if (_propAbletDetectPlatform.boolValue)
+            LEditorGUILayout.Prop(_abletDetectPlatform);
+            if (_abletDetectPlatform.Property.boolValue)
             {
                 using (new EditorGUI.DisabledScope(true))
                 {
-                    EditorGUILayout.EnumPopup("Detected Platform", _deleteOtherPlatformComponents.ActualPlatform());
+                    LEditorGUILayout.EnumPopup(Loc("AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"), _deleteOtherPlatformComponents.ActualPlatform());
                 }
             }
             else
             {
-                EditorGUILayout.PropertyField(_propPlatform);
+                LEditorGUILayout.Prop(_platform);
             }
             serializedObject.ApplyModifiedProperties();
         }

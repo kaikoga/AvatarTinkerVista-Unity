@@ -1,5 +1,8 @@
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
+using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista.Tools.ReplaceMaterialTexture
 {
@@ -22,26 +25,21 @@ namespace Silksprite.AvatarTinkerVista.Tools.ReplaceMaterialTexture
         {
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
 
-            void HelpLabel(string message)
-            {
-                GUILayout.Label(message.Replace(" ", " "), new GUIStyle{wordWrap = true});
-            }
-
-            GUILayout.Label("Replace Material Texture", new GUIStyle { fontStyle = FontStyle.Bold });
+            LGUILayout.Heading(Loc("ReplaceMaterialTexture::ReplaceMaterialTexture"));
             GUILayout.Space(4f);
-            EditorGUILayout.HelpBox("マテリアルからテクスチャへの参照を一括で置き換えます。".Replace(" ", " "), MessageType.Info);
+            LEditorGUILayout.HelpBox(Loc("ReplaceMaterialTexture::Help."), MessageType.Info);
             GUILayout.Space(4f);
 
-            HelpLabel("1. マテリアルを選択する");
+            LGUILayout.Label(Loc("ReplaceMaterialTexture::1"));
             var serializedCore = new SerializedObject(this).FindProperty(nameof(core));
             EditorGUI.BeginChangeCheck();
-            EditorGUILayout.PropertyField(serializedCore.FindPropertyRelative(nameof(ReplaceMaterialTexture.materials)));
+            LEditorGUILayout.Prop(serializedCore.Lop(nameof(ReplaceMaterialTexture.materials), Loc("ReplaceMaterialTexture::materials")));
             if (EditorGUI.EndChangeCheck())
             {
                 serializedCore.serializedObject.ApplyModifiedProperties();
             }
 
-            HelpLabel("2. 置き換えるテクスチャを設定する\n置き換え元→置き換え先");
+            LGUILayout.Label(Loc("ReplaceMaterialTexture::2"));
             foreach (var replacement in core.Replacements())
             {
                 EditorGUILayout.BeginHorizontal();
@@ -60,8 +58,8 @@ namespace Silksprite.AvatarTinkerVista.Tools.ReplaceMaterialTexture
                 EditorGUILayout.EndHorizontal();
             }
 
-            HelpLabel("3. 「Apply」を押す");
-            if (GUILayout.Button("Apply"))
+            LGUILayout.Label(Loc("ReplaceMaterialTexture::3"));
+            if (LGUILayout.Button(Loc("ReplaceMaterialTexture::Apply")))
             {
                 core.Apply();
             }

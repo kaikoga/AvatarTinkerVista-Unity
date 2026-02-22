@@ -1,6 +1,10 @@
 ﻿using System.Linq;
+using Silksprite.Loch;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
+using static Silksprite.Loch.Tools.LochTool;
 
 #if ATIV_NDMF
 using nadena.dev.ndmf.runtime;
@@ -16,9 +20,11 @@ namespace Silksprite.AvatarTinkerVista
     class AtivReduceDynamicsEditor : Editor
     {
         AtivReduceDynamics _reduceDynamics;
-        SerializedProperty _propReduceOnPC;
-        SerializedProperty _propReduceOnMobile;
-        SerializedProperty _propKeepBoneRoots;
+
+        LocalizedProperty _reduceOnPC;
+        LocalizedProperty _reduceOnMobile;
+        LocalizedProperty _keepBoneRoots;
+
         Transform _avatarRoot;
 
 #if ATIV_VRCSDK3_AVATARS
@@ -28,9 +34,9 @@ namespace Silksprite.AvatarTinkerVista
         void OnEnable()
         {
             _reduceDynamics = (AtivReduceDynamics)target;
-            _propReduceOnPC = serializedObject.FindProperty(nameof(AtivReduceDynamics.reduceOnPC));
-            _propReduceOnMobile = serializedObject.FindProperty(nameof(AtivReduceDynamics.reduceOnMobile));
-            _propKeepBoneRoots = serializedObject.FindProperty(nameof(AtivReduceDynamics.keepBoneRoots));
+            _reduceOnPC = serializedObject.Lop(nameof(AtivReduceDynamics.reduceOnPC), Loc("AtivReduceDynamics::reduceOnPC"));
+            _reduceOnMobile = serializedObject.Lop(nameof(AtivReduceDynamics.reduceOnMobile), Loc("AtivReduceDynamics::reduceOnMobile"));
+            _keepBoneRoots = serializedObject.Lop(nameof(AtivReduceDynamics.keepBoneRoots), Loc("AtivReduceDynamics::keepBoneRoots"));
 #if ATIV_NDMF
             _avatarRoot = RuntimeUtil.FindAvatarInParents(_reduceDynamics.transform);
 #if ATIV_VRCSDK3_AVATARS
@@ -48,9 +54,9 @@ namespace Silksprite.AvatarTinkerVista
 
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.PropertyField(_propReduceOnPC);
-            EditorGUILayout.PropertyField(_propReduceOnMobile);
-            EditorGUILayout.PropertyField(_propKeepBoneRoots);
+            LEditorGUILayout.Prop(_reduceOnPC);
+            LEditorGUILayout.Prop(_reduceOnMobile);
+            LEditorGUILayout.Prop(_keepBoneRoots);
             serializedObject.ApplyModifiedProperties();
 #if ATIV_VRCSDK3_AVATARS
             if (_allVrcPhysBones == null)
@@ -73,10 +79,10 @@ namespace Silksprite.AvatarTinkerVista
             var pbCollisions = vrcPhysBones.Sum(pb => pb.bones.Count * pb.colliders.Count);
             using (new EditorGUI.DisabledScope(true))
             {
-                EditorGUILayout.IntField("Est. Components", vrcPhysBones.Length);
-                EditorGUILayout.IntField("Est. Transforms", pbTransforms);
-                EditorGUILayout.IntField("Est. Colliders", pbColliders);
-                EditorGUILayout.IntField("Est. Collisions", pbCollisions);
+                LEditorGUILayout.IntField(Loc("AtivReduceDynamics::EstComponents"), vrcPhysBones.Length);
+                LEditorGUILayout.IntField(Loc("AtivReduceDynamics::EstTransforms"), pbTransforms);
+                LEditorGUILayout.IntField(Loc("AtivReduceDynamics::EstColliders"), pbColliders);
+                LEditorGUILayout.IntField(Loc("AtivReduceDynamics::EstCollisions"), pbCollisions);
             }
 #endif
         }

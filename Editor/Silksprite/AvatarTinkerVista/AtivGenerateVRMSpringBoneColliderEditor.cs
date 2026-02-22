@@ -1,6 +1,10 @@
 using System;
 using Silksprite.AvatarTinkerVista.Common;
+using Silksprite.Loch;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
 using UnityEditor;
+using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
@@ -8,47 +12,47 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivGenerateVRMSpringBoneColliderEditor : Editor
     {
-        SerializedProperty _propRenderers;
-        SerializedProperty _propRootBone;
-        SerializedProperty _propOffset;
-        SerializedProperty _propRadius;
-        SerializedProperty _propTail;
-        SerializedProperty _propNormal;
+        LocalizedProperty _renderers;
+        LocalizedProperty _rootBone;
+        LocalizedProperty _offset;
+        LocalizedProperty _radius;
+        LocalizedProperty _tail;
+        LocalizedProperty _normal;
 
         void OnEnable()
         {
-            _propRenderers = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.colliderType));
-            _propRootBone = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.rootBone));
-            _propOffset = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.offset));
-            _propRadius = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.radius));
-            _propTail = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.tail));
-            _propNormal = serializedObject.FindProperty(nameof(AtivGenerateDynamicsCollider.normal));
+            _renderers = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.colliderType), Loc("AtivGenerateDynamicsCollider::colliderType"));
+            _rootBone = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.rootBone), Loc("AtivGenerateDynamicsCollider::rootBone"));
+            _offset = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.offset), Loc("AtivGenerateDynamicsCollider::offset"));
+            _radius = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.radius), Loc("AtivGenerateDynamicsCollider::radius"));
+            _tail = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.tail), Loc("AtivGenerateDynamicsCollider::tail"));
+            _normal = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.normal), Loc("AtivGenerateDynamicsCollider::normal"));
         }
         
         public override void OnInspectorGUI()
         {
             AtivGUILayout.GizmosDarkModeToggle();
-            EditorGUILayout.PropertyField(_propRenderers);
-            EditorGUILayout.PropertyField(_propRootBone);
-            EditorGUILayout.PropertyField(_propOffset);
-            switch ((AtivGenerateDynamicsCollider.ColliderTypes)_propRenderers.intValue)
+            LEditorGUILayout.Prop(_renderers);
+            LEditorGUILayout.Prop(_rootBone);
+            LEditorGUILayout.Prop(_offset);
+            switch ((AtivGenerateDynamicsCollider.ColliderTypes)_renderers.Property.intValue)
             {
                 case AtivGenerateDynamicsCollider.ColliderTypes.Sphere:
-                    EditorGUILayout.PropertyField(_propRadius);
+                    LEditorGUILayout.Prop(_radius);
                     break;
                 case AtivGenerateDynamicsCollider.ColliderTypes.Capsule:
-                    EditorGUILayout.PropertyField(_propRadius);
-                    EditorGUILayout.PropertyField(_propTail);
+                    LEditorGUILayout.Prop(_radius);
+                    LEditorGUILayout.Prop(_tail);
                     break;
                 case AtivGenerateDynamicsCollider.ColliderTypes.Plane:
-                    EditorGUILayout.PropertyField(_propNormal);
+                    LEditorGUILayout.Prop(_normal);
                     break;
                 case AtivGenerateDynamicsCollider.ColliderTypes.SphereInside:
-                    EditorGUILayout.PropertyField(_propRadius);
+                    LEditorGUILayout.Prop(_radius);
                     break;
                 case AtivGenerateDynamicsCollider.ColliderTypes.CapsuleInside:
-                    EditorGUILayout.PropertyField(_propRadius);
-                    EditorGUILayout.PropertyField(_propTail);
+                    LEditorGUILayout.Prop(_radius);
+                    LEditorGUILayout.Prop(_tail);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

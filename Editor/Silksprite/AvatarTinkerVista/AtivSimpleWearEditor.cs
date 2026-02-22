@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Silksprite.AvatarTinkerVista.Common;
 using Silksprite.AvatarTinkerVista.Common.Wear;
+using Silksprite.Loch;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
+using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
@@ -14,12 +17,12 @@ namespace Silksprite.AvatarTinkerVista
     {
         AtivSimpleWear[] _simpleWears;
 
-        SerializedProperty _serializedModuleRootBones;
-        SerializedProperty _serializedModuleIgnoreBones;
-        SerializedProperty _serializedModuleLeafBones;
-        SerializedProperty _serializedAvatarRootBones;
-        SerializedProperty _serializedAvatarIgnoreBones;
-        SerializedProperty _serializedAvatarLeafBones;
+        LocalizedProperty _moduleRootBones;
+        LocalizedProperty _moduleIgnoreBones;
+        LocalizedProperty _moduleLeafBones;
+        LocalizedProperty _avatarRootBones;
+        LocalizedProperty _avatarIgnoreBones;
+        LocalizedProperty _avatarLeafBones;
 
         static bool _showModuleBoneTree;
         static bool _showAvatarBoneTree;
@@ -31,25 +34,25 @@ namespace Silksprite.AvatarTinkerVista
         void OnEnable()
         {
             _simpleWears = targets.Cast<AtivSimpleWear>().ToArray();
-            _serializedModuleRootBones = serializedObject.FindProperty(nameof(AtivSimpleWear.moduleRootBones));
-            _serializedModuleRootBones.isExpanded = true;
-            _serializedModuleIgnoreBones = serializedObject.FindProperty(nameof(AtivSimpleWear.moduleIgnoreBones));
-            _serializedModuleLeafBones = serializedObject.FindProperty(nameof(AtivSimpleWear.moduleLeafBones));
-            _serializedAvatarRootBones = serializedObject.FindProperty(nameof(AtivSimpleWear.avatarRootBones));
-            _serializedAvatarRootBones.isExpanded = true;
-            _serializedAvatarIgnoreBones = serializedObject.FindProperty(nameof(AtivSimpleWear.avatarIgnoreBones));
-            _serializedAvatarLeafBones = serializedObject.FindProperty(nameof(AtivSimpleWear.avatarLeafBones));
+            _moduleRootBones = serializedObject.Lop(nameof(AtivSimpleWear.moduleRootBones), Loc("AtivSimpleWear::moduleRootBones"));
+            _moduleRootBones.Property.isExpanded = true;
+            _moduleIgnoreBones = serializedObject.Lop(nameof(AtivSimpleWear.moduleIgnoreBones), Loc("AtivSimpleWear::moduleIgnoreBones"));
+            _moduleLeafBones = serializedObject.Lop(nameof(AtivSimpleWear.moduleLeafBones), Loc("AtivSimpleWear::moduleLeafBones"));
+            _avatarRootBones = serializedObject.Lop(nameof(AtivSimpleWear.avatarRootBones), Loc("AtivSimpleWear::avatarRootBones"));
+            _avatarRootBones.Property.isExpanded = true;
+            _avatarIgnoreBones = serializedObject.Lop(nameof(AtivSimpleWear.avatarIgnoreBones), Loc("AtivSimpleWear::avatarIgnoreBones"));
+            _avatarLeafBones = serializedObject.Lop(nameof(AtivSimpleWear.avatarLeafBones), Loc("AtivSimpleWear::avatarLeafBones"));
         }
 
         public override void OnInspectorGUI()
         {
             using var changed = new EditorGUI.ChangeCheckScope();
-            EditorGUILayout.HelpBox("This component is in beta state.", MessageType.Info);
+            LEditorGUILayout.HelpBox(Loc("AtivSimpleWear::BetaWarning."), MessageType.Info);
             Action<AtivSimpleWear> defer = null;
-            AtivGUILayout.Header("Module Settings");
-            EditorGUILayout.PropertyField(_serializedModuleRootBones);
-            EditorGUILayout.PropertyField(_serializedModuleIgnoreBones);
-            EditorGUILayout.PropertyField(_serializedModuleLeafBones);
+            LGUILayout.Heading(Loc("AtivSimpleWear::ModuleSettings"));
+            LEditorGUILayout.Prop(_moduleRootBones);
+            LEditorGUILayout.Prop(_moduleIgnoreBones);
+            LEditorGUILayout.Prop(_moduleLeafBones);
 
             if (GUILayout.Button("Setup as Humanoid Module"))
             {
@@ -61,10 +64,10 @@ namespace Silksprite.AvatarTinkerVista
                 defer = SimpleWearSetup.SetupAccessoryModule;
             }
 
-            AtivGUILayout.Header("Avatar Settings");
-            EditorGUILayout.PropertyField(_serializedAvatarRootBones);
-            EditorGUILayout.PropertyField(_serializedAvatarIgnoreBones);
-            EditorGUILayout.PropertyField(_serializedAvatarLeafBones);
+            LGUILayout.Heading(Loc("AtivSimpleWear::AvatarSettings"));
+            LEditorGUILayout.Prop(_avatarRootBones);
+            LEditorGUILayout.Prop(_avatarIgnoreBones);
+            LEditorGUILayout.Prop(_avatarLeafBones);
             serializedObject.ApplyModifiedProperties();
 
             if (GUILayout.Button("Setup Avatar"))
@@ -91,8 +94,8 @@ namespace Silksprite.AvatarTinkerVista
             if (!serializedObject.isEditingMultipleObjects)
             {
                 var simpleWear = _simpleWears.First();
-                AtivGUILayout.Header("Merge Dry Run");
-                _showModuleBoneTree = EditorGUILayout.Foldout(_showModuleBoneTree, "Show Module Bone Tree");
+                LGUILayout.Heading(Loc("AtivSimpleWear::MergeDryRun"));
+                _showModuleBoneTree = LEditorGUILayout.Foldout(_showModuleBoneTree, Loc("AtivSimpleWear::ShowModuleBoneTree"));
                 if (_showModuleBoneTree)
                 {
                     _cachedModuleBoneTree ??= simpleWear.ResolveModule();
@@ -104,7 +107,7 @@ namespace Silksprite.AvatarTinkerVista
                     _cachedModuleBoneTree = null;
                 }
                 
-                _showAvatarBoneTree = EditorGUILayout.Foldout(_showAvatarBoneTree, "Show Avatar Bone Tree");
+                _showAvatarBoneTree = LEditorGUILayout.Foldout(_showAvatarBoneTree, Loc("AtivSimpleWear::ShowAvatarBoneTree"));
                 if (_showAvatarBoneTree)
                 {
                     _cachedAvatarBoneTree ??= simpleWear.ResolveAvatar();
@@ -116,7 +119,7 @@ namespace Silksprite.AvatarTinkerVista
                     _cachedAvatarBoneTree = null;
                 }
                 
-                _showMapping = EditorGUILayout.Foldout(_showMapping, "Show Mapping");
+                _showMapping = LEditorGUILayout.Foldout(_showMapping, Loc("AtivSimpleWear::ShowMapping"));
                 if (_showMapping)
                 {
                     _cachedMapping ??= WearProcessor.Map(simpleWear.ResolveModule(), simpleWear.ResolveAvatar());
@@ -125,8 +128,8 @@ namespace Silksprite.AvatarTinkerVista
                     {
                         using (new GUILayout.HorizontalScope())
                         {
-                            EditorGUILayout.ObjectField(new GUIContent(""), m.moduleBone, typeof(Transform), true);
-                            EditorGUILayout.ObjectField(new GUIContent(""), m.avatarBone, typeof(Transform), true);
+                            EditorGUILayout.ObjectField(m.moduleBone, typeof(Transform), true);
+                            EditorGUILayout.ObjectField(m.avatarBone, typeof(Transform), true);
                         }
                     }
                 }
@@ -141,7 +144,7 @@ namespace Silksprite.AvatarTinkerVista
         {
             foreach (var node in tree)
             {
-                EditorGUILayout.ObjectField(new GUIContent(""), node.Bone, typeof(Transform), true);
+                EditorGUILayout.ObjectField(node.Bone, typeof(Transform), true);
                 using var _ = new EditorGUI.IndentLevelScope();
                 DrawWearTree(node.Children);
             }

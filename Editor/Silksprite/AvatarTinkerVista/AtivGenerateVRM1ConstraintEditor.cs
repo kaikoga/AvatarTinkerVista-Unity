@@ -1,5 +1,9 @@
 using System;
+using Silksprite.Loch;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
 using UnityEditor;
+using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
@@ -7,36 +11,36 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivGenerateVRM1ConstraintEditor : Editor
     {
-        SerializedProperty _propKind;
-        SerializedProperty _propSource;
-        SerializedProperty _propTarget;
-        SerializedProperty _propWeight;
-        SerializedProperty _propAimAxis;
-        SerializedProperty _propRollAxis;
+        LocalizedProperty _kind;
+        LocalizedProperty _source;
+        LocalizedProperty _target;
+        LocalizedProperty _weight;
+        LocalizedProperty _aimAxis;
+        LocalizedProperty _rollAxis;
 
         void OnEnable()
         {
-            _propKind = serializedObject.FindProperty(nameof(AtivGenerateConstraint.kind));
-            _propSource = serializedObject.FindProperty(nameof(AtivGenerateConstraint.source));
-            _propTarget = serializedObject.FindProperty(nameof(AtivGenerateConstraint.target));
-            _propWeight = serializedObject.FindProperty(nameof(AtivGenerateConstraint.weight));
-            _propAimAxis = serializedObject.FindProperty(nameof(AtivGenerateConstraint.aimAxis));
-            _propRollAxis = serializedObject.FindProperty(nameof(AtivGenerateConstraint.rollAxis));
+            _kind = serializedObject.Lop(nameof(AtivGenerateConstraint.kind), Loc("AtivGenerateConstraint::kind"));
+            _source = serializedObject.Lop(nameof(AtivGenerateConstraint.source), Loc("AtivGenerateConstraint::source"));
+            _target = serializedObject.Lop(nameof(AtivGenerateConstraint.target), Loc("AtivGenerateConstraint::target"));
+            _weight = serializedObject.Lop(nameof(AtivGenerateConstraint.weight), Loc("AtivGenerateConstraint::weight"));
+            _aimAxis = serializedObject.Lop(nameof(AtivGenerateConstraint.aimAxis), Loc("AtivGenerateConstraint::aimAxis"));
+            _rollAxis = serializedObject.Lop(nameof(AtivGenerateConstraint.rollAxis), Loc("AtivGenerateConstraint::rollAxis"));
         }
         
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.PropertyField(_propKind);
-            EditorGUILayout.PropertyField(_propSource);
-            EditorGUILayout.PropertyField(_propTarget);
-            EditorGUILayout.PropertyField(_propWeight);
-            switch ((AtivGenerateConstraint.ConstraintKind)_propKind.intValue)
+            LEditorGUILayout.Prop(_kind);
+            LEditorGUILayout.Prop(_source);
+            LEditorGUILayout.Prop(_target);
+            LEditorGUILayout.Prop(_weight);
+            switch ((AtivGenerateConstraint.ConstraintKind)_kind.Property.intValue)
             {
                 case AtivGenerateConstraint.ConstraintKind.Aim:
-                    EditorGUILayout.PropertyField(_propAimAxis);
+                    LEditorGUILayout.Prop(_aimAxis);
                     break;
                 case AtivGenerateConstraint.ConstraintKind.Roll:
-                    EditorGUILayout.PropertyField(_propRollAxis);
+                    LEditorGUILayout.Prop(_rollAxis);
                     break;
                 case AtivGenerateConstraint.ConstraintKind.Rotation:
                     break;

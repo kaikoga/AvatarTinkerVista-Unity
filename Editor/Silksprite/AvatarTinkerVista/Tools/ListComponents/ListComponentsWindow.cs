@@ -1,6 +1,8 @@
-using Silksprite.AvatarTinkerVista.Tools.ReplaceMaterialTexture;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
+using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista.Tools.ListComponents
 {
@@ -23,33 +25,27 @@ namespace Silksprite.AvatarTinkerVista.Tools.ListComponents
         {
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
 
-            void HelpLabel(string message)
-            {
-                GUILayout.Label(message.Replace(" ", " "), new GUIStyle{wordWrap = true});
-            }
-
-            GUILayout.Label("List Components", new GUIStyle { fontStyle = FontStyle.Bold });
+            LGUILayout.Heading(Loc("ListComponents::ListComponents"));
             GUILayout.Space(4f);
-            EditorGUILayout.HelpBox("選択されたコンポーネント以下で使用されているコンポーネントを表示します。".Replace(" ", " "), MessageType.Info);
+            LEditorGUILayout.HelpBox(Loc("ListComponents::Help."), MessageType.Info);
             GUILayout.Space(4f);
 
-            HelpLabel("1. アバター（など）を選択する");
+            LGUILayout.Label(Loc("ListComponents::1"));
             var serializedCore = new SerializedObject(this).FindProperty(nameof(core));
             EditorGUI.BeginChangeCheck();
-            EditorGUILayout.PropertyField(serializedCore.FindPropertyRelative(nameof(ListComponents.avatarRoot)));
+            LEditorGUILayout.Prop(serializedCore.Lop(nameof(ListComponents.avatarRoot), Loc("ListComponents::avatarRoot")));
             if (EditorGUI.EndChangeCheck())
             {
                 serializedCore.serializedObject.ApplyModifiedProperties();
                 core.Refresh();
             }
 
-            HelpLabel("2. コンポーネント名が表示される");
+            LGUILayout.Label(Loc("ListComponents::2"));
             EditorGUI.BeginDisabledGroup(true);
-            EditorGUILayout.PropertyField(serializedCore.FindPropertyRelative(nameof(ListComponents.componentNames)));
+            LEditorGUILayout.Prop(serializedCore.Lop(nameof(ListComponents.componentNames), Loc("ListComponents::componentNames")));
             EditorGUI.EndDisabledGroup();
 
             EditorGUILayout.EndScrollView();
-
         }
 
         [MenuItem("Tools/Avatar Tinker Vista/List Components", false, 60000)]

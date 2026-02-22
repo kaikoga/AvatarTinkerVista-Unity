@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2026-02-23 01:20+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loch\n"
+
+#: Editor/Silksprite/AvatarTinkerVista/Common/AtivGUILayout.cs:15
+msgid "ativ::GizmosDarkMode"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:19
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:20
+msgid "AtivDeleteOtherPlatformComponents::abletDetectPlatform"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:30
+msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:27
+msgid "AtivGenerateConstraint::aimAxis"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:23
+msgid "AtivGenerateConstraint::kind"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:28
+msgid "AtivGenerateConstraint::rollAxis"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:24
+msgid "AtivGenerateConstraint::source"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:25
+msgid "AtivGenerateConstraint::target"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:26
+msgid "AtivGenerateConstraint::weight"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBonesEditor.cs:25
+msgid "AtivGenerateDynamics::Joints"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:24
+msgid "AtivGenerateDynamicsCollider::colliderType"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:29
+msgid "AtivGenerateDynamicsCollider::normal"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:26
+msgid "AtivGenerateDynamicsCollider::offset"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:27
+msgid "AtivGenerateDynamicsCollider::radius"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:25
+msgid "AtivGenerateDynamicsCollider::rootBone"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:28
+msgid "AtivGenerateDynamicsCollider::tail"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/VRM1/AtivMergeVRM1SpringBonesEditor.cs:17
+msgid "AtivMergeVRM1SpringBones::colliderGroups"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/VRM1/AtivMergeVRM1SpringBonesEditor.cs:18
+msgid "AtivMergeVRM1SpringBones::springs"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivMergeVRMFirstPersonEditor.cs:17
+msgid "AtivMergeVRMFirstPerson::renderers"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
+msgid "AtivReduceDynamics::EstColliders"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
+msgid "AtivReduceDynamics::EstCollisions"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:82
+msgid "AtivReduceDynamics::EstComponents"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
+msgid "AtivReduceDynamics::EstTransforms"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:39
+msgid "AtivReduceDynamics::keepBoneRoots"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:38
+msgid "AtivReduceDynamics::reduceOnMobile"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:37
+msgid "AtivReduceDynamics::reduceOnPC"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:43
+msgid "AtivSimpleWear::avatarIgnoreBones"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:44
+msgid "AtivSimpleWear::avatarLeafBones"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:41
+msgid "AtivSimpleWear::avatarRootBones"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:67
+msgid "AtivSimpleWear::AvatarSettings"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:50
+msgid "AtivSimpleWear::BetaWarning."
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:97
+msgid "AtivSimpleWear::MergeDryRun"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:39
+msgid "AtivSimpleWear::moduleIgnoreBones"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:40
+msgid "AtivSimpleWear::moduleLeafBones"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:37
+msgid "AtivSimpleWear::moduleRootBones"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:52
+msgid "AtivSimpleWear::ModuleSettings"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:110
+msgid "AtivSimpleWear::ShowAvatarBoneTree"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:122
+msgid "AtivSimpleWear::ShowMapping"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:98
+msgid "AtivSimpleWear::ShowModuleBoneTree"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:40
+msgid "ListComponents::1"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:50
+msgid "ListComponents::2"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:43
+msgid "ListComponents::avatarRoot"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:52
+msgid "ListComponents::componentNames"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:37
+msgid "ListComponents::Help."
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:34
+msgid "ListComponents::ListComponents"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:40
+msgid "ReplaceMaterialTexture::1"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:49
+msgid "ReplaceMaterialTexture::2"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:68
+msgid "ReplaceMaterialTexture::3"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:69
+msgid "ReplaceMaterialTexture::Apply"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:37
+msgid "ReplaceMaterialTexture::Help."
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:43
+msgid "ReplaceMaterialTexture::materials"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:34
+msgid "ReplaceMaterialTexture::ReplaceMaterialTexture"
+msgstr ""
+

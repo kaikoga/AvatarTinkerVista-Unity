@@ -11,7 +11,9 @@
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.Common.Editor",
         "AvatarTinkerVista.VRM1",
-        "AvatarTinkerVista"
+        "AvatarTinkerVista",
+        "Loch",
+        "Loch.Editor"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,23 +1,27 @@
-﻿using UnityEditor;
+﻿using Silksprite.Loch;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
+using Silksprite.Loch.Tools;
+using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista.VRM1
 {
     [CustomEditor(typeof(AtivMergeVRM1SpringBones))]
     class AtivMergeVRM1SpringBonesEditor : Editor
     {
-        SerializedProperty _propColliderGroups;
-        SerializedProperty _propSprings;
+        LocalizedProperty _colliderGroups;
+        LocalizedProperty _springs;
 
         void OnEnable()
         {
-            _propColliderGroups = serializedObject.FindProperty(nameof(AtivMergeVRM1SpringBones.colliderGroups));
-            _propSprings = serializedObject.FindProperty(nameof(AtivMergeVRM1SpringBones.springs));
+            _colliderGroups = serializedObject.Lop(nameof(AtivMergeVRM1SpringBones.colliderGroups), LochTool.Loc("AtivMergeVRM1SpringBones::colliderGroups"));
+            _springs = serializedObject.Lop(nameof(AtivMergeVRM1SpringBones.springs), LochTool.Loc("AtivMergeVRM1SpringBones::springs"));
         }
         
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.PropertyField(_propColliderGroups);
-            EditorGUILayout.PropertyField(_propSprings);
+            LEditorGUILayout.Prop(_colliderGroups);
+            LEditorGUILayout.Prop(_springs);
             serializedObject.ApplyModifiedProperties();
         }
     }

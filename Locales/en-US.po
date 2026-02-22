@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2026-02-22 07:47+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: Tr;Loc\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Locales/Translations.cs:14
+msgid "AbletConsoleWindowView::entrypointObjectField"
+msgstr "Specify Entrypoint Object"
+
+#: Locales/Translations.cs:13
+msgid "AbletConsoleWindowView::sceneEntrypointsPopup"
+msgstr "Select Scene Entrypoints"
+
+#: Editor/Silksprite/AvatarTinkerVista/Common/AtivGUILayout.cs:15
+msgid "ativ::GizmosDarkMode"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBonesEditor.cs:24
+msgid "AtivGenerateDynamics::Joints"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:65
+msgid "AtivSimpleWear::Avatar Settings"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:95
+msgid "AtivSimpleWear::MergeDryRun"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:50
+msgid "AtivSimpleWear::ModuleSettings"
+msgstr ""
+
+#~ msgid "AbletConsoleWindowView::clearReports"
+#~ msgstr "Clear"
+
+#~ msgid "AbletSettingsWindowView::abletOnNdmfInfoLabel"
+#~ msgstr "Executes Ablet Only Plugins from NDMF."
+
+#~ msgid "AbletSettingsWindowView::abletOnNdmfToggle"
+#~ msgstr "Ablet on NDMF"
+
+#~ msgid "AbletSettingsWindowView::abletPreferNdmfInfoLabel"
+#~ msgstr "If enabled, Ablet will proactively utilize NDMF features, and hides similar Ablet features."
+
+#~ msgid "AbletSettingsWindowView::abletPreferNdmfToggle"
+#~ msgstr "Ablet Prefer NDMF"
+
+#~ msgid "AbletSettingsWindowView::applyOnPlatformBuildInfoLabel"
+#~ msgstr "When exporting for platforms, applies Apply on Platform Build of Ablet."
+
+#~ msgid "AbletSettingsWindowView::applyOnPlatformBuildNdmfInfoLabel"
+#~ msgstr "If enabled, Apply on Build of NDMF will be disabled."
+
+#~ msgid "AbletSettingsWindowView::applyOnPlatformBuildToggle"
+#~ msgstr "Apply on Platform Build"
+
+#~ msgid "AbletSettingsWindowView::applyOnPlayInfoLabel"
+#~ msgstr "When entering Play Mode, applies Apply on Play of Ablet."
+
+#~ msgid "AbletSettingsWindowView::applyOnPlayNdmfInfoLabel"
+#~ msgstr "If enabled, Apply on Play of NDMF will be disabled."
+
+#~ msgid "AbletSettingsWindowView::applyOnPlayToggle"
+#~ msgstr "Apply on Play"
+
+#~ msgid "AbletSettingsWindowView::autoOpenConsoleWindowInfoLabel"
+#~ msgstr "If enabled, Ablet Console will automatically open when information is updated."
+
+#~ msgid "AbletSettingsWindowView::autoOpenConsoleWindowToggle"
+#~ msgstr "Auto Open Console Window"
+
+#~ msgid "AbletSettingsWindowView::enhanceInplacePreviewInfoLabel"
+#~ msgstr "Applies modifications by some Ablet Plugins while Inplace Preview of Ablet is active."
+
+#~ msgid "AbletSettingsWindowView::enhanceInplacePreviewToggle"
+#~ msgstr "Enhance Inplace Preview"
+
+#~ msgid "AbletSettingsWindowView::generalHeader"
+#~ msgstr "General Settings"
+
+#~ msgid "AbletSettingsWindowView::isCompilingLabel"
+#~ msgstr "Waiting for settings to update..."
+
+#~ msgid "AbletSettingsWindowView::ndmfOnAbletDisabledLabel"
+#~ msgstr "NDMF on Ablet cannot be enabled while Apply on Play of NDMF is enabled."
+
+#~ msgid "AbletSettingsWindowView::ndmfOnAbletInfoLabel"
+#~ msgstr "Executes NDMF Only Plugins from Ablet."
+
+#~ msgid "AbletSettingsWindowView::ndmfOnAbletToggle"
+#~ msgstr "NDMF on Ablet"
+
+#~ msgid "AbletSettingsWindowView::persistedHeader"
+#~ msgstr "Persisted Settings"
+
+#~ msgid "AbletSettingsWindowView::persistedNdmfHeader"
+#~ msgstr "Persisted Settings (NDMF)"
+
+#~ msgid "AbletSettingsWindowView::preferAbletInfoLabel"
+#~ msgstr "Configures how Ablet-NDMF Hybrid Plugins operate.\\nIf enabled, they operate as Ablet Plugins.\\nIf disabled, they operate as NDMF Plugins."
+
+#~ msgid "AbletSettingsWindowView::preferAbletToggle"
+#~ msgstr "Prefer Ablet"
+
+#~ msgid "AbletSettingsWindowView::presetPreferAbletButton"
+#~ msgstr "Preset: Prefer Ablet"
+
+#~ msgid "AbletSettingsWindowView::presetPreferAbletInfoLabel"
+#~ msgstr "Use Ablet as the primary toolset.\\nNDMF Only Plugins are executed by compatibility feature of Ablet.\\nHybrid Plugins will work as Ablet Plugins.\\nPlease initiate builds from Ablet."
+
+#~ msgid "AbletSettingsWindowView::presetPreferNdmfButton"
+#~ msgstr "Preset: Prefer NDMF"
+
+#~ msgid "AbletSettingsWindowView::presetPreferNdmfInfoLabel"
+#~ msgstr "Use NDMF as the primary toolset.\\nAblet Only Plugins are executed by compatibility feature for NDMF.\\nHybrid Plugins will work as NDMF Plugins.\\nPlease initiate builds from NDMF."
+
+#~ msgid "AbletSettingsWindowView::presetsHeader"
+#~ msgstr "Presets"
+
+#~ msgid "AbletSettingsWindowView::syncTranslationInfoLabel"
+#~ msgstr "If enabled, applies NDMF language setting."
+
+#~ msgid "AbletSettingsWindowView::syncTranslationToggle"
+#~ msgstr "Sync Translation (Loch) with NDMF"
+
+#~ msgid "AbletSettingsWindowView::temporaryHeader"
+#~ msgstr "Temporary Settings"
+
+#~ msgid "BuildReporterStateView::settingsButton"
+#~ msgstr "..."
+
+#~ msgid "BuildReportListView::entrypointObjectField"
+#~ msgstr "Entrypoint"
+
+#~ msgid "BuildReportListView::entrypointSceneAssetField"
+#~ msgstr "Scene"
+
+#~ msgid "BuildReportListView::manualApplyButton"
+#~ msgstr "Manual Apply"
+
+#~ msgid "BuildReportListView::noEntrypointMessageLabel"
+#~ msgstr "Entrypoint Not Found"
+
+#~ msgid "BuildReportListView::openSceneAdditiveButton"
+#~ msgstr "Open Scene Additive"
+
+#~ msgid "BuildReportListView::openSceneButton"
+#~ msgstr "Open Scene"
+
+#~ msgid "UniVRM10ExportExtension::exportButton"
+#~ msgstr "Export VRM1.0 Avatar..."
+
+#~ msgid "UniVRM10ExportExtension::saveButton"
+#~ msgstr "Save VRM1.0 File"
+
+#~ msgid "UniVRMExportExtension::exportButton"
+#~ msgstr "Export VRM0.x Avatar..."
+
+#~ msgid "UniVRMExportExtension::saveButton"
+#~ msgstr "Save VRM0.x File"

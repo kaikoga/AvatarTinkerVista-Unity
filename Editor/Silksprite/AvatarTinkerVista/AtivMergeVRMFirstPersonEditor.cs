@@ -1,3 +1,7 @@
+using Silksprite.Loch;
+using Silksprite.Loch.Extensions;
+using Silksprite.Loch.IMGUI;
+using Silksprite.Loch.Tools;
 using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista
@@ -6,16 +10,16 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivMergeVRMFirstPersonEditor : Editor
     {
-        SerializedProperty _propRenderers;
+        LocalizedProperty _renderers;
 
         void OnEnable()
         {
-            _propRenderers = serializedObject.FindProperty(nameof(AtivMergeVRMFirstPerson.renderers));
+            _renderers = serializedObject.Lop(nameof(AtivMergeVRMFirstPerson.renderers), LochTool.Loc("AtivMergeVRMFirstPerson::renderers"));
         }
         
         public override void OnInspectorGUI()
         {
-            EditorGUILayout.PropertyField(_propRenderers);
+            LEditorGUILayout.Prop(_renderers);
             serializedObject.ApplyModifiedProperties();
         }
     }
