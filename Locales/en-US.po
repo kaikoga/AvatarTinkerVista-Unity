@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-22 07:47+0900\n"
+"POT-Creation-Date: 2026-02-23 01:32+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,159 +15,217 @@ msgstr ""
 "X-Poedit-KeywordsList: Tr;Loc\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Locales/Translations.cs:14
-msgid "AbletConsoleWindowView::entrypointObjectField"
-msgstr "Specify Entrypoint Object"
-
-#: Locales/Translations.cs:13
-msgid "AbletConsoleWindowView::sceneEntrypointsPopup"
-msgstr "Select Scene Entrypoints"
-
 #: Editor/Silksprite/AvatarTinkerVista/Common/AtivGUILayout.cs:15
 msgid "ativ::GizmosDarkMode"
-msgstr ""
+msgstr "Gizmos Dark Mode"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBonesEditor.cs:24
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:18
+msgid "AtivDefaultRendererSettings::Setup"
+msgstr "Setup"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:19
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:20
+msgid "AtivDeleteOtherPlatformComponents::abletDetectPlatform"
+msgstr "Ablet Detect Platform"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:31
+msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
+msgstr "Detected Platform"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:27
+msgid "AtivGenerateConstraint::aimAxis"
+msgstr "Aim Axis"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:23
+msgid "AtivGenerateConstraint::kind"
+msgstr "Kind"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:28
+msgid "AtivGenerateConstraint::rollAxis"
+msgstr "Roll Axis"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:24
+msgid "AtivGenerateConstraint::source"
+msgstr "Source"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:25
+msgid "AtivGenerateConstraint::target"
+msgstr "Target"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:26
+msgid "AtivGenerateConstraint::weight"
+msgstr "Weight"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBonesEditor.cs:26
 msgid "AtivGenerateDynamics::Joints"
-msgstr ""
+msgstr "Joints"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:65
-msgid "AtivSimpleWear::Avatar Settings"
-msgstr ""
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:24
+msgid "AtivGenerateDynamicsCollider::colliderType"
+msgstr "Collider Type"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:95
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:29
+msgid "AtivGenerateDynamicsCollider::normal"
+msgstr "Normal"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:26
+msgid "AtivGenerateDynamicsCollider::offset"
+msgstr "Offset"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:27
+msgid "AtivGenerateDynamicsCollider::radius"
+msgstr "Radius"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:25
+msgid "AtivGenerateDynamicsCollider::rootBone"
+msgstr "Root Bone"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:28
+msgid "AtivGenerateDynamicsCollider::tail"
+msgstr "Tail"
+
+#: Editor/Silksprite/AvatarTinkerVista/VRM1/AtivMergeVRM1SpringBonesEditor.cs:17
+msgid "AtivMergeVRM1SpringBones::colliderGroups"
+msgstr "Collider Groups"
+
+#: Editor/Silksprite/AvatarTinkerVista/VRM1/AtivMergeVRM1SpringBonesEditor.cs:18
+msgid "AtivMergeVRM1SpringBones::springs"
+msgstr "Springs"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivMergeVRMFirstPersonEditor.cs:17
+msgid "AtivMergeVRMFirstPerson::renderers"
+msgstr "Renderers"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
+msgid "AtivReduceDynamics::EstColliders"
+msgstr "Est. Colliders"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:86
+msgid "AtivReduceDynamics::EstCollisions"
+msgstr "Est. Collisions"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
+msgid "AtivReduceDynamics::EstComponents"
+msgstr "Est. Components"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
+msgid "AtivReduceDynamics::EstTransforms"
+msgstr "Est. Transforms"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:39
+msgid "AtivReduceDynamics::keepBoneRoots"
+msgstr "Keep Bone Roots"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:38
+msgid "AtivReduceDynamics::reduceOnMobile"
+msgstr "Reduce On Mobile"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:37
+msgid "AtivReduceDynamics::reduceOnPC"
+msgstr "Reduce On PC"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:43
+msgid "AtivSimpleWear::avatarIgnoreBones"
+msgstr "Avatar Ignore Bones"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:44
+msgid "AtivSimpleWear::avatarLeafBones"
+msgstr "Avatar Leaf Bones"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:41
+msgid "AtivSimpleWear::avatarRootBones"
+msgstr "Avatar Root Bones"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:68
+msgid "AtivSimpleWear::AvatarSettings"
+msgstr "Avatar Settings"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:51
+msgid "AtivSimpleWear::BetaWarning."
+msgstr "This component is in beta state."
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:98
 msgid "AtivSimpleWear::MergeDryRun"
-msgstr ""
+msgstr "Merge Dry Run"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:50
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:39
+msgid "AtivSimpleWear::moduleIgnoreBones"
+msgstr "Module Ignore Bones"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:40
+msgid "AtivSimpleWear::moduleLeafBones"
+msgstr "Module Leaf Bones"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:37
+msgid "AtivSimpleWear::moduleRootBones"
+msgstr "Module Root Bones"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:53
 msgid "AtivSimpleWear::ModuleSettings"
+msgstr "Module Settings"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:111
+msgid "AtivSimpleWear::ShowAvatarBoneTree"
+msgstr "Show Avatar Bone Tree"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:123
+msgid "AtivSimpleWear::ShowMapping"
+msgstr "Show Mapping"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
+msgid "AtivSimpleWear::ShowModuleBoneTree"
+msgstr "Show Module Bone Tree"
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:34
+msgid "ListComponents::1"
+msgstr "1. Select an avatar (or something)"
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:44
+msgid "ListComponents::2"
+msgstr "2. Component names are listed below"
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:37
+msgid "ListComponents::avatarRoot"
+msgstr "Avatar Root"
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:46
+msgid "ListComponents::componentNames"
+msgstr "Component Names"
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:31
+msgid "ListComponents::Help."
+msgstr "Display Components used in hierarchy under selected Transform."
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:29
+msgid "ListComponents::ListComponents"
+msgstr "List Components"
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:34
+msgid "ReplaceMaterialTexture::1"
+msgstr "1. Select a Material"
+
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:43
+msgid "ReplaceMaterialTexture::2"
 msgstr ""
+"2. Configure Textures to replace\n"
+"Replace from -> Replace to"
 
-#~ msgid "AbletConsoleWindowView::clearReports"
-#~ msgstr "Clear"
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:62
+msgid "ReplaceMaterialTexture::3"
+msgstr "3. Press Apply"
 
-#~ msgid "AbletSettingsWindowView::abletOnNdmfInfoLabel"
-#~ msgstr "Executes Ablet Only Plugins from NDMF."
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:63
+msgid "ReplaceMaterialTexture::Apply"
+msgstr "Apply"
 
-#~ msgid "AbletSettingsWindowView::abletOnNdmfToggle"
-#~ msgstr "Ablet on NDMF"
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:31
+msgid "ReplaceMaterialTexture::Help."
+msgstr "Replace all Texture references in a Material."
 
-#~ msgid "AbletSettingsWindowView::abletPreferNdmfInfoLabel"
-#~ msgstr "If enabled, Ablet will proactively utilize NDMF features, and hides similar Ablet features."
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:37
+msgid "ReplaceMaterialTexture::materials"
+msgstr "Materials"
 
-#~ msgid "AbletSettingsWindowView::abletPreferNdmfToggle"
-#~ msgstr "Ablet Prefer NDMF"
-
-#~ msgid "AbletSettingsWindowView::applyOnPlatformBuildInfoLabel"
-#~ msgstr "When exporting for platforms, applies Apply on Platform Build of Ablet."
-
-#~ msgid "AbletSettingsWindowView::applyOnPlatformBuildNdmfInfoLabel"
-#~ msgstr "If enabled, Apply on Build of NDMF will be disabled."
-
-#~ msgid "AbletSettingsWindowView::applyOnPlatformBuildToggle"
-#~ msgstr "Apply on Platform Build"
-
-#~ msgid "AbletSettingsWindowView::applyOnPlayInfoLabel"
-#~ msgstr "When entering Play Mode, applies Apply on Play of Ablet."
-
-#~ msgid "AbletSettingsWindowView::applyOnPlayNdmfInfoLabel"
-#~ msgstr "If enabled, Apply on Play of NDMF will be disabled."
-
-#~ msgid "AbletSettingsWindowView::applyOnPlayToggle"
-#~ msgstr "Apply on Play"
-
-#~ msgid "AbletSettingsWindowView::autoOpenConsoleWindowInfoLabel"
-#~ msgstr "If enabled, Ablet Console will automatically open when information is updated."
-
-#~ msgid "AbletSettingsWindowView::autoOpenConsoleWindowToggle"
-#~ msgstr "Auto Open Console Window"
-
-#~ msgid "AbletSettingsWindowView::enhanceInplacePreviewInfoLabel"
-#~ msgstr "Applies modifications by some Ablet Plugins while Inplace Preview of Ablet is active."
-
-#~ msgid "AbletSettingsWindowView::enhanceInplacePreviewToggle"
-#~ msgstr "Enhance Inplace Preview"
-
-#~ msgid "AbletSettingsWindowView::generalHeader"
-#~ msgstr "General Settings"
-
-#~ msgid "AbletSettingsWindowView::isCompilingLabel"
-#~ msgstr "Waiting for settings to update..."
-
-#~ msgid "AbletSettingsWindowView::ndmfOnAbletDisabledLabel"
-#~ msgstr "NDMF on Ablet cannot be enabled while Apply on Play of NDMF is enabled."
-
-#~ msgid "AbletSettingsWindowView::ndmfOnAbletInfoLabel"
-#~ msgstr "Executes NDMF Only Plugins from Ablet."
-
-#~ msgid "AbletSettingsWindowView::ndmfOnAbletToggle"
-#~ msgstr "NDMF on Ablet"
-
-#~ msgid "AbletSettingsWindowView::persistedHeader"
-#~ msgstr "Persisted Settings"
-
-#~ msgid "AbletSettingsWindowView::persistedNdmfHeader"
-#~ msgstr "Persisted Settings (NDMF)"
-
-#~ msgid "AbletSettingsWindowView::preferAbletInfoLabel"
-#~ msgstr "Configures how Ablet-NDMF Hybrid Plugins operate.\\nIf enabled, they operate as Ablet Plugins.\\nIf disabled, they operate as NDMF Plugins."
-
-#~ msgid "AbletSettingsWindowView::preferAbletToggle"
-#~ msgstr "Prefer Ablet"
-
-#~ msgid "AbletSettingsWindowView::presetPreferAbletButton"
-#~ msgstr "Preset: Prefer Ablet"
-
-#~ msgid "AbletSettingsWindowView::presetPreferAbletInfoLabel"
-#~ msgstr "Use Ablet as the primary toolset.\\nNDMF Only Plugins are executed by compatibility feature of Ablet.\\nHybrid Plugins will work as Ablet Plugins.\\nPlease initiate builds from Ablet."
-
-#~ msgid "AbletSettingsWindowView::presetPreferNdmfButton"
-#~ msgstr "Preset: Prefer NDMF"
-
-#~ msgid "AbletSettingsWindowView::presetPreferNdmfInfoLabel"
-#~ msgstr "Use NDMF as the primary toolset.\\nAblet Only Plugins are executed by compatibility feature for NDMF.\\nHybrid Plugins will work as NDMF Plugins.\\nPlease initiate builds from NDMF."
-
-#~ msgid "AbletSettingsWindowView::presetsHeader"
-#~ msgstr "Presets"
-
-#~ msgid "AbletSettingsWindowView::syncTranslationInfoLabel"
-#~ msgstr "If enabled, applies NDMF language setting."
-
-#~ msgid "AbletSettingsWindowView::syncTranslationToggle"
-#~ msgstr "Sync Translation (Loch) with NDMF"
-
-#~ msgid "AbletSettingsWindowView::temporaryHeader"
-#~ msgstr "Temporary Settings"
-
-#~ msgid "BuildReporterStateView::settingsButton"
-#~ msgstr "..."
-
-#~ msgid "BuildReportListView::entrypointObjectField"
-#~ msgstr "Entrypoint"
-
-#~ msgid "BuildReportListView::entrypointSceneAssetField"
-#~ msgstr "Scene"
-
-#~ msgid "BuildReportListView::manualApplyButton"
-#~ msgstr "Manual Apply"
-
-#~ msgid "BuildReportListView::noEntrypointMessageLabel"
-#~ msgstr "Entrypoint Not Found"
-
-#~ msgid "BuildReportListView::openSceneAdditiveButton"
-#~ msgstr "Open Scene Additive"
-
-#~ msgid "BuildReportListView::openSceneButton"
-#~ msgstr "Open Scene"
-
-#~ msgid "UniVRM10ExportExtension::exportButton"
-#~ msgstr "Export VRM1.0 Avatar..."
-
-#~ msgid "UniVRM10ExportExtension::saveButton"
-#~ msgstr "Save VRM1.0 File"
-
-#~ msgid "UniVRMExportExtension::exportButton"
-#~ msgstr "Export VRM0.x Avatar..."
-
-#~ msgid "UniVRMExportExtension::saveButton"
-#~ msgstr "Save VRM0.x File"
+#: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:29
+msgid "ReplaceMaterialTexture::ReplaceMaterialTexture"
+msgstr "Replace Material Texture"
