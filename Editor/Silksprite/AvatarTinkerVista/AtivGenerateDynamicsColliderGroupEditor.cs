@@ -1,15 +1,15 @@
 using System;
+using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch;
-using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [CustomEditor(typeof(AtivGenerateConstraint))]
+    [CustomEditor(typeof(AtivGenerateDynamicsColliderGroup))]
     [CanEditMultipleObjects]
-    class AtivGenerateVRM1ConstraintEditor : Editor
+    class AtivGenerateDynamicsColliderGroupEditor : AtivEditorBase
     {
         LocalizedProperty _kind;
         LocalizedProperty _source;
@@ -20,17 +20,16 @@ namespace Silksprite.AvatarTinkerVista
 
         void OnEnable()
         {
-            _kind = serializedObject.Lop(nameof(AtivGenerateConstraint.kind), Loc("AtivGenerateConstraint::kind"));
-            _source = serializedObject.Lop(nameof(AtivGenerateConstraint.source), Loc("AtivGenerateConstraint::source"));
-            _target = serializedObject.Lop(nameof(AtivGenerateConstraint.target), Loc("AtivGenerateConstraint::target"));
-            _weight = serializedObject.Lop(nameof(AtivGenerateConstraint.weight), Loc("AtivGenerateConstraint::weight"));
-            _aimAxis = serializedObject.Lop(nameof(AtivGenerateConstraint.aimAxis), Loc("AtivGenerateConstraint::aimAxis"));
-            _rollAxis = serializedObject.Lop(nameof(AtivGenerateConstraint.rollAxis), Loc("AtivGenerateConstraint::rollAxis"));
+            _kind = Lop(nameof(AtivGenerateConstraint.kind), Loc("AtivGenerateConstraint::kind"));
+            _source = Lop(nameof(AtivGenerateConstraint.source), Loc("AtivGenerateConstraint::source"));
+            _target = Lop(nameof(AtivGenerateConstraint.target), Loc("AtivGenerateConstraint::target"));
+            _weight = Lop(nameof(AtivGenerateConstraint.weight), Loc("AtivGenerateConstraint::weight"));
+            _aimAxis = Lop(nameof(AtivGenerateConstraint.aimAxis), Loc("AtivGenerateConstraint::aimAxis"));
+            _rollAxis = Lop(nameof(AtivGenerateConstraint.rollAxis), Loc("AtivGenerateConstraint::rollAxis"));
         }
         
-        public override void OnInspectorGUI()
+        protected override void OnInnerInspectorGUI()
         {
-            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_kind);
             LEditorGUILayout.Prop(_source);
             LEditorGUILayout.Prop(_target);

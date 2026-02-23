@@ -1,5 +1,5 @@
-﻿using Silksprite.Loch;
-using Silksprite.Loch.Extensions;
+﻿using Silksprite.AvatarTinkerVista.Common.Base;
+using Silksprite.Loch;
 using Silksprite.Loch.IMGUI;
 using Silksprite.Loch.Tools;
 using UnityEditor;
@@ -7,18 +7,18 @@ using UnityEditor;
 namespace Silksprite.AvatarTinkerVista.VRM1
 {
     [CustomEditor(typeof(AtivMergeVRM1SpringBones))]
-    class AtivMergeVRM1SpringBonesEditor : Editor
+    class AtivMergeVRM1SpringBonesEditor : AtivEditorBase
     {
         LocalizedProperty _colliderGroups;
         LocalizedProperty _springs;
 
         void OnEnable()
         {
-            _colliderGroups = serializedObject.Lop(nameof(AtivMergeVRM1SpringBones.colliderGroups), LochTool.Loc("AtivMergeVRM1SpringBones::colliderGroups"));
-            _springs = serializedObject.Lop(nameof(AtivMergeVRM1SpringBones.springs), LochTool.Loc("AtivMergeVRM1SpringBones::springs"));
+            _colliderGroups = Lop(nameof(AtivMergeVRM1SpringBones.colliderGroups), LochTool.Loc("AtivMergeVRM1SpringBones::colliderGroups"));
+            _springs = Lop(nameof(AtivMergeVRM1SpringBones.springs), LochTool.Loc("AtivMergeVRM1SpringBones::springs"));
         }
         
-        public override void OnInspectorGUI()
+        protected override void OnInnerInspectorGUI()
         {
             LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_colliderGroups);

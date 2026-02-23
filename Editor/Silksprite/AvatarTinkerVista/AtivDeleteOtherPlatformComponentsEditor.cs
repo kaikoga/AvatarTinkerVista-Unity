@@ -1,4 +1,5 @@
-﻿using Silksprite.Loch;
+﻿using Silksprite.AvatarTinkerVista.Common.Base;
+using Silksprite.Loch;
 using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
@@ -7,7 +8,7 @@ using static Silksprite.Loch.Tools.LochTool;
 namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivDeleteOtherPlatformComponents))]
-    class AtivDeleteOtherPlatformComponentsEditor : Editor
+    class AtivDeleteOtherPlatformComponentsEditor : AtivEditorBase
     {
         AtivDeleteOtherPlatformComponents _deleteOtherPlatformComponents;
         LocalizedProperty _abletDetectPlatform;
@@ -20,9 +21,8 @@ namespace Silksprite.AvatarTinkerVista
             _platform = serializedObject.Lop(nameof(AtivDeleteOtherPlatformComponents.platform), Loc("AtivDeleteOtherPlatformComponents::abletDetectPlatform"));
         }
 
-        public override void OnInspectorGUI()
+        protected override void OnInnerInspectorGUI()
         {
-            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_abletDetectPlatform);
             if (_abletDetectPlatform.Property.boolValue)
             {

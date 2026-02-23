@@ -14,7 +14,6 @@ namespace Silksprite.AvatarTinkerVista
     {
         #region Info
 
-        [Header("Info")]
         public OverwriteString nameOrTitle;
         public OverwriteString version;
         [FormerlySerializedAs("vrm0Author")] public OverwriteString author;
@@ -31,7 +30,6 @@ namespace Silksprite.AvatarTinkerVista
 
         #region Permission
 
-        [Header("Permission")]
         public OverwriteAllowedUser allowedUser;
         public OverwriteBool violentUsage;
         public OverwriteBool sexualUsage;
@@ -45,7 +43,6 @@ namespace Silksprite.AvatarTinkerVista
 
         #region Distribution License
         
-        [Header("Distribution License")]
         public OverwriteVRM0LicenseType vrm0LicenseType;
         public OverwriteVRM1CreditNotationType vrm1CreditNotation;
         public OverwriteBool vrm1Redistribution;

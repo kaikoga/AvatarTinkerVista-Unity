@@ -20,7 +20,7 @@ using VRM;
 using Silksprite.AvatarTinkerVista.VRM1;
 #endif
 
-namespace Silksprite.AvatarTinkerVista
+namespace Silksprite.AvatarTinkerVista.Utils
 {
     public static class SimpleWearSetup
     {

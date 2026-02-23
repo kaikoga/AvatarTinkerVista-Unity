@@ -1,7 +1,7 @@
 using System;
 using Silksprite.AvatarTinkerVista.Common;
+using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch;
-using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using static Silksprite.Loch.Tools.LochTool;
@@ -10,7 +10,7 @@ namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivGenerateDynamicsCollider))]
     [CanEditMultipleObjects]
-    class AtivGenerateVRMSpringBoneColliderEditor : Editor
+    class AtivGenerateDynamicsColliderEditor : AtivEditorBase
     {
         LocalizedProperty _renderers;
         LocalizedProperty _rootBone;
@@ -21,17 +21,16 @@ namespace Silksprite.AvatarTinkerVista
 
         void OnEnable()
         {
-            _renderers = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.colliderType), Loc("AtivGenerateDynamicsCollider::colliderType"));
-            _rootBone = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.rootBone), Loc("AtivGenerateDynamicsCollider::rootBone"));
-            _offset = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.offset), Loc("AtivGenerateDynamicsCollider::offset"));
-            _radius = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.radius), Loc("AtivGenerateDynamicsCollider::radius"));
-            _tail = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.tail), Loc("AtivGenerateDynamicsCollider::tail"));
-            _normal = serializedObject.Lop(nameof(AtivGenerateDynamicsCollider.normal), Loc("AtivGenerateDynamicsCollider::normal"));
+            _renderers = Lop(nameof(AtivGenerateDynamicsCollider.colliderType), Loc("AtivGenerateDynamicsCollider::colliderType"));
+            _rootBone = Lop(nameof(AtivGenerateDynamicsCollider.rootBone), Loc("AtivGenerateDynamicsCollider::rootBone"));
+            _offset = Lop(nameof(AtivGenerateDynamicsCollider.offset), Loc("AtivGenerateDynamicsCollider::offset"));
+            _radius = Lop(nameof(AtivGenerateDynamicsCollider.radius), Loc("AtivGenerateDynamicsCollider::radius"));
+            _tail = Lop(nameof(AtivGenerateDynamicsCollider.tail), Loc("AtivGenerateDynamicsCollider::tail"));
+            _normal = Lop(nameof(AtivGenerateDynamicsCollider.normal), Loc("AtivGenerateDynamicsCollider::normal"));
         }
         
-        public override void OnInspectorGUI()
+        protected override void OnInnerInspectorGUI()
         {
-            LEditorGUILayout.LocaleSelector();
             AtivGUILayout.GizmosDarkModeToggle();
             LEditorGUILayout.Prop(_renderers);
             LEditorGUILayout.Prop(_rootBone);

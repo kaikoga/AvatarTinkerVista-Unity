@@ -1,5 +1,6 @@
 using nadena.dev.ndmf;
 using Silksprite.AvatarTinkerVista.Common.Wear;
+using Silksprite.AvatarTinkerVista.Utils;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.Passes
 {

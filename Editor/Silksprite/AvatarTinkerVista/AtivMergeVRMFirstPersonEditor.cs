@@ -1,25 +1,24 @@
+using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch;
-using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
-using Silksprite.Loch.Tools;
 using UnityEditor;
+using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivMergeVRMFirstPerson))]
     [CanEditMultipleObjects]
-    class AtivMergeVRMFirstPersonEditor : Editor
+    class AtivMergeVRMFirstPersonEditor : AtivEditorBase
     {
         LocalizedProperty _renderers;
 
         void OnEnable()
         {
-            _renderers = serializedObject.Lop(nameof(AtivMergeVRMFirstPerson.renderers), LochTool.Loc("AtivMergeVRMFirstPerson::renderers"));
+            _renderers = Lop(nameof(AtivMergeVRMFirstPerson.renderers), Loc("AtivMergeVRMFirstPerson::renderers"));
         }
         
-        public override void OnInspectorGUI()
+        protected override void OnInnerInspectorGUI()
         {
-            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_renderers);
             serializedObject.ApplyModifiedProperties();
         }

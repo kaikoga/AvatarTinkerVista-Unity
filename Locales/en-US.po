@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-23 05:52+0900\n"
+"POT-Creation-Date: 2026-02-24 03:10+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,76 +19,138 @@ msgstr ""
 msgid "ativ::GizmosDarkMode"
 msgstr "Gizmos Dark Mode"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:18
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:26
+msgid "AtivDefaultRendererSettings::overwriteBounds"
+msgstr "Bounds"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:24
+msgid "AtivDefaultRendererSettings::overwriteProbeAnchor"
+msgstr "Probe Anchor"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:25
+msgid "AtivDefaultRendererSettings::overwriteRootBone"
+msgstr "Root Bone"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:23
+msgid "AtivDefaultRendererSettings::preferParentSettings"
+msgstr "Prefer Parent Settings"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:37
 msgid "AtivDefaultRendererSettings::Setup"
 msgstr "Setup"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:19
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultVRMFirstPersonEditor.cs:18
+msgid "AtivDefaultVRMFirstPerson::defaultValue"
+msgstr "Default Value"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultVRMFirstPersonEditor.cs:17
+msgid "AtivDefaultVRMFirstPerson::firstPersonOffset"
+msgstr "First Person Offset"
+
 #: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:20
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:21
 msgid "AtivDeleteOtherPlatformComponents::abletDetectPlatform"
 msgstr "Ablet Detect Platform"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:31
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:32
 msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
 msgstr "Detected Platform"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:89
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:87
 msgid "AtivExportVRMUI.ExportWithAblet"
 msgstr "Export With Ablet"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:57
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:58
 msgid "AtivExportVRMUI.ExportWithNDMF"
 msgstr "Export With NDMF"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:27
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:27
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:27
 msgid "AtivGenerateConstraint::aimAxis"
 msgstr "Aim Axis"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:23
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:23
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:23
 msgid "AtivGenerateConstraint::kind"
 msgstr "Kind"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:28
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:28
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:28
 msgid "AtivGenerateConstraint::rollAxis"
 msgstr "Roll Axis"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:24
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:24
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:24
 msgid "AtivGenerateConstraint::source"
 msgstr "Source"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:25
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:25
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:25
 msgid "AtivGenerateConstraint::target"
 msgstr "Target"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRM1ConstraintEditor.cs:26
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:26
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:26
 msgid "AtivGenerateConstraint::weight"
 msgstr "Weight"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBonesEditor.cs:26
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:33
+msgid "AtivGenerateDynamics::center"
+msgstr "Center"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:34
+msgid "AtivGenerateDynamics::colliderGroups"
+msgstr "Collider Groups"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:30
+msgid "AtivGenerateDynamics::dragForce"
+msgstr "Drag Force"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:29
+msgid "AtivGenerateDynamics::gravityDir"
+msgstr "Gravity Dir"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:28
+msgid "AtivGenerateDynamics::gravityPower"
+msgstr "Gravity Power"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:58
 msgid "AtivGenerateDynamics::Joints"
 msgstr "Joints"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:24
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:31
+msgid "AtivGenerateDynamics::radius"
+msgstr "Radius"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:32
+msgid "AtivGenerateDynamics::rootBone"
+msgstr "Root Bone"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:27
+msgid "AtivGenerateDynamics::stiffness"
+msgstr "Stiffness"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderEditor.cs:24
 msgid "AtivGenerateDynamicsCollider::colliderType"
 msgstr "Collider Type"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:29
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderEditor.cs:29
 msgid "AtivGenerateDynamicsCollider::normal"
 msgstr "Normal"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:26
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderEditor.cs:26
 msgid "AtivGenerateDynamicsCollider::offset"
 msgstr "Offset"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:27
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderEditor.cs:27
 msgid "AtivGenerateDynamicsCollider::radius"
 msgstr "Radius"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:25
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderEditor.cs:25
 msgid "AtivGenerateDynamicsCollider::rootBone"
 msgstr "Root Bone"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateVRMSpringBoneColliderEditor.cs:28
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderEditor.cs:28
 msgid "AtivGenerateDynamicsCollider::tail"
 msgstr "Tail"
 
@@ -103,6 +165,110 @@ msgstr "Springs"
 #: Editor/Silksprite/AvatarTinkerVista/AtivMergeVRMFirstPersonEditor.cs:17
 msgid "AtivMergeVRMFirstPerson::renderers"
 msgstr "Renderers"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:54
+msgid "AtivOverwriteVRMMeta::allowedUser"
+msgstr "Allowed User"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:44
+msgid "AtivOverwriteVRMMeta::author"
+msgstr "Author"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:48
+msgid "AtivOverwriteVRMMeta::contactInformation"
+msgstr "Contact Information"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:97
+msgid "AtivOverwriteVRMMeta::DistributionLicense"
+msgstr "Distribution License"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:74
+msgid "AtivOverwriteVRMMeta::Info"
+msgstr "Info"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:42
+msgid "AtivOverwriteVRMMeta::nameOrTitle"
+msgstr "Name Or Title"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:67
+msgid "AtivOverwriteVRMMeta::otherLicenseUrl"
+msgstr "Other License URL"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:87
+msgid "AtivOverwriteVRMMeta::Permission"
+msgstr "Permission"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:49
+msgid "AtivOverwriteVRMMeta::reference"
+msgstr "Reference"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:56
+msgid "AtivOverwriteVRMMeta::sexualUsage"
+msgstr "Sexual Usage"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:52
+msgid "AtivOverwriteVRMMeta::thumbnail"
+msgstr "Thumbnail"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:43
+msgid "AtivOverwriteVRMMeta::version"
+msgstr "Version"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:55
+msgid "AtivOverwriteVRMMeta::violentUsage"
+msgstr "Violent Usage"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:57
+msgid "AtivOverwriteVRMMeta::vrm0CommercialUsage"
+msgstr "VRM0 Commercial Usage"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:63
+msgid "AtivOverwriteVRMMeta::vrm0LicenseType"
+msgstr "VRM0 License Type"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:61
+msgid "AtivOverwriteVRMMeta::vrm0OtherPermissionUrl"
+msgstr "VRM0 Other Permission URL"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:60
+msgid "AtivOverwriteVRMMeta::vrm1AntisocialOrHateUsage"
+msgstr "VRM1 Antisocial Or Hate Usage"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:58
+msgid "AtivOverwriteVRMMeta::vrm1CommercialUsage"
+msgstr "VRM1 Commercial Usage"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:47
+msgid "AtivOverwriteVRMMeta::vrm1CopyrightInformation"
+msgstr "VRM1 Copyright Information"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:64
+msgid "AtivOverwriteVRMMeta::vrm1CreditNotation"
+msgstr "VRM1 Credit Notation"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:66
+msgid "AtivOverwriteVRMMeta::vrm1Modification"
+msgstr "VRM1 Modification"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:45
+msgid "AtivOverwriteVRMMeta::vrm1MoreAuthors"
+msgstr "VRM1 More Authors"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:50
+msgid "AtivOverwriteVRMMeta::vrm1MoreReferences"
+msgstr "VRM1 More References"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:59
+msgid "AtivOverwriteVRMMeta::vrm1PoliticalOrReligiousUsage"
+msgstr "VRM1 Political Or Religious Usage"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:65
+msgid "AtivOverwriteVRMMeta::vrm1Redistribution"
+msgstr "VRM1 Redistribution"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:51
+msgid "AtivOverwriteVRMMeta::vrm1ThirdPartyLicenses"
+msgstr "VRM1 Third Party Licenses"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
 msgid "AtivReduceDynamics::EstColliders"
@@ -132,55 +298,55 @@ msgstr "Reduce On Mobile"
 msgid "AtivReduceDynamics::reduceOnPC"
 msgstr "Reduce On PC"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:43
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:44
 msgid "AtivSimpleWear::avatarIgnoreBones"
 msgstr "Avatar Ignore Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:44
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:45
 msgid "AtivSimpleWear::avatarLeafBones"
 msgstr "Avatar Leaf Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:41
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:42
 msgid "AtivSimpleWear::avatarRootBones"
 msgstr "Avatar Root Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:68
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:69
 msgid "AtivSimpleWear::AvatarSettings"
 msgstr "Avatar Settings"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:51
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:52
 msgid "AtivSimpleWear::BetaWarning."
 msgstr "This component is in beta state."
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:98
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
 msgid "AtivSimpleWear::MergeDryRun"
 msgstr "Merge Dry Run"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:39
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:40
 msgid "AtivSimpleWear::moduleIgnoreBones"
 msgstr "Module Ignore Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:40
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:41
 msgid "AtivSimpleWear::moduleLeafBones"
 msgstr "Module Leaf Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:37
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:38
 msgid "AtivSimpleWear::moduleRootBones"
 msgstr "Module Root Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:53
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:54
 msgid "AtivSimpleWear::ModuleSettings"
 msgstr "Module Settings"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:111
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:112
 msgid "AtivSimpleWear::ShowAvatarBoneTree"
 msgstr "Show Avatar Bone Tree"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:123
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:124
 msgid "AtivSimpleWear::ShowMapping"
 msgstr "Show Mapping"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:100
 msgid "AtivSimpleWear::ShowModuleBoneTree"
 msgstr "Show Module Bone Tree"
 

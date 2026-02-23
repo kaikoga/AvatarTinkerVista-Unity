@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Common.Wear;
+using Silksprite.AvatarTinkerVista.Utils;
 using Silksprite.Loch;
-using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivSimpleWear))]
     [CanEditMultipleObjects]
-    class AtivSimpleWearEditor : Editor
+    class AtivSimpleWearEditor : AtivEditorBase
     {
         AtivSimpleWear[] _simpleWears;
 
@@ -34,19 +35,18 @@ namespace Silksprite.AvatarTinkerVista
         void OnEnable()
         {
             _simpleWears = targets.Cast<AtivSimpleWear>().ToArray();
-            _moduleRootBones = serializedObject.Lop(nameof(AtivSimpleWear.moduleRootBones), Loc("AtivSimpleWear::moduleRootBones"));
+            _moduleRootBones = Lop(nameof(AtivSimpleWear.moduleRootBones), Loc("AtivSimpleWear::moduleRootBones"));
             _moduleRootBones.Property.isExpanded = true;
-            _moduleIgnoreBones = serializedObject.Lop(nameof(AtivSimpleWear.moduleIgnoreBones), Loc("AtivSimpleWear::moduleIgnoreBones"));
-            _moduleLeafBones = serializedObject.Lop(nameof(AtivSimpleWear.moduleLeafBones), Loc("AtivSimpleWear::moduleLeafBones"));
-            _avatarRootBones = serializedObject.Lop(nameof(AtivSimpleWear.avatarRootBones), Loc("AtivSimpleWear::avatarRootBones"));
+            _moduleIgnoreBones = Lop(nameof(AtivSimpleWear.moduleIgnoreBones), Loc("AtivSimpleWear::moduleIgnoreBones"));
+            _moduleLeafBones = Lop(nameof(AtivSimpleWear.moduleLeafBones), Loc("AtivSimpleWear::moduleLeafBones"));
+            _avatarRootBones = Lop(nameof(AtivSimpleWear.avatarRootBones), Loc("AtivSimpleWear::avatarRootBones"));
             _avatarRootBones.Property.isExpanded = true;
-            _avatarIgnoreBones = serializedObject.Lop(nameof(AtivSimpleWear.avatarIgnoreBones), Loc("AtivSimpleWear::avatarIgnoreBones"));
-            _avatarLeafBones = serializedObject.Lop(nameof(AtivSimpleWear.avatarLeafBones), Loc("AtivSimpleWear::avatarLeafBones"));
+            _avatarIgnoreBones = Lop(nameof(AtivSimpleWear.avatarIgnoreBones), Loc("AtivSimpleWear::avatarIgnoreBones"));
+            _avatarLeafBones = Lop(nameof(AtivSimpleWear.avatarLeafBones), Loc("AtivSimpleWear::avatarLeafBones"));
         }
 
-        public override void OnInspectorGUI()
+        protected override void OnInnerInspectorGUI()
         {
-            LEditorGUILayout.LocaleSelector();
             using var changed = new EditorGUI.ChangeCheckScope();
             LEditorGUILayout.HelpBox(Loc("AtivSimpleWear::BetaWarning."), MessageType.Info);
             Action<AtivSimpleWear> defer = null;

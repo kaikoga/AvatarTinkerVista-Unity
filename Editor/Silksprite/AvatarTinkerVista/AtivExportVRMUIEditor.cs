@@ -1,6 +1,6 @@
+using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch.UIElements.LEditor;
 using UnityEditor;
-using UnityEngine;
 using UnityEngine.UIElements;
 using static Silksprite.Loch.Tools.LochTool;
 
@@ -27,7 +27,7 @@ namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivExportVRMUI))]
     [CanEditMultipleObjects]
-    class AtivExportVRMUIEditor : Editor
+    class AtivExportVRMUIEditor : AtivEditorBase
     {
 
 #if ATIV_DETECTED_VRM0 || ATIV_DETECTED_VRM1

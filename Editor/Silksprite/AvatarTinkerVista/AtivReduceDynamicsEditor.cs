@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch;
-using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
@@ -17,7 +17,7 @@ using VRC.Dynamics;
 namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivReduceDynamics))]
-    class AtivReduceDynamicsEditor : Editor
+    class AtivReduceDynamicsEditor : AtivEditorBase
     {
         AtivReduceDynamics _reduceDynamics;
 
@@ -34,9 +34,9 @@ namespace Silksprite.AvatarTinkerVista
         void OnEnable()
         {
             _reduceDynamics = (AtivReduceDynamics)target;
-            _reduceOnPC = serializedObject.Lop(nameof(AtivReduceDynamics.reduceOnPC), Loc("AtivReduceDynamics::reduceOnPC"));
-            _reduceOnMobile = serializedObject.Lop(nameof(AtivReduceDynamics.reduceOnMobile), Loc("AtivReduceDynamics::reduceOnMobile"));
-            _keepBoneRoots = serializedObject.Lop(nameof(AtivReduceDynamics.keepBoneRoots), Loc("AtivReduceDynamics::keepBoneRoots"));
+            _reduceOnPC = Lop(nameof(AtivReduceDynamics.reduceOnPC), Loc("AtivReduceDynamics::reduceOnPC"));
+            _reduceOnMobile = Lop(nameof(AtivReduceDynamics.reduceOnMobile), Loc("AtivReduceDynamics::reduceOnMobile"));
+            _keepBoneRoots = Lop(nameof(AtivReduceDynamics.keepBoneRoots), Loc("AtivReduceDynamics::keepBoneRoots"));
 #if ATIV_NDMF
             _avatarRoot = RuntimeUtil.FindAvatarInParents(_reduceDynamics.transform);
 #if ATIV_VRCSDK3_AVATARS
@@ -52,9 +52,8 @@ namespace Silksprite.AvatarTinkerVista
 #endif
         }
 
-        public override void OnInspectorGUI()
+        protected override void OnInnerInspectorGUI()
         {
-            LEditorGUILayout.LocaleSelector();
             LEditorGUILayout.Prop(_reduceOnPC);
             LEditorGUILayout.Prop(_reduceOnMobile);
             LEditorGUILayout.Prop(_keepBoneRoots);

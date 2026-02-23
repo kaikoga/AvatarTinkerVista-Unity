@@ -5,6 +5,7 @@ using Ablet.API.V1.Building;
 using Ablet.Builtin;
 using Ablet.Querying;
 using Silksprite.AvatarTinkerVista.Common.Wear;
+using Silksprite.AvatarTinkerVista.Utils;
 
 namespace Silksprite.AvatarTinkerVista.Ablet.Layers
 {
