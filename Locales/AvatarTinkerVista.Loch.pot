@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-24 10:54+0900\n"
+"POT-Creation-Date: 2026-02-25 12:47+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -359,6 +359,22 @@ msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
 msgid "AtivSimpleWear::ShowModuleBoneTree"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Common/InteractiveConverterBase.cs:27
+msgid "InteractiveConverterBase::Alt"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Common/InteractiveConverterBase.cs:26
+msgid "InteractiveConverterBase::Cancel"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Common/InteractiveConverterBase.cs:24
+msgid "InteractiveConverterBase::Message?"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/Common/InteractiveConverterBase.cs:25
+msgid "InteractiveConverterBase::Ok"
 msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/Tools/ListComponents/ListComponentsWindow.cs:34
