@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-25 12:47+0900\n"
+"POT-Creation-Date: 2026-02-25 01:57+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -77,32 +77,26 @@ msgid "AtivExportVRMUI.ExportWithNDMF"
 msgstr "Export With NDMF"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:27
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:27
 msgid "AtivGenerateConstraint::aimAxis"
 msgstr "Aim Axis"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:23
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:23
 msgid "AtivGenerateConstraint::kind"
 msgstr "Kind"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:28
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:28
 msgid "AtivGenerateConstraint::rollAxis"
 msgstr "Roll Axis"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:24
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:24
 msgid "AtivGenerateConstraint::source"
 msgstr "Source"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:25
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:25
 msgid "AtivGenerateConstraint::target"
 msgstr "Target"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateConstraintEditor.cs:26
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:26
 msgid "AtivGenerateConstraint::weight"
 msgstr "Weight"
 
@@ -165,6 +159,10 @@ msgstr "Root Bone"
 #: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderEditor.cs:28
 msgid "AtivGenerateDynamicsCollider::tail"
 msgstr "Tail"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsColliderGroupEditor.cs:18
+msgid "AtivGenerateDynamicsColliderGroup.colliders"
+msgstr "Colliders"
 
 #: Editor/Silksprite/AvatarTinkerVista/VRM1/AtivMergeVRM1SpringBonesEditor.cs:17
 msgid "AtivMergeVRM1SpringBones::colliderGroups"
