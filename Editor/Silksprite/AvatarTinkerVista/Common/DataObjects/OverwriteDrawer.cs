@@ -7,11 +7,6 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     [CustomPropertyDrawer(typeof(OverwriteString))]
     [CustomPropertyDrawer(typeof(OverwriteTexture2D))]
     [CustomPropertyDrawer(typeof(OverwriteAvatarRelativeTransform))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteAllowedUser))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM1CommercialUsageType))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM0LicenseType))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM1CreditNotationType))]
-    [CustomPropertyDrawer(typeof(AtivOverwriteVRMMeta.OverwriteVRM1ModificationType))]
     public class OverwriteDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty serializedProperty, GUIContent label)

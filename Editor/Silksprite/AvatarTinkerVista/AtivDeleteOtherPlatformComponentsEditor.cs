@@ -18,7 +18,7 @@ namespace Silksprite.AvatarTinkerVista
         {
             _deleteOtherPlatformComponents = (AtivDeleteOtherPlatformComponents)target;
             _abletDetectPlatform = serializedObject.Lop(nameof(AtivDeleteOtherPlatformComponents.abletDetectPlatform), Loc("AtivDeleteOtherPlatformComponents::abletDetectPlatform"));
-            _platform = serializedObject.Lop(nameof(AtivDeleteOtherPlatformComponents.platform), Loc("AtivDeleteOtherPlatformComponents::abletDetectPlatform"));
+            _platform = serializedObject.Lop(nameof(AtivDeleteOtherPlatformComponents.platform), Loc("AtivDeleteOtherPlatformComponents::platform"));
         }
 
         protected override void OnInnerInspectorGUI()

@@ -1,6 +1,7 @@
 {
     "name": "AvatarTinkerVista",
     "references": [
+        "Loch",
         "Ablet",
         "Ablet.Builtin",
         "AvatarTinkerVista.Common"

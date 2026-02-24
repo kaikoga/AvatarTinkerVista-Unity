@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-24 03:10+0900\n"
+"POT-Creation-Date: 2026-02-24 10:54+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,6 +10,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loch\n"
+
+#: 
+msgid "AllowedUser::Everyone"
+msgstr ""
+
+#: 
+msgid "AllowedUser::ExplicitlyLicensedPerson"
+msgstr ""
+
+#: 
+msgid "AllowedUser::OnlyAuthor"
+msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/Common/AtivGUILayout.cs:15
 msgid "ativ::GizmosDarkMode"
@@ -31,7 +43,7 @@ msgstr ""
 msgid "AtivDefaultRendererSettings::preferParentSettings"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:37
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:36
 msgid "AtivDefaultRendererSettings::Setup"
 msgstr ""
 
@@ -44,11 +56,14 @@ msgid "AtivDefaultVRMFirstPerson::firstPersonOffset"
 msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:20
-#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:21
 msgid "AtivDeleteOtherPlatformComponents::abletDetectPlatform"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:32
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:21
+msgid "AtivDeleteOtherPlatformComponents::platform"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:31
 msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
 msgstr ""
 
@@ -110,7 +125,7 @@ msgstr ""
 msgid "AtivGenerateDynamics::gravityPower"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:58
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:57
 msgid "AtivGenerateDynamics::Joints"
 msgstr ""
 
@@ -174,11 +189,11 @@ msgstr ""
 msgid "AtivOverwriteVRMMeta::contactInformation"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:97
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:95
 msgid "AtivOverwriteVRMMeta::DistributionLicense"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:74
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:72
 msgid "AtivOverwriteVRMMeta::Info"
 msgstr ""
 
@@ -190,7 +205,7 @@ msgstr ""
 msgid "AtivOverwriteVRMMeta::otherLicenseUrl"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:87
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:85
 msgid "AtivOverwriteVRMMeta::Permission"
 msgstr ""
 
@@ -266,19 +281,19 @@ msgstr ""
 msgid "AtivOverwriteVRMMeta::vrm1ThirdPartyLicenses"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
 msgid "AtivReduceDynamics::EstColliders"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:86
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
 msgid "AtivReduceDynamics::EstCollisions"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:82
 msgid "AtivReduceDynamics::EstComponents"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
 msgid "AtivReduceDynamics::EstTransforms"
 msgstr ""
 
@@ -306,15 +321,15 @@ msgstr ""
 msgid "AtivSimpleWear::avatarRootBones"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:69
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:68
 msgid "AtivSimpleWear::AvatarSettings"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:52
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:51
 msgid "AtivSimpleWear::BetaWarning."
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:98
 msgid "AtivSimpleWear::MergeDryRun"
 msgstr ""
 
@@ -330,19 +345,19 @@ msgstr ""
 msgid "AtivSimpleWear::moduleRootBones"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:54
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:53
 msgid "AtivSimpleWear::ModuleSettings"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:112
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:111
 msgid "AtivSimpleWear::ShowAvatarBoneTree"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:124
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:123
 msgid "AtivSimpleWear::ShowMapping"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:100
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
 msgid "AtivSimpleWear::ShowModuleBoneTree"
 msgstr ""
 
@@ -396,5 +411,73 @@ msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:29
 msgid "ReplaceMaterialTexture::ReplaceMaterialTexture"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::CC_BY"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::CC_BY_NC"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::CC_BY_NC_ND"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::CC_BY_NC_SA"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::CC_BY_ND"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::CC_BY_SA"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::CC0"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::Other"
+msgstr ""
+
+#: 
+msgid "VRM0LicenseType::Redistribution_Prohibited"
+msgstr ""
+
+#: 
+msgid "VRM1CommercialUsageType::Corporation"
+msgstr ""
+
+#: 
+msgid "VRM1CommercialUsageType::PersonalNonProfit"
+msgstr ""
+
+#: 
+msgid "VRM1CommercialUsageType::PersonalProfit"
+msgstr ""
+
+#: 
+msgid "VRM1CreditNotationType::Required"
+msgstr ""
+
+#: 
+msgid "VRM1CreditNotationType::Unnecessary"
+msgstr ""
+
+#: 
+msgid "VRM1ModificationType::AllowModification"
+msgstr ""
+
+#: 
+msgid "VRM1ModificationType::AllowModificationRedistribution"
+msgstr ""
+
+#: 
+msgid "VRM1ModificationType::Prohibited"
 msgstr ""
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
+using Silksprite.Loch.Attributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -53,6 +54,7 @@ namespace Silksprite.AvatarTinkerVista
         
         #region enums
 
+        [LEnum]
         public enum AllowedUser
         {
             OnlyAuthor,
@@ -60,6 +62,7 @@ namespace Silksprite.AvatarTinkerVista
             Everyone,
         }
 
+        [LEnum]
         public enum VRM1CommercialUsageType
         {
             PersonalNonProfit,
@@ -70,6 +73,7 @@ namespace Silksprite.AvatarTinkerVista
         [Serializable] public class OverwriteAllowedUser : Overwrite<AllowedUser> { }
         [Serializable] public class OverwriteVRM1CommercialUsageType : Overwrite<VRM1CommercialUsageType> { }
 
+        [LEnum]
         public enum VRM0LicenseType {
             Redistribution_Prohibited,
             CC0,
@@ -82,12 +86,14 @@ namespace Silksprite.AvatarTinkerVista
             Other
         }
 
+        [LEnum]
         public enum VRM1CreditNotationType
         {
             Required,
             Unnecessary
         }
 
+        [LEnum]
         public enum VRM1ModificationType
         {
             Prohibited,

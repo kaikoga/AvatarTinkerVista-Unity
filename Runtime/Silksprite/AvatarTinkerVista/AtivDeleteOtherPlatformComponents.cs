@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Base;
+using Silksprite.Loch.Attributes;
 using UnityEngine;
 
 #if ATIV_ABLET
@@ -48,6 +49,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public enum AtivPlatform
         {
+            [InspectorName("VRCSDK3 Avatars")]
             VRCSDK3_Avatars,
             VRM0,
             VRM1

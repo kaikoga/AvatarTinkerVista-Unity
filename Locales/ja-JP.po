@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-02-24 03:10+0900\n"
+"POT-Creation-Date: 2026-02-24 10:28+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,6 +14,15 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: Tr;Loc\n"
 "X-Poedit-SearchPath-0: .\n"
+
+msgid "AllowedUser::Everyone"
+msgstr "全員に許可"
+
+msgid "AllowedUser::ExplicitlyLicensedPerson"
+msgstr "指定された利用者のみ許可"
+
+msgid "AllowedUser::OnlyAuthor"
+msgstr "作成者のみ許可"
 
 #: Editor/Silksprite/AvatarTinkerVista/Common/AtivGUILayout.cs:15
 msgid "ativ::GizmosDarkMode"
@@ -35,7 +44,7 @@ msgstr "Root Bone"
 msgid "AtivDefaultRendererSettings::preferParentSettings"
 msgstr "Prefer Parent Settings"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:37
+#: Editor/Silksprite/AvatarTinkerVista/AtivDefaultRendererSettingsEditor.cs:36
 msgid "AtivDefaultRendererSettings::Setup"
 msgstr "Setup"
 
@@ -48,11 +57,14 @@ msgid "AtivDefaultVRMFirstPerson::firstPersonOffset"
 msgstr "First Person Offset"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:20
-#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:21
 msgid "AtivDeleteOtherPlatformComponents::abletDetectPlatform"
 msgstr "Ablet Detect Platform"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:32
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:21
+msgid "AtivDeleteOtherPlatformComponents::platform"
+msgstr "Platform"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivDeleteOtherPlatformComponentsEditor.cs:31
 msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
 msgstr "Detected Platform"
 
@@ -114,7 +126,7 @@ msgstr "Gravity Dir"
 msgid "AtivGenerateDynamics::gravityPower"
 msgstr "Gravity Power"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:58
+#: Editor/Silksprite/AvatarTinkerVista/AtivGenerateDynamicsEditor.cs:57
 msgid "AtivGenerateDynamics::Joints"
 msgstr "Joints"
 
@@ -178,11 +190,11 @@ msgstr "Author"
 msgid "AtivOverwriteVRMMeta::contactInformation"
 msgstr "Contact Information"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:97
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:95
 msgid "AtivOverwriteVRMMeta::DistributionLicense"
 msgstr "再配布・改変の許諾"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:74
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:72
 msgid "AtivOverwriteVRMMeta::Info"
 msgstr "Info"
 
@@ -194,7 +206,7 @@ msgstr "Name Or Title"
 msgid "AtivOverwriteVRMMeta::otherLicenseUrl"
 msgstr "Other License URL"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:87
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:85
 msgid "AtivOverwriteVRMMeta::Permission"
 msgstr "アバターの人格に関する許諾"
 
@@ -252,11 +264,11 @@ msgstr "VRM1 改変"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:45
 msgid "AtivOverwriteVRMMeta::vrm1MoreAuthors"
-msgstr "VRM1 More Authors"
+msgstr "VRM1 追加 Authors"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:50
 msgid "AtivOverwriteVRMMeta::vrm1MoreReferences"
-msgstr "VRM1 More References"
+msgstr "VRM1 追加 References"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRMMetaEditor.cs:59
 msgid "AtivOverwriteVRMMeta::vrm1PoliticalOrReligiousUsage"
@@ -270,19 +282,19 @@ msgstr "VRM1 再配布"
 msgid "AtivOverwriteVRMMeta::vrm1ThirdPartyLicenses"
 msgstr "VRM1 Third Party Licenses"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
 msgid "AtivReduceDynamics::EstColliders"
 msgstr "Est. Colliders"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:86
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:85
 msgid "AtivReduceDynamics::EstCollisions"
 msgstr "Est. Collisions"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:82
 msgid "AtivReduceDynamics::EstComponents"
 msgstr "Est. Components"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:84
+#: Editor/Silksprite/AvatarTinkerVista/AtivReduceDynamicsEditor.cs:83
 msgid "AtivReduceDynamics::EstTransforms"
 msgstr "Est. Transforms"
 
@@ -310,15 +322,15 @@ msgstr "Avatar Leaf Bones"
 msgid "AtivSimpleWear::avatarRootBones"
 msgstr "Avatar Root Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:69
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:68
 msgid "AtivSimpleWear::AvatarSettings"
 msgstr "Avatar Settings"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:52
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:51
 msgid "AtivSimpleWear::BetaWarning."
 msgstr "This component is in beta state."
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:98
 msgid "AtivSimpleWear::MergeDryRun"
 msgstr "Merge Dry Run"
 
@@ -334,19 +346,19 @@ msgstr "Module Leaf Bones"
 msgid "AtivSimpleWear::moduleRootBones"
 msgstr "Module Root Bones"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:54
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:53
 msgid "AtivSimpleWear::ModuleSettings"
 msgstr "Module Settings"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:112
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:111
 msgid "AtivSimpleWear::ShowAvatarBoneTree"
 msgstr "Show Avatar Bone Tree"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:124
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:123
 msgid "AtivSimpleWear::ShowMapping"
 msgstr "Show Mapping"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:100
+#: Editor/Silksprite/AvatarTinkerVista/AtivSimpleWearEditor.cs:99
 msgid "AtivSimpleWear::ShowModuleBoneTree"
 msgstr "Show Module Bone Tree"
 
@@ -405,3 +417,54 @@ msgstr "Materials"
 #: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:29
 msgid "ReplaceMaterialTexture::ReplaceMaterialTexture"
 msgstr "Replace Material Texture"
+
+msgid "VRM0LicenseType::CC_BY"
+msgstr "CC_BY"
+
+msgid "VRM0LicenseType::CC_BY_NC"
+msgstr "CC_BY_NC"
+
+msgid "VRM0LicenseType::CC_BY_NC_ND"
+msgstr "CC_BY_NC_ND"
+
+msgid "VRM0LicenseType::CC_BY_NC_SA"
+msgstr "CC_BY_NC_SA"
+
+msgid "VRM0LicenseType::CC_BY_ND"
+msgstr "CC_BY_ND"
+
+msgid "VRM0LicenseType::CC_BY_SA"
+msgstr "CC_BY_SA"
+
+msgid "VRM0LicenseType::CC0"
+msgstr "CC0"
+
+msgid "VRM0LicenseType::Other"
+msgstr "Other"
+
+msgid "VRM0LicenseType::Redistribution_Prohibited"
+msgstr "Redistribution Prohibited"
+
+msgid "VRM1CommercialUsageType::Corporation"
+msgstr "法人利用"
+
+msgid "VRM1CommercialUsageType::PersonalNonProfit"
+msgstr "個人非商用"
+
+msgid "VRM1CommercialUsageType::PersonalProfit"
+msgstr "個人商用"
+
+msgid "VRM1CreditNotationType::Required"
+msgstr "必須"
+
+msgid "VRM1CreditNotationType::Unnecessary"
+msgstr "不要"
+
+msgid "VRM1ModificationType::AllowModification"
+msgstr "改変を許可"
+
+msgid "VRM1ModificationType::AllowModificationRedistribution"
+msgstr "改変と再配布を許可"
+
+msgid "VRM1ModificationType::Prohibited"
+msgstr "不許可"

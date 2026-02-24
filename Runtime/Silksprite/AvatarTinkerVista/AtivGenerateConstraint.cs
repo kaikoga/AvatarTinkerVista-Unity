@@ -30,11 +30,17 @@ namespace Silksprite.AvatarTinkerVista
         
         public enum AimAxis
         {
+            [InspectorName("+X")]
             PositiveX,
+            [InspectorName("-X")]
             NegativeX,
+            [InspectorName("+Y")]
             PositiveY,
+            [InspectorName("-Y")]
             NegativeY,
+            [InspectorName("+Z")]
             PositiveZ,
+            [InspectorName("-Z")]
             NegativeZ,
 
         }
