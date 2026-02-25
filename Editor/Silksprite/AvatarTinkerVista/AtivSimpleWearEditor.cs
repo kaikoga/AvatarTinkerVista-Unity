@@ -55,12 +55,12 @@ namespace Silksprite.AvatarTinkerVista
             LEditorGUILayout.Prop(_moduleIgnoreBones);
             LEditorGUILayout.Prop(_moduleLeafBones);
 
-            if (GUILayout.Button("Setup as Humanoid Module"))
+            if (LGUILayout.Button(Loc("AtivSimpleWear::SetupAsHumanoidModule")))
             {
                 defer = SimpleWearSetup.SetupHumanoidModule;
             }
 
-            if (GUILayout.Button("Setup as Accessory Module"))
+            if (LGUILayout.Button(Loc("AtivSimpleWear::SetupAsAccessoryModule")))
             {
                 defer = SimpleWearSetup.SetupAccessoryModule;
             }
@@ -71,7 +71,7 @@ namespace Silksprite.AvatarTinkerVista
             LEditorGUILayout.Prop(_avatarLeafBones);
             serializedObject.ApplyModifiedProperties();
 
-            if (GUILayout.Button("Setup Avatar"))
+            if (LGUILayout.Button(Loc("AtivSimpleWear::DetectAndSetupAvatar")))
             {
                 defer = SimpleWearSetup.SetupAvatar;
             }
