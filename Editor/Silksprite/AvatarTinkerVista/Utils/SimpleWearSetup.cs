@@ -5,7 +5,6 @@ using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.AvatarTinkerVista.Common.Wear;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 #if ATIV_VRCSDK3_AVATARS
@@ -117,7 +116,7 @@ namespace Silksprite.AvatarTinkerVista.Utils
                 ignoreBones.Add(gd.ActualRootBone);
             }
 #if ATIV_DETECTED_VRM0
-            foreach (var springBone in StageUtility.GetCurrentStageHandle().FindComponentsOfType<VRMSpringBone>())
+            foreach (var springBone in root.GetComponentsInChildren<VRMSpringBone>())
             {
                 foreach (var rootBone in springBone.RootBones)
                 {
