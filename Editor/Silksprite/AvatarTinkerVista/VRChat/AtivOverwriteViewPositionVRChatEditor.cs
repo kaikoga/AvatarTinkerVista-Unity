@@ -20,10 +20,10 @@ namespace Silksprite.AvatarTinkerVista.VRChat
         {
             if (avatarRoot.TryGetComponent(out VRCAvatarDescriptor avatarDescriptor))
             {
-                LEditorGUILayout.HelpBox(Loc("AtivOverwriteViewPosition::OutcomeVRChat."), MessageType.Info, new Substitution
+                LEditorGUILayout.HelpBox(Loc("AtivOverwriteViewPosition::OutcomeVRChat.").Format(new Substitution
                 {
                     ["outcome"] = TrEnum(new ViewPositionConverterForVRChat().GetOption(overwriteViewPosition).viewPositionStyle)
-                });
+                }), MessageType.Info);
                 if (LGUILayout.Button(Loc("AtivOverwriteViewPosition::ExtractFromVRChat")))
                 {
                     new ViewPositionConverterForVRChat().ToAtiv(overwriteViewPosition, avatarDescriptor);

@@ -1,5 +1,3 @@
-using System.Linq;
-using Silksprite.AvatarTinkerVista.VRChat.Converter;
 using Silksprite.AvatarTinkerVista.VRChat.Converters;
 using Silksprite.Loch;
 using Silksprite.Loch.IMGUI;
@@ -22,10 +20,10 @@ namespace Silksprite.AvatarTinkerVista.VRChat
         {
             if (avatarRoot.TryGetComponent(out VRCAvatarDescriptor avatarDescriptor))
             {
-                LEditorGUILayout.HelpBox(Loc("AtivOverwriteVRCBlink::OutcomeVRChat."), MessageType.Info, new Substitution
+                LEditorGUILayout.HelpBox(Loc("AtivOverwriteVRCBlink::OutcomeVRChat.").Format(new Substitution
                 {
                     ["outcome"] = TrEnum(new VRCBlinkConverterForVRChat().GetOption(overwriteBlink).blinkStyle)
-                });
+                }), MessageType.Info);
                 if (LGUILayout.Button(Loc("AtivOverwriteVRCBlink::ExtractFromVRChat")))
                 {
                     new VRCBlinkConverterForVRChat().ToAtiv(overwriteBlink, avatarDescriptor);

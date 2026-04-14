@@ -20,10 +20,10 @@ namespace Silksprite.AvatarTinkerVista.VRM0
         {
             if (avatarRoot.TryGetComponent(out VRMMeta avatarDescriptor))
             {
-                LEditorGUILayout.HelpBox(Loc("AtivOverwriteViewPosition::OutcomeVRM0."), MessageType.Info, new Substitution
+                LEditorGUILayout.HelpBox(Loc("AtivOverwriteViewPosition::OutcomeVRM0.").Format(new Substitution
                 {
                     ["outcome"] = TrEnum(new ViewPositionConverterForVRM0().GetOption(overwriteViewPosition).viewPositionStyle)
-                });
+                }), MessageType.Info);
                 if (LGUILayout.Button(Loc("AtivOverwriteViewPosition::ExtractFromVRM0")))
                 {
                     new ViewPositionConverterForVRM0().ToAtiv(overwriteViewPosition, avatarDescriptor);

@@ -21,10 +21,10 @@ namespace Silksprite.AvatarTinkerVista.Common
             };
             var result = EditorUtility.DisplayDialogComplex(
                 Title,
-                Loc("InteractiveConverterBase::Message?").TrFormat(substitution),
+                Loc("InteractiveConverterBase::Message?").Format(substitution).Tr,
                 Loc("InteractiveConverterBase::Ok").Tr,
                 Loc("InteractiveConverterBase::Cancel").Tr,
-                Loc("InteractiveConverterBase::Alt").TrFormat(substitution));
+                Loc("InteractiveConverterBase::Alt").Format(substitution).Tr);
             if (result != 1)
             {
                 Convert(context, result == 2);
