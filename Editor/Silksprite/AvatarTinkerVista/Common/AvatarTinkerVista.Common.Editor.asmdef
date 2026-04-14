@@ -4,8 +4,8 @@
     "references": [
         "Loch",
         "Loch.Editor",
-        "AvatarTinkerVista.Common",
-        "AvatarTinkerVista"
+        "AvatarTinkerVista",
+        "AvatarTinkerVista.Common"
     ],
     "includePlatforms": [
         "Editor"

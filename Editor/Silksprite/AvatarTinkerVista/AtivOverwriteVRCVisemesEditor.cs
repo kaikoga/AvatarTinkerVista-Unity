@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Common;
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.Loch;
@@ -50,34 +51,39 @@ namespace Silksprite.AvatarTinkerVista
                 position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
                 return position;
             }
+
             var visemeStyle = serializedProperty.Lop(nameof(VisemeOption.visemeStyle), Loc("VisemeOption::visemeStyle"));
             position.height = EditorGUIUtility.singleLineHeight;
             LEditorGUI.PropAsEnumPopup<VisemeStyle>(position, visemeStyle);
+
+            var faceMesh = serializedProperty.Lop(nameof(VisemeOption.faceMesh), Loc("VisemeOption::faceMesh"));
+            var faceSkinnedMesh = AtivEditorUtil.ResolveAvatarRelativeSkinnedMeshRenderer(faceMesh);
+
             switch (GetVisemeStyle(visemeStyle))
             {
                 case VisemeStyle.None:
                     break;
                 case VisemeStyle.SingleBlendShape:
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.faceMesh), Loc("VisemeOption::faceMesh")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.singleBlendShape), Loc("VisemeOption::singleBlendShape")));
+                    LEditorGUI.Prop(Next(), faceMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.singleBlendShape), Loc("VisemeOption::singleBlendShape")), faceSkinnedMesh);
                     break;
                 case VisemeStyle.OculusVisemes:
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.faceMesh), Loc("VisemeOption::faceMesh")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusSil), Loc("VisemeOption::oculusSil")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusPp), Loc("VisemeOption::oculusPp")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusFf), Loc("VisemeOption::oculusFf")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusTh), Loc("VisemeOption::oculusTh")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusDd), Loc("VisemeOption::oculusDd")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusKk), Loc("VisemeOption::oculusKk")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusCh), Loc("VisemeOption::oculusCh")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusSs), Loc("VisemeOption::oculusSs")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusNn), Loc("VisemeOption::oculusNn")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusRr), Loc("VisemeOption::oculusRr")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusAa), Loc("VisemeOption::oculusAa")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusE), Loc("VisemeOption::oculusE")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusI), Loc("VisemeOption::oculusI")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusO), Loc("VisemeOption::oculusO")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusU), Loc("VisemeOption::oculusU")));
+                    LEditorGUI.Prop(Next(), faceMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusSil), Loc("VisemeOption::oculusSil")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusPp), Loc("VisemeOption::oculusPp")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusFf), Loc("VisemeOption::oculusFf")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusTh), Loc("VisemeOption::oculusTh")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusDd), Loc("VisemeOption::oculusDd")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusKk), Loc("VisemeOption::oculusKk")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusCh), Loc("VisemeOption::oculusCh")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusSs), Loc("VisemeOption::oculusSs")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusNn), Loc("VisemeOption::oculusNn")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusRr), Loc("VisemeOption::oculusRr")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusAa), Loc("VisemeOption::oculusAa")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusE), Loc("VisemeOption::oculusE")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusI), Loc("VisemeOption::oculusI")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusO), Loc("VisemeOption::oculusO")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusU), Loc("VisemeOption::oculusU")), faceSkinnedMesh);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

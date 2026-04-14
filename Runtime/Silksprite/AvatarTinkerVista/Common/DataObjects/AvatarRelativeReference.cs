@@ -8,8 +8,8 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     public abstract class AvatarRelativeReference<T>
     where T : Component
     {
-        [SerializeField] bool hasValue;
-        [SerializeField] string relativePath;
+        [SerializeField] internal bool hasValue;
+        [SerializeField] internal string relativePath;
 
         public string RelativePath
         {
@@ -28,8 +28,8 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
             } 
         }
 
-        public T ResolveNow(Transform transform) => AvatarRelativeReference.ResolveNow<T>(transform, relativePath);
-        public T ResolveFromAvatar(Transform avatarRoot) => AvatarRelativeReference.ResolveFromAvatar<T>(avatarRoot, relativePath);
+        public T ResolveNow(Transform transform) => AvatarRelativeReference.ResolveNow<T>(transform, RelativePath);
+        public T ResolveFromAvatar(Transform avatarRoot) => AvatarRelativeReference.ResolveFromAvatar<T>(avatarRoot, RelativePath);
     }
 
     [Serializable]
@@ -57,7 +57,7 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
         public static T ResolveNow<T>(Transform transform, string relativePath)
             where T : Component
         {
-            if (string.IsNullOrEmpty(relativePath)) return null;
+            if (relativePath == null) return null;
             var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
             return ResolveFromAvatar<T>(avatarRoot, relativePath);
         }
@@ -72,7 +72,7 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
         public static T ResolveFromAvatar<T>(Transform avatarRoot, string relativePath)
             where T : Component
         {
-            if (string.IsNullOrEmpty(relativePath)) return null;
+            if (relativePath == null) return null;
             return avatarRoot? AtivRuntimeUtil.FromRelativePath(avatarRoot.transform, relativePath)?.GetComponent<T>() : null;
         }
 

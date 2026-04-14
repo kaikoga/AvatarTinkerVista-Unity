@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
+using Silksprite.AvatarTinkerVista.Common;
 using Silksprite.AvatarTinkerVista.Common.Base;
+using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.Loch;
 using Silksprite.Loch.Extensions;
@@ -49,21 +51,26 @@ namespace Silksprite.AvatarTinkerVista
                 position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
                 return position;
             }
+
             var blinkStyle = serializedProperty.Lop(nameof(BlinkOption.blinkStyle), Loc("BlinkOption::blinkStyle"));
             position.height = EditorGUIUtility.singleLineHeight;
             LEditorGUI.PropAsEnumPopup<BlinkStyle>(position, blinkStyle);
+            
+            var faceMesh = serializedProperty.Lop(nameof(BlinkOption.faceMesh), Loc("BlinkOption::faceMesh"));
+            var faceSkinnedMesh = AtivEditorUtil.ResolveAvatarRelativeSkinnedMeshRenderer(faceMesh);
+
             switch (GetBlinkStyle(blinkStyle))
             {
                 case BlinkStyle.None:
                     break;
                 case BlinkStyle.SingleBlendShape:
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(BlinkOption.faceMesh), Loc("BlinkOption::faceMesh")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(BlinkOption.singleBlendShape), Loc("BlinkOption::singleBlendShape")));
+                    LEditorGUI.Prop(Next(), faceMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(BlinkOption.singleBlendShape), Loc("BlinkOption::singleBlendShape")), faceSkinnedMesh);
                     break;
                 case BlinkStyle.SeparateBlendShapes:
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(BlinkOption.faceMesh), Loc("BlinkOption::faceMesh")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(BlinkOption.separateBlendShapeLeft), Loc("BlinkOption::separateBlendShapeLeft")));
-                    LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(BlinkOption.separateBlendShapeRight), Loc("BlinkOption::separateBlendShapeRight")));
+                    LEditorGUI.Prop(Next(), faceMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(BlinkOption.separateBlendShapeLeft), Loc("BlinkOption::separateBlendShapeLeft")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(BlinkOption.separateBlendShapeRight), Loc("BlinkOption::separateBlendShapeRight")), faceSkinnedMesh);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
