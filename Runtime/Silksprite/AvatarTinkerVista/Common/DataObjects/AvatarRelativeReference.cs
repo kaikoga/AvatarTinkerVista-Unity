@@ -42,6 +42,16 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
             };
     }
 
+    [Serializable]
+    public class AvatarRelativeSkinnedMeshRenderer : AvatarRelativeReference<SkinnedMeshRenderer>
+    {
+        public static AvatarRelativeSkinnedMeshRenderer OfAvatar(Transform avatarRoot, SkinnedMeshRenderer skinnedMeshRenderer) =>
+            new AvatarRelativeSkinnedMeshRenderer
+            {
+                RelativePath = AvatarRelativeReference.RelativePathFromAvatar(avatarRoot, skinnedMeshRenderer)
+            };
+    }
+
     public static class AvatarRelativeReference
     {
         public static T ResolveNow<T>(Transform transform, string relativePath)

@@ -14,8 +14,7 @@
         "AvatarTinkerVista",
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.Common.Editor",
-        "AvatarTinkerVista.Ndmf.VRM0.Editor",
-        "AvatarTinkerVista.Ndmf.VRM1.Editor",
+        "AvatarTinkerVista.VRChat",
         "AvatarTinkerVista.VRM1",
         "VRM",
         "VRM10"
@@ -27,6 +26,8 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
+        "VRCSDKBase.dll",
+        "VRCSDK3A.dll",
         "VRC.Dynamics.dll"
     ],
     "autoReferenced": false,

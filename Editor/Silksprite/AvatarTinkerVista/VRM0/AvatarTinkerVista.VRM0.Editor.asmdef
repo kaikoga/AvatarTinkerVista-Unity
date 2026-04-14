@@ -5,11 +5,14 @@
         "UniGLTF",
         "UniVRM.Editor",
         "VRM",
+        "AdLib.Editor",
+        "Loch.Editor",
+        "Loch",
         "AvatarTinkerVista",
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.Common.Editor",
-        "AvatarTinkerVista.VRM0",
-        "AdLib.Editor"
+        "AvatarTinkerVista.Editor",
+        "AvatarTinkerVista.VRM0"
     ],
     "includePlatforms": [
         "Editor"

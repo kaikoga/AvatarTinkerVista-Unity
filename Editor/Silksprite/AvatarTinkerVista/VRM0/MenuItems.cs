@@ -1,4 +1,4 @@
-using Silksprite.AvatarTinkerVista.VRM0.Converter;
+using Silksprite.AvatarTinkerVista.VRM0.Converters;
 using UnityEditor;
 
 namespace Silksprite.AvatarTinkerVista.VRM0

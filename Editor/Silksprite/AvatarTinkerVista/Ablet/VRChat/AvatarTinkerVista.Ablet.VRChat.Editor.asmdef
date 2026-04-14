@@ -4,6 +4,7 @@
     "references": [
         "Ablet.API",
         "Ablet.Builtin",
+        "AvatarTinkerVista",
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.VRChat",
         "AvatarTinkerVista.VRChat.Editor"

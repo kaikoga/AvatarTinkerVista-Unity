@@ -2,7 +2,10 @@
     "name": "AvatarTinkerVista.VRChat.Editor",
     "rootNamespace": "Silksprite.AvatarTinkerVista.VRChat",
     "references": [
+        "Loch",
+        "Loch.Editor",
         "AvatarTinkerVista",
+        "AvatarTinkerVista.Editor",
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.Common.Editor",
         "AvatarTinkerVista.VRChat"

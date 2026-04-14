@@ -29,5 +29,8 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     
     [CustomPropertyDrawer(typeof(AvatarRelativeTransform))]
     public class AvatarRelativeTransformDrawer : AvatarRelativeReferenceDrawer<Transform> { }
+    
+    [CustomPropertyDrawer(typeof(AvatarRelativeSkinnedMeshRenderer))]
+    public class AvatarRelativeSkinnedMeshRendererDrawer : AvatarRelativeReferenceDrawer<SkinnedMeshRenderer> { }
 }
 

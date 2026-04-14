@@ -1,5 +1,5 @@
 using nadena.dev.ndmf;
-using Silksprite.AvatarTinkerVista.VRM0.Converter;
+using Silksprite.AvatarTinkerVista.VRM0.Converters;
 using VRM;
 
 namespace Silksprite.AvatarTinkerVista.Ndmf.VRM0.Passes

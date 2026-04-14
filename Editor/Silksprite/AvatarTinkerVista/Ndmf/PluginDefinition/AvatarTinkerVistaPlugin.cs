@@ -49,6 +49,16 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 sequence.Run(DeleteAtivComponentsPass<T>.Instance);
             }
 
+            {
+                var firstChance = InPhase(BuildPhase.FirstChance);
+#if ATIV_DETECTED_VRM0
+                firstChance.Run(CloneVRM0ObjectsPass.Instance);
+#endif
+#if ATIV_DETECTED_VRM1
+                firstChance.Run(CloneVRM1ObjectsPass.Instance);
+#endif
+            }
+
             Phase<AtivResolvingComponent>(BuildPhase.Resolving, resolving =>
             {
                 resolving.Run(DeleteDisabledAtivComponentsPass.Instance);
@@ -57,12 +67,19 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 
             Phase<AtivGeneratingComponent>(BuildPhase.Generating, generating =>
             {
+#if ATIV_VRCSDK3_AVATARS
+                generating.Run(OverwriteVRChatBlinkPass.Instance);
+                generating.Run(OverwriteVRChatVisemesPass.Instance);
+                generating.Run(OverwriteVRChatViewPositionPass.Instance);
+#endif
 #if ATIV_DETECTED_VRM0
                 generating.Run(OverwriteVRM0MetaPass.Instance);
+                generating.Run(OverwriteVRM0ViewPositionPass.Instance);
                 generating.Run(GenerateVRM0SpringBonesPass.Instance);
 #endif
 #if ATIV_DETECTED_VRM1
                 generating.Run(OverwriteVRM1MetaPass.Instance);
+                generating.Run(OverwriteVRM1ViewPositionPass.Instance);
                 generating.Run(GenerateVRM1SpringBonesPass.Instance);
 #endif
             });

@@ -1,19 +1,12 @@
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch.UIElements.LEditor;
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.UIElements;
 using static Silksprite.Loch.Tools.LochTool;
 
 #if ATIV_NDMF
 using nadena.dev.ndmf.runtime;
-#endif
-
-#if ATIV_NDMF && ATIV_DETECTED_VRM0
-using Silksprite.AvatarTinkerVista.Ndmf.VRM0.PlatformDefinition;
-#endif
-
-#if ATIV_NDMF && ATIV_DETECTED_VRM1
-using Silksprite.AvatarTinkerVista.Ndmf.VRM1.PlatformDefinition;
 #endif
 
 #if ATIV_ABLET
@@ -27,7 +20,7 @@ namespace Silksprite.AvatarTinkerVista
 {
     [CustomEditor(typeof(AtivExportVRMUI))]
     [CanEditMultipleObjects]
-    class AtivExportVRMUIEditor : AtivEditorBase
+    public class AtivExportVRMUIEditor : AtivEditorBase
     {
 
 #if ATIV_DETECTED_VRM0 || ATIV_DETECTED_VRM1
@@ -39,6 +32,9 @@ namespace Silksprite.AvatarTinkerVista
         static bool MayNdmfExport => true;
         static bool MayAbletExport => false;
 #endif
+
+        public delegate void NdmfExportUIHandler(VisualElement container, Transform avatarRoot);
+        public static event NdmfExportUIHandler NdmfExportUI;
 
         public override VisualElement CreateInspectorGUI()
         {
@@ -57,20 +53,7 @@ namespace Silksprite.AvatarTinkerVista
                         text = "Export With NDMF",
                         loc = Loc("AtivExportVRMUI.ExportWithNDMF")
                     });
-#if ATIV_DETECTED_VRM0
-                    if (VRM0Platform.Instance.CreateBuildUI() is { } vrm0BuildUI)
-                    {
-                        vrm0BuildUI.AvatarRoot = avatarRoot.gameObject;
-                        container.Add(vrm0BuildUI);
-                    }
-#endif
-#if ATIV_DETECTED_VRM1
-                    if (VRM1Platform.Instance.CreateBuildUI() is { } vrm1BuildUI)
-                    {
-                        vrm1BuildUI.AvatarRoot = avatarRoot.gameObject;
-                        container.Add(vrm1BuildUI);
-                    }
-#endif
+                    NdmfExportUI?.Invoke(container, avatarRoot);
                 }
             }
 #endif

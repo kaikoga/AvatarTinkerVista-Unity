@@ -7,13 +7,13 @@
         "VrmLib",
         "VRM10",
         "VRM10.Editor",
-        "AdLib.Editor",
+        "Loch",
+        "Loch.Editor",
+        "AvatarTinkerVista",
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.Common.Editor",
-        "AvatarTinkerVista.VRM1",
-        "AvatarTinkerVista",
-        "Loch",
-        "Loch.Editor"
+        "AvatarTinkerVista.Editor",
+        "AvatarTinkerVista.VRM1"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,6 +1,7 @@
 {
     "name": "AvatarTinkerVista.VRM1",
     "references": [
+        "UniHumanoid",
         "VRM10",
         "AvatarTinkerVista",
         "AvatarTinkerVista.Common"

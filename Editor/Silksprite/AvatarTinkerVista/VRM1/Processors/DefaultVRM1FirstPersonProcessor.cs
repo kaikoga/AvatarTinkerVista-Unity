@@ -1,5 +1,4 @@
 using System.Linq;
-using Silksprite.AdLib.Utils.VRM1;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using UniGLTF.Extensions.VRMC_vrm;
 using UnityEngine;
@@ -17,12 +16,9 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Processors
             var vrm = vrmInstance.Vrm;
             if (!vrm) return;
             
-            var newVrm = new CustomCloneVRM10Object().Clone(vrmInstance.Vrm).mainAsset;
-            vrmInstance.Vrm = newVrm;
+            ativ.firstPersonOffset.OverwriteValue(ref vrm.LookAt.OffsetFromHead);
 
-            ativ.firstPersonOffset.OverwriteValue(ref newVrm.LookAt.OffsetFromHead);
-
-            DoOverwrite(vrmInstance, ativ, newVrm.FirstPerson);
+            DoOverwrite(vrmInstance, ativ, vrm.FirstPerson);
         }
 
         static void DoOverwrite(Vrm10Instance vrmInstance, AtivDefaultVRMFirstPerson ativ, VRM10ObjectFirstPerson newFirstPerson)

@@ -11,6 +11,7 @@
         "AvatarTinkerVista",
         "AvatarTinkerVista.Common",
         "AvatarTinkerVista.Common.Editor",
+        "AvatarTinkerVista.Editor",
         "AvatarTinkerVista.VRM1",
         "AvatarTinkerVista.VRM1.Editor",
         "AvatarTinkerVista.AdLib.VRM1.Editor"

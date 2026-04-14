@@ -1,4 +1,5 @@
 using Silksprite.AvatarTinkerVista.Common;
+using Silksprite.AvatarTinkerVista.VRChat.Converters;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.VRChat.Converter

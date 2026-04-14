@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
-    [AddComponentMenu("Avatar Tinker Vista/ATiV Delete All VRC PhysBones")]
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Delete All VRCPhysBones")]
     [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_delete_all_vrc_physbones")]
     public class AtivDeleteAllVRCPhysBones : AtivDeleteComponentsBase
     {
