@@ -35,13 +35,16 @@ namespace Silksprite.AvatarTinkerVista
 #if ATIV_ABLET
             if (abletDetectPlatform)
             {
-                return AbletFacade.GetEntrypointFor(transform.gameObject).platform.Id switch
+                if (AbletFacade.TryGetEntrypointFor(transform.gameObject, out _, out var abletPlatform))
                 {
-                    BuiltinPlatformIds.VRChatAvatarSDK3 => AtivPlatform.VRCSDK3_Avatars,
-                    BuiltinPlatformIds.UniVRM => AtivPlatform.VRM0,
-                    BuiltinPlatformIds.UniVRM10 => AtivPlatform.VRM1,
-                    _ => platform
-                };
+                    return abletPlatform.Id switch
+                    {
+                        BuiltinPlatformIds.VRChatAvatarSDK3 => AtivPlatform.VRCSDK3_Avatars,
+                        BuiltinPlatformIds.UniVRM => AtivPlatform.VRM0,
+                        BuiltinPlatformIds.UniVRM10 => AtivPlatform.VRM1,
+                        _ => platform
+                    };
+                }
             }
 #endif
             return platform;
