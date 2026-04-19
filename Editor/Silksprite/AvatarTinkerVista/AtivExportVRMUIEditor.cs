@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch.UIElements.LEditor;
 using UnityEditor;
@@ -34,6 +35,7 @@ namespace Silksprite.AvatarTinkerVista
 #endif
 
         public delegate void NdmfExportUIHandler(VisualElement container, Transform avatarRoot);
+        [PublicAPI]
         public static event NdmfExportUIHandler NdmfExportUI;
 
         public override VisualElement CreateInspectorGUI()
