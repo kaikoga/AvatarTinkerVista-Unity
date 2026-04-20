@@ -19,15 +19,29 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
         }
         public AbletProcedure ToProcedure(IBuildArgument argument)
         {
-            if (!AbletSymbols.PreferAblet) return null;
+            if (!AbletSymbols.PreferAblet)
+            {
+                return null;
+            }
 
             return AbletBuildProcedure.Create(context =>
             {
-                if (context.CurrentRootObject.TryGetComponent<Vrm10Instance>(out var vrm10Instance))
+                switch (AtivSelectDynamics.GetDynamicsIdOf(context.CurrentRootTransform))
                 {
-                    new DynamicsConverterToVRM1SpringBone().Convert(vrm10Instance, true);
+                    case AtivSelectDynamics.Auto:
+                    case DynamicsConverterToVRM1SpringBone.DynamicsId:
+                        if (context.CurrentRootObject.TryGetComponent<Vrm10Instance>(out var vrm10Instance))
+                        {
+                            DoConvertVRM1(vrm10Instance);
+                        }
+                        break;
                 }
             });
+        }
+
+        static void DoConvertVRM1(Vrm10Instance vrm10Instance)
+        {
+            new DynamicsConverterToVRM1SpringBone().Convert(vrm10Instance, true);
         }
     }
 }

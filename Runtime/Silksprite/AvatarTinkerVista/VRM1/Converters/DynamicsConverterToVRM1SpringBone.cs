@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Converters;
+using UnityEditor;
+using UnityEngine;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.VRM1.Converters
@@ -10,6 +12,12 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
         Vrm10Instance, AtivGenerateDynamics, AtivGenerateDynamicsColliderGroup, VRM10SpringBoneColliderGroup
     >
     {
+        public const string DynamicsId = "VRM1 SpringBone";
+
+        [InitializeOnLoadMethod]
+        [RuntimeInitializeOnLoadMethod]
+        static void InitializeOnLoad() => AtivSelectDynamics.RegisterDynamicsId(DynamicsId);
+
         protected override bool TryConvertCollider(Vrm10Instance vrm10Instance, AtivGenerateDynamicsColliderGroup ativ, out VRM10SpringBoneColliderGroup result)
         {
             var ativColliders = ativ.colliders.Where(collider => collider).ToArray();

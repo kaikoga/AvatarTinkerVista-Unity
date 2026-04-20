@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Converters;
 using Silksprite.AvatarTinkerVista.Common.Utils;
+using UnityEditor;
 using UnityEngine;
 using VRM;
 
@@ -11,6 +12,12 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converters
         Transform, AtivGenerateDynamics, AtivGenerateDynamicsColliderGroup, VRMSpringBoneColliderGroup[]
     >
     {
+        public const string DynamicsId = "VRM0 SpringBone";
+
+        [InitializeOnLoadMethod]
+        [RuntimeInitializeOnLoadMethod]
+        static void InitializeOnLoad() => AtivSelectDynamics.RegisterDynamicsId(DynamicsId);
+
         protected override bool TryConvertCollider(Transform avatarRootTransform, AtivGenerateDynamicsColliderGroup ativ, out VRMSpringBoneColliderGroup[] result)
         {
             var ativColliders = ativ.colliders

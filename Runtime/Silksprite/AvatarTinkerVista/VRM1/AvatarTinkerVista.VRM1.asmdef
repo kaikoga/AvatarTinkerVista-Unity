@@ -4,7 +4,8 @@
         "UniHumanoid",
         "VRM10",
         "AvatarTinkerVista",
-        "AvatarTinkerVista.Common"
+        "AvatarTinkerVista.Common",
+        "Ablet.API"
     ],
     "includePlatforms": [
     ],
