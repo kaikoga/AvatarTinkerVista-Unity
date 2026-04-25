@@ -2,7 +2,8 @@
     "name": "AvatarTinkerVista.Common",
     "references": [
         "nadena.dev.ndmf.runtime",
-        "Ablet"
+        "Ablet",
+        "Loch"
     ],
     "includePlatforms": [
     ],

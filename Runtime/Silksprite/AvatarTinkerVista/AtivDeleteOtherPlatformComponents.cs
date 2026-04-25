@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Silksprite.AvatarTinkerVista.Base;
-using Silksprite.Loch.Attributes;
 using UnityEngine;
 
 #if ATIV_ABLET

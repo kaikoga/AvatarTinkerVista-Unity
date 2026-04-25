@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-04-19 03:52+0900\n"
+"POT-Creation-Date: 2026-04-25 03:14+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -428,6 +428,22 @@ msgstr "Show Mapping"
 msgid "AtivSimpleWear::ShowModuleBoneTree"
 msgstr "Show Module Bone Tree"
 
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:96
+msgid "AtivTargetPlatformBase::DeselectAll"
+msgstr "全て選択解除"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:45
+msgid "AtivTargetPlatformBase::Platforms"
+msgstr "Platforms"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:88
+msgid "AtivTargetPlatformBase::SelectAll"
+msgstr "全て選択"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:31
+msgid "AtivTargetPlatformBase::useOutputPlatform"
+msgstr "Use Output Platform"
+
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:55
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:82
 msgid "BlinkOption::blinkStyle"
@@ -531,6 +547,12 @@ msgstr "Materials"
 #: Editor/Silksprite/AvatarTinkerVista/Tools/ReplaceMaterialTexture/ReplaceMaterialTextureWindow.cs:29
 msgid "ReplaceMaterialTexture::ReplaceMaterialTexture"
 msgstr "Replace Material Texture"
+
+msgid "TargetPlatformMode::Exclude"
+msgstr "Exclude"
+
+msgid "TargetPlatformMode::Include"
+msgstr "Include"
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:59
 msgid "ViewPositionOption::globalPosition"

@@ -57,12 +57,14 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
 #if ATIV_DETECTED_VRM1
                 firstChance.Run(CloneVRM1ObjectsPass.Instance);
 #endif
+                firstChance.Run(TargetInputPlatformPass.Instance);
             }
 
             Phase<AtivResolvingComponent>(BuildPhase.Resolving, resolving =>
             {
                 resolving.Run(DeleteDisabledAtivComponentsPass.Instance);
                 resolving.Run(DeleteComponentsPass.Instance);
+                resolving.Run(TargetPlatformPass.Instance);
             });
 
             Phase<AtivGeneratingComponent>(BuildPhase.Generating, generating =>

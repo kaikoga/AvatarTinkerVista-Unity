@@ -3,6 +3,7 @@
     "references": [
         "Loch",
         "Ablet",
+        "Ablet.API",
         "Ablet.Builtin",
         "AvatarTinkerVista.Common"
     ],
