@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
-using Ablet.Building;
-using Ablet.Registries;
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using UnityEngine;
+
+#if ATIV_ABLET
+using Ablet.Building;
+using Ablet.Registries;
+#endif
 
 namespace Silksprite.AvatarTinkerVista
 {
@@ -19,19 +22,27 @@ namespace Silksprite.AvatarTinkerVista
 
         public override IEnumerable<AtivPlatformHandle> AllPlatforms()
         {
+#if ATIV_ABLET
             return PlatformRegistry.Instance.All()
                 .Select(platform => new AtivPlatformHandle(platform.Id, platform.DisplayName));
+#else
+            return Enumerable.Empty<AtivPlatformHandle>();
+#endif
         }
 
         public override string SelectedPlatformId()
         {
+#if ATIV_ABLET
             if (useOutputPlatform && BuildContext.TryGetCurrentBuildArgument(out var argument))
             {
                 return argument.TargetPlatform.Id;
             }
-            return PlatformRegistry.Instance.TryGuessPlatform(AtivRuntimeUtil.FindAvatarInParents(transform).gameObject, out var platform)
-                ? platform.Id
-                : null;
+            if (PlatformRegistry.Instance.TryGuessPlatform(AtivRuntimeUtil.FindAvatarInParents(transform).gameObject, out var platform))
+            {
+                return platform.Id;
+            }
+#endif
+            return null;
         }
     }
 }
