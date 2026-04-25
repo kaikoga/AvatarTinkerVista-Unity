@@ -76,21 +76,16 @@ namespace Silksprite.AvatarTinkerVista.Common.Base
             }
         }
 
-        public void ApplyTarget()
-        {
-            if (!GetIsTargetPlatform(SelectedPlatformId()))
-            {
-                DestroyImmediate(gameObject);
-            }
-        }
-
         public static void ApplyToAvatarRoot(Transform avatarRoot, bool forOutputPlatform)
         {
             var components = avatarRoot.GetComponentsInChildren<AtivTargetPlatformBase>(true)
                 .Where(component => component.UseOutputPlatform == forOutputPlatform);
             foreach (var component in components)
             {
-                component.ApplyTarget();
+                if (component && !component.GetIsTargetPlatform(component.SelectedPlatformId()))
+                {
+                    DestroyImmediate(component.gameObject);
+                }
             }
         }
 
