@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [AddComponentMenu("Avatar Tinker Vista/ATiV Generate VRM0+1 SpringBone")]
-    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_generate_vrm_springbone")]
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Generate Dynamics")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_generate_dynamics")]
     public class AtivGenerateDynamics : AtivGeneratingComponent
     {
         public float stiffness = 1.0f;
