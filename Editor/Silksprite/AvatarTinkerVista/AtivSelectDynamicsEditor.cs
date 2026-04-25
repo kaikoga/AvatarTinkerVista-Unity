@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Base;
+using Silksprite.AvatarTinkerVista.Common.Registries;
 using Silksprite.Loch;
 using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
@@ -39,12 +40,14 @@ namespace Silksprite.AvatarTinkerVista
 
         static void DynamicsIdPopup(Rect position, LocalizedProperty lop)
         {
-            var dynamicsIds = AllDynamicIds().ToArray();
+            var dynamicsHandles = DynamicsRegistry.All().OrderBy(dynamics => dynamics.Order).ThenBy(dynamics => dynamics.DisplayName).ToArray();
+            var dynamicsIds = dynamicsHandles.Select(dynamics => dynamics.Id).ToArray();
+            var dynamicsDisplayNames = dynamicsHandles.Select(dynamics => dynamics.DisplayName).ToArray();
             var label = lop.GUIContent;
             EditorGUI.BeginProperty(position, label, lop.Property);
             var selectedIndex = Array.IndexOf(dynamicsIds, lop.Property.stringValue);
             EditorGUI.BeginChangeCheck();
-            selectedIndex = EditorGUI.Popup(position, lop.Loc.Tr, selectedIndex, dynamicsIds);
+            selectedIndex = EditorGUI.Popup(position, lop.Loc.Tr, selectedIndex, dynamicsDisplayNames);
             if (EditorGUI.EndChangeCheck())
             {
                 lop.Property.stringValue = dynamicsIds[selectedIndex];

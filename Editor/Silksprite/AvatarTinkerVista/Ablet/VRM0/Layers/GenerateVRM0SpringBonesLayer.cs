@@ -3,6 +3,7 @@ using Ablet.API.V1;
 using Ablet.API.V1.Attributes;
 using Ablet.API.V1.Building;
 using Ablet.Builtin;
+using Silksprite.AvatarTinkerVista.Common.Registries;
 using Silksprite.AvatarTinkerVista.VRM0.Converters;
 using VRM;
 
@@ -28,7 +29,7 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM0.Layers
             {
                 switch (AtivSelectDynamics.GetDynamicsIdOf(context.CurrentRootTransform))
                 {
-                    case AtivSelectDynamics.Auto:
+                    case DynamicsRegistry.Auto:
                         if (context.CurrentRootObject.TryGetComponent<VRMMeta>(out _))
                         {
                             DoConvertVRM0(context);

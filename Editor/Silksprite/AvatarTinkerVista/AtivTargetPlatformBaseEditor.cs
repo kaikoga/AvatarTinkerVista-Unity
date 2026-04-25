@@ -119,11 +119,18 @@ namespace Silksprite.AvatarTinkerVista
         protected override bool EnableUseOutputPlatform => true;
     }
 
-
     [CustomEditor(typeof(AtivTargetAbletPlatform))]
     [CanEditMultipleObjects]
     class AtivTargetAbletPlatformEditor : AtivTargetPlatformBaseEditor<AtivTargetAbletPlatform>
     {
         protected override bool EnableUseOutputPlatform => false;
     }
+
+    [CustomEditor(typeof(AtivTargetSelectedDynamicsPlatform))]
+    [CanEditMultipleObjects]
+    class AtivTargetSelectedDynamicsPlatformEditor : AtivTargetPlatformBaseEditor<AtivTargetSelectedDynamicsPlatform>
+    {
+        protected override bool EnableUseOutputPlatform => false;
+    }
+
 }
