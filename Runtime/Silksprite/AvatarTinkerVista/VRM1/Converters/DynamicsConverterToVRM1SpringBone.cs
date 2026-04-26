@@ -4,7 +4,6 @@ using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Converters;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Registries;
-using UnityEditor;
 using UnityEngine;
 using UniVRM10;
 
@@ -17,7 +16,9 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
         public const string DynamicsId = "VRM1 SpringBone";
         const string DisplayName = "VRM1 SpringBone";
 
-        [InitializeOnLoadMethod]
+#if UNITY_EDITOR
+        [UnityEditor.InitializeOnLoadMethod]
+#endif
         [RuntimeInitializeOnLoadMethod]
         static void InitializeOnLoad() => DynamicsRegistry.Register(new AtivDynamicsHandle(DynamicsId, DisplayName, typeof(Vrm10Instance)));
 
