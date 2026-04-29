@@ -32,9 +32,9 @@ namespace Silksprite.AvatarTinkerVista
 #elif UNITY_STANDALONE_LINUX
         static string UnityPlatformId => Linux.Id;
 #elif UNITY_ANDROID
-        static string AndroidPlatformId => Android.Id;
+        static string UnityPlatformId => Android.Id;
 #elif UNITY_IOS
-        static string iOSPlatformId => iOS.Id;
+        static string UnityPlatformId => Ios.Id;
 #endif
 
         public override string SelectedPlatformId() => UnityPlatformId;
