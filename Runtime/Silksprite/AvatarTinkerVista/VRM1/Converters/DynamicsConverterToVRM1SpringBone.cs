@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Converters;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
@@ -22,7 +23,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
         [RuntimeInitializeOnLoadMethod]
         static void InitializeOnLoad() => DynamicsRegistry.Register(new AtivDynamicsHandle(DynamicsId, DisplayName, typeof(Vrm10Instance)));
 
-        protected override bool TryConvertCollider(Vrm10Instance vrm10Instance, AtivGenerateDynamicsColliderGroup ativ, out VRM10SpringBoneColliderGroup result)
+        protected override bool TryConvertCollider(Vrm10Instance vrm10Instance, AtivGenerateDynamicsColliderGroup ativ, [MaybeNullWhen(false)] out VRM10SpringBoneColliderGroup result)
         {
             var ativColliders = ativ.colliders.Where(collider => collider).ToArray();
             if (ativColliders.Length == 0)

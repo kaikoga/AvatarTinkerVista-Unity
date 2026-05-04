@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Silksprite.AvatarTinkerVista.Base;
 using UnityEngine;
 
@@ -52,6 +53,7 @@ namespace Silksprite.AvatarTinkerVista
         public enum AtivPlatform
         {
             [InspectorName("VRCSDK3 Avatars")]
+            [SuppressMessage("ReSharper", "InconsistentNaming")]
             VRCSDK3_Avatars,
             VRM0,
             VRM1

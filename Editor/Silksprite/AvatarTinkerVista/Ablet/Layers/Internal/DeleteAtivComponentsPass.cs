@@ -16,16 +16,16 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers.Internal
         public abstract string Id { get; }
         public abstract string DisplayName { get; }
 
-        public void Configure(IDependencyConfigurator config)
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<AfterLayer<TAblet>>();
         }
 
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 
-            return AbletBuildProcedure.Create((IBuildContext context) =>
+            return AbletBuildProcedure.Create(context =>
             {
                 foreach (var ativComponent in context.CurrentRootObject.GetComponentsInChildren<TAtiv>())
                 {

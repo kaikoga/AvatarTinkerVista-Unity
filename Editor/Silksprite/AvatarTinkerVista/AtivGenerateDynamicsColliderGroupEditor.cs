@@ -1,4 +1,3 @@
-using System;
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.Loch;
 using Silksprite.Loch.IMGUI;
@@ -11,7 +10,7 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivGenerateDynamicsColliderGroupEditor : AtivEditorBase
     {
-        LocalizedProperty _colliders;
+        LocalizedProperty _colliders = null!;
 
         void OnEnable()
         {

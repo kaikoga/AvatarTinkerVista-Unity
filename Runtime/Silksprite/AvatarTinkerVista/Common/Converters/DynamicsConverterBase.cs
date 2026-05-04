@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using UnityEngine;
@@ -38,7 +39,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Converters
             }
         }
 
-        protected abstract bool TryConvertCollider(TContext context, TColliderFrom colliderFrom, out TColliderTo result);
+        protected abstract bool TryConvertCollider(TContext context, TColliderFrom colliderFrom, [MaybeNullWhen(false)] out TColliderTo result);
 
         protected abstract void ConvertDynamics(TContext context, TDynamicsFrom dynamicsFrom, Dictionary<TColliderFrom, TColliderTo> colliderMapping);
     }

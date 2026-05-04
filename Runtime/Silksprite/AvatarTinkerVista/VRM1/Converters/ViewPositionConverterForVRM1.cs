@@ -67,7 +67,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
                     throw new NotSupportedException();
                 default:
                     throw new ArgumentOutOfRangeException();
-            };
+            }
         }
     }
 }

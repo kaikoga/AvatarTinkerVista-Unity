@@ -11,25 +11,25 @@ namespace Silksprite.AvatarTinkerVista.ProjectSettings
     {
         static readonly Type TargetComponentBase = typeof(AtivComponent);
 
-        static readonly Type AnnotationUtility = Assembly.GetAssembly(typeof(Editor))
+        static readonly Type? AnnotationUtility = Assembly.GetAssembly(typeof(Editor))
             ?.GetType("UnityEditor.AnnotationUtility");
 
-        static readonly MethodInfo GetAnnotations = AnnotationUtility
+        static readonly MethodInfo? GetAnnotations = AnnotationUtility
             ?.GetMethod("GetAnnotations", BindingFlags.Static | BindingFlags.NonPublic);
 
-        static readonly MethodInfo SetIconEnabled = AnnotationUtility
+        static readonly MethodInfo? SetIconEnabled = AnnotationUtility
             ?.GetMethod("SetIconEnabled", BindingFlags.Static | BindingFlags.NonPublic);
 
-        static readonly Type Annotation = Assembly.GetAssembly(typeof(Editor))
+        static readonly Type? Annotation = Assembly.GetAssembly(typeof(Editor))
             ?.GetType("UnityEditor.Annotation");
 
-        static readonly FieldInfo ScriptClass = Annotation
+        static readonly FieldInfo? ScriptClass = Annotation
             ?.GetField("scriptClass", BindingFlags.Instance | BindingFlags.Public);
 
         [InitializeOnLoadMethod]
         static void InitializeOnLoad()
         {
-            var a = Type.GetType("UnityEditor.AnnotationUtility");
+            _ = Type.GetType("UnityEditor.AnnotationUtility");
             _ = InitializeOnLoadAsync();
         }
         
@@ -49,7 +49,7 @@ namespace Silksprite.AvatarTinkerVista.ProjectSettings
             {
                 await Task.Delay(TimeSpan.FromSeconds(1));
 
-                if (SetIconEnabled == null)
+                if (GetAnnotations == null || ScriptClass == null || SetIconEnabled == null)
                 {
                     return;
                 }
@@ -66,5 +66,6 @@ namespace Silksprite.AvatarTinkerVista.ProjectSettings
                 }
                 return;
             }
-        }    }
+        }
+    }
 }

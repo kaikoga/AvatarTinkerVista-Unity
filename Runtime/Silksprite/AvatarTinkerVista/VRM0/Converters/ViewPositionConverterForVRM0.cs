@@ -80,7 +80,7 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converters
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
-            };
+            }
         }
     }
 }

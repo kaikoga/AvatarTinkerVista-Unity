@@ -11,14 +11,14 @@ namespace Silksprite.AvatarTinkerVista
     {
         public ColliderTypes colliderType;
 
-        public Transform rootBone;
+        public Transform? rootBone;
         public Vector3 offset;
         [Range(0, 1.0f)]
         public float radius;
         public Vector3 tail;
         public Vector3 normal = Vector3.up;
 
-        public Transform ActualRootBone => rootBone ? rootBone : transform;
+        public Transform ActualRootBone => rootBone != null ? rootBone : transform;
 
         public void OnValidate()
         {

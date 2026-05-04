@@ -9,8 +9,8 @@ namespace Silksprite.AvatarTinkerVista
     [CustomEditor(typeof(AtivDefaultVRMFirstPerson))]
     class AtivDefaultVRMFirstPersonEditor : AtivEditorBase
     {
-        LocalizedProperty _firstPersonOffset;
-        LocalizedProperty _defaultValue;
+        LocalizedProperty _firstPersonOffset = null!;
+        LocalizedProperty _defaultValue = null!;
 
         void OnEnable()
         {

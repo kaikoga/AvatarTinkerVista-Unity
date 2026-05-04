@@ -17,10 +17,10 @@ namespace Silksprite.AvatarTinkerVista
         public float dragForce = 0.4f;
         public float radius = 0.02f;
 
-        public Transform rootBone;
-        public Transform center;
+        public Transform? rootBone;
+        public Transform? center;
 
-        public Transform ActualRootBone => rootBone ? rootBone : transform;
+        public Transform ActualRootBone => rootBone != null ? rootBone : transform;
 
         public List<AtivGenerateDynamicsColliderGroup> colliderGroups = new List<AtivGenerateDynamicsColliderGroup>();
 

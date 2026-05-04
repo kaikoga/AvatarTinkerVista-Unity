@@ -12,12 +12,12 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivGenerateDynamicsColliderEditor : AtivEditorBase
     {
-        LocalizedProperty _renderers;
-        LocalizedProperty _rootBone;
-        LocalizedProperty _offset;
-        LocalizedProperty _radius;
-        LocalizedProperty _tail;
-        LocalizedProperty _normal;
+        LocalizedProperty _renderers = null!;
+        LocalizedProperty _rootBone = null!;
+        LocalizedProperty _offset = null!;
+        LocalizedProperty _radius = null!;
+        LocalizedProperty _tail = null!;
+        LocalizedProperty _normal = null!;
 
         void OnEnable()
         {

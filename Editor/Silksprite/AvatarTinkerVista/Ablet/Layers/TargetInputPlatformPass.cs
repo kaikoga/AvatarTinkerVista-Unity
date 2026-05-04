@@ -10,17 +10,17 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers
     [AbletLayer]
     class TargetInputPlatformLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.TargetInputPlatform";
-        public string DisplayName => "ATiV: Target Input Platform";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.TargetInputPlatform";
+        string IAbletDefinition.DisplayName => "ATiV: Target Input Platform";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<ImportingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
             
-            return AbletBuildProcedure.Create((IBuildContext context) =>
+            return AbletBuildProcedure.Create(context =>
             {
                 AtivTargetPlatformBase.ApplyToAvatarRoot(context.CurrentRootTransform, false);
             });

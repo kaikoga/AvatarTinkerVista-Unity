@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common;
 using Silksprite.AvatarTinkerVista.Common.Base;
-using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.AvatarTinkerVista.Common.Utils;
 using Silksprite.Loch;
 using Silksprite.Loch.Extensions;
@@ -18,11 +17,11 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     public class AtivOverwriteVRCBlinkEditor : AtivEditorBase
     {
-        AtivOverwriteVRCBlink[] _overwriteBlinks;
-        LocalizedProperty _options;
+        AtivOverwriteVRCBlink[] _overwriteBlinks = null!;
+        LocalizedProperty _options = null!;
 
         public delegate void PlatformUIHandler(AtivOverwriteVRCBlink overwriteBlink, Transform transform);
-        public static event PlatformUIHandler PlatformUI;
+        public static event PlatformUIHandler? PlatformUI;
 
         void OnEnable()
         {
@@ -36,8 +35,10 @@ namespace Silksprite.AvatarTinkerVista
             serializedObject.ApplyModifiedProperties();
             
             var overwriteBlink = _overwriteBlinks.First();
-            var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(overwriteBlink.transform);
-            PlatformUI?.Invoke(overwriteBlink, avatarRoot);
+            if (AtivRuntimeUtil.FindAvatarInParents(overwriteBlink.transform) is { } avatarRoot)
+            {
+                PlatformUI?.Invoke(overwriteBlink, avatarRoot);
+            }
         }
     }
 

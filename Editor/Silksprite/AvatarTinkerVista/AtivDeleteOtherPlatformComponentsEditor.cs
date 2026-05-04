@@ -10,9 +10,9 @@ namespace Silksprite.AvatarTinkerVista
     [CustomEditor(typeof(AtivDeleteOtherPlatformComponents))]
     class AtivDeleteOtherPlatformComponentsEditor : AtivEditorBase
     {
-        AtivDeleteOtherPlatformComponents _deleteOtherPlatformComponents;
-        LocalizedProperty _abletDetectPlatform;
-        LocalizedProperty _platform;
+        AtivDeleteOtherPlatformComponents _deleteOtherPlatformComponents = null!;
+        LocalizedProperty _abletDetectPlatform = null!;
+        LocalizedProperty _platform = null!;
 
         void OnEnable()
         {

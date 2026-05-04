@@ -9,9 +9,9 @@ namespace Silksprite.AvatarTinkerVista.Common
 {
     public static class AtivGUI
     {
-        public static void PropAsBlendShapeName(Rect position, LocalizedProperty lop, SkinnedMeshRenderer skinnedMeshRenderer)
+        public static void PropAsBlendShapeName(Rect position, LocalizedProperty lop, SkinnedMeshRenderer? skinnedMeshRenderer)
         {
-            if (skinnedMeshRenderer && skinnedMeshRenderer.sharedMesh is { } sharedMesh)
+            if (skinnedMeshRenderer && skinnedMeshRenderer?.sharedMesh is { } sharedMesh)
             {
                 var left = position;
                 left.width -= 72f;

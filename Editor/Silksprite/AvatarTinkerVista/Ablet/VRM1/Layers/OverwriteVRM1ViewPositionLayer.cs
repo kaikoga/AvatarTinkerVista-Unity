@@ -11,13 +11,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
     [AbletLayer]
     class OverwriteVRM1ViewPositionLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.OverwriteVRM1ViewPosition";
-        public string DisplayName => "ATiV: Overwrite VRM1 View Position";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.OverwriteVRM1ViewPosition";
+        string IAbletDefinition.DisplayName => "ATiV: Overwrite VRM1 View Position";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<GeneratingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 

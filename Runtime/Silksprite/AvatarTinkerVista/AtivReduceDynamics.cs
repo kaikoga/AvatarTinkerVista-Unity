@@ -8,6 +8,7 @@ namespace Silksprite.AvatarTinkerVista
     [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_reduce_vrc_physbones")]
     public class AtivReduceDynamics : AtivTransformingComponent
     {
+        // ReSharper disable once RedundantDefaultMemberInitializer
         public bool reduceOnPC = false;
         public bool reduceOnMobile = true;
 

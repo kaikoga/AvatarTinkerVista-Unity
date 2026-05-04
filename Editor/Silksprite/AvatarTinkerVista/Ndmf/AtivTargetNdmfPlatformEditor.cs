@@ -22,7 +22,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf
                 .Select(platform => new AtivPlatformHandle(platform.QualifiedName, platform.DisplayName));
         }
         
-        static string SelectedPlatformId(GameObject gameObject)
+        static string? SelectedPlatformId(GameObject gameObject)
         {
             return PlatformRegistry.GetPrimaryPlatformForAvatar(gameObject)?.QualifiedName;
         }

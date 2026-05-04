@@ -12,7 +12,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Processors
             var sources = vrmInstance.GetComponentsInChildren<AtivMergeVRMFirstPerson>();
 
             vrmInstance.Vrm.FirstPerson.Renderers.AddRange(sources.SelectMany(source => source.renderers)
-                .Select(renderer => new UniVRM10.RendererFirstPersonFlags
+                .Select(renderer => new RendererFirstPersonFlags
                 {
                     Renderer = AtivRuntimeUtil.RelativePath(vrmInstance.transform, renderer.renderer.transform),
                     FirstPersonFlag = renderer.VRM1FirstPersonType()

@@ -12,13 +12,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
     [AbletLayer]
     class GenerateVRM1SpringBonesLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.GenerateVRM1SpringBones";
-        public string DisplayName => "ATiV: Generate VRM1 SpringBones";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.GenerateVRM1SpringBones";
+        string IAbletDefinition.DisplayName => "ATiV: Generate VRM1 SpringBones";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<GeneratingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet)
             {

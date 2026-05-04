@@ -9,8 +9,8 @@ namespace Silksprite.AvatarTinkerVista
     {
         public ConstraintKind kind;
 
-        public Transform source;
-        public Transform target;
+        public Transform? source;
+        public Transform? target;
 
         [Range(0, 1.0f)]
         public float weight = 1.0f;
@@ -18,7 +18,7 @@ namespace Silksprite.AvatarTinkerVista
         public AimAxis aimAxis;
         public RollAxis rollAxis;
 
-        public Transform ActualTarget => target ? target : transform;
+        public Transform ActualTarget => target != null ? target : transform;
 
         public enum ConstraintKind
         {

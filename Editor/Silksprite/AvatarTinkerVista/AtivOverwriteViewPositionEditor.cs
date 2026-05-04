@@ -16,11 +16,11 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     public class AtivOverwriteViewPositionEditor : AtivEditorBase
     {
-        AtivOverwriteViewPosition[] _overwriteViewPositions;
-        LocalizedProperty _options;
+        AtivOverwriteViewPosition[] _overwriteViewPositions = null!;
+        LocalizedProperty _options = null!;
 
         public delegate void PlatformUIHandler(AtivOverwriteViewPosition overwriteViewPosition, Transform transform);
-        public static event PlatformUIHandler PlatformUI;
+        public static event PlatformUIHandler? PlatformUI;
 
         void OnEnable()
         {
@@ -35,8 +35,10 @@ namespace Silksprite.AvatarTinkerVista
             serializedObject.ApplyModifiedProperties();
 
             var overwriteViewPosition = _overwriteViewPositions.First();
-            var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(overwriteViewPosition.transform);
-            PlatformUI?.Invoke(overwriteViewPosition, avatarRoot);
+            if (AtivRuntimeUtil.FindAvatarInParents(overwriteViewPosition.transform) is { } avatarRoot)
+            {
+                PlatformUI?.Invoke(overwriteViewPosition, avatarRoot);
+            }
         }
     }
 

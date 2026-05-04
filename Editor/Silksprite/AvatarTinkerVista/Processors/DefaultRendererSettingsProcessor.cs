@@ -31,7 +31,7 @@ namespace Silksprite.AvatarTinkerVista.Processors
                 
                 if (ativs.Select(ativ => ativ.overwriteProbeAnchor).FirstOrDefault(overwrite => overwrite.willOverwrite) is { } overwriteProbeAnchor)
                 {
-                    renderer.probeAnchor = overwriteProbeAnchor.value.ResolveNow(avatarRoot);
+                    renderer.probeAnchor = overwriteProbeAnchor.value?.ResolveNow(avatarRoot);
                 }
                 if (renderer is SkinnedMeshRenderer skinnedMeshRenderer)
                 {
@@ -41,7 +41,7 @@ namespace Silksprite.AvatarTinkerVista.Processors
                     }
                     if (ativs.Select(ativ => ativ.overwriteRootBone).FirstOrDefault(overwrite => overwrite.willOverwrite) is { } overwriteRootBone)
                     {
-                        skinnedMeshRenderer.rootBone = overwriteRootBone.value.ResolveNow(avatarRoot);
+                        skinnedMeshRenderer.rootBone = overwriteRootBone.value?.ResolveNow(avatarRoot);
                     }
                 }
             }

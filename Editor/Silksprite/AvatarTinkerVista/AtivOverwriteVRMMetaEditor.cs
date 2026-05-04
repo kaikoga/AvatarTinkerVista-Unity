@@ -10,32 +10,32 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivOverwriteVRMMetaEditor : AtivEditorBase
     {
-        LocalizedProperty _nameOrTitle;
-        LocalizedProperty _version;
-        LocalizedProperty _author;
-        LocalizedProperty _vrm1MoreAuthors;
+        LocalizedProperty _nameOrTitle = null!;
+        LocalizedProperty _version = null!;
+        LocalizedProperty _author = null!;
+        LocalizedProperty _vrm1MoreAuthors = null!;
 
-        LocalizedProperty _vrm1CopyrightInformation;
-        LocalizedProperty _contactInformation;
-        LocalizedProperty _reference;
-        LocalizedProperty _vrm1MoreReferences;
-        LocalizedProperty _vrm1ThirdPartyLicenses;
-        LocalizedProperty _thumbnail;
+        LocalizedProperty _vrm1CopyrightInformation = null!;
+        LocalizedProperty _contactInformation = null!;
+        LocalizedProperty _reference = null!;
+        LocalizedProperty _vrm1MoreReferences = null!;
+        LocalizedProperty _vrm1ThirdPartyLicenses = null!;
+        LocalizedProperty _thumbnail = null!;
 
-        LocalizedProperty _allowedUser;
-        LocalizedProperty _violentUsage;
-        LocalizedProperty _sexualUsage;
-        LocalizedProperty _vrm0CommercialUsage;
-        LocalizedProperty _vrm1CommercialUsage;
-        LocalizedProperty _vrm1PoliticalOrReligiousUsage;
-        LocalizedProperty _vrm1AntisocialOrHateUsage;
-        LocalizedProperty _vrm0OtherPermissionUrl;
+        LocalizedProperty _allowedUser = null!;
+        LocalizedProperty _violentUsage = null!;
+        LocalizedProperty _sexualUsage = null!;
+        LocalizedProperty _vrm0CommercialUsage = null!;
+        LocalizedProperty _vrm1CommercialUsage = null!;
+        LocalizedProperty _vrm1PoliticalOrReligiousUsage = null!;
+        LocalizedProperty _vrm1AntisocialOrHateUsage = null!;
+        LocalizedProperty _vrm0OtherPermissionUrl = null!;
 
-        LocalizedProperty _vrm0LicenseType;
-        LocalizedProperty _vrm1CreditNotation;
-        LocalizedProperty _vrm1Redistribution;
-        LocalizedProperty _vrm1Modification;
-        LocalizedProperty _otherLicenseUrl;
+        LocalizedProperty _vrm0LicenseType = null!;
+        LocalizedProperty _vrm1CreditNotation = null!;
+        LocalizedProperty _vrm1Redistribution = null!;
+        LocalizedProperty _vrm1Modification = null!;
+        LocalizedProperty _otherLicenseUrl = null!;
 
         void OnEnable()
         {

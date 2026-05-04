@@ -16,10 +16,11 @@ namespace Silksprite.AvatarTinkerVista.Common.Base
 
         public abstract IEnumerable<AtivPlatformHandle> AllPlatforms();
 
-        public abstract string SelectedPlatformId();
+        public abstract string? SelectedPlatformId();
 
-        bool GetIsTargetPlatform(string platformId)
+        bool GetIsTargetPlatform(string? platformId)
         {
+            platformId ??= "";
             return targetPlatformMode switch
             {
                 TargetPlatformMode.Include => platformIds.Contains(platformId),
@@ -52,8 +53,10 @@ namespace Silksprite.AvatarTinkerVista.Common.Base
         {
             platformIds = (focusPlatformMode: targetPlatformMode, value) switch
             {
-                (TargetPlatformMode.Include, false) or (TargetPlatformMode.Exclude, true) => new List<string>(),
-                (TargetPlatformMode.Include, true) or (TargetPlatformMode.Exclude, false) => AllPlatforms().Select(platform => platform.Id).ToList(),
+                (TargetPlatformMode.Include, false) => new List<string>(),
+                (TargetPlatformMode.Exclude, true) => new List<string>(),
+                (TargetPlatformMode.Include, true) => AllPlatforms().Select(platform => platform.Id).ToList(),
+                (TargetPlatformMode.Exclude, false) => AllPlatforms().Select(platform => platform.Id).ToList(),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }

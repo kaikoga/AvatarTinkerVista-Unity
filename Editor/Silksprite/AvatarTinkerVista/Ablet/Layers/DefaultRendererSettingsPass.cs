@@ -3,8 +3,6 @@ using Ablet.API.V1;
 using Ablet.API.V1.Attributes;
 using Ablet.API.V1.Building;
 using Ablet.Builtin;
-using Ablet.Querying;
-using Silksprite.AvatarTinkerVista.Common.Wear;
 using Silksprite.AvatarTinkerVista.Processors;
 
 namespace Silksprite.AvatarTinkerVista.Ablet.Layers
@@ -12,13 +10,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers
     [AbletLayer]
     class DefaultRendererSettingsPass : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.DefaultRendererSettings";
-        public string DisplayName => "ATiV: Default Renderer Settings";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.DefaultRendererSettings";
+        string IAbletDefinition.DisplayName => "ATiV: Default Renderer Settings";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<MaterializingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 

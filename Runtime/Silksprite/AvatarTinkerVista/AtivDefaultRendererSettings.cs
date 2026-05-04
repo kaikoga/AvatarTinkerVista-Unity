@@ -10,8 +10,8 @@ namespace Silksprite.AvatarTinkerVista
     public class AtivDefaultRendererSettings : AtivOptimizingComponent
     {
         public bool preferParentSettings;
-        public OverwriteAvatarRelativeTransform overwriteProbeAnchor;
-        public OverwriteAvatarRelativeTransform overwriteRootBone;
-        public OverwriteBounds overwriteBounds;
+        public OverwriteAvatarRelativeTransform overwriteProbeAnchor = new OverwriteAvatarRelativeTransform();
+        public OverwriteAvatarRelativeTransform overwriteRootBone = new OverwriteAvatarRelativeTransform();
+        public OverwriteBounds overwriteBounds = new OverwriteBounds();
     }
 }

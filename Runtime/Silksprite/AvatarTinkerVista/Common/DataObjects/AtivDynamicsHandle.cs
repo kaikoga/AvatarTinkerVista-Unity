@@ -6,10 +6,10 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     {
         public readonly string Id;
         public readonly string DisplayName;
-        public readonly Type MarkerComponentType;
+        public readonly Type? MarkerComponentType;
         public readonly int Order;
 
-        public AtivDynamicsHandle(string id, string displayName, Type markerComponentType, int order = 0)
+        public AtivDynamicsHandle(string id, string displayName, Type? markerComponentType, int order = 0)
         {
             Id = id;
             DisplayName = displayName;

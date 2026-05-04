@@ -17,11 +17,11 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     public class AtivOverwriteVRCVisemesEditor : AtivEditorBase
     {
-        AtivOverwriteVRCVisemes[] _overwriteVisemes;
-        LocalizedProperty _options;
+        AtivOverwriteVRCVisemes[] _overwriteVisemes = null!;
+        LocalizedProperty _options = null!;
 
         public delegate void PlatformUIHandler(AtivOverwriteVRCVisemes overwriteVisemes, Transform transform);
-        public static event PlatformUIHandler PlatformUI;
+        public static event PlatformUIHandler? PlatformUI;
 
         void OnEnable()
         {
@@ -36,8 +36,10 @@ namespace Silksprite.AvatarTinkerVista
             serializedObject.ApplyModifiedProperties();
 
             var overwriteVisemes = _overwriteVisemes.First();
-            var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(overwriteVisemes.transform);
-            PlatformUI?.Invoke(overwriteVisemes, avatarRoot);
+            if (AtivRuntimeUtil.FindAvatarInParents(overwriteVisemes.transform) is { } avatarRoot)
+            {
+                PlatformUI?.Invoke(overwriteVisemes, avatarRoot);
+            }
         }
     }
 

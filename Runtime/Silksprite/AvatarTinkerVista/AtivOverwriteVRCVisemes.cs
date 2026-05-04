@@ -27,25 +27,25 @@ namespace Silksprite.AvatarTinkerVista
         {
             public VisemeStyle visemeStyle;
 
-            public AvatarRelativeSkinnedMeshRenderer faceMesh;
+            public AvatarRelativeSkinnedMeshRenderer faceMesh = new AvatarRelativeSkinnedMeshRenderer();
 
-            public string singleBlendShape;
+            public string singleBlendShape = "";
             
-            public string oculusSil;
-            public string oculusPp;
-            public string oculusFf;
-            public string oculusTh;
-            public string oculusDd;
-            public string oculusKk;
-            public string oculusCh;
-            public string oculusSs;
-            public string oculusNn;
-            public string oculusRr;
-            public string oculusAa;
-            public string oculusE;
-            public string oculusI;
-            public string oculusO;
-            public string oculusU;
+            public string oculusSil = "";
+            public string oculusPp = "";
+            public string oculusFf = "";
+            public string oculusTh = "";
+            public string oculusDd = "";
+            public string oculusKk = "";
+            public string oculusCh = "";
+            public string oculusSs = "";
+            public string oculusNn = "";
+            public string oculusRr = "";
+            public string oculusAa = "";
+            public string oculusE = "";
+            public string oculusI = "";
+            public string oculusO = "";
+            public string oculusU = "";
         }
     }
 }

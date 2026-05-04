@@ -11,12 +11,12 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivGenerateConstraintEditor : AtivEditorBase
     {
-        LocalizedProperty _kind;
-        LocalizedProperty _source;
-        LocalizedProperty _target;
-        LocalizedProperty _weight;
-        LocalizedProperty _aimAxis;
-        LocalizedProperty _rollAxis;
+        LocalizedProperty _kind = null!;
+        LocalizedProperty _source = null!;
+        LocalizedProperty _target = null!;
+        LocalizedProperty _weight = null!;
+        LocalizedProperty _aimAxis = null!;
+        LocalizedProperty _rollAxis = null!;
 
         void OnEnable()
         {

@@ -18,7 +18,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
 
         const string NameOfHasValue = "hasValue";
         const string NameOfRelativePath = "relativePath";
-        public static SkinnedMeshRenderer ResolveAvatarRelativeSkinnedMeshRenderer(LocalizedProperty lop)
+        public static SkinnedMeshRenderer? ResolveAvatarRelativeSkinnedMeshRenderer(LocalizedProperty lop)
         {
             var transform = (lop.Property.serializedObject.targetObject as Component)?.transform;
             var hasValue = lop.Property.FindPropertyRelative(NameOfHasValue).boolValue;

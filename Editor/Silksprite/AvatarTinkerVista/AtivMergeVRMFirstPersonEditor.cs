@@ -10,7 +10,7 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivMergeVRMFirstPersonEditor : AtivEditorBase
     {
-        LocalizedProperty _renderers;
+        LocalizedProperty _renderers = null!;
 
         void OnEnable()
         {

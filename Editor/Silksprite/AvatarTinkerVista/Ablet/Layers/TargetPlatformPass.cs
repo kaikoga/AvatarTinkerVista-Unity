@@ -1,4 +1,3 @@
-using System.Linq;
 using Ablet.API;
 using Ablet.API.V1;
 using Ablet.API.V1.Attributes;
@@ -11,17 +10,17 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers
     [AbletLayer]
     class TargetPlatformLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.TargetPlatform";
-        public string DisplayName => "ATiV: Target Platform";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.TargetPlatform";
+        string IAbletDefinition.DisplayName => "ATiV: Target Platform";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<PruningPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
             
-            return AbletBuildProcedure.Create((IBuildContext context) =>
+            return AbletBuildProcedure.Create(context =>
             {
                 AtivTargetPlatformBase.ApplyToAvatarRoot(context.CurrentRootTransform, true);
             });

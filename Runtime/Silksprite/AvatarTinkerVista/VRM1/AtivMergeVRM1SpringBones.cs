@@ -17,11 +17,8 @@ namespace Silksprite.AvatarTinkerVista.VRM1
 
         void OnDrawGizmosSelected()
         {
-            static Color JointColor(VRM10SpringBoneJoint joint)
-            {
-                return Color.green;
-            }
-        
+            var jointColor = Color.green;
+
             foreach (var spring in springs)
             {
                 var joints = spring.Joints;
@@ -29,11 +26,11 @@ namespace Silksprite.AvatarTinkerVista.VRM1
                 {
                     var backup = Gizmos.matrix;
                     Gizmos.matrix = Matrix4x4.identity;
-                    VRM10SpringBoneJoint lastJoint = joints[0];
-                    for (int i = 1; i < joints.Count; ++i)
+                    var lastJoint = joints[0];
+                    for (var i = 1; i < joints.Count; ++i)
                     {
                         var joint = joints[i];
-                        Gizmos.color = JointColor(lastJoint);
+                        Gizmos.color = jointColor;
                         if (joint != null && lastJoint != null)
                         {
                             Gizmos.DrawLine(lastJoint.transform.position, joint.transform.position);

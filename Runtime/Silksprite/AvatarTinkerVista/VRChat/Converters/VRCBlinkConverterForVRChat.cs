@@ -69,17 +69,23 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
                     break;
                 case BlinkStyle.SingleBlendShape:
                     platform.enableEyeLook = true;
-                    platform.customEyeLookSettings.eyelidType = VRCAvatarDescriptor.EyelidType.Blendshapes;
-                    var skinnedMesh = options.faceMesh.ResolveFromAvatar(platform.transform);
-                    platform.customEyeLookSettings.eyelidsSkinnedMesh = skinnedMesh;
-                    var blendShapeIndex = skinnedMesh.sharedMesh.GetBlendShapeIndex(options.singleBlendShape);
-                    platform.customEyeLookSettings.eyelidsBlendshapes = new[] { blendShapeIndex, -1, -1 };
+                    if (options.faceMesh.ResolveFromAvatar(platform.transform) is { } skinnedMesh)
+                    {
+                        platform.customEyeLookSettings.eyelidType = VRCAvatarDescriptor.EyelidType.Blendshapes;
+                        platform.customEyeLookSettings.eyelidsSkinnedMesh = skinnedMesh;
+                        var blendShapeIndex = skinnedMesh.sharedMesh.GetBlendShapeIndex(options.singleBlendShape);
+                        platform.customEyeLookSettings.eyelidsBlendshapes = new[] { blendShapeIndex, -1, -1 };
+                    }
+                    else
+                    {
+                        platform.customEyeLookSettings.eyelidType = VRCAvatarDescriptor.EyelidType.None;
+                    }
                     break;
                 case BlinkStyle.SeparateBlendShapes:
                     throw new NotSupportedException();
                 default:
                     throw new ArgumentOutOfRangeException();
-            };
+            }
         }
     }
 }

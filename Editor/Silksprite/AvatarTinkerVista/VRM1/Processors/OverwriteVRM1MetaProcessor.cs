@@ -26,11 +26,11 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Processors
             overwrite.nameOrTitle.OverwriteValue(ref newMeta.Name);
             overwrite.version.OverwriteValue(ref newMeta.Version);
             overwrite.author.OverwriteValue(ref newMeta.Authors, MapStringList);
-            newMeta.Authors.AddRange(overwrite.vrm1MoreAuthors);
+            newMeta.Authors!.AddRange(overwrite.vrm1MoreAuthors);
             overwrite.vrm1CopyrightInformation.OverwriteValue(ref newMeta.Name);
             overwrite.contactInformation.OverwriteValue(ref newMeta.Name);
             overwrite.reference.OverwriteValue(ref newMeta.References, MapStringList);
-            newMeta.References.AddRange(overwrite.vrm1MoreReferences);
+            newMeta.References!.AddRange(overwrite.vrm1MoreReferences);
             overwrite.vrm1ThirdPartyLicenses.OverwriteValue(ref newMeta.ThirdPartyLicenses);
             overwrite.thumbnail.OverwriteValue(ref newMeta.Thumbnail);
 
@@ -47,10 +47,10 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Processors
             overwrite.otherLicenseUrl.OverwriteValue(ref newMeta.OtherLicenseUrl);
         }
 
-        static List<string> MapStringList(string atvValue)
+        static List<string> MapStringList(string? atvValue)
         {
             var list = new List<string>();
-            if (!string.IsNullOrWhiteSpace(atvValue)) list.Add(atvValue);
+            if (!string.IsNullOrWhiteSpace(atvValue)) list.Add(atvValue!);
             return list;
         }
 

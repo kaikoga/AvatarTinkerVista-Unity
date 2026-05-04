@@ -36,7 +36,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public delegate void NdmfExportUIHandler(VisualElement container, Transform avatarRoot);
         [PublicAPI]
-        public static event NdmfExportUIHandler NdmfExportUI;
+        public static event NdmfExportUIHandler? NdmfExportUI;
 
         public override VisualElement CreateInspectorGUI()
         {
@@ -48,7 +48,7 @@ namespace Silksprite.AvatarTinkerVista
             if (MayNdmfExport)
             {
                 var avatarRoot = RuntimeUtil.FindAvatarInParents(exportVrm.gameObject.transform);
-                if (avatarRoot)
+                if (avatarRoot != null)
                 {
                     container.Add(new Loch.UIElements.Heading
                     {

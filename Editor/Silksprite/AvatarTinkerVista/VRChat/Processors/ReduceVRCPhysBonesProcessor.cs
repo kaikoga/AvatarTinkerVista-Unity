@@ -52,7 +52,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Processors
         static void RecordNetworkIdsToSync(VRCAvatarDescriptor avatarDescriptor, IEnumerable<VRCPhysBoneBase> pbs, IEnumerable<int> idGen)
         {
             var networkIdPairs = avatarDescriptor.NetworkIDCollection;
-            using var unusedIds = idGen.GetEnumerator();;
+            using var unusedIds = idGen.GetEnumerator();
             foreach (var networkId in pbs.OfType<INetworkID>())
             {
                 var networkObject = ((Component)networkId).gameObject;
@@ -70,8 +70,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Processors
                 networkIdPairs.Add(new NetworkIDPair
                 {
                     gameObject = networkObject,
-                    ID = unusedIds.Current,
-                    SerializedTypeNames = { }
+                    ID = unusedIds.Current
                 });
             }
             avatarDescriptor.NetworkIDCollection = networkIdPairs;

@@ -19,7 +19,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Registries
         public static IEnumerable<AtivDynamicsHandle> All() => Dynamics;
         public static void Register(AtivDynamicsHandle id) => Dynamics.Add(id);
 
-        public static string GuessDynamicsIdOf(Transform transform)
+        public static string? GuessDynamicsIdOf(Transform transform)
         {
             return All()
                 .Where(dynamics => dynamics.MarkerComponentType != null)

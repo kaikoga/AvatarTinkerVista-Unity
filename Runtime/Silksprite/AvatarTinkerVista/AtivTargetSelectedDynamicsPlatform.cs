@@ -20,10 +20,11 @@ namespace Silksprite.AvatarTinkerVista
                 .Select(dynamics => new AtivPlatformHandle(dynamics.Id, dynamics.DisplayName));
         }
 
-        public override string SelectedPlatformId()
-        {
-            return AtivSelectDynamics.GetDynamicsIdOf(transform)
-                ?? DynamicsRegistry.GuessDynamicsIdOf(transform);
-        }
+        public override string? SelectedPlatformId() =>
+            AtivSelectDynamics.GetDynamicsIdOf(transform) switch
+            {
+                DynamicsRegistry.Auto => DynamicsRegistry.GuessDynamicsIdOf(transform),
+                var dynamicsId => dynamicsId
+            };
     }
 }

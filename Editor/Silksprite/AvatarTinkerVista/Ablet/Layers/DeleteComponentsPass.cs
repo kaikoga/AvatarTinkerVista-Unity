@@ -12,17 +12,17 @@ namespace Silksprite.AvatarTinkerVista.Ablet.Layers
     [AbletLayer]
     class DeleteComponentsPass : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.DeleteComponents";
-        public string DisplayName => "ATiV: Delete Components";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.DeleteComponents";
+        string IAbletDefinition.DisplayName => "ATiV: Delete Components";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<PruningPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
             
-            return AbletBuildProcedure.Create((IBuildContext context) =>
+            return AbletBuildProcedure.Create(context =>
             {
                 var typeNamePrefixes = context.CurrentRootTransform.GetComponentsInChildren<AtivDeleteComponentsBase>(true)
                     .SelectMany(atv => atv.ComponentTypeNamePrefixes)

@@ -13,14 +13,14 @@ namespace Silksprite.AvatarTinkerVista
         public bool useOutputPlatform = true;
         public override bool UseOutputPlatform => useOutputPlatform;
 
-        public static AllPlatformsInjectedHandler AllPlatformsInjected;
+        public static AllPlatformsInjectedHandler? AllPlatformsInjected;
         public delegate IEnumerable<AtivPlatformHandle> AllPlatformsInjectedHandler();
 
-        public static CurrentAmbientPlatformIdInjectedHandler CurrentAmbientPlatformIdInjected;
+        public static CurrentAmbientPlatformIdInjectedHandler? CurrentAmbientPlatformIdInjected;
         public delegate string CurrentAmbientPlatformIdInjectedHandler();
 
-        public static SelectedPlatformIdInjectedHandler SelectedPlatformIdInjected;
-        public delegate string SelectedPlatformIdInjectedHandler(GameObject gameObject);
+        public static SelectedPlatformIdInjectedHandler? SelectedPlatformIdInjected;
+        public delegate string? SelectedPlatformIdInjectedHandler(GameObject gameObject);
 
         public override IEnumerable<AtivPlatformHandle> AllPlatforms()
         {
@@ -32,7 +32,7 @@ namespace Silksprite.AvatarTinkerVista
             yield break;
         }
 
-        public override string SelectedPlatformId()
+        public override string? SelectedPlatformId()
         {
             return useOutputPlatform
                 ? CurrentAmbientPlatformIdInjected?.Invoke()

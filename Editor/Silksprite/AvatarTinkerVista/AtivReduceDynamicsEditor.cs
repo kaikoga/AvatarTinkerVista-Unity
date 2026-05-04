@@ -19,16 +19,16 @@ namespace Silksprite.AvatarTinkerVista
     [CustomEditor(typeof(AtivReduceDynamics))]
     class AtivReduceDynamicsEditor : AtivEditorBase
     {
-        AtivReduceDynamics _reduceDynamics;
+        AtivReduceDynamics _reduceDynamics = null!;
 
-        LocalizedProperty _reduceOnPC;
-        LocalizedProperty _reduceOnMobile;
-        LocalizedProperty _keepBoneRoots;
+        LocalizedProperty _reduceOnPC = null!;
+        LocalizedProperty _reduceOnMobile = null!;
+        LocalizedProperty _keepBoneRoots = null!;
 
-        Transform _avatarRoot;
+        Transform? _avatarRoot;
 
 #if ATIV_VRCSDK3_AVATARS
-        VRCPhysBoneBase[] _allVrcPhysBones;
+        VRCPhysBoneBase[]? _allVrcPhysBones;
 #endif
 
         void OnEnable()

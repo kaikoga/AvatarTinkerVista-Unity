@@ -81,7 +81,7 @@ namespace Silksprite.AvatarTinkerVista.Utils
 
         public static void SetupAvatarIfNeeded(AtivSimpleWear simpleWear)
         {
-            if (simpleWear.avatarRootBones.All(rootBone => !rootBone.rootBone.ResolveNow(simpleWear.transform)))
+            if (simpleWear.avatarRootBones.All(rootBone => rootBone.rootBone?.ResolveNow(simpleWear.transform) == null))
             {
                 SetupAvatar(simpleWear);
             }
@@ -91,6 +91,10 @@ namespace Silksprite.AvatarTinkerVista.Utils
         {
             var animator = simpleWear.GetComponentInParent<Animator>();
             var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(animator.transform);
+            if (avatarRoot == null)
+            {
+                throw new InvalidOperationException("Could not find avatar");
+            }
             var avatarAnimator = avatarRoot.GetComponent<Animator>();
             simpleWear.avatarRootBones = simpleWear.moduleRootBones.Select(moduleRootBone => new WearRelativeRootBoneEntry
             {

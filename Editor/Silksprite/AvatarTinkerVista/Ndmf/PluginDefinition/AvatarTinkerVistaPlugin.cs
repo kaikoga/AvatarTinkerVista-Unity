@@ -1,6 +1,6 @@
 ﻿using System;
-using Silksprite.AvatarTinkerVista.Ndmf;
 using Silksprite.AvatarTinkerVista.Ndmf.Passes;
+using Silksprite.AvatarTinkerVista.Ndmf.PluginDefinition;
 using nadena.dev.ndmf;
 using nadena.dev.ndmf.fluent;
 using Silksprite.AvatarTinkerVista.Common.Base;
@@ -21,7 +21,7 @@ using Silksprite.AvatarTinkerVista.Ndmf.VRM1.Passes;
 #endif
 
 [assembly: ExportsPlugin(typeof(AvatarTinkerVistaPlugin))]
-namespace Silksprite.AvatarTinkerVista.Ndmf
+namespace Silksprite.AvatarTinkerVista.Ndmf.PluginDefinition
 {
     // runs independently of NDMF platform
     [RunsOnAllPlatforms]

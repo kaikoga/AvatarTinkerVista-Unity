@@ -14,12 +14,12 @@ namespace Silksprite.AvatarTinkerVista
     {
         protected abstract bool EnableUseOutputPlatform { get; }
 
-        T[] _targets;
-        AtivPlatformHandle[] _allPlatforms;
+        T[] _targets = null!;
+        AtivPlatformHandle[] _allPlatforms = null!;
 
-        LocalizedProperty _useOutputPlatform;
+        LocalizedProperty _useOutputPlatform = null!;
 
-        SerializedProperty _focusPlatformMode;
+        SerializedProperty _focusPlatformMode = null!;
 
         protected virtual void OnEnable()
         {

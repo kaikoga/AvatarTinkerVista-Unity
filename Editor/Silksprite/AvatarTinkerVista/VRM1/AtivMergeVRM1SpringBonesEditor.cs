@@ -9,8 +9,8 @@ namespace Silksprite.AvatarTinkerVista.VRM1
     [CustomEditor(typeof(AtivMergeVRM1SpringBones))]
     class AtivMergeVRM1SpringBonesEditor : AtivEditorBase
     {
-        LocalizedProperty _colliderGroups;
-        LocalizedProperty _springs;
+        LocalizedProperty _colliderGroups = null!;
+        LocalizedProperty _springs = null!;
 
         void OnEnable()
         {

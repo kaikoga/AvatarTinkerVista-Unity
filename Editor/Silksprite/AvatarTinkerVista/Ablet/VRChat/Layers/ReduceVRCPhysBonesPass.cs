@@ -11,17 +11,17 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRChat.Layers
     [AbletLayer]
     class ReduceVRCPhysBonesPass : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.ReduceVRCPhysBones";
-        public string DisplayName => "ATiV: Reduce VRC PhysBones";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.ReduceVRCPhysBones";
+        string IAbletDefinition.DisplayName => "ATiV: Reduce VRC PhysBones";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<TransformingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 
-            return AbletBuildProcedure.Create((IBuildContext context) =>
+            return AbletBuildProcedure.Create(context =>
             {
                 if (context.CurrentRootTransform.TryGetComponent<VRCAvatarDescriptor>(out var avatarDescriptor))
                 {

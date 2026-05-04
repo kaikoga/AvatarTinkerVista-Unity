@@ -10,7 +10,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Base
     public abstract class AtivEditorBase : Editor
     {
         bool _isVisualElement;
-        public override VisualElement CreateInspectorGUI()
+        public override VisualElement? CreateInspectorGUI()
         {
             var visualElement = base.CreateInspectorGUI();
             _isVisualElement = visualElement != null;

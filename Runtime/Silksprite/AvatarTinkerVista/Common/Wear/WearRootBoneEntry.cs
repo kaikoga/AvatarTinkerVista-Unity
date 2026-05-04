@@ -7,7 +7,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Wear
     [Serializable]
     public abstract class WearRootBoneEntryBase<T>
     {
-        public T rootBone;
+        public T? rootBone;
         public WearArmatureMode armatureMode;
         public HumanBodyBones humanBone;
     }

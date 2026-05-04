@@ -7,7 +7,7 @@ namespace Silksprite.AvatarTinkerVista.Tools.ListComponents
     [Serializable]
     public class ListComponents
     {
-        public Transform avatarRoot;
+        public Transform avatarRoot = null!;
         public string[] componentNames = { };
 
         public void Refresh()

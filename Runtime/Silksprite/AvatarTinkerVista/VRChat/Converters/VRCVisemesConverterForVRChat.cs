@@ -40,22 +40,25 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
                     options.singleBlendShape = platform.MouthOpenBlendShapeName;
                     break;
                 case VisemeStyle.OculusVisemes:
-                    var visemeBlendShapes = new Queue<string>(platform.VisemeBlendShapes);
-                    options.oculusSil = visemeBlendShapes.Dequeue();
-                    options.oculusPp = visemeBlendShapes.Dequeue();
-                    options.oculusFf = visemeBlendShapes.Dequeue();
-                    options.oculusTh = visemeBlendShapes.Dequeue();
-                    options.oculusDd = visemeBlendShapes.Dequeue();
-                    options.oculusKk = visemeBlendShapes.Dequeue();
-                    options.oculusCh = visemeBlendShapes.Dequeue();
-                    options.oculusSs = visemeBlendShapes.Dequeue();
-                    options.oculusNn = visemeBlendShapes.Dequeue();
-                    options.oculusRr = visemeBlendShapes.Dequeue();
-                    options.oculusAa = visemeBlendShapes.Dequeue();
-                    options.oculusE = visemeBlendShapes.Dequeue();
-                    options.oculusI = visemeBlendShapes.Dequeue();
-                    options.oculusO = visemeBlendShapes.Dequeue();
-                    options.oculusU = visemeBlendShapes.Dequeue();
+                    if (platform.VisemeBlendShapes is { } visemeBlendShapesValue)
+                    {
+                        var visemeBlendShapes = new Queue<string>(visemeBlendShapesValue);
+                        options.oculusSil = visemeBlendShapes.Dequeue();
+                        options.oculusPp = visemeBlendShapes.Dequeue();
+                        options.oculusFf = visemeBlendShapes.Dequeue();
+                        options.oculusTh = visemeBlendShapes.Dequeue();
+                        options.oculusDd = visemeBlendShapes.Dequeue();
+                        options.oculusKk = visemeBlendShapes.Dequeue();
+                        options.oculusCh = visemeBlendShapes.Dequeue();
+                        options.oculusSs = visemeBlendShapes.Dequeue();
+                        options.oculusNn = visemeBlendShapes.Dequeue();
+                        options.oculusRr = visemeBlendShapes.Dequeue();
+                        options.oculusAa = visemeBlendShapes.Dequeue();
+                        options.oculusE = visemeBlendShapes.Dequeue();
+                        options.oculusI = visemeBlendShapes.Dequeue();
+                        options.oculusO = visemeBlendShapes.Dequeue();
+                        options.oculusU = visemeBlendShapes.Dequeue();
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Converters;
 using Silksprite.AvatarTinkerVista.Common.Utils;
@@ -16,7 +17,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
         AtivGenerateDynamicsColliderGroup
     >
     {
-        protected override bool TryConvertCollider(Transform context, VRCPhysBoneColliderBase pbCollider, out AtivGenerateDynamicsColliderGroup result)
+        protected override bool TryConvertCollider(Transform context, VRCPhysBoneColliderBase pbCollider, [MaybeNullWhen(false)] out AtivGenerateDynamicsColliderGroup result)
         {
             var secondary = context.transform.FindOrCreateSecondary(pbCollider.gameObject.name);
             result = secondary.gameObject.AddComponent<AtivGenerateDynamicsColliderGroup>();

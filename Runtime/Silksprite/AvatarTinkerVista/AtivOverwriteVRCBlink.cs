@@ -27,12 +27,12 @@ namespace Silksprite.AvatarTinkerVista
         {
             public BlinkStyle blinkStyle;
             
-            public AvatarRelativeSkinnedMeshRenderer faceMesh;
+            public AvatarRelativeSkinnedMeshRenderer faceMesh = new AvatarRelativeSkinnedMeshRenderer();
 
-            public string singleBlendShape;
+            public string singleBlendShape = "";
 
-            public string separateBlendShapeLeft;
-            public string separateBlendShapeRight;
+            public string separateBlendShapeLeft = "";
+            public string separateBlendShapeRight = "";
         }
     }
 }

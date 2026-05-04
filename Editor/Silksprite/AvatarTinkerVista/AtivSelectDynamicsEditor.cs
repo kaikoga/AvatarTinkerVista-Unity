@@ -15,7 +15,7 @@ namespace Silksprite.AvatarTinkerVista
     [CustomEditor(typeof(AtivSelectDynamics))]
     class AtivSelectDynamicsEditor : AtivEditorBase
     {
-        LocalizedProperty _options;
+        LocalizedProperty _options = null!;
 
         void OnEnable()
         {

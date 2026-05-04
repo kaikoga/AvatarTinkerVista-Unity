@@ -7,14 +7,14 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     public abstract class Overwrite<T>
     {
         public bool willOverwrite;
-        public T value;
+        public T? value;
 
-        public void OverwriteValue(ref T original)
+        public void OverwriteValue(ref T? original)
         {
             if (willOverwrite) original = value;
         }
 
-        public void OverwriteValue<TOut>(ref TOut original, Func<T, TOut> filter)
+        public void OverwriteValue<TOut>(ref TOut? original, Func<T?, TOut?> filter)
         {
             if (willOverwrite) original = filter(value);
         }

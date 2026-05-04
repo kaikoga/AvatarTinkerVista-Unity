@@ -31,7 +31,7 @@ namespace Silksprite.AvatarTinkerVista
 
             public Vector3 headLocalPosition;
             
-            public AvatarRelativeTransform transform;
+            public AvatarRelativeTransform transform = new AvatarRelativeTransform();
             public Vector3 transformLocalPosition;
         }
     }

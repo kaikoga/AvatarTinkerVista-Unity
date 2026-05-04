@@ -9,7 +9,7 @@ namespace Silksprite.AvatarTinkerVista
     [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_default_vrm_firstperson")]
     public class AtivDefaultVRMFirstPerson : AtivOptimizingComponent
     {
-        public OverwriteVector3 firstPersonOffset;
+        public OverwriteVector3 firstPersonOffset = new OverwriteVector3();
         public AtivFirstPersonFlag defaultValue;
 
         public enum AtivFirstPersonFlag

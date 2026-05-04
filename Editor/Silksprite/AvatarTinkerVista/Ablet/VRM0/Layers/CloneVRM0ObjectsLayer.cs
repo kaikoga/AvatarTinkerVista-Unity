@@ -11,13 +11,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM0.Layers
     [AbletLayer]
     class CloneVRM0ObjectsLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.CloneVRM0Objects";
-        public string DisplayName => "ATiV: Clone VRM0 Objects";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.CloneVRM0Objects";
+        string IAbletDefinition.DisplayName => "ATiV: Clone VRM0 Objects";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<ImportingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 

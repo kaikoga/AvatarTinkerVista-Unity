@@ -105,7 +105,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
             var fr = 1f;
 #if UNITY_EDITOR
             var sceneCamera = SceneView.currentDrawingSceneView?.camera;
-            if (sceneCamera)
+            if (sceneCamera != null)
             {
                 if (!sceneCamera.orthographic)
                 {

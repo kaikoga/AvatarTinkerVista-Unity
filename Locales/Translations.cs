@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace Ablet.Locales
+namespace AvatarTinkerVista.Locales
 {
     static class Translations
     {

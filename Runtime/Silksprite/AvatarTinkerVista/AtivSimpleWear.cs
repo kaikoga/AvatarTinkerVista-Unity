@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Common.Utils;
@@ -20,31 +21,35 @@ namespace Silksprite.AvatarTinkerVista
         public WearTreeNode[] ResolveModule()
         {
             var ignore = moduleIgnoreBones
-                .Concat(moduleRootBones.Select(e => e.rootBone))
+                .Concat(moduleRootBones.Select(e => e.rootBone).OfType<Transform>())
                 .ToArray();
             return moduleRootBones
                 .Select(entry =>
                 {
                     var rootBone = entry.rootBone;
-                    return rootBone ? WearTreeNode.Build(rootBone, entry.armatureMode, ignore, moduleLeafBones) : null;
+                    return rootBone != null ? WearTreeNode.Build(rootBone, entry.armatureMode, ignore, moduleLeafBones) : null;
                 })
-                .Where(tree => tree != null)
+                .OfType<WearTreeNode>()
                 .ToArray();
         }
 
         public WearTreeNode[] ResolveAvatar()
         {
             var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
+            if (avatarRoot == null)
+            {
+                return Array.Empty<WearTreeNode>();
+            }
             var ignore = avatarIgnoreBones
-                .Concat(avatarRootBones.Select(e => e.rootBone.ResolveFromAvatar(avatarRoot)))
+                .Concat(avatarRootBones.Select(e => e.rootBone?.ResolveFromAvatar(avatarRoot)).OfType<Transform>())
                 .ToArray();
             return avatarRootBones
                 .Select(entry =>
                 {
-                    var rootBone = entry.rootBone.ResolveFromAvatar(avatarRoot);
-                    return rootBone ? WearTreeNode.Build(rootBone, entry.armatureMode, ignore, moduleLeafBones) : null;
+                    var rootBone = entry.rootBone?.ResolveFromAvatar(avatarRoot);
+                    return rootBone != null ? WearTreeNode.Build(rootBone, entry.armatureMode, ignore, moduleLeafBones) : null;
                 })
-                .Where(tree => tree != null)
+                .OfType<WearTreeNode>()
                 .ToArray();
         }
     }

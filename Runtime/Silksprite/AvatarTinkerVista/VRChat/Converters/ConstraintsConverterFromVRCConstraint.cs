@@ -32,17 +32,17 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
                     ativConstraint.kind = AtivGenerateConstraint.ConstraintKind.Aim;
                     ativConstraint.aimAxis = GuessAimAxis(vrcAim.AimAxis);
                     break;
-                case VRCLookAtConstraintBase:
+                case VRCLookAtConstraintBase _:
                     ativConstraint.kind = AtivGenerateConstraint.ConstraintKind.Aim;
                     break;
                 case VRCRotationConstraintBase vrcRotation:
                     (ativConstraint.kind, ativConstraint.rollAxis) = GuessRollAxisOrRotation(vrcRotation);
                     break;
-                case VRCParentConstraintBase:
+                case VRCParentConstraintBase _:
                     ativConstraint.kind = AtivGenerateConstraint.ConstraintKind.Rotation;
                     break;
-                case VRCScaleConstraintBase:
-                case VRCPositionConstraintBase:
+                case VRCScaleConstraintBase _:
+                case VRCPositionConstraintBase _:
                     // not supported
                     break;
             }

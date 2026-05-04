@@ -11,13 +11,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM0.Layers
     [AbletLayer]
     class MergeVRM0FirstPersonLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.MergeVRM0FirstPerson";
-        public string DisplayName => "ATiV: Merge VRM0 FirstPerson";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.MergeVRM0FirstPerson";
+        string IAbletDefinition.DisplayName => "ATiV: Merge VRM0 FirstPerson";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<TransformingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 

@@ -58,7 +58,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
                     throw new NotSupportedException();
                 default:
                     throw new ArgumentOutOfRangeException();
-            };
+            }
         }
     }
 }

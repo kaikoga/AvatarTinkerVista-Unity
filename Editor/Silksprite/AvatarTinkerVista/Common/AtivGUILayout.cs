@@ -1,8 +1,6 @@
 using Silksprite.AvatarTinkerVista.Common.Utils;
-using Silksprite.Loch;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
-using UnityEngine;
 using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista.Common

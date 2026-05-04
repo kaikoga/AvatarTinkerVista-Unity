@@ -3,7 +3,6 @@ using Ablet.API.V1;
 using Ablet.API.V1.Attributes;
 using Ablet.API.V1.Building;
 using Ablet.Builtin;
-using Silksprite.AvatarTinkerVista.VRChat.Converter;
 using Silksprite.AvatarTinkerVista.VRChat.Converters;
 using VRC.SDK3.Avatars.Components;
 
@@ -12,13 +11,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRChat.Layers
     [AbletLayer]
     class OverwriteVRChatVisemesLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.OverwriteVRChatVisemesLayer";
-        public string DisplayName => "ATiV: Overwrite VRChat Visemes";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.OverwriteVRChatVisemesLayer";
+        string IAbletDefinition.DisplayName => "ATiV: Overwrite VRChat Visemes";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<GeneratingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 

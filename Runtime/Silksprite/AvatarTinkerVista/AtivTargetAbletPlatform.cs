@@ -30,14 +30,15 @@ namespace Silksprite.AvatarTinkerVista
 #endif
         }
 
-        public override string SelectedPlatformId()
+        public override string? SelectedPlatformId()
         {
 #if ATIV_ABLET
             if (useOutputPlatform && BuildContext.TryGetCurrentBuildArgument(out var argument))
             {
                 return argument.TargetPlatform.Id;
             }
-            if (PlatformRegistry.Instance.TryGuessPlatform(AtivRuntimeUtil.FindAvatarInParents(transform).gameObject, out var platform))
+            if (AtivRuntimeUtil.FindAvatarInParents(transform)?.gameObject is { } avatarRootObject
+                && PlatformRegistry.Instance.TryGuessPlatform(avatarRootObject, out var platform))
             {
                 return platform.Id;
             }

@@ -9,9 +9,9 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     where T : Component
     {
         [SerializeField] internal bool hasValue;
-        [SerializeField] internal string relativePath;
+        [SerializeField] internal string relativePath = null!;
 
-        public string RelativePath
+        public string? RelativePath
         {
             get => hasValue ? relativePath : null;
             set {
@@ -28,14 +28,14 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
             } 
         }
 
-        public T ResolveNow(Transform transform) => AvatarRelativeReference.ResolveNow<T>(transform, RelativePath);
-        public T ResolveFromAvatar(Transform avatarRoot) => AvatarRelativeReference.ResolveFromAvatar<T>(avatarRoot, RelativePath);
+        public T? ResolveNow(Transform transform) => AvatarRelativeReference.ResolveNow<T>(transform, RelativePath);
+        public T? ResolveFromAvatar(Transform avatarRoot) => AvatarRelativeReference.ResolveFromAvatar<T>(avatarRoot, RelativePath);
     }
 
     [Serializable]
     public class AvatarRelativeTransform : AvatarRelativeReference<Transform>
     {
-        public static AvatarRelativeTransform OfAvatar(Transform avatarRoot, Transform transform) =>
+        public static AvatarRelativeTransform OfAvatar(Transform? avatarRoot, Transform? transform) =>
             new AvatarRelativeTransform
             {
                 RelativePath = AvatarRelativeReference.RelativePathFromAvatar(avatarRoot, transform)
@@ -45,7 +45,7 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     [Serializable]
     public class AvatarRelativeSkinnedMeshRenderer : AvatarRelativeReference<SkinnedMeshRenderer>
     {
-        public static AvatarRelativeSkinnedMeshRenderer OfAvatar(Transform avatarRoot, SkinnedMeshRenderer skinnedMeshRenderer) =>
+        public static AvatarRelativeSkinnedMeshRenderer OfAvatar(Transform? avatarRoot, SkinnedMeshRenderer? skinnedMeshRenderer) =>
             new AvatarRelativeSkinnedMeshRenderer
             {
                 RelativePath = AvatarRelativeReference.RelativePathFromAvatar(avatarRoot, skinnedMeshRenderer)
@@ -54,7 +54,7 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
 
     public static class AvatarRelativeReference
     {
-        public static T ResolveNow<T>(Transform transform, string relativePath)
+        public static T? ResolveNow<T>(Transform? transform, string? relativePath)
             where T : Component
         {
             if (relativePath == null) return null;
@@ -62,24 +62,24 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
             return ResolveFromAvatar<T>(avatarRoot, relativePath);
         }
 
-        public static string RelativePath<T>(Transform transform, T obj)
+        public static string? RelativePath<T>(Transform? transform, T? obj)
             where T : Component
         {
             var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(transform);
             return RelativePathFromAvatar(avatarRoot, obj);
         }
         
-        public static T ResolveFromAvatar<T>(Transform avatarRoot, string relativePath)
+        public static T? ResolveFromAvatar<T>(Transform? avatarRoot, string? relativePath)
             where T : Component
         {
             if (relativePath == null) return null;
-            return avatarRoot? AtivRuntimeUtil.FromRelativePath(avatarRoot.transform, relativePath)?.GetComponent<T>() : null;
+            return avatarRoot != null ? AtivRuntimeUtil.FromRelativePath(avatarRoot.transform, relativePath)?.GetComponent<T>() : null;
         }
 
-        public static string RelativePathFromAvatar<T>(Transform avatarRoot, T obj)
+        public static string? RelativePathFromAvatar<T>(Transform? avatarRoot, T? obj)
             where T : Component
         {
-            return avatarRoot? AtivRuntimeUtil.RelativePath(avatarRoot.transform, obj?.transform) : null;
+            return avatarRoot != null ? AtivRuntimeUtil.RelativePath(avatarRoot.transform, obj?.transform) : null;
         }
     }
 }

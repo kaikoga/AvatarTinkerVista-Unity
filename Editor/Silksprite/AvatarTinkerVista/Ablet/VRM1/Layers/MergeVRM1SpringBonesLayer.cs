@@ -11,13 +11,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
     [AbletLayer]
     class MergeVRM1SpringBonesLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.MergeVRM1SpringBones";
-        public string DisplayName => "ATiV: Merge VRM1 SpringBones";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.MergeVRM1SpringBones";
+        string IAbletDefinition.DisplayName => "ATiV: Merge VRM1 SpringBones";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<TransformingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 

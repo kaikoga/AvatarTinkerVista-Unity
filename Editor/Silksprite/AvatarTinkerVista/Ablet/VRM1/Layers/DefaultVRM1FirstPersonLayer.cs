@@ -11,13 +11,13 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
     [AbletLayer]
     class DefaultVRM1FirstPersonLayer : IAbletLayer
     {
-        public string Id => "Silksprite.AvatarTinkerVista.DefaultVRM1FirstPerson";
-        public string DisplayName => "ATiV: Default VRM1 FirstPerson";
-        public void Configure(IDependencyConfigurator config)
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.DefaultVRM1FirstPerson";
+        string IAbletDefinition.DisplayName => "ATiV: Default VRM1 FirstPerson";
+        void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<MaterializingPhase>();
         }
-        public AbletProcedure ToProcedure(IBuildArgument argument)
+        AbletProcedure? IAbletLayer.ToProcedure(IBuildArgument argument)
         {
             if (!AbletSymbols.PreferAblet) return null;
 

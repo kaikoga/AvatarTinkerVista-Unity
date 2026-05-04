@@ -16,21 +16,21 @@ namespace Silksprite.AvatarTinkerVista
     [CanEditMultipleObjects]
     class AtivSimpleWearEditor : AtivEditorBase
     {
-        AtivSimpleWear[] _simpleWears;
+        AtivSimpleWear[] _simpleWears = null!;
 
-        LocalizedProperty _moduleRootBones;
-        LocalizedProperty _moduleIgnoreBones;
-        LocalizedProperty _moduleLeafBones;
-        LocalizedProperty _avatarRootBones;
-        LocalizedProperty _avatarIgnoreBones;
-        LocalizedProperty _avatarLeafBones;
+        LocalizedProperty _moduleRootBones = null!;
+        LocalizedProperty _moduleIgnoreBones = null!;
+        LocalizedProperty _moduleLeafBones = null!;
+        LocalizedProperty _avatarRootBones = null!;
+        LocalizedProperty _avatarIgnoreBones = null!;
+        LocalizedProperty _avatarLeafBones = null!;
 
         static bool _showModuleBoneTree;
         static bool _showAvatarBoneTree;
         static bool _showMapping;
-        WearTreeNode[] _cachedModuleBoneTree;
-        WearTreeNode[] _cachedAvatarBoneTree;
-        List<(Transform moduleBone, Transform avatarBone)> _cachedMapping;
+        WearTreeNode[]? _cachedModuleBoneTree;
+        WearTreeNode[]? _cachedAvatarBoneTree;
+        List<(Transform moduleBone, Transform avatarBone)>? _cachedMapping;
 
         void OnEnable()
         {
@@ -49,7 +49,7 @@ namespace Silksprite.AvatarTinkerVista
         {
             using var changed = new EditorGUI.ChangeCheckScope();
             LEditorGUILayout.HelpBox(Loc("AtivSimpleWear::BetaWarning."), MessageType.Info);
-            Action<AtivSimpleWear> defer = null;
+            Action<AtivSimpleWear>? defer = null;
             LGUILayout.Heading(Loc("AtivSimpleWear::ModuleSettings"));
             LEditorGUILayout.Prop(_moduleRootBones);
             LEditorGUILayout.Prop(_moduleIgnoreBones);
@@ -76,7 +76,7 @@ namespace Silksprite.AvatarTinkerVista
                 defer = SimpleWearSetup.SetupAvatar;
             }
 
-            if (defer is not null)
+            if (defer != null)
             {
                 foreach (var simpleWear in _simpleWears)
                 {

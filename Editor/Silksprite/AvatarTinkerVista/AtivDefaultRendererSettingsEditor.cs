@@ -13,10 +13,10 @@ namespace Silksprite.AvatarTinkerVista
     [CustomEditor(typeof(AtivDefaultRendererSettings))]
     class AtivDefaultRendererSettingsEditor : AtivEditorBase
     {
-        LocalizedProperty _preferParentSettings;
-        LocalizedProperty _overwriteProbeAnchor;
-        LocalizedProperty _overwriteRootBone;
-        LocalizedProperty _overwriteBounds;
+        LocalizedProperty _preferParentSettings = null!;
+        LocalizedProperty _overwriteProbeAnchor = null!;
+        LocalizedProperty _overwriteRootBone = null!;
+        LocalizedProperty _overwriteBounds = null!;
 
         void OnEnable()
         {
@@ -44,6 +44,10 @@ namespace Silksprite.AvatarTinkerVista
             foreach (var ativ in targets.OfType<AtivDefaultRendererSettings>())
             {
                 var avatarRoot = AtivRuntimeUtil.FindAvatarInParents(ativ.transform);
+                if (avatarRoot == null)
+                {
+                    continue;
+                }
                 var hips = avatarRoot.GetComponent<Animator>().GetBoneTransform(HumanBodyBones.Hips)
                            ?? avatarRoot;
                 ativ.overwriteProbeAnchor = new OverwriteAvatarRelativeTransform
