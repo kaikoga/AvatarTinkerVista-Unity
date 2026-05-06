@@ -11,9 +11,9 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRChat.Passes
             var avatarDescriptor = context.VRChatAvatarDescriptor();
             if (avatarDescriptor)
             {
-                foreach (var ativ in context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVRCVisemes>())
+                foreach (var ativ in context.AvatarRootTransform.GetComponentsInChildren<AtivOverwriteVisemes>())
                 {
-                    new VRCVisemesConverterForVRChat().ToPlatform(ativ, avatarDescriptor);
+                    new VisemesConverterForVRChat().ToPlatform(ativ, avatarDescriptor);
                 }
             }
         }

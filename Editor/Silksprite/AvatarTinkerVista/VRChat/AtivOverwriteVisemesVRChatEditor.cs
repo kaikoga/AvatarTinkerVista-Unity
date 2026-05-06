@@ -8,25 +8,25 @@ using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista.VRChat
 {
-    public static class AtivOverwriteVRCVisemesVRChatEditor
+    public static class AtivOverwriteVisemesVRChatEditor
     {
         [InitializeOnLoadMethod]
         static void InitializeOnLoadMethod()
         {
-            AtivOverwriteVRCVisemesEditor.PlatformUI += OnPlatformUI;
+            AtivOverwriteVisemesEditor.PlatformUI += OnPlatformUI;
         }
 
-        static void OnPlatformUI(AtivOverwriteVRCVisemes overwriteVisemes, Transform avatarRoot)
+        static void OnPlatformUI(AtivOverwriteVisemes overwriteVisemes, Transform avatarRoot)
         {
             if (avatarRoot.TryGetComponent(out VRCAvatarDescriptor avatarDescriptor))
             {
                 LEditorGUILayout.HelpBox(Loc("AtivOverwriteVRCVisemes::OutcomeVRChat.").Format(new Substitution
                 {
-                    ["outcome"] = TrEnum(new VRCVisemesConverterForVRChat().GetOption(overwriteVisemes).visemeStyle)
+                    ["outcome"] = TrEnum(new VisemesConverterForVRChat().GetOption(overwriteVisemes).visemeStyle)
                 }), MessageType.Info);
                 if (LGUILayout.Button(Loc("AtivOverwriteVRCVisemes::ExtractFromVRChat")))
                 {
-                    new VRCVisemesConverterForVRChat().ToAtiv(overwriteVisemes, avatarDescriptor);
+                    new VisemesConverterForVRChat().ToAtiv(overwriteVisemes, avatarDescriptor);
                 }
             }
         }

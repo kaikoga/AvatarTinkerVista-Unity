@@ -5,13 +5,13 @@ using Silksprite.AvatarTinkerVista.Common.Converters;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using VRC.SDK3.Avatars.Components;
 using VRC.SDKBase;
-using static Silksprite.AvatarTinkerVista.AtivOverwriteVRCVisemes;
+using static Silksprite.AvatarTinkerVista.AtivOverwriteVisemes;
 
 namespace Silksprite.AvatarTinkerVista.VRChat.Converters
 {
-    public class VRCVisemesConverterForVRChat : AtivOptionConverterBase<AtivOverwriteVRCVisemes, VisemeOption, VRCAvatarDescriptor>
+    public class VisemesConverterForVRChat : AtivOptionConverterBase<AtivOverwriteVisemes, VisemeOption, VRCAvatarDescriptor>
     {
-        public override void ToAtiv(AtivOverwriteVRCVisemes ativ, VRCAvatarDescriptor platform)
+        public override void ToAtiv(AtivOverwriteVisemes ativ, VRCAvatarDescriptor platform)
         {
             var visemeStyle = platform.lipSync switch
             {
@@ -65,7 +65,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             }
         }
 
-        public override VisemeOption GetOption(AtivOverwriteVRCVisemes overwriteVisemes)
+        public override VisemeOption GetOption(AtivOverwriteVisemes overwriteVisemes)
         {
             return overwriteVisemes.options.FirstOrDefault(option => option.visemeStyle switch
             {
@@ -79,7 +79,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             };
         }
 
-        public override void ToPlatform(AtivOverwriteVRCVisemes ativ, VRCAvatarDescriptor platform)
+        public override void ToPlatform(AtivOverwriteVisemes ativ, VRCAvatarDescriptor platform)
         {
             var options = GetOption(ativ);
             switch (options.visemeStyle)

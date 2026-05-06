@@ -25,9 +25,9 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRChat.Layers
             {
                 if (context.CurrentRootTransform.TryGetComponent<VRCAvatarDescriptor>(out var avatarDescriptor))
                 {
-                    foreach (var ativ in context.CurrentRootTransform.GetComponentsInChildren<AtivOverwriteVRCVisemes>())
+                    foreach (var ativ in context.CurrentRootTransform.GetComponentsInChildren<AtivOverwriteVisemes>())
                     {
-                        new VRCVisemesConverterForVRChat().ToPlatform(ativ, avatarDescriptor);
+                        new VisemesConverterForVRChat().ToPlatform(ativ, avatarDescriptor);
                     }
                 }
             });
