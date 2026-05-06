@@ -19,6 +19,7 @@ namespace Silksprite.AvatarTinkerVista
         {
             None = 0,
             SingleBlendShape = 100,
+            VrmBlendShapes = 500,
             OculusVisemes = 1500,
         }
 
@@ -30,6 +31,12 @@ namespace Silksprite.AvatarTinkerVista
             public AvatarRelativeSkinnedMeshRenderer faceMesh = new AvatarRelativeSkinnedMeshRenderer();
 
             public string singleBlendShape = "";
+
+            public string vrmA = "";
+            public string vrmI = "";
+            public string vrmU = "";
+            public string vrmE = "";
+            public string vrmO = "";
             
             public string oculusSil = "";
             public string oculusPp = "";

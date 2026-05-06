@@ -69,6 +69,14 @@ namespace Silksprite.AvatarTinkerVista
                     LEditorGUI.Prop(Next(), faceMesh);
                     AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.singleBlendShape), Loc("VisemeOption::singleBlendShape")), faceSkinnedMesh);
                     break;
+                case VisemeStyle.VrmBlendShapes:
+                    LEditorGUI.Prop(Next(), faceMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.vrmA), Loc("VisemeOption::vrmA")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.vrmI), Loc("VisemeOption::vrmI")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.vrmU), Loc("VisemeOption::vrmU")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.vrmE), Loc("VisemeOption::vrmE")), faceSkinnedMesh);
+                    AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.vrmO), Loc("VisemeOption::vrmO")), faceSkinnedMesh);
+                    break;
                 case VisemeStyle.OculusVisemes:
                     LEditorGUI.Prop(Next(), faceMesh);
                     AtivGUI.PropAsBlendShapeName(Next(), serializedProperty.Lop(nameof(VisemeOption.oculusSil), Loc("VisemeOption::oculusSil")), faceSkinnedMesh);
@@ -99,6 +107,7 @@ namespace Silksprite.AvatarTinkerVista
             {
                 VisemeStyle.None => 1,
                 VisemeStyle.SingleBlendShape => 3,
+                VisemeStyle.VrmBlendShapes => 7,
                 VisemeStyle.OculusVisemes => 17,
                 _ => throw new ArgumentOutOfRangeException()
             };

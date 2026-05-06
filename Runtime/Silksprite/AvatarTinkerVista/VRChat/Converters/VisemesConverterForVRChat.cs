@@ -71,6 +71,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             {
                 VisemeStyle.None => true,
                 VisemeStyle.SingleBlendShape => true,
+                VisemeStyle.VrmBlendShapes => false,
                 VisemeStyle.OculusVisemes => true,
                 _ => throw new ArgumentOutOfRangeException()
             }) ?? new VisemeOption
@@ -92,6 +93,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
                     platform.lipSync = VRC_AvatarDescriptor.LipSyncStyle.JawFlapBlendShape;
                     platform.MouthOpenBlendShapeName = options.singleBlendShape;
                     break;
+                case VisemeStyle.VrmBlendShapes:
+                    throw new NotSupportedException();
                 case VisemeStyle.OculusVisemes:
                     platform.VisemeSkinnedMesh = options.faceMesh.ResolveFromAvatar(platform.transform);
                     platform.lipSync = VRC_AvatarDescriptor.LipSyncStyle.VisemeBlendShape;
