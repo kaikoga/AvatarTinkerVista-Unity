@@ -8,9 +8,9 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
-    [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite VRC Visemes")]
-    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_overwrite_vrc_visemes")]
-    public class AtivOverwriteVRCVisemes : AtivGeneratingComponent
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite Visemes")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_overwrite_visemes")]
+    public class AtivOverwriteVisemes : AtivGeneratingComponent
     {
         public List<VisemeOption> options = new List<VisemeOption>();
         

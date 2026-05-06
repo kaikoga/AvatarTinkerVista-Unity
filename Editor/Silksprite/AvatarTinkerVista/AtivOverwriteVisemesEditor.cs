@@ -8,24 +8,24 @@ using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
-using static Silksprite.AvatarTinkerVista.AtivOverwriteVRCVisemes;
+using static Silksprite.AvatarTinkerVista.AtivOverwriteVisemes;
 using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [CustomEditor(typeof(AtivOverwriteVRCVisemes))]
+    [CustomEditor(typeof(AtivOverwriteVisemes))]
     [CanEditMultipleObjects]
-    public class AtivOverwriteVRCVisemesEditor : AtivEditorBase
+    public class AtivOverwriteVisemesEditor : AtivEditorBase
     {
-        AtivOverwriteVRCVisemes[] _overwriteVisemes = null!;
+        AtivOverwriteVisemes[] _overwriteVisemes = null!;
         LocalizedProperty _options = null!;
 
-        public delegate void PlatformUIHandler(AtivOverwriteVRCVisemes overwriteVisemes, Transform transform);
+        public delegate void PlatformUIHandler(AtivOverwriteVisemes overwriteVisemes, Transform transform);
         public static event PlatformUIHandler? PlatformUI;
 
         void OnEnable()
         {
-            _overwriteVisemes = targets.Cast<AtivOverwriteVRCVisemes>().ToArray();
+            _overwriteVisemes = targets.Cast<AtivOverwriteVisemes>().ToArray();
             _options = Lop(nameof(AtivOverwriteVRCBlink.options), Loc("AtivOverwriteVRCVisemes::options"));
         }
 
