@@ -62,6 +62,8 @@ namespace Silksprite.AvatarTinkerVista
 
             switch (GetBlinkStyle(blinkStyle))
             {
+                case BlinkStyle.Inherit:
+                    break;
                 case BlinkStyle.None:
                     break;
                 case BlinkStyle.SingleBlendShape:
@@ -83,6 +85,7 @@ namespace Silksprite.AvatarTinkerVista
             var blinkStyle = serializedProperty.Lop(nameof(BlinkOption.blinkStyle), Loc("BlinkOption::blinkStyle"));
             var result = (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) * GetBlinkStyle(blinkStyle) switch
             {
+                BlinkStyle.Inherit => 1,
                 BlinkStyle.None => 1,
                 BlinkStyle.SingleBlendShape => 3,
                 BlinkStyle.SeparateBlendShapes => 4,

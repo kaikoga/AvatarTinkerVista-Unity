@@ -63,6 +63,8 @@ namespace Silksprite.AvatarTinkerVista
 
             switch (GetVisemeStyle(visemeStyle))
             {
+                case VisemeStyle.Inherit:
+                    break;
                 case VisemeStyle.None:
                     break;
                 case VisemeStyle.SingleBlendShape:
@@ -105,6 +107,7 @@ namespace Silksprite.AvatarTinkerVista
             var visemeStyle = serializedProperty.Lop(nameof(VisemeOption.visemeStyle), Loc("VisemeOption::visemeStyle"));
             var result = (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) * GetVisemeStyle(visemeStyle) switch
             {
+                VisemeStyle.Inherit => 1,
                 VisemeStyle.None => 1,
                 VisemeStyle.SingleBlendShape => 3,
                 VisemeStyle.VrmBlendShapes => 7,

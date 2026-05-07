@@ -57,6 +57,8 @@ namespace Silksprite.AvatarTinkerVista
             LEditorGUI.PropAsEnumPopup<ViewPositionStyle>(position, viewPositionStyle);
             switch (GetViewPositionStyle(viewPositionStyle))
             {
+                case ViewPositionStyle.Inherit:
+                    break;
                 case ViewPositionStyle.Global:
                     LEditorGUI.Prop(Next(), serializedProperty.Lop(nameof(ViewPositionOption.globalPosition), Loc("ViewPositionOption::globalPosition")));
                     break;
@@ -77,6 +79,7 @@ namespace Silksprite.AvatarTinkerVista
             var viewPositionStyle = serializedProperty.Lop(nameof(ViewPositionOption.viewPositionStyle), Loc("ViewPositionOption::viewPositionStyle"));
             var result = (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) * GetViewPositionStyle(viewPositionStyle) switch
             {
+                ViewPositionStyle.Inherit => 1,
                 ViewPositionStyle.Global => 2,
                 ViewPositionStyle.HeadLocal => 2,
                 ViewPositionStyle.TransformLocal => 3,
