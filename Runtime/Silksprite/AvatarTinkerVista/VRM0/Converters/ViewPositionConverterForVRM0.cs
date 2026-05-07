@@ -44,6 +44,7 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converters
         {
             return overwriteViewPosition.options.FirstOrDefault(option => option.viewPositionStyle switch
             {
+                ViewPositionStyle.Inherit => true,
                 ViewPositionStyle.Global => true,
                 ViewPositionStyle.HeadLocal => true,
                 ViewPositionStyle.TransformLocal => true,
@@ -66,6 +67,8 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converters
             var options = GetOption(ativ);
             switch (options.viewPositionStyle) 
             {
+                case ViewPositionStyle.Inherit:
+                    break;
                 case ViewPositionStyle.Global:
                     firstPerson.FirstPersonBone = headBone;
                     firstPerson.FirstPersonOffset = headBone.InverseTransformPoint(rootBone.TransformPoint(options.globalPosition));

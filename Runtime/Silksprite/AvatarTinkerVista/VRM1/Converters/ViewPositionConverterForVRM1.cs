@@ -12,7 +12,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
     {
         public override void ToAtiv(AtivOverwriteViewPosition ativ, Vrm10Instance platform)
         {
-            if (!(platform.Vrm?.LookAt is { } lookAt))
+            if (platform.Vrm?.LookAt is not { } lookAt)
             {
                 return;
             }
@@ -35,6 +35,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
         {
             return overwriteViewPosition.options.FirstOrDefault(option => option.viewPositionStyle switch
             {
+                ViewPositionStyle.Inherit => true,
                 ViewPositionStyle.Global => true,
                 ViewPositionStyle.HeadLocal => true,
                 ViewPositionStyle.TransformLocal => false,
@@ -48,13 +49,15 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
 
         public override void ToPlatform(AtivOverwriteViewPosition ativ, Vrm10Instance platform)
         {
-            if (!(platform.Vrm?.LookAt is { } lookAt))
+            if (platform.Vrm?.LookAt is not { } lookAt)
             {
                 return;
             }
             var options = GetOption(ativ);
             switch (options.viewPositionStyle) 
             {
+                case ViewPositionStyle.Inherit:
+                    break;
                 case ViewPositionStyle.Global:
                     var rootBone = platform.transform;
                     var headBone = platform.GetComponent<Humanoid>()?.Head ?? rootBone;

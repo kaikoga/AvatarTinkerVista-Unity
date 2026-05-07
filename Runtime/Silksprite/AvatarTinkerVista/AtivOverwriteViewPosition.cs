@@ -17,6 +17,7 @@ namespace Silksprite.AvatarTinkerVista
         [LEnum]
         public enum ViewPositionStyle
         {
+            Inherit = -1,
             Global = 0,
             HeadLocal = 1,
             TransformLocal = 2,

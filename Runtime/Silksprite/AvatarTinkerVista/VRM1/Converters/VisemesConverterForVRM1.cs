@@ -18,6 +18,7 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
         {
             return overwriteVisemes.options.FirstOrDefault(option => option.visemeStyle switch
             {
+                VisemeStyle.Inherit => true,
                 VisemeStyle.None => true,
                 VisemeStyle.SingleBlendShape => true,
                 VisemeStyle.VrmBlendShapes => true,
@@ -54,7 +55,14 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
 
             switch (options.visemeStyle)
             {
+                case VisemeStyle.Inherit:
+                    break;
                 case VisemeStyle.None:
+                    platform.Vrm.Expression.Aa = null;
+                    platform.Vrm.Expression.Ih = null;
+                    platform.Vrm.Expression.Ou = null;
+                    platform.Vrm.Expression.Ee = null;
+                    platform.Vrm.Expression.Oh = null;
                     break;
                 case VisemeStyle.SingleBlendShape:
                     platform.Vrm.Expression.Aa = CreateClip(options.singleBlendShape);

@@ -30,6 +30,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
         {
             return overwriteViewPosition.options.FirstOrDefault(option => option.viewPositionStyle switch
             {
+                ViewPositionStyle.Inherit => true,
                 ViewPositionStyle.Global => true,
                 ViewPositionStyle.HeadLocal => true,
                 ViewPositionStyle.TransformLocal => false,
@@ -46,6 +47,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             var options = GetOption(ativ);
             switch (options.viewPositionStyle) 
             {
+                case ViewPositionStyle.Inherit:
+                    break;
                 case ViewPositionStyle.Global:
                     platform.ViewPosition = options.globalPosition;
                     break;

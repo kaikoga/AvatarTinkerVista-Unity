@@ -48,6 +48,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
         {
             return overwriteBlink.options.FirstOrDefault(option => option.blinkStyle switch
             {
+                BlinkStyle.Inherit => true,
                 BlinkStyle.None => true,
                 BlinkStyle.SingleBlendShape => true,
                 BlinkStyle.SeparateBlendShapes => false,
@@ -63,6 +64,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             var options = GetOption(ativ);
             switch (options.blinkStyle) 
             {
+                case BlinkStyle.Inherit:
+                    break;
                 case BlinkStyle.None:
                     platform.enableEyeLook = true;
                     platform.customEyeLookSettings.eyelidType = VRCAvatarDescriptor.EyelidType.None;

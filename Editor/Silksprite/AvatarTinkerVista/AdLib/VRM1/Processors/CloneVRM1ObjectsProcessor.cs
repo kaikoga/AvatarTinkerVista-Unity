@@ -8,7 +8,7 @@ namespace Silksprite.AvatarTinkerVista.AdLib.VRM1.Processors
     {
         public static void Process(Vrm10Instance vrmInstance)
         {
-            if (!(vrmInstance.Vrm is { } vrm))
+            if (vrmInstance.Vrm is not { } vrm)
             {
                 return;
             }

@@ -17,6 +17,7 @@ namespace Silksprite.AvatarTinkerVista
         [LEnum]
         public enum VisemeStyle
         {
+            Inherit = -1,
             None = 0,
             SingleBlendShape = 100,
             VrmBlendShapes = 500,

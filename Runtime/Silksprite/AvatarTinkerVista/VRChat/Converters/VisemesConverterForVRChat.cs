@@ -69,6 +69,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
         {
             return overwriteVisemes.options.FirstOrDefault(option => option.visemeStyle switch
             {
+                VisemeStyle.Inherit => true,
                 VisemeStyle.None => true,
                 VisemeStyle.SingleBlendShape => true,
                 VisemeStyle.VrmBlendShapes => false,
@@ -85,6 +86,8 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             var options = GetOption(ativ);
             switch (options.visemeStyle)
             {
+                case VisemeStyle.Inherit:
+                    break;
                 case VisemeStyle.None:
                     platform.lipSync = VRC_AvatarDescriptor.LipSyncStyle.VisemeParameterOnly;
                     break;

@@ -18,6 +18,7 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converters
         {
             return overwriteVisemes.options.FirstOrDefault(option => option.visemeStyle switch
             {
+                VisemeStyle.Inherit => true,
                 VisemeStyle.None => true,
                 VisemeStyle.SingleBlendShape => true,
                 VisemeStyle.VrmBlendShapes => true,
@@ -37,24 +38,34 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converters
                 return;
             }
 
-            void SetBlendShape(BlendShapePreset preset, string blendShapeName)
+            void SetBlendShape(BlendShapePreset preset, string? blendShapeName)
             {
                 var clip = ScriptableObject.CreateInstance<BlendShapeClip>();
-                clip.Values = new[]
+                if (blendShapeName is not null)
                 {
-                    new BlendShapeBinding
+                    clip.Values = new[]
                     {
-                        RelativePath = options.faceMesh.RelativePath,
-                        Index = sharedMesh.GetBlendShapeIndex(blendShapeName),
-                        Weight = 100f
-                    }
-                };
+                        new BlendShapeBinding
+                        {
+                            RelativePath = options.faceMesh.RelativePath,
+                            Index = sharedMesh.GetBlendShapeIndex(blendShapeName),
+                            Weight = 100f
+                        }
+                    };
+                }
                 platform.BlendShapeAvatar.SetClip(BlendShapeKey.CreateFromPreset(preset), clip);
             }
 
             switch (options.visemeStyle)
             {
+                case VisemeStyle.Inherit:
+                    break;
                 case VisemeStyle.None:
+                    SetBlendShape(BlendShapePreset.A, null);
+                    SetBlendShape(BlendShapePreset.I, null);
+                    SetBlendShape(BlendShapePreset.U, null);
+                    SetBlendShape(BlendShapePreset.E, null);
+                    SetBlendShape(BlendShapePreset.O, null);
                     break;
                 case VisemeStyle.SingleBlendShape:
                     SetBlendShape(BlendShapePreset.A, options.singleBlendShape);

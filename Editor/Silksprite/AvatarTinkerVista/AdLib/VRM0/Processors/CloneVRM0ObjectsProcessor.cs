@@ -8,7 +8,7 @@ namespace Silksprite.AvatarTinkerVista.AdLib.VRM0.Processors
     {
         public static void Process(VRMMeta vrmMeta)
         {
-            if (!(vrmMeta.Meta is { } meta))
+            if (vrmMeta.Meta is not { } meta)
             {
                 return;
             }

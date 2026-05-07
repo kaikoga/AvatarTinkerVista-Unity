@@ -17,6 +17,7 @@ namespace Silksprite.AvatarTinkerVista
         [LEnum]
         public enum BlinkStyle
         {
+            Inherit = -1,
             None = 0,
             SingleBlendShape = 10,
             SeparateBlendShapes = 20,
