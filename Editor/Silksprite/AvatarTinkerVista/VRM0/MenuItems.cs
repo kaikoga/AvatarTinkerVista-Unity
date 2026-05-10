@@ -5,7 +5,7 @@ namespace Silksprite.AvatarTinkerVista.VRM0
 {
     public static class MenuItems
     {
-        const string BakeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateSpringBones as VRM0 SpringBones"; 
+        const string BakeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiV Generate Dynamics as VRM0 SpringBones"; 
         [MenuItem(BakeDynamicsMenu, true, 61000)]
         public static bool ValidateBakeVRM0SpringBones(MenuCommand menuCommand)
         {

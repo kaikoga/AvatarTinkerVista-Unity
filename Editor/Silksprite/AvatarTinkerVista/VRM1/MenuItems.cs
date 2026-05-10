@@ -6,10 +6,10 @@ namespace Silksprite.AvatarTinkerVista.VRM1
 {
     public static class MenuItems
     {
-        const string BakeMergeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateSpringBones as ATiV Merge VRM1 SpringBones";
+        const string BakeMergeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiV Generate Dynamics as ATiV Merge VRM1 SpringBones";
 
-        const string BakeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateSpringBones into Vrm10Instance SpringBones";
-        const string BakeConstraintsMenu = "GameObject/Avatar Tinker Vista/Bake ATiVGenerateConstraints as Vrm10Constraints";
+        const string BakeDynamicsMenu = "GameObject/Avatar Tinker Vista/Bake ATiV Generate Dynamics into Vrm10Instance SpringBones";
+        const string BakeConstraintsMenu = "GameObject/Avatar Tinker Vista/Bake ATiV Generate Constraint as VRM1 Constraints";
 
         [MenuItem(BakeDynamicsMenu, true, 61110)]
         public static bool ValidateBakeVRM1SpringBones(MenuCommand menuCommand)
