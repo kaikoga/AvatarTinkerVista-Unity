@@ -23,7 +23,7 @@ namespace Silksprite.AvatarTinkerVista
         public override string? SelectedPlatformId() =>
             AtivSelectDynamics.GetDynamicsIdOf(transform) switch
             {
-                DynamicsRegistry.Auto => DynamicsRegistry.GuessDynamicsIdOf(transform),
+                DynamicsRegistry.Auto => DynamicsMarkerRegistry.GuessDynamicsIdOf(transform),
                 var dynamicsId => dynamicsId
             };
     }

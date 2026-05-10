@@ -21,7 +21,11 @@ namespace Silksprite.AvatarTinkerVista.VRM1.Converters
         [UnityEditor.InitializeOnLoadMethod]
 #endif
         [RuntimeInitializeOnLoadMethod]
-        static void InitializeOnLoad() => DynamicsRegistry.Register(new AtivDynamicsHandle(DynamicsId, DisplayName, typeof(Vrm10Instance)));
+        static void InitializeOnLoad()
+        {
+            DynamicsRegistry.Register(new AtivDynamicsHandle(DynamicsId, DisplayName));   
+            DynamicsMarkerRegistry.Register(typeof(Vrm10Instance), DynamicsId);
+        }
 
         protected override bool TryConvertCollider(Vrm10Instance vrm10Instance, AtivGenerateDynamicsColliderGroup ativ, [MaybeNullWhen(false)] out VRM10SpringBoneColliderGroup result)
         {
