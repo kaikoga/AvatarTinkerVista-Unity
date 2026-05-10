@@ -33,7 +33,7 @@ namespace Silksprite.AvatarTinkerVista.VRM0.Converters
                 .Where(collider => collider)
                 .GroupBy(collider => collider.ActualRootBone)
                 .ToArray();
-            if (ativColliders.Any())
+            if (ativColliders.Length == 0)
             {
                 result = null;
                 return false;
