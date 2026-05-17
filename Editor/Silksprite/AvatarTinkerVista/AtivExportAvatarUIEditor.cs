@@ -19,13 +19,10 @@ using Ablet.Repositories;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [CustomEditor(typeof(AtivExportVRMUI))]
+    [CustomEditor(typeof(AtivExportAvatarUI))]
     [CanEditMultipleObjects]
-    public class AtivExportVRMUIEditor : AtivEditorBase
+    public class AtivExportAvatarUIEditor : AtivEditorBase
     {
-
-#if ATIV_DETECTED_VRM0 || ATIV_DETECTED_VRM1
-
 #if ATIV_ABLET
         static bool MayNdmfExport => !EditorSettingsRepository.Instance.Value.IsNdmfOnAblet;
         static bool MayAbletExport => !EditorSettingsRepository.Instance.Value.IsAbletOnNdmf;
@@ -40,7 +37,7 @@ namespace Silksprite.AvatarTinkerVista
 
         public override VisualElement CreateInspectorGUI()
         {
-            var exportVrm = (AtivExportVRMUI)target;
+            var exportVrm = (AtivExportAvatarUI)target;
             var container = new VisualElement();
             container.Add(new GlobalLocaleSelector());
 
@@ -78,7 +75,5 @@ namespace Silksprite.AvatarTinkerVista
 
             return container;
         }
-
-#endif
     }
 }

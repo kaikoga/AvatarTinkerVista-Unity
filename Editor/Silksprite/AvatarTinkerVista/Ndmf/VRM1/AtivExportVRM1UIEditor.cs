@@ -10,7 +10,7 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.VRM1
         [InitializeOnLoadMethod]
         static void InitializeOnLoadMethod()
         {
-            AtivExportVRMUIEditor.NdmfExportUI += OnNdmfExportUI;
+            AtivExportAvatarUIEditor.NdmfExportUI += OnNdmfExportUI;
         }
 
         static void OnNdmfExportUI(VisualElement container, Transform avatarRoot)
