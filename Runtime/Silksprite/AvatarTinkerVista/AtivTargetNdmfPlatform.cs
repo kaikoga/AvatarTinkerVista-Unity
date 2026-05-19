@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Base;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using UnityEngine;
@@ -24,7 +25,8 @@ namespace Silksprite.AvatarTinkerVista
 
         public override IEnumerable<AtivPlatformHandle> AllPlatforms()
         {
-            return (AllPlatformsInjected ?? EmptyPlatforms).Invoke();
+            return (AllPlatformsInjected ?? EmptyPlatforms).Invoke()
+                .OrderBy(platform => platform.DisplayName);
         }
 
         static IEnumerable<AtivPlatformHandle> EmptyPlatforms()

@@ -4,13 +4,11 @@ namespace Silksprite.AvatarTinkerVista.Common.DataObjects
     {
         public readonly string Id;
         public readonly string DisplayName;
-        public readonly int Order;
 
-        public AtivPlatformHandle(string id, string displayName, int order = 0)
+        public AtivPlatformHandle(string id, string displayName)
         {
             Id = id;
             DisplayName = displayName;
-            Order = order;
         }
     }
 }

@@ -10,11 +10,11 @@ namespace Silksprite.AvatarTinkerVista
     [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_target_platform")]
     public class AtivTargetUnityPlatform : AtivTargetPlatformBase
     {
-        public static AtivPlatformHandle Windows = new AtivPlatformHandle("Windows", "Windows", 1);
-        public static AtivPlatformHandle Macos = new AtivPlatformHandle("Macos", "macOS", 2);
-        public static AtivPlatformHandle Linux = new AtivPlatformHandle("Linux", "Linux", 3);
-        public static AtivPlatformHandle Android = new AtivPlatformHandle("Android", "Android", 4);
-        public static AtivPlatformHandle Ios = new AtivPlatformHandle("Ios", "iOS", 5);
+        public static readonly AtivPlatformHandle Windows = new AtivPlatformHandle("Windows", "Windows");
+        public static readonly AtivPlatformHandle Macos = new AtivPlatformHandle("Macos", "macOS");
+        public static readonly AtivPlatformHandle Linux = new AtivPlatformHandle("Linux", "Linux");
+        public static readonly AtivPlatformHandle Android = new AtivPlatformHandle("Android", "Android");
+        public static readonly AtivPlatformHandle Ios = new AtivPlatformHandle("Ios", "iOS");
 
         public override IEnumerable<AtivPlatformHandle> AllPlatforms()
         {

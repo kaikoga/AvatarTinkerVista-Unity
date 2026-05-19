@@ -17,7 +17,8 @@ namespace Silksprite.AvatarTinkerVista
         public override IEnumerable<AtivPlatformHandle> AllPlatforms()
         {
             return DynamicsRegistry.All()
-                .Select(dynamics => new AtivPlatformHandle(dynamics.Id, dynamics.DisplayName));
+                .Select(dynamics => new AtivPlatformHandle(dynamics.Id, dynamics.DisplayName))
+                .OrderBy(platform => platform.DisplayName);
         }
 
         public override string? SelectedPlatformId() =>

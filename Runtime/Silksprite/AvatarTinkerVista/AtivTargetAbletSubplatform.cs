@@ -13,9 +13,9 @@ using Ablet.Registries;
 namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
-    [AddComponentMenu("Avatar Tinker Vista/ATiV Target Ablet Platform")]
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Target Ablet Subplatform")]
     [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_target_platform")]
-    public class AtivTargetAbletPlatform : AtivTargetPlatformBase
+    public class AtivTargetAbletSubplatform : AtivTargetPlatformBase
     {
         public bool useOutputPlatform = true;
         public override bool UseOutputPlatform => useOutputPlatform;
@@ -23,9 +23,12 @@ namespace Silksprite.AvatarTinkerVista
         public override IEnumerable<AtivPlatformHandle> AllPlatforms()
         {
 #if ATIV_ABLET
-            return PlatformRegistry.Instance.All()
-                .Select(platform => new AtivPlatformHandle(platform.Id, platform.DisplayName))
-                .OrderBy(platform => platform.DisplayName);
+            return SubplatformRegistry.Instance.All()
+                .Where(subplatform => subplatform.IsAvailable)
+                .OrderBy(subplatform => subplatform.Platform.DisplayName)
+                .ThenBy(subplatform => subplatform.Priority)
+                .ThenBy(subplatform => subplatform.DisplayName)
+                .Select(subplatform => new AtivPlatformHandle(subplatform.Id, subplatform.DisplayName));
 #else
             return Enumerable.Empty<AtivPlatformHandle>();
 #endif
@@ -36,12 +39,12 @@ namespace Silksprite.AvatarTinkerVista
 #if ATIV_ABLET
             if (useOutputPlatform && BuildContext.TryGetCurrentBuildArgument(out var argument))
             {
-                return argument.TargetPlatform.Id;
+                return argument.TargetSubplatform.Id;
             }
             if (AtivRuntimeUtil.FindAvatarInParents(transform)?.gameObject is { } avatarRootObject
                 && PlatformRegistry.Instance.TryGuessPlatform(avatarRootObject, out var platform))
             {
-                return platform.Id;
+                return SubplatformRegistry.Instance.GuessSubplatform(avatarRootObject, platform).Id;
             }
 #endif
             return null;

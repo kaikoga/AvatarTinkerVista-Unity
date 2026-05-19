@@ -24,7 +24,7 @@ namespace Silksprite.AvatarTinkerVista
         protected virtual void OnEnable()
         {
             _targets = targets.OfType<T>().ToArray();
-            _allPlatforms = _targets.First().AllPlatforms().OrderBy(platform => platform.Order).ThenBy(platform => platform.DisplayName).ToArray();
+            _allPlatforms = _targets.First().AllPlatforms().ToArray();
 
             if (EnableUseOutputPlatform)
             {
@@ -122,6 +122,13 @@ namespace Silksprite.AvatarTinkerVista
     [CustomEditor(typeof(AtivTargetAbletPlatform))]
     [CanEditMultipleObjects]
     class AtivTargetAbletPlatformEditor : AtivTargetPlatformBaseEditor<AtivTargetAbletPlatform>
+    {
+        protected override bool EnableUseOutputPlatform => false;
+    }
+
+    [CustomEditor(typeof(AtivTargetAbletSubplatform))]
+    [CanEditMultipleObjects]
+    class AtivTargetAbletSubplatformEditor : AtivTargetPlatformBaseEditor<AtivTargetAbletSubplatform>
     {
         protected override bool EnableUseOutputPlatform => false;
     }

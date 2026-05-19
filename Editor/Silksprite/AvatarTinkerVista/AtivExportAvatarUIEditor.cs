@@ -13,7 +13,9 @@ using nadena.dev.ndmf.runtime;
 #if ATIV_ABLET
 using Ablet;
 using Ablet.EditorAPI.V1.Extensions.Platform;
+using Ablet.EditorAPI.V1.Extensions.Subplatform;
 using Ablet.Models.Extensions;
+using Ablet.Registries;
 using Ablet.Repositories;
 #endif
 
@@ -69,6 +71,13 @@ namespace Silksprite.AvatarTinkerVista
                         loc = Loc("AtivExportVRMUI.ExportWithAblet")
                     });
                     container.Add(exportUI.RenderExportUI(entrypointObject));
+                    foreach (var subplatform in SubplatformRegistry.Instance.ForPlatform(platform))
+                    {
+                        if (subplatform.TryGetExtensionDef<ISubExportUIExtension>(out var subExportUI))
+                        {
+                            container.Add(subExportUI.RenderSubExportUI(entrypointObject));
+                        }
+                    }
                 }
             }
 #endif
