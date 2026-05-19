@@ -25,9 +25,6 @@ namespace Silksprite.AvatarTinkerVista
 #if ATIV_ABLET
             return SubplatformRegistry.Instance.All()
                 .Where(subplatform => subplatform.IsAvailable)
-                .OrderBy(subplatform => subplatform.Platform.DisplayName)
-                .ThenBy(subplatform => subplatform.Priority)
-                .ThenBy(subplatform => subplatform.DisplayName)
                 .Select(subplatform => new AtivPlatformHandle(subplatform.Id, subplatform.DisplayName));
 #else
             return Enumerable.Empty<AtivPlatformHandle>();
