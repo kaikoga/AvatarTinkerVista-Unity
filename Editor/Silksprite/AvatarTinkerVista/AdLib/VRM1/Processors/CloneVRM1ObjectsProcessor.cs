@@ -8,11 +8,9 @@ namespace Silksprite.AvatarTinkerVista.AdLib.VRM1.Processors
     {
         public static void Process(Vrm10Instance vrmInstance)
         {
-            if (vrmInstance.Vrm is not { } vrm)
-            {
-                return;
-            }
-            vrmInstance.Vrm = AtivEditorUtil.ToEphemeralClone(vrm, v => new CustomCloneVRM10Object().Clone(v).mainAsset);
+            vrmInstance.Vrm = AtivEditorUtil.ToEphemeralClone(
+                vrmInstance.Vrm,
+                vrm => new CustomCloneVRM10Object().Clone(vrm).mainAsset);
         }
     }
 }

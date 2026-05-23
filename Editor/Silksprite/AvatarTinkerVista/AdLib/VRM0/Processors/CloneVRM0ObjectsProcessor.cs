@@ -8,12 +8,16 @@ namespace Silksprite.AvatarTinkerVista.AdLib.VRM0.Processors
     {
         public static void Process(VRMMeta vrmMeta)
         {
-            if (vrmMeta.Meta is not { } meta)
+            vrmMeta.Meta = AtivEditorUtil.ToEphemeralClone(
+                vrmMeta.Meta,
+                meta => new CustomCloneVRMMetaObject().Clone(meta).mainAsset);
+
+            if (vrmMeta.TryGetComponent<VRMBlendShapeProxy>(out var blendShapeProxy))
             {
-                return;
+                blendShapeProxy.BlendShapeAvatar = AtivEditorUtil.ToEphemeralClone(
+                    blendShapeProxy.BlendShapeAvatar,
+                    blendShapeAvatar => new CustomCloneBlendShapeAvatar().Clone(blendShapeAvatar).mainAsset); 
             }
-            
-            vrmMeta.Meta = AtivEditorUtil.ToEphemeralClone(meta, m => new CustomCloneVRMMetaObject().Clone(m).mainAsset);
         }
     }
 }

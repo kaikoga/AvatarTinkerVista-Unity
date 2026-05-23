@@ -30,7 +30,7 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
 
         public static T ToEphemeralClone<T>(T asset, Func<T, T> customClone) where T : UnityEngine.Object
         {
-            if (!EditorUtility.IsPersistent(asset))
+            if (!asset || !EditorUtility.IsPersistent(asset))
             {
                 return asset;
             } 
