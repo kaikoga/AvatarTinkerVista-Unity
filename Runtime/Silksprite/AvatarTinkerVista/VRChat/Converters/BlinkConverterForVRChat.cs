@@ -3,13 +3,13 @@ using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.Converters;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using VRC.SDK3.Avatars.Components;
-using static Silksprite.AvatarTinkerVista.AtivOverwriteVRCBlink;
+using static Silksprite.AvatarTinkerVista.AtivOverwriteBlink;
 
 namespace Silksprite.AvatarTinkerVista.VRChat.Converters
 {
-    public class VRCBlinkConverterForVRChat : AtivOptionConverterBase<AtivOverwriteVRCBlink, BlinkOption, VRCAvatarDescriptor>
+    public class BlinkConverterForVRChat : AtivOptionConverterBase<AtivOverwriteBlink, BlinkOption, VRCAvatarDescriptor>
     {
-        public override void ToAtiv(AtivOverwriteVRCBlink ativ, VRCAvatarDescriptor platform)
+        public override void ToAtiv(AtivOverwriteBlink ativ, VRCAvatarDescriptor platform)
         {
             var blinkStyle = (platform.enableEyeLook, platform.customEyeLookSettings.eyelidType) switch
             {
@@ -44,7 +44,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             }
         }
 
-        public override BlinkOption GetOption(AtivOverwriteVRCBlink overwriteBlink)
+        public override BlinkOption GetOption(AtivOverwriteBlink overwriteBlink)
         {
             return overwriteBlink.options.FirstOrDefault(option => option.blinkStyle switch
             {
@@ -59,7 +59,7 @@ namespace Silksprite.AvatarTinkerVista.VRChat.Converters
             };
         }
 
-        public override void ToPlatform(AtivOverwriteVRCBlink ativ, VRCAvatarDescriptor platform)
+        public override void ToPlatform(AtivOverwriteBlink ativ, VRCAvatarDescriptor platform)
         {
             var options = GetOption(ativ);
             switch (options.blinkStyle) 

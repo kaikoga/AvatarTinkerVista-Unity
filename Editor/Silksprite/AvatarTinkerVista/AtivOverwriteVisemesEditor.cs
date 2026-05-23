@@ -26,7 +26,7 @@ namespace Silksprite.AvatarTinkerVista
         void OnEnable()
         {
             _overwriteVisemes = targets.Cast<AtivOverwriteVisemes>().ToArray();
-            _options = Lop(nameof(AtivOverwriteVRCBlink.options), Loc("AtivOverwriteVRCVisemes::options"));
+            _options = Lop(nameof(AtivOverwriteBlink.options), Loc("AtivOverwriteVRCVisemes::options"));
         }
 
         protected override void OnInnerInspectorGUI()

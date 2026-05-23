@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-05-08 03:29+0900\n"
+"POT-Creation-Date: 2026-05-23 08:24+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -67,11 +67,11 @@ msgstr ""
 msgid "AtivDeleteOtherPlatformComponentsEditor::DetectedPlatform"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:72
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportAvatarUIEditor.cs:71
 msgid "AtivExportVRMUI.ExportWithAblet"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivExportVRMUIEditor.cs:56
+#: Editor/Silksprite/AvatarTinkerVista/AtivExportAvatarUIEditor.cs:55
 msgid "AtivExportVRMUI.ExportWithNDMF"
 msgstr ""
 
@@ -175,6 +175,18 @@ msgstr ""
 msgid "AtivMergeVRMFirstPerson::renderers"
 msgstr ""
 
+#: Editor/Silksprite/AvatarTinkerVista/VRChat/AtivOverwriteBlinkVRChatEditor.cs:27
+msgid "AtivOverwriteBlink::ExtractFromVRChat"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteBlinkEditor.cs:29
+msgid "AtivOverwriteBlink::options"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/VRChat/AtivOverwriteBlinkVRChatEditor.cs:23
+msgid "AtivOverwriteBlink::OutcomeVRChat."
+msgstr ""
+
 #: Editor/Silksprite/AvatarTinkerVista/VRChat/AtivOverwriteViewPositionVRChatEditor.cs:27
 msgid "AtivOverwriteViewPosition::ExtractFromVRChat"
 msgstr ""
@@ -201,18 +213,6 @@ msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/VRM1/AtivOverwriteViewPositionVRM1Editor.cs:23
 msgid "AtivOverwriteViewPosition::OutcomeVRM1."
-msgstr ""
-
-#: Editor/Silksprite/AvatarTinkerVista/VRChat/AtivOverwriteVRCBlinkVRChatEditor.cs:27
-msgid "AtivOverwriteVRCBlink::ExtractFromVRChat"
-msgstr ""
-
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:29
-msgid "AtivOverwriteVRCBlink::options"
-msgstr ""
-
-#: Editor/Silksprite/AvatarTinkerVista/VRChat/AtivOverwriteVRCBlinkVRChatEditor.cs:23
-msgid "AtivOverwriteVRCBlink::OutcomeVRChat."
 msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/VRChat/AtivOverwriteVisemesVRChatEditor.cs:27
@@ -443,24 +443,24 @@ msgstr ""
 msgid "AtivTargetPlatformBase::useOutputPlatform"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:56
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:83
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteBlinkEditor.cs:56
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteBlinkEditor.cs:85
 msgid "BlinkOption::blinkStyle"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:60
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteBlinkEditor.cs:60
 msgid "BlinkOption::faceMesh"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:73
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteBlinkEditor.cs:75
 msgid "BlinkOption::separateBlendShapeLeft"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:74
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteBlinkEditor.cs:76
 msgid "BlinkOption::separateBlendShapeRight"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVRCBlinkEditor.cs:69
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteBlinkEditor.cs:71
 msgid "BlinkOption::singleBlendShape"
 msgstr ""
 
@@ -560,24 +560,24 @@ msgstr ""
 msgid "TargetPlatformMode::Include"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:61
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:63
 msgid "ViewPositionOption::globalPosition"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:64
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:66
 msgid "ViewPositionOption::headLocalPosition"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:67
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:69
 msgid "ViewPositionOption::transform"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:68
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:70
 msgid "ViewPositionOption::transformLocalPosition"
 msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:55
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:77
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteViewPositionEditor.cs:79
 msgid "ViewPositionOption::viewPositionStyle"
 msgstr ""
 
@@ -601,92 +601,92 @@ msgstr ""
 msgid "VisemeOption::faceMesh"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:92
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:94
 msgid "VisemeOption::oculusAa"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:88
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:90
 msgid "VisemeOption::oculusCh"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:86
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:88
 msgid "VisemeOption::oculusDd"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:93
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:95
 msgid "VisemeOption::oculusE"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:84
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:86
 msgid "VisemeOption::oculusFf"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:94
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:96
 msgid "VisemeOption::oculusI"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:87
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:89
 msgid "VisemeOption::oculusKk"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:90
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:92
 msgid "VisemeOption::oculusNn"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:95
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:97
 msgid "VisemeOption::oculusO"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:83
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:85
 msgid "VisemeOption::oculusPp"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:91
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:93
 msgid "VisemeOption::oculusRr"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:82
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:84
 msgid "VisemeOption::oculusSil"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:89
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:91
 msgid "VisemeOption::oculusSs"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:85
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:87
 msgid "VisemeOption::oculusTh"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:96
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:98
 msgid "VisemeOption::oculusU"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:70
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:72
 msgid "VisemeOption::singleBlendShape"
 msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:57
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:105
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:107
 msgid "VisemeOption::visemeStyle"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:74
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:76
 msgid "VisemeOption::vrmA"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:77
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:79
 msgid "VisemeOption::vrmE"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:75
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:77
 msgid "VisemeOption::vrmI"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:78
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:80
 msgid "VisemeOption::vrmO"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:76
+#: Editor/Silksprite/AvatarTinkerVista/AtivOverwriteVisemesEditor.cs:78
 msgid "VisemeOption::vrmU"
 msgstr ""
 

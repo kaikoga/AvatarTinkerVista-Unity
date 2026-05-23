@@ -8,25 +8,25 @@ using Silksprite.Loch.Extensions;
 using Silksprite.Loch.IMGUI;
 using UnityEditor;
 using UnityEngine;
-using static Silksprite.AvatarTinkerVista.AtivOverwriteVRCBlink;
+using static Silksprite.AvatarTinkerVista.AtivOverwriteBlink;
 using static Silksprite.Loch.Tools.LochTool;
 
 namespace Silksprite.AvatarTinkerVista
 {
-    [CustomEditor(typeof(AtivOverwriteVRCBlink))]
+    [CustomEditor(typeof(AtivOverwriteBlink))]
     [CanEditMultipleObjects]
-    public class AtivOverwriteVRCBlinkEditor : AtivEditorBase
+    public class AtivOverwriteBlinkEditor : AtivEditorBase
     {
-        AtivOverwriteVRCBlink[] _overwriteBlinks = null!;
+        AtivOverwriteBlink[] _overwriteBlinks = null!;
         LocalizedProperty _options = null!;
 
-        public delegate void PlatformUIHandler(AtivOverwriteVRCBlink overwriteBlink, Transform transform);
+        public delegate void PlatformUIHandler(AtivOverwriteBlink overwriteBlink, Transform transform);
         public static event PlatformUIHandler? PlatformUI;
 
         void OnEnable()
         {
-            _overwriteBlinks = targets.Cast<AtivOverwriteVRCBlink>().ToArray();
-            _options = Lop(nameof(AtivOverwriteVRCBlink.options), Loc("AtivOverwriteVRCBlink::options"));
+            _overwriteBlinks = targets.Cast<AtivOverwriteBlink>().ToArray();
+            _options = Lop(nameof(AtivOverwriteBlink.options), Loc("AtivOverwriteBlink::options"));
         }
 
         protected override void OnInnerInspectorGUI()

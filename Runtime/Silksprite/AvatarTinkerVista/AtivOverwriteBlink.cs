@@ -8,9 +8,9 @@ using UnityEngine;
 namespace Silksprite.AvatarTinkerVista
 {
     [DisallowMultipleComponent]
-    [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite VRC Blink")]
-    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_overwrite_vrc_blink")]
-    public class AtivOverwriteVRCBlink : AtivGeneratingComponent
+    [AddComponentMenu("Avatar Tinker Vista/ATiV Overwrite Blink")]
+    [HelpURL("https://docs.kaikoga.net/ativ/components/ativ_overwrite_blink")]
+    public class AtivOverwriteBlink : AtivGeneratingComponent
     {
         public List<BlinkOption> options = new List<BlinkOption>();
         
