@@ -1,5 +1,5 @@
 using Silksprite.AdLib.Utils.VRM1;
-using UnityEditor;
+using Silksprite.AvatarTinkerVista.Common.Utils;
 using UniVRM10;
 
 namespace Silksprite.AvatarTinkerVista.AdLib.VRM1.Processors
@@ -12,13 +12,7 @@ namespace Silksprite.AvatarTinkerVista.AdLib.VRM1.Processors
             {
                 return;
             }
-            if (EditorUtility.IsPersistent(vrm))
-            {
-                return;
-            }
-            
-            var newVrm = new CustomCloneVRM10Object().Clone(vrmInstance.Vrm).mainAsset;
-            vrmInstance.Vrm = newVrm;
+            vrmInstance.Vrm = AtivEditorUtil.ToEphemeralClone(vrm, v => new CustomCloneVRM10Object().Clone(v).mainAsset);
         }
     }
 }

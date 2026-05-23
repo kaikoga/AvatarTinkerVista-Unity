@@ -22,8 +22,18 @@
     "defineConstraints": ["ATIV_ADLIB", "ATIV_DETECTED_VRM0"],
     "versionDefines": [
         {
+            "name": "net.kaikoga.ablet",
+            "expression": "[3.0.0,4.0.0)",
+            "define": "ATIV_ABLET"
+        },
+        {
+            "name": "nadena.dev.ndmf",
+            "expression": "(1.8.0-a,2.0-a)",
+            "define": "ATIV_NDMF"
+        },
+        {
             "name": "net.kaikoga.adlib",
-            "expression": "[2.0.0,3.0.0)",
+            "expression": "[3.0.0,4.0.0)",
             "define": "ATIV_ADLIB"
         },
         {

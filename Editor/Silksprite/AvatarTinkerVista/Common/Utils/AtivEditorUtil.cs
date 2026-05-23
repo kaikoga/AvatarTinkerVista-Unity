@@ -1,6 +1,8 @@
+using System;
 using System.Diagnostics;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.Loch;
+using UnityEditor;
 using UnityEngine;
 
 namespace Silksprite.AvatarTinkerVista.Common.Utils
@@ -26,5 +28,19 @@ namespace Silksprite.AvatarTinkerVista.Common.Utils
             return hasValue ? AvatarRelativeReference.ResolveNow<SkinnedMeshRenderer>(transform, relativePath) : null;
         }
 
+        public static T ToEphemeralClone<T>(T asset, Func<T, T> customClone) where T : UnityEngine.Object
+        {
+            if (!EditorUtility.IsPersistent(asset))
+            {
+                return asset;
+            } 
+            var clone = customClone(asset);
+#if ATIV_ABLET
+            Ablet.ErrorReporting.ObjectChain.Register(asset, clone);
+#elif ATIV_NDMF
+            nadena.dev.ndmf.ObjectRegistry.RegisterReplacedObject(asset, clone);
+#endif
+            return clone;
+        }
     }
 }

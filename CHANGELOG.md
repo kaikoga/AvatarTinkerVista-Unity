@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-05-24
+
+### Added
+
+- Added many components, notably ATiV Overwrite View Position and ATiV Target Ablet Platform.
+- Some components are pluggable, notably ATiV Generate Dynamics and ATiV Overwrite View Position.
+
+### Changed
+
+- Supports Loch 3.0 breaking changes.
+- ATiVExportVRMUI (and some other components) are renamed.
+
 ## [2.1.0] - 2026-02-26
 
 ### Added

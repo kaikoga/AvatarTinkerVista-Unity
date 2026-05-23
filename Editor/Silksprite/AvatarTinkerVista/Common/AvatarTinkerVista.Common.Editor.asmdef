@@ -4,6 +4,8 @@
     "references": [
         "Loch",
         "Loch.Editor",
+        "Ablet.ErrorReporting",
+        "nadena.dev.ndmf",
         "AvatarTinkerVista",
         "AvatarTinkerVista.Common"
     ],
@@ -18,6 +20,17 @@
     ],
     "autoReferenced": false,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "net.kaikoga.ablet",
+            "expression": "[3.0.0,4.0.0)",
+            "define": "ATIV_ABLET"
+        },
+        {
+            "name": "nadena.dev.ndmf",
+            "expression": "(1.8.0-a,2.0-a)",
+            "define": "ATIV_NDMF"
+        }
+    ],
     "noEngineReferences": false
 }
