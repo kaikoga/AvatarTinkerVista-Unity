@@ -9,10 +9,10 @@ using UniVRM10;
 namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
 {
     [AbletLayer]
-    class OverwriteVRM1VisemesLayer : IAbletLayer
+    class OverwriteVRM1BlinkLayer : IAbletLayer
     {
-        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.OverwriteVRM1VisemesLayer";
-        string IAbletDefinition.DisplayName => "ATiV: Overwrite VRM1 Visemes";
+        string IAbletDefinition.Id => "Silksprite.AvatarTinkerVista.OverwriteVRM1BlinkLayer";
+        string IAbletDefinition.DisplayName => "ATiV: Overwrite VRM1 Blink";
         void IAbletLayer.Configure(IDependencyConfigurator config)
         {
             config.AddDependency<GeneratingPhase>();
@@ -25,9 +25,10 @@ namespace Silksprite.AvatarTinkerVista.Ablet.VRM1.Layers
             {
                 if (context.CurrentRootTransform.TryGetComponent<Vrm10Instance>(out var vrm10Instance))
                 {
-                    foreach (var ativ in context.CurrentRootTransform.GetComponentsInChildren<AtivOverwriteVisemes>())
+                    foreach (var ativ in context.CurrentRootTransform.GetComponentsInChildren<AtivOverwriteBlink>())
                     {
-                        new VisemesConverterForVRM1().ToPlatform(ativ, vrm10Instance);
+                        new BlinkConverterSingleForVRM1().ToPlatform(ativ, vrm10Instance);
+                        new BlinkConverterSeparateForVRM1().ToPlatform(ativ, vrm10Instance);
                     }
                 }
             });

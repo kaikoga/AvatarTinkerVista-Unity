@@ -76,12 +76,14 @@ namespace Silksprite.AvatarTinkerVista.Ndmf.PluginDefinition
 #endif
 #if ATIV_DETECTED_VRM0
                 generating.Run(OverwriteVRM0MetaPass.Instance);
+                generating.Run(OverwriteVRM0BlinkPass.Instance);
                 generating.Run(OverwriteVRM0VisemesPass.Instance);
                 generating.Run(OverwriteVRM0ViewPositionPass.Instance);
                 generating.Run(GenerateVRM0SpringBonesPass.Instance);
 #endif
 #if ATIV_DETECTED_VRM1
                 generating.Run(OverwriteVRM1MetaPass.Instance);
+                generating.Run(OverwriteVRM1BlinkPass.Instance);
                 generating.Run(OverwriteVRM1VisemesPass.Instance);
                 generating.Run(OverwriteVRM1ViewPositionPass.Instance);
                 generating.Run(GenerateVRM1SpringBonesPass.Instance);
