@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-05-23 08:24+0900\n"
+"POT-Creation-Date: 2026-05-24 11:09+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,6 +21,18 @@ msgstr ""
 
 #: 
 msgid "AllowedUser::OnlyAuthor"
+msgstr ""
+
+#: 
+msgid "ApplyMode::Components"
+msgstr ""
+
+#: 
+msgid "ApplyMode::GameObject"
+msgstr ""
+
+#: 
+msgid "ApplyMode::None"
 msgstr ""
 
 #: Editor/Silksprite/AvatarTinkerVista/Common/AtivGUILayout.cs:13
@@ -427,19 +439,35 @@ msgstr ""
 msgid "AtivSimpleWear::ShowModuleBoneTree"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:96
-msgid "AtivTargetPlatformBase::DeselectAll"
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:49
+msgid "AtivTargetPlatformBase::applyMode"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:45
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:132
+msgid "AtivTargetPlatformBase::ApplyMode"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:175
+msgid "AtivTargetPlatformBase::DeselectAllComponent"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:119
+msgid "AtivTargetPlatformBase::DeselectAllPlatform"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:68
 msgid "AtivTargetPlatformBase::Platforms"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:88
-msgid "AtivTargetPlatformBase::SelectAll"
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:165
+msgid "AtivTargetPlatformBase::SelectAllComponent"
 msgstr ""
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:31
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:111
+msgid "AtivTargetPlatformBase::SelectAllPlatform"
+msgstr ""
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:47
 msgid "AtivTargetPlatformBase::useOutputPlatform"
 msgstr ""
 

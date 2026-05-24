@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2026-05-23 08:24+0900\n"
+"POT-Creation-Date: 2026-05-24 11:09+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,6 +23,15 @@ msgstr "指定された利用者のみ許可"
 
 msgid "AllowedUser::OnlyAuthor"
 msgstr "作成者のみ許可"
+
+msgid "ApplyMode::Components"
+msgstr "コンポーネント"
+
+msgid "ApplyMode::GameObject"
+msgstr "ゲームオブジェクト"
+
+msgid "ApplyMode::None"
+msgstr "適用しない"
 
 #: Editor/Silksprite/AvatarTinkerVista/Common/AtivGUILayout.cs:13
 msgid "ativ::GizmosDarkMode"
@@ -428,19 +437,35 @@ msgstr "マッピングを表示"
 msgid "AtivSimpleWear::ShowModuleBoneTree"
 msgstr "モジュールのボーンツリーを表示"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:96
-msgid "AtivTargetPlatformBase::DeselectAll"
-msgstr "Deselect All"
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:49
+msgid "AtivTargetPlatformBase::applyMode"
+msgstr "適用モード"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:45
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:132
+msgid "AtivTargetPlatformBase::ApplyMode"
+msgstr "適用モード"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:175
+msgid "AtivTargetPlatformBase::DeselectAllComponent"
+msgstr "全て選択解除"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:119
+msgid "AtivTargetPlatformBase::DeselectAllPlatform"
+msgstr "全て選択解除"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:68
 msgid "AtivTargetPlatformBase::Platforms"
 msgstr "プラットフォーム"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:88
-msgid "AtivTargetPlatformBase::SelectAll"
-msgstr "Select All"
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:165
+msgid "AtivTargetPlatformBase::SelectAllComponent"
+msgstr "全て選択"
 
-#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:31
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:111
+msgid "AtivTargetPlatformBase::SelectAllPlatform"
+msgstr "全て選択"
+
+#: Editor/Silksprite/AvatarTinkerVista/AtivTargetPlatformBaseEditor.cs:47
 msgid "AtivTargetPlatformBase::useOutputPlatform"
 msgstr "出力先で判定する"
 

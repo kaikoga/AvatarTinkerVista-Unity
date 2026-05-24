@@ -4,6 +4,7 @@ using System.Linq;
 using Silksprite.AvatarTinkerVista.Common.DataObjects;
 using Silksprite.Loch.Attributes;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Silksprite.AvatarTinkerVista.Common.Base
 {
@@ -11,6 +12,9 @@ namespace Silksprite.AvatarTinkerVista.Common.Base
     {
         public TargetPlatformMode targetPlatformMode = TargetPlatformMode.Exclude;
         public List<string> platformIds = new List<string>();
+
+        public ApplyMode applyMode = ApplyMode.GameObject;
+        public List<string> componentTypeQualifiedNames = new List<string>();
 
         public virtual bool UseOutputPlatform => false;
 
@@ -87,7 +91,24 @@ namespace Silksprite.AvatarTinkerVista.Common.Base
             {
                 if (component && !component.GetIsTargetPlatform(component.SelectedPlatformId()))
                 {
-                    DestroyImmediate(component.gameObject);
+                    switch (component.applyMode)
+                    {
+                        case ApplyMode.None:
+                            break;
+                        case ApplyMode.GameObject:
+                            DestroyImmediate(component.gameObject);
+                            break;
+                        case ApplyMode.Components:
+                            var componentsToDestroy = component.GetComponents<Component>()
+                                .Where(c => c && component.componentTypeQualifiedNames.Contains(c.GetType().FullName));
+                            foreach (var c in componentsToDestroy)
+                            {
+                                DestroyImmediate(c);
+                            }
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
                 }
             }
         }
@@ -97,6 +118,14 @@ namespace Silksprite.AvatarTinkerVista.Common.Base
         {
             Include,
             Exclude
+        }
+
+        [LEnum]
+        public enum ApplyMode
+        {
+            None,
+            GameObject,
+            Components,
         }
     }
 }
